@@ -191,7 +191,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         multiworld_img_path = randovania.get_data_path().joinpath("gui_assets", "common", "multiworld.png")
         bannerSize = 40
 
-        for game in RandovaniaGame.sorted_all_games():
+        for game in [RandovaniaGame.METROID_PRIME_CORRUPTION]:
             # Play game buttons
             pack_tile = QtWidgets.QStackedWidget(self.game_list_contents)
             pack_tile.setFixedSize(150, 200)
