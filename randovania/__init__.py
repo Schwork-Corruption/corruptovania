@@ -25,6 +25,7 @@ def is_dirty() -> bool:
 
 
 def is_dev_version():
+    return False
     return (".dev" in VERSION or is_dirty()) and version_hash.git_branch != "stable"
 
 
