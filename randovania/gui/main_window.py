@@ -135,6 +135,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
         super().__init__()
         self.setupUi(self)
+        self.main_tab_widget.setTabVisible(self.main_tab_widget.count() - 1, False)
         self.setWindowTitle(f"Randovania {VERSION}")
         self._is_preview_mode = preview
         self.setAcceptDrops(True)

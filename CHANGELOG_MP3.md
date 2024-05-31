@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Major** - Changed: Corruption is now the only game you can access from this build. To play the other games check out the [official Randovania build](https://github.com/randovania/randovania/releases/latest).
 - **Major** - Added: All changes that concern Prime 3 will now be recorded here.
 - Removed: The layout editor has been hidden to increase performance.
-
+- Removed: The Multiworld tab has been hidden due to Prime 3 not being compatible.
 ### Metroid Prime 3: Corruption
 
 - Fixed: The progressive missile/beam text in the preset describer will now only be shown once.
