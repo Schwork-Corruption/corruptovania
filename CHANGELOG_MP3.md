@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Major** - Added: All changes that concern Prime 3 will now be recorded here.
 - Removed: The layout editor has been hidden to increase performance.
 - Removed: The Multiworld tab has been hidden due to Prime 3 not being compatible.
+- Changed: The welcome screen has been shortened to only mention Prime 3.
+
 ### Metroid Prime 3: Corruption
 
 - Fixed: The progressive missile/beam text in the preset describer will now only be shown once.
