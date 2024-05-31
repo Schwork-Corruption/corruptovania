@@ -133,6 +133,8 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
     ):
         super().__init__()
         self.setupUi(self)
+        self.main_tab_widget.setTabVisible(self.main_tab_widget.count() - 1, False)
+        self.intro_play_multiworld_button.setVisible(False)
         self.setWindowTitle(f"Randovania {VERSION}")
         self._is_preview_mode = preview
         self.setAcceptDrops(True)
@@ -191,7 +193,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         multiworld_img_path = randovania.get_data_path().joinpath("gui_assets", "common", "multiworld.png")
         bannerSize = 40
 
-        for game in RandovaniaGame.sorted_all_games():
+        for game in [RandovaniaGame.METROID_PRIME_CORRUPTION]:
             # Play game buttons
             pack_tile = QtWidgets.QStackedWidget(self.game_list_contents)
             pack_tile.setFixedSize(150, 200)

@@ -52,19 +52,21 @@ def state_for_blank(
 def test_current_state_report(state_for_blank):
     result = state_for_blank.current_state_report()
     assert result == (
-        "At Intro/Heated Room/Pickup (Health) after 0 actions and 0 pickups, "
-        "with 4 collected locations, 20 safe nodes.\n\n"
+        "At Intro/Starting Area/Event - Post Weapon after 0 actions and 0 pickups, "
+        "with 4 collected locations, 24 safe nodes.\n\n"
         "Pickups still available: \n\n"
-        "Resources to progress: Blue Key, Missile, Weapon\n\n"
+        "Resources to progress: Blue Key, Double Jump, Jump, Missile, Weapon\n\n"
         "Paths to be opened:\n"
         "* Intro/Blue Key Room/Lock - Door to Starting Area (Exit): Blue Key\n"
+        "* Intro/Ledge Room/Low Ledge: Double Jump\n"
+        "* Intro/Ledge Room/Low Ledge: Jump\n"
         "* Intro/Starting Area/Door to Boss Arena: Missile and Weapon\n"
         "\n"
         "Accessible teleporters:\n"
         "None\n"
         "\n"
         "Reachable nodes:\n"
-        "26 nodes total"
+        "32 nodes total"
     )
 
 

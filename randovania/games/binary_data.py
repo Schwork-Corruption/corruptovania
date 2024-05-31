@@ -40,6 +40,7 @@ _EXPECTED_FIELDS = [
     "victory_condition",
     "dock_weakness_database",
     "used_trick_levels",
+    "flatten_to_set_on_patch",
     "regions",
 ]
 
@@ -120,10 +121,11 @@ ConstructResourceRequirement = Struct(
 requirement_type_map = {
     "resource": ConstructResourceRequirement,
     "template": String,
+    "node": ConstructNodeIdentifier,
 }
 
 ConstructRequirement = Struct(
-    type=construct.Enum(Byte, resource=0, **{"and": 1, "or": 2}, template=3),
+    type=construct.Enum(Byte, resource=0, **{"and": 1, "or": 2}, template=3, node=4),
     data=Switch(lambda this: this.type, requirement_type_map),
 )
 ConstructRequirementArray = Struct(
@@ -222,6 +224,7 @@ ConstructNode = NodeAdapter(
                     incompatible_dock_weaknesses=PrefixedArray(VarInt, String),
                     override_default_open_requirement=OptionalValue(ConstructRequirement),
                     override_default_lock_requirement=OptionalValue(ConstructRequirement),
+                    ui_custom_name=OptionalValue(String),
                 ),
                 "pickup": Struct(
                     **NodeBaseFields,
@@ -334,6 +337,7 @@ ConstructGame = Struct(
             victory_condition=ConstructRequirement,
             dock_weakness_database=ConstructDockWeaknessDatabase,
             used_trick_levels=ConstructUsedTrickLevels,
+            flatten_to_set_on_patch=Flag,
             regions=PrefixedArray(VarInt, ConstructRegion),
         ),
         "lzma",
