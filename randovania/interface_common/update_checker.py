@@ -24,7 +24,7 @@ class VersionDescription(NamedTuple):
 
     @property
     def as_strict_version(self) -> StrictVersion:
-        return StrictVersion(self.tag_name[1:])
+        return StrictVersion(self.tag_name[1:-1])
 
 
 def strict_version_for_version_string(version_name: str) -> StrictVersion:
