@@ -9,12 +9,7 @@ New here or looking to install? Check [our website](https://randovania.org/).
 <!-- Begin SUPPORTED -->
 
 ### Supported Games
- - Another Metroid 2 Remake
- - Cave Story
- - Metroid Dread
- - Metroid Prime
- - Metroid Prime 2: Echoes
- - Metroid: Samus Returns
+ - Metroid Prime 3: Corruption
 
 <!-- End SUPPORTED -->
 
@@ -29,12 +24,6 @@ without using any glitches or exploits. Its features include:
 
 * Randomizing what can be found in each item location. Weapons, keys, and more can end up in
   completely new places.
-
-* Use Multiworld sessions to shuffle items between multiple separate games, alone or with friends.
-  All Multiworld games are compatible with each other - mix and match as you like!
-
-* Randomize how areas connect to one another, or what resources are required to travel between areas.
-  These options are highly customizable, letting you limit or unleash the chaos.
 
 * Randomize your starting equipment and location. Feeling brave? You can even shuffle items
   you normally start with.
