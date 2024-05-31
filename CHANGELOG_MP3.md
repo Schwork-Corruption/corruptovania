@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2024-05-28
 
-- **Major** - Changed: Corruption is now the only game you can access from this build. To play the other games check out the [latest stable build](https://github.com/randovania/randovania/releases/latest).
+- **Major** - Changed: Corruption is now the only game you can access from this build. To play the other games check out the [official Randovania build](https://github.com/randovania/randovania/releases/latest).
 - **Major** - Added: All changes that concern Prime 3 will now be recorded here.
+- Removed: The layout editor has been hidden to increase performance.
 
 ### Metroid Prime 3: Corruption
 
@@ -17,4 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Logic Database
 
-- Fixed: The trick to open the door in Skytown, Elysia - Aurora Chamber has been removed due to no documented proof of it being possible.
+- Fixed: The trick to open the door with spring ball in Skytown, Elysia - Aurora Chamber has been removed due to no documented proof of it being possible.
