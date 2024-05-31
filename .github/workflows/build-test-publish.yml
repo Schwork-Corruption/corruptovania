@@ -132,11 +132,11 @@ jobs:
           PRODUCTION: ${{ startsWith(github.ref, 'refs/tags/v') || startsWith(github.ref, 'refs/heads/stable') }}
 
       - name: executable check
-        run: dist/randovania/randovania --version
+        run: dist/corruptovania/corruptovania --version
         if: matrix.executable
 
       - name: executable test
-        run: dist/randovania/randovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py
+        run: dist/corruptovania/corruptovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py
         if: matrix.executable
 
 # TODO: this causes CI to hang
@@ -390,6 +390,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     name: Docker
+    if: false
     steps:
       -
         name: Checkout
