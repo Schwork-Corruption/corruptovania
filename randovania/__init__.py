@@ -24,11 +24,12 @@ def is_dirty() -> bool:
     return version_hash.dirty
 
 
-def is_dev_version() -> bool:
+def is_dev_version():
+    return False
     return (".dev" in VERSION or is_dirty()) and version_hash.git_branch != "stable"
 
 
-def get_icon_path() -> Path:
+def get_icon_path():
     if is_dev_version():
         icon_name = "rdv_logo_red.ico"
     else:
@@ -89,7 +90,7 @@ def get_configuration() -> dict:
             raise
 
 
-def setup_logging(default_level: str, log_to_file: Path | None, quiet: bool = False) -> None:
+def setup_logging(default_level: str, log_to_file: Path | None, quiet: bool = False):
     import logging.config
     import logging.handlers
     import time

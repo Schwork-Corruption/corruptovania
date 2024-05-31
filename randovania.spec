@@ -72,17 +72,17 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name="randovania",
+    name="corruptovania",
     debug=False,
     strip=False,
     upx=False,
     icon=icon_path,
     console=True,
 )
-coll = COLLECT(exe, a.binaries, a.zipfiles, a.datas, strip=False, upx=False, name="randovania")
+coll = COLLECT(exe, a.binaries, a.zipfiles, a.datas, strip=False, upx=False, name="corruptovania")
 app = BUNDLE(
     coll,
-    name="Randovania.app",
+    name="Corruptovania.app",
     icon="tools/rdv_logo.icns",
     bundle_identifier="run.metroidprime.randovania",
     info_plist={
