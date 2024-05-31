@@ -1,10 +1,10 @@
 <!-- The Begin and End comments throughout this document are used in order to pull specific sections of the readme into the main GUI window at runtime. -->
 
-# Randovania
+# Corruptovania
 
-Welcome to Randovania, a randomizer platform for a multitude of games.
+Welcome to Corruptovania, a fork of Randovania dedicated to randomizing Metroid Prime 3: Corruption.
 
-New here or looking to install? Check [our website](https://randovania.org/).
+New here or looking to install? Check [the downloads](https://github.com/schwork-corruption/corruptovania/releases/latest).
 
 <!-- Begin SUPPORTED -->
 
@@ -19,7 +19,7 @@ New here or looking to install? Check [our website](https://randovania.org/).
 
 <!-- Begin WELCOME -->
 
-Randovania can randomize many aspects of its supported games, all while still ensuring they're completable
+Corruptovania can randomize many aspects of its supported games, all while still ensuring they're completable
 without using any glitches or exploits. Its features include:
 
 * Randomizing what can be found in each item location. Weapons, keys, and more can end up in
@@ -34,18 +34,16 @@ Have fun and start randomizing!
 
 # Installation
 
-In the [releases page](https://github.com/randovania/randovania/releases), we have zip files
+In the [releases page](https://github.com/schwork-corruption/corruptovania/releases), we have zip files
 with everything ready to use. Just extract and run!
-
-For Linux users, we recommend using our [Flatpak](https://flathub.org/apps/io.github.randovania.Randovania) instead.
 
 <!-- Begin COMMUNITY -->
 
 # Community
 
-Join the Randovania Discord: <https://discord.gg/M23gCxj6fw>
+Join the Prime Randomizer Discord: <https://randodiscord.metroidprime.run>
 
-Invite links for specific games' servers can be found in the `#game-communities` channel in our server.
+Invite links for the main Randovania server and other specific games' servers can be found in the `#affiliates` channel in our server.
 
 <!-- End COMMUNITY -->
 

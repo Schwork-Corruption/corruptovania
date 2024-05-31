@@ -137,7 +137,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.setupUi(self)
         self.main_tab_widget.setTabVisible(self.main_tab_widget.count() - 1, False)
         self.intro_play_multiworld_button.setVisible(False)
-        self.setWindowTitle(f"Randovania {VERSION}")
+        self.setWindowTitle(f"Corruptovania {VERSION}")
         self._is_preview_mode = preview
         self.setAcceptDrops(True)
         common_qt_lib.set_default_window_icon(self)

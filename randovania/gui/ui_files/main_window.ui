@@ -81,7 +81,7 @@
         <item row="0" column="0" colspan="3">
          <widget class="QLabel" name="intro_label">
           <property name="text">
-           <string>Welcome to Randovania {version}, a randomizer for a multitude of games.</string>
+           <string>Welcome to Corruptovania {version}, a fork of Randovania dedicated to randomizing and playing Metroid Prime 3: Corruption.</string>
           </property>
           <property name="textFormat">
            <enum>Qt::MarkdownText</enum>
