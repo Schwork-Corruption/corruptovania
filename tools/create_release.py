@@ -25,7 +25,7 @@ from randovania.lib.enum_lib import iterate_enum
 
 _ROOT_FOLDER = Path(__file__).parents[1]
 _NINTENDONT_DOWNLOAD_URL = "https://github.com/randovania/Nintendont/releases/download/v5-multiworld/boot.dol"
-zip_folder = f"randovania-{VERSION}"
+zip_folder = f"corruptovania-{VERSION}"
 
 
 def is_production():
@@ -124,11 +124,11 @@ def write_frozen_file_list(package_folder: Path) -> None:
 
 
 async def main():
-    package_folder = Path("dist", "randovania")
+    package_folder = Path("dist", "corruptovania")
     if package_folder.exists():
         shutil.rmtree(package_folder, ignore_errors=False)
 
-    app_folder = Path("dist", "Randovania.app")
+    app_folder = Path("dist", "Corruptovania.app")
     if app_folder.exists():
         shutil.rmtree(app_folder, ignore_errors=False)
 
@@ -207,7 +207,7 @@ def create_macos_zip(folder_to_pack: Path):
     output = f"dist/{zip_folder}-macos.tar.gz"
     with tarfile.open(_ROOT_FOLDER.joinpath(f"dist/{zip_folder}-macos.tar.gz"), "w:gz") as release_zip:
         print(f"Creating {output} from {folder_to_pack}.")
-        release_zip.add(folder_to_pack, f"{zip_folder}/Randovania.app")
+        release_zip.add(folder_to_pack, f"{zip_folder}/Corruptovania.app")
         print("Finished.")
 
 
