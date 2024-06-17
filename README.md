@@ -2,9 +2,9 @@
 
 # Corruptovania
 
-Welcome to Corruptovania, a fork of Randovania dedicated to randomizing Metroid Prime 3: Corruption.
+Welcome to Corruptovania, a fork of [Randovania](https://randovania.org/) dedicated to randomizing Metroid Prime 3: Corruption.
 
-New here or looking to install? Check [the downloads](https://github.com/schwork-corruption/corruptovania/releases/latest).
+New here or looking to install? Check out [the setup guide](https://github.com/Schwork-Corruption/corruptovania/wiki/Setup-Guide) and [the downloads](https://github.com/schwork-corruption/corruptovania/releases/latest).
 
 <!-- Begin SUPPORTED -->
 
