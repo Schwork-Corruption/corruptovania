@@ -178,8 +178,8 @@ jobs:
           name: Python Package
           if-no-files-found: error
           path: |
-            dist/randovania-*.tar.gz
-            dist/randovania-*.whl
+            dist/corruptovania-*.tar.gz
+            dist/corruptovania-*.whl
 
   installer:
     runs-on: windows-latest
