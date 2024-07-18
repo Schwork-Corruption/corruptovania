@@ -177,5 +177,3 @@ if is_dirty():
 __version__ = _final_version
 VERSION = _final_version
 GIT_HASH = version_hash.git_hash
-if not is_dev_version():
-    GIT_HASH = GIT_HASH[:-1]
