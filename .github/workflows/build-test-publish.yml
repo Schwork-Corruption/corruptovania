@@ -178,8 +178,8 @@ jobs:
           name: Python Package
           if-no-files-found: error
           path: |
-            dist/corruptovania-*.tar.gz
-            dist/corruptovania-*.whl
+            dist/randovania-*.tar.gz
+            dist/randovania-*.whl
 
   installer:
     runs-on: windows-latest
@@ -496,8 +496,9 @@ jobs:
           python-version: "3.12"
 
       - name: Download the executables
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.0
         with:
+          pattern: '* *'
           path: packages/
 
       - name: Install Python packages
