@@ -94,6 +94,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added: 1 more joke hint
 - Fixed: A joke hint showing as two joke hints.
 
+- Changed: When replacing a preset in a multiworld session, the user playing the world will now be unmarked from being ready.
+
 ### Metroid Dread
 
 #### Logic Database
