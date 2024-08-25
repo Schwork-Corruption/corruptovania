@@ -37,7 +37,7 @@
      </property>
     </widget>
    </item>
-<item row="2" column="0" colspan="2">
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="input_file_label">
      <property name="maximumSize">
       <size>
@@ -70,7 +70,7 @@
      </property>
     </widget>
    </item>
-<item row="4" column="0" colspan="3">
+   <item row="4" column="0" colspan="3">
     <layout class="QHBoxLayout" name="target_platform_layout">
      <item>
       <widget class="QLabel" name="target_platform_label">
@@ -79,14 +79,14 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QRadioButton" name="wbfs_radio">
-       <property name="text">
-        <string>.wbfs</string>
-       </property>
-      </widget>
-     </item>
-     <item>
+    <item>
+     <widget class="QRadioButton" name="wbfs_radio">
+      <property name="text">
+       <string>.wbfs</string>
+      </property>
+     </widget>
+    </item>
+    <item>
       <widget class="QRadioButton" name="dolphin_radio">
        <property name="text">
         <string>Uncompressed Folder</string>
@@ -95,67 +95,28 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0" rowspan="2" colspan="3">
-    <widget class="QTabWidget" name="output_tab_widget">
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="tab_dolphin">
-      <attribute name="title">
-       <string>Dolphin Emulator</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="dolphin_label">
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The game will be exported directly to Dolphin's default games folder in this computer.&lt;/p&gt;&lt;p&gt;Make sure that if you export an uncompressed folder, you have Dolphin set to search subfolders. You can find this setting in Config under the Paths tab.&lt;/p&gt;&lt;p&gt;Path to be used:&lt;br/&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;{games_path}&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_custom_path">
-      <attribute name="title">
-       <string>Custom Path</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="0">
-        <widget class="QLineEdit" name="custom_path_edit">
-         <property name="placeholderText">
-          <string>Path where to place randomized game</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="custom_path_button">
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Select File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="QLabel" name="custom_path_label">
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Saves the game to a path of your choosing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
+<item>
+ <layout class="QGridLayout" name="gridLayout_3">
+  <item row="1" column="0">
+   <widget class="QLineEdit" name="custom_path_edit">
+    <property name="placeholderText">
+     <string>Path where to place randomized game</string>
+    </property>
+   </widget>
+  </item>
+<item row="1" column="1">
+ <widget class="QPushButton" name="custom_path_button">
+  <property name="maximumSize">
+   <size>
+    <width>100</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="text">
+   <string>Select File</string>
+  </property>
+ </widget>
+</item>
    <item row="11" column="0">
     <widget class="QCheckBox" name="auto_save_spoiler_check">
      <property name="text">
