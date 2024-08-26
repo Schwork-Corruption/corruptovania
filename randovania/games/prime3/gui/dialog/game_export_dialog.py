@@ -30,7 +30,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
 
         commands = patch_data["commands"]
         common_qt_lib.set_clipboard(commands)
-        self.commands_label.setText(commands)
+        # self.commands_label.setText(commands)
 
     def update_per_game_options(self, per_game: PerGameOptions) -> CorruptionPerGameOptions:
         assert isinstance(per_game, CorruptionPerGameOptions)
