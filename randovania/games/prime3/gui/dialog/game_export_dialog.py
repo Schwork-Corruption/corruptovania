@@ -21,7 +21,7 @@ from randovania.gui.lib.multi_format_output_mixin import MultiFormatOutputMixin
 
 if TYPE_CHECKING:
     from randovania.exporter.game_exporter import GameExportParams
-    from randovania.interface_common.options import Options
+    from randovania.interface_common.options import Options, PerGameOptions
 
 
 class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog, MultiFormatOutputMixin):
@@ -80,13 +80,13 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
             },
         )
 
-    def update_per_game_options(self, per_game: CorruptionPerGameOptions) -> CorruptionPerGameOptions:
+    def update_per_game_options(self, per_game: PerGameOptions) -> PerGameOptions:
         assert isinstance(per_game, CorruptionPerGameOptions)
         return dataclasses.replace(
             per_game,
-            input_path=self.input_file,
+            input_path=Path(self.input_file),
             output_format=(self.output_format),
-            output_path=self.output_file,
+            output_path=Path(self.output_file),
         )
 
     @property
@@ -122,13 +122,13 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
             return CorruptionOutputFormats.WBFS.value
 
     # Input file
-    def _on_input_file_button(self):
+    def _on_input_file_button(self) -> None:
         input_file = prompt_for_input_file(self, self.input_file_edit, self.valid_input_file_types)
         if input_file is not None:
             self.input_file_edit.setText(str(input_file.absolute()))
 
     # Output File
-    def _on_output_file_button(self):
+    def _on_output_file_button(self) -> None:
         output_file = prompt_for_output_file(
             self, self.available_output_file_types, self.default_output_name, self.output_file_edit
         )
@@ -144,7 +144,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
 
         return CorruptionGameExportParams(
             spoiler_output=spoiler_output,
-            input_path=self.input_file,
-            output_path=self.output_file,
-            output_format=self.output_format,
+            input_path=Path(self.input_file),
+            output_path=Path(self.output_file),
+            output_format=CorruptionOutputFormats(self.output_format),
         )
