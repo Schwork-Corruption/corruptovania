@@ -30,7 +30,7 @@
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="description_label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;p&gt;After using it once, a copy is kept by Corruptovania for later use.&lt;/p&gt;&lt;p&gt;Please note that to export game to a WBFS, &lt;a href="https://wit.wiimm.de"&gt;Wiimms ISO Tools&lt;/a&gt; must be installed on your computer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;p&gt;Please note that to export a WBFS for console play, you must either use &lt;a href="https://wii.hacks.guide/wii-backups#using-wii-backup-manager"&gt;Wii Backup Manager&lt;/a&gt; or &lt;a href="https://wit.wiimm.de"&gt;Wiimms ISO Tools&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -84,14 +84,14 @@
     </widget>
    </item>
    <item row="4" column="0" colspan="2">
-    <widget class="QLineEdit" name="custom_path_edit">
+    <widget class="QLineEdit" name="output_file_edit">
      <property name="placeholderText">
       <string>Path where to place randomized game</string>
      </property>
     </widget>
    </item>
    <item row="4" column="2">
-    <widget class="QPushButton" name="custom_path_button">
+    <widget class="QPushButton" name="output_file_button">
      <property name="maximumSize">
       <size>
        <width>100</width>
@@ -117,13 +117,19 @@
        <property name="text">
         <string>.wbfs</string>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">format_btn_group</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="dolphin_radio">
+      <widget class="QRadioButton" name="iso_radio">
        <property name="text">
-        <string>Uncompressed Folder</string>
+        <string>.iso</string>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">format_btn_group</string>
+       </attribute>
       </widget>
      </item>
     </layout>
@@ -154,4 +160,7 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="format_btn_group"/>
+ </buttongroups>
 </ui>
