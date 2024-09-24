@@ -27,6 +27,7 @@ datas = [
     ("randovania/data/configuration.json", "data/"),
     ("randovania/data/binary_data", "data/binary_data"),
     ("randovania/data/ClarisPrimeRandomizer", "data/ClarisPrimeRandomizer"),
+    ("randovania/data/gollop_mp3_patcher", "data/gollop_mp3_patcher"),
     ("randovania/data/gui_assets", "data/gui_assets"),
     ("randovania/data/icons", "data/icons"),
     ("randovania/data/nintendont", "data/nintendont"),
