@@ -85,7 +85,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         return dataclasses.replace(
             per_game,
             input_path=Path(self.input_file),
-            output_format=(self.output_format),
+            output_format=CorruptionOutputFormats(self.output_format),
             output_path=Path(self.output_file),
         )
 
