@@ -230,7 +230,7 @@ jobs:
       - name: Deploy Advanced Installer
         uses: caphyon/advinst-github-action@v2.0
         with:
-          advinst-version: '21.1'
+          advinst-version: '22.0'
           advinst-license: ${{ secrets.ADVANCED_INSTALLER_LICENSE }}
           advinst-enable-automation: 'true'
 
@@ -368,7 +368,7 @@ jobs:
         run: python setup.py build_ui
 
       - name: Mypy on modified files
-        uses: tsuyoshicho/action-mypy@v4
+        uses: tsuyoshicho/action-mypy@v5
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
@@ -437,7 +437,7 @@ jobs:
 
       -
         name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3.3.0
+        uses: docker/setup-buildx-action@v3.6.1
 
       - name: Should Push
         id: decide_push
@@ -449,7 +449,7 @@ jobs:
       -
         name: Login to DockerHub
         if: ${{ fromJSON(steps.decide_push.outputs.should) }}
-        uses: docker/login-action@v3.1.0
+        uses: docker/login-action@v3.3.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -457,7 +457,7 @@ jobs:
       -
         name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v5.3.0
+        uses: docker/build-push-action@v6.7.0
         with:
           context: .
           file: ./Dockerfile.server
@@ -521,7 +521,7 @@ jobs:
 
       - name: Upload binaries to GitHub Release
         uses: svenstaro/upload-release-action@2.9.0
-        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ startsWith(github.ref, 'refs/tags/v') || startsWith(github.ref, 'refs/heads/stable') }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: packages/**
@@ -529,4 +529,5 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           prerelease: true
+          draft: ${{ startsWith(github.ref, 'refs/heads/stable') }}
           body: "Release executable"

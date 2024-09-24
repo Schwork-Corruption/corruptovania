@@ -196,7 +196,7 @@ class DreadPatchDataFactory(PatchDataFactory):
         elif alt_model[0] == "itemsphere":
             map_icon = {
                 "custom_icon": {
-                    "label": detail.original_pickup.name.upper(),
+                    "label": detail.name.upper(),
                 }
             }
         else:
@@ -384,6 +384,9 @@ class DreadPatchDataFactory(PatchDataFactory):
                     "fMusicVolume": c.music_volume / 100,
                     "fSfxVolume": c.sfx_volume / 100,
                     "fEnvironmentStreamsVolume": c.ambience_volume / 100,
+                },
+                "SubAreaManager": {
+                    "bKillPlayerOutsideScenario": not self.configuration.freesink,
                 },
             },
             "lua": {

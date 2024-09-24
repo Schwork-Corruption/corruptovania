@@ -23,6 +23,8 @@ class AM2RArtifactConfig(BitPackDataclass, JsonDataclass):
 @dataclasses.dataclass(frozen=True)
 class AM2RConfiguration(BaseConfiguration):
     energy_per_tank: int = dataclasses.field(metadata={"min": 1, "max": 1000, "precision": 1})
+    first_suit_dr: int = dataclasses.field(metadata={"min": 0, "max": 100, "precision": 1})
+    second_suit_dr: int = dataclasses.field(metadata={"min": 0, "max": 100, "precision": 1})
     softlock_prevention_blocks: bool
     septogg_helpers: bool
     teleporters: AM2RTeleporterConfiguration
@@ -42,6 +44,8 @@ class AM2RConfiguration(BaseConfiguration):
     force_blue_labs: bool
 
     # Chaos options
+    vertically_flip_gameplay: bool
+    horizontally_flip_gameplay: bool
     # div 1000 to get coefficient, div 10 to get %
     darkness_chance: int = dataclasses.field(metadata={"min": 0, "max": 1000})
     darkness_min: int = dataclasses.field(metadata={"min": 0, "max": 4})

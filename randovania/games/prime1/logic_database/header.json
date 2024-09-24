@@ -1,5 +1,5 @@
 {
-    "schema_version": 26,
+    "schema_version": 27,
     "game": "prime1",
     "resource_database": {
         "items": {
@@ -185,13 +185,6 @@
                     "item_id": 25
                 }
             },
-            "HealthRefill": {
-                "long_name": "Health Refill",
-                "max_capacity": 1,
-                "extra": {
-                    "item_id": 26
-                }
-            },
             "Unknown2": {
                 "long_name": "Unknown Item 2",
                 "max_capacity": 1,
@@ -323,6 +316,39 @@
                 "max_capacity": 999,
                 "extra": {
                     "item_id": 1008
+                }
+            },
+            "HealthRefill": {
+                "long_name": "Energy",
+                "max_capacity": 9999,
+                "extra": {
+                    "item_id": 1009,
+                    "pickup_type": "Health Refill",
+                    "max_increase": 0,
+                    "is_refill": true,
+                    "refill_id": 26
+                }
+            },
+            "MissileRefill": {
+                "long_name": "Missile Ammunition",
+                "max_capacity": 999,
+                "extra": {
+                    "item_id": 1010,
+                    "pickup_type": "Missile",
+                    "max_increase": 0,
+                    "is_refill": true,
+                    "refill_id": 4
+                }
+            },
+            "PBRefill": {
+                "long_name": "Power Bomb Ammunition",
+                "max_capacity": 999,
+                "extra": {
+                    "item_id": 1011,
+                    "pickup_type": "Power Bomb",
+                    "max_increase": 0,
+                    "is_refill": true,
+                    "refill_id": 7
                 }
             }
         },
@@ -562,7 +588,7 @@
             "Knowledge": {
                 "long_name": "Knowledge",
                 "description": "Some destructible objects have vulnerabilities other than those which the player is informed of. Enabling this trick may require players to apply this knowledge in order to progress.",
-                "require_documentation_above": 0,
+                "require_documentation_above": 1,
                 "extra": {}
             },
             "Combat": {
@@ -610,7 +636,7 @@
             "BJ": {
                 "long_name": "Bomb Jump",
                 "description": "By using the vanilla Bomb Jump mechanic in unexpected locations, Samus can clear jumps normally meant to require the use of other items. Enabling this trick means that the player may be expected to use standard bomb jumps in places other than morph tunnels.",
-                "require_documentation_above": 0,
+                "require_documentation_above": 1,
                 "extra": {}
             },
             "StandEnemies": {
@@ -1282,9 +1308,6 @@
         "region": "Tallon Overworld",
         "area": "Landing Site",
         "node": "Ship"
-    },
-    "initial_states": {
-        "Item Loss Disabled": []
     },
     "minimal_logic": {
         "items_to_exclude": [
@@ -2138,6 +2161,27 @@
                             "data": {
                                 "comment": null,
                                 "items": []
+                            }
+                        },
+                        "lock": null
+                    },
+                    "Frigate Ship Teleporter": {
+                        "extra": {},
+                        "requirement": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event33",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
                             }
                         },
                         "lock": null

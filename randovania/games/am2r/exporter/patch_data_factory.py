@@ -4,6 +4,7 @@ import typing
 from random import Random
 from typing import TYPE_CHECKING
 
+from randovania import monitoring
 from randovania.exporter import item_names
 from randovania.exporter.hints import credits_spoiler, guaranteed_item_hint
 from randovania.exporter.patch_data_factory import PatchDataFactory
@@ -166,6 +167,7 @@ class AM2RPatchDataFactory(PatchDataFactory):
             shiny_id = (pickup_obj["item_effect"], pickup_obj["sprite_details"]["name"], pickup_obj["text"]["header"])
 
             if (shiny_id in self.SHINIES) and not pickup.other_player and rng.randint(0, self._EASTER_EGG_SHINY) == 0:
+                monitoring.metrics.incr("am2r_rolled_shiny", tags={"item": shiny_id[0]})
                 sprite, text = self.SHINIES[shiny_id]
                 pickup_obj["sprite_details"]["name"] = sprite
                 pickup_obj["text"]["header"] = text
@@ -285,6 +287,8 @@ class AM2RPatchDataFactory(PatchDataFactory):
             "skip_save_cutscene": config.skip_save_cutscene,
             "skip_item_cutscenes": config.skip_item_cutscenes,
             "energy_per_tank": config.energy_per_tank,
+            "one_suit_damage_multiplier": (1 - config.first_suit_dr / 100),
+            "two_suits_damage_multiplier": (1 - config.second_suit_dr / 100),
             "grave_grotto_blocks": config.grave_grotto_blocks,
             "fusion_mode": config.fusion_mode,
             "supers_on_missile_doors": config.supers_on_missile_doors,
@@ -306,6 +310,8 @@ class AM2RPatchDataFactory(PatchDataFactory):
                 "description": pb_text,
             },
             "required_amount_of_dna": 46 - (config.artifacts.placed_artifacts - config.artifacts.required_artifacts),
+            "flip_vertically": config.vertically_flip_gameplay,
+            "flip_horizontally": config.horizontally_flip_gameplay,
         }
         for item, state in config.ammo_pickup_configuration.pickups_state.items():
             launcher_dict = {
@@ -323,7 +329,11 @@ class AM2RPatchDataFactory(PatchDataFactory):
 
     def _create_door_locks(self) -> dict:
         return {
-            str(node.extra["instance_id"]): {
+            str(
+                node.extra["door_instance_id"]
+                if node.default_dock_weakness.name != "Open Transition"
+                else node.extra["instance_id"]
+            ): {
                 "lock": weakness.extra.get("door_name", weakness.long_name),
                 "is_dock": True if node.default_dock_weakness.extra.get("is_dock", None) is not None else False,
                 "facing_direction": node.extra["facing"] if node.extra.get("facing", None) is not None else "invalid",
@@ -356,14 +366,21 @@ class AM2RPatchDataFactory(PatchDataFactory):
 
         septogg_hints = {}
         gm_newline = "#-#"
-        dud_hint = "This creature did not give any useful DNA hints."
+        dud_hints = ["This creature did not give any useful DNA hints.", "Metroid DNA is hidden somewhere on SR-388."]
+        joke_hints = JOKE_HINTS + dud_hints
         area_to_amount_map = {0: (0, 5), 1: (5, 9), 2: (9, 17), 3: (17, 27), 4: (27, 33), 5: (33, 41), 6: (41, 46)}
         for i in range(7):
             start, end = area_to_amount_map[i]
             shuffled_hints = list(dna_hint_mapping.values())[start:end]
-            shuffled_hints = [hint for hint in shuffled_hints if "Hunter already started with" not in hint]
+            shuffled_hints = [
+                hint
+                for hint in shuffled_hints
+                if not ("Hunter already started with" in hint or "is hidden somewhere on SR-388" in hint)
+            ]
             if not shuffled_hints:
-                shuffled_hints = [hint_namer.format_joke(rng.choice(JOKE_HINTS + [dud_hint]), True)]
+                joke = rng.choice(joke_hints)
+                joke_hints.remove(joke)
+                shuffled_hints = [hint_namer.format_joke(joke, True)]
             septogg_hints[f"septogg_a{i}"] = gm_newline.join(shuffled_hints)
 
         ice_hint = {}

@@ -58,7 +58,8 @@
                         "instance_id": 144867,
                         "facing": "left",
                         "x": 1920,
-                        "y": 144
+                        "y": 144,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -183,7 +184,10 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "instance_id": 145025,
+                        "facing": "left"
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -1617,7 +1621,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146501
+                        "door_instance_id": 146501
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1708,7 +1712,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146514
+                        "door_instance_id": 146514
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1746,7 +1750,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146513
+                        "door_instance_id": 146513
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1807,7 +1811,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146532
+                        "door_instance_id": 146532
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1845,7 +1849,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146531
+                        "door_instance_id": 146531
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1883,7 +1887,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146535
+                        "door_instance_id": 146535
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2057,7 +2061,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146563
+                        "door_instance_id": 146563
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2203,7 +2207,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146602
+                        "door_instance_id": 146602
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2241,7 +2245,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146601
+                        "door_instance_id": 146601
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2360,7 +2364,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146836
+                        "door_instance_id": 146836,
+                        "instance_id": 146831,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2630,7 +2636,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146900
+                        "door_instance_id": 146900
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2778,7 +2784,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146934
+                        "door_instance_id": 146934
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2824,7 +2830,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146935
+                        "door_instance_id": 146935
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2977,7 +2983,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146959
+                        "door_instance_id": 146959
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3018,7 +3024,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146956
+                        "door_instance_id": 146956
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3091,7 +3097,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147000
+                        "door_instance_id": 147000
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3132,7 +3138,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147001
+                        "door_instance_id": 147001
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3536,7 +3542,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147042
+                        "door_instance_id": 147042
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3577,7 +3583,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147043
+                        "door_instance_id": 147043,
+                        "instance_id": 147038,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4425,7 +4433,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147081
+                        "door_instance_id": 147081
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4466,7 +4474,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147287
+                        "door_instance_id": 147287
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4856,7 +4864,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147404
+                        "door_instance_id": 147404
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4897,7 +4905,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147405
+                        "door_instance_id": 147405
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4972,7 +4980,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147656
+                        "door_instance_id": 147656
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -6036,7 +6044,8 @@
                         "instance_id": 147905,
                         "facing": "right",
                         "x": 0,
-                        "y": 192
+                        "y": 192,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -6146,7 +6155,8 @@
                         "instance_id": 148221,
                         "facing": "left",
                         "x": 320,
-                        "y": 1632
+                        "y": 1632,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",

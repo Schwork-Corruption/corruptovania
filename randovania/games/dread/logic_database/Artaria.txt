@@ -1209,10 +1209,7 @@ Extra - asset_id: collision_camera_011
   * Extra - actor_name: item_missiletank_003
   * Extra - actor_def: actordef:actors/items/item_missiletank/charclasses/item_missiletank.bmsad
   > Door to Chain Reaction Access
-      All of the following:
-          # TODO: The dock is a charge beam door with a super missile lock. Handle this with the dock, and not with a node path.
-          Lay Any Bomb
-          Enabled Door Lock Randomizer or Open Charge Door
+      Lay Any Bomb
 
 > Door to Chain Reaction Access; Heals? False
   * Layers: default
@@ -1223,6 +1220,9 @@ Extra - asset_id: collision_camera_011
   * Extra - left_shield_def: actordef:actors/props/doorshieldsupermissile/charclasses/doorshieldsupermissile.bmsad
   * Extra - right_shield_entity: {EMPTY}
   * Extra - right_shield_def: None
+  * Override default lock requirement:
+    Open Charge Door and Shoot Super Missile
+
   > Pickup (Missile Tank, Supers-locked)
       Lay Any Bomb
 
@@ -1581,7 +1581,6 @@ Extra - asset_id: collision_camera_015
       Any of the following:
           Space Jump
           Climb Sloped Surfaces (Beginner) and Use Spin Boost
-          Speed Booster and Speed Booster Upgrade and Speed Booster Conservation (Beginner) and Disabled Door Lock Randomizer
   > Tunnel to White EMMI Arena
       Trivial
   > Event - EMMI Magnet Platform Lowered
@@ -1636,10 +1635,16 @@ Extra - asset_id: collision_camera_015
       Trivial
   > Pickup (Missile Tank)
       Any of the following:
-          Grapple Beam
+          After Artaria - EMMI Spinner Pulled
           Before Artaria - EMMI Spinner Rotated and Enabled Door Lock Randomizer and Enabled Highly Dangerous Logic
   > Door to White EMMI Introduction
-      After Artaria - EMMI Spinner Rotated
+      All of the following:
+          After Artaria - EMMI Spinner Rotated
+          Any of the following:
+              After Artaria - EMMI Spinner Rotated Again
+              Before Artaria - EMMI Spinner Pulled and Enabled Door Lock Randomizer and Enabled Highly Dangerous Logic
+  > Event - EMMI Spinner Pulled
+      Grapple Beam and After Artaria - EMMI Spinner Rotated
 
 > Door to Wide Beam Block Room; Heals? False
   * Layers: default
@@ -1668,6 +1673,8 @@ Extra - asset_id: collision_camera_015
       Trivial
   > Event - EMMI Spinner Rotated
       Trivial
+  > Event - EMMI Spinner Rotated Again
+      After Artaria - EMMI Spinner Pulled
 
 > Tunnel to White EMMI Arena; Heals? False
   * Layers: default
@@ -1680,6 +1687,16 @@ Extra - asset_id: collision_camera_015
               Speed Booster or Wall Jump (Beginner) or Simple IBJ
   > Door to White EMMI Arena (Bottom)
       Trivial
+  > Door to White EMMI Arena (Top)
+      Any of the following:
+          # https://youtu.be/RUvZaIl5vts
+          Diagonal Bomb Jump (Advanced) and Lay Normal Bomb
+          # https://youtu.be/otd7WX_dU_s
+          Speed Booster and Infinite Bomb Jump (Intermediate) and Speed Booster Conservation (Advanced) and Lay Normal Bomb
+          # https://youtu.be/OFHELQQbO4w
+          Speed Booster and Infinite Bomb Jump (Beginner) and Speed Booster Conservation (Intermediate) and Lay Cross Bomb
+          # https://youtu.be/vlhzedSfhEA
+          Morph Ball and Speed Booster and Speed Booster Conservation (Beginner) and Wall Jump (Beginner) and Use Spin Boost
 
 > Event - EMMI Magnet Platform Lowered; Heals? False
   * Layers: default
@@ -1696,6 +1713,18 @@ Extra - asset_id: collision_camera_015
 > Start Point; Heals? False; Default Node
   * Layers: default
   > Door to Wide Beam Block Room
+      Trivial
+
+> Event - EMMI Spinner Pulled; Heals? False
+  * Layers: default
+  * Event Artaria - EMMI Spinner Pulled
+  > Door to White EMMI Arena (Top)
+      Trivial
+
+> Event - EMMI Spinner Rotated Again; Heals? False
+  * Layers: default
+  * Event Artaria - EMMI Spinner Rotated Again
+  > Door to White EMMI Arena (Top)
       Trivial
 
 ----------------
@@ -3285,6 +3314,9 @@ Extra - asset_id: collision_camera_055
   * Extra - left_shield_def: actordef:actors/props/doorshieldsupermissile/charclasses/doorshieldsupermissile.bmsad
   * Extra - right_shield_entity: {EMPTY}
   * Extra - right_shield_def: None
+  * Override default lock requirement:
+    Open Charge Door and Shoot Super Missile
+
   > Room Middle
       Trivial
 
@@ -3311,8 +3343,7 @@ Extra - asset_id: collision_camera_055
   > Door to Chain Reaction Room
       Morph Ball
   > Door to Teleport to Cataris
-      # TODO: The dock is a charge beam door with a super missile lock. Handle this with the dock, and not with a node path.
-      Open Charge Door
+      Trivial
   > Tunnel to Teleport to Cataris (Tunnel)
       Trivial
 

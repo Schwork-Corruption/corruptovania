@@ -57,6 +57,7 @@ class PresetAM2RChaos(PresetTab, Ui_PresetAM2RChaos):
 
     def on_preset_changed(self, preset: Preset) -> None:
         assert isinstance(preset.configuration, AM2RConfiguration)
+
         self.darkness_min_spin.setValue(preset.configuration.darkness_min)
         self.darkness_max_spin.setValue(preset.configuration.darkness_max)
 

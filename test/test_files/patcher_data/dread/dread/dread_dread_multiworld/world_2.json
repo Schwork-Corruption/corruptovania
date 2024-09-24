@@ -920,7 +920,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -3438,7 +3438,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -3883,6 +3883,9 @@
                 "fMusicVolume": 0.5,
                 "fSfxVolume": 0.5,
                 "fEnvironmentStreamsVolume": 0.5
+            },
+            "SubAreaManager": {
+                "bKillPlayerOutsideScenario": true
             }
         },
         "lua": {

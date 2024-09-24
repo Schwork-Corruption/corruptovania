@@ -837,7 +837,9 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -1036,7 +1038,9 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -1660,7 +1664,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 101612
+                        "door_instance_id": 101612,
+                        "instance_id": 101611,
+                        "facing": "right"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1751,7 +1757,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 101657
+                        "door_instance_id": 101657,
+                        "instance_id": 101655,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1788,7 +1796,10 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "instance_id": 101656,
+                        "facing": "right"
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -2345,7 +2356,10 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "instance_id": 102610,
+                        "facing": "right"
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -2435,15 +2449,17 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1273.8410674223637,
-                        "y": 77.69040028338668,
+                        "x": 1273.84,
+                        "y": 77.69,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "tunnel",
                     "default_connection": {
@@ -2493,7 +2509,8 @@
                         "instance_id": 102617,
                         "facing": "right",
                         "x": 640,
-                        "y": 1600
+                        "y": 1600,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2568,7 +2585,9 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -3223,7 +3242,9 @@
                     "extra": {
                         "instance_id": 102820,
                         "source_x": 1280,
-                        "source_y": 160
+                        "source_y": 160,
+                        "facing": "left",
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -3340,7 +3361,9 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "tunnel",
                     "default_connection": {
@@ -3504,7 +3527,9 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "ignore_for_er": true
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -4604,7 +4629,9 @@
                     "extra": {
                         "instance_id": 103777,
                         "source_x": 640,
-                        "source_y": 640
+                        "source_y": 640,
+                        "facing": "left",
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -4671,7 +4698,9 @@
                     "extra": {
                         "instance_id": 103842,
                         "source_x": 640,
-                        "source_y": 176
+                        "source_y": 176,
+                        "facing": "left",
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -5190,7 +5219,8 @@
                         "instance_id": 104414,
                         "facing": "right",
                         "x": 0,
-                        "y": 1392
+                        "y": 1392,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -5390,7 +5420,8 @@
                         "instance_id": 104675,
                         "facing": "left",
                         "x": 640,
-                        "y": 192
+                        "y": 192,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -7357,7 +7388,8 @@
                         "instance_id": 106332,
                         "facing": "right",
                         "x": 0,
-                        "y": 128
+                        "y": 128,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -7657,7 +7689,8 @@
                         "instance_id": 106386,
                         "facing": "left",
                         "x": 320,
-                        "y": 128
+                        "y": 128,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -8504,7 +8537,9 @@
                     "extra": {
                         "instance_id": 107610,
                         "source_x": 0,
-                        "source_y": 144
+                        "source_y": 144,
+                        "facing": "right",
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -8980,7 +9015,8 @@
                     "extra": {
                         "instance_id": 122611,
                         "source_x": 0,
-                        "source_y": 112
+                        "source_y": 112,
+                        "facing": "right"
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -9159,7 +9195,8 @@
                     "extra": {
                         "instance_id": 122751,
                         "source_x": 320,
-                        "source_y": 592
+                        "source_y": 592,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
@@ -9202,7 +9239,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 122750
+                        "door_instance_id": 122750
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -9357,7 +9394,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 122899
+                        "door_instance_id": 122899
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -9437,7 +9474,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 122898
+                        "door_instance_id": 122898
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -9614,7 +9651,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 122978
+                        "door_instance_id": 122978
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -9745,7 +9782,9 @@
                     "extra": {
                         "instance_id": 123179,
                         "source_x": 0,
-                        "source_y": 160
+                        "source_y": 160,
+                        "facing": "right",
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",

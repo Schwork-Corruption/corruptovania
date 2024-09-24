@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import contextlib
-import json
+import os
 import platform
 import re
 import typing
@@ -57,7 +57,7 @@ def _filter_data(data: object, str_filter: typing.Callable[[str], str]) -> typin
     return result
 
 
-_HOME_RE = re.compile(r"(:?[/\\](?:home|Users)[/\\])([^/\\]+)([/\\])")
+_HOME_RE = re.compile(r"(:?[/\\](?:home|Users)[/\\]+)([^/\\]+)([/\\])")
 
 
 def _filter_user_home(data: typing.Any) -> typing.Any | None:
@@ -74,6 +74,11 @@ def before_breadcrumb(crumb: dict[str, typing.Any], hint: sentry_sdk.types.Hint)
 
 
 def before_send(event: sentry_sdk.types.Event, hint: sentry_sdk.types.Hint) -> sentry_sdk.types.Event | None:
+    if "exc_info" in hint:
+        exc_type, exc_value, tb = hint["exc_info"]
+        if isinstance(exc_value, ConnectionError):
+            return None
+
     _filter_user_home(event)
     return event
 
@@ -102,7 +107,12 @@ def _init(include_flask: bool, url_key: str, sampling_rate: float = 1.0, exclude
 
         integrations.append(FlaskIntegration())
     else:
-        profiles_sample_rate = 0.0
+        profiles_sample_rate = 0.5 if randovania.is_dev_version() else 0.0
+
+        # We use asyncio for clients and bot, but not server.
+        from sentry_sdk.integrations.asyncio import AsyncioIntegration
+
+        integrations.append(AsyncioIntegration())
 
     server_name = None
     if exclude_server_name:
@@ -129,7 +139,7 @@ def _init(include_flask: bool, url_key: str, sampling_rate: float = 1.0, exclude
         before_breadcrumb=before_breadcrumb,
         before_send=before_send,
     )
-    sentry_sdk.set_context(
+    sentry_sdk.Scope.get_global_scope().set_context(
         "os",
         {
             "name": platform.system(),
@@ -141,8 +151,11 @@ def _init(include_flask: bool, url_key: str, sampling_rate: float = 1.0, exclude
 def client_init() -> None:
     _init(False, "client", exclude_server_name=True)
 
-    sentry_sdk.set_tag("frozen", randovania.is_frozen())
-    sentry_sdk.set_tag("cpu.architecture", platform.machine())
+    global_scope = sentry_sdk.Scope.get_global_scope()
+    global_scope.set_tag("frozen", randovania.is_frozen())
+    global_scope.set_tag("cpu.architecture", platform.machine())
+    global_scope.set_tag("cpu.processor", platform.processor() or "unknown")  # Empty string is an invalid value
+    global_scope.set_tag("cpu.count", os.cpu_count())
 
     # Ignore the "packet queue is empty, aborting" message
     # It causes a disconnect, but we smoothly reconnect in that case.
@@ -155,17 +168,6 @@ def server_init(sampling_rate: float) -> None:
 
 def bot_init() -> None:
     return _init(False, "bot")
-
-
-@contextlib.contextmanager
-def attach_patcher_data(patcher_data: dict):
-    with sentry_sdk.push_scope() as scope:
-        scope.add_attachment(
-            json.dumps(patcher_data).encode("utf-8"),
-            filename="patcher.json",
-            content_type="application/json",
-        )
-        yield scope
 
 
 trace_function = sentry_sdk.trace

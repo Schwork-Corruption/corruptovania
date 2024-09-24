@@ -130,7 +130,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -155,7 +155,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -833,7 +833,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -1553,7 +1553,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 },
                 "original_actor": {
                     "scenario": "s030_baselab",
@@ -1736,7 +1736,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -1937,7 +1937,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -2956,7 +2956,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -3064,7 +3064,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -3244,7 +3244,7 @@
             ],
             "map_icon": {
                 "custom_icon": {
-                    "label": "NOTHING"
+                    "label": "YOUR NOTHING"
                 }
             }
         },
@@ -3952,6 +3952,9 @@
                 "fMusicVolume": 1.0,
                 "fSfxVolume": 1.0,
                 "fEnvironmentStreamsVolume": 1.0
+            },
+            "SubAreaManager": {
+                "bKillPlayerOutsideScenario": true
             }
         },
         "lua": {

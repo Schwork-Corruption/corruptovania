@@ -12906,29 +12906,12 @@
                             }
                         },
                         "Dock to Early Gravity Speedboost Room 1 (Lower)": {
-                            "type": "and",
+                            "type": "resource",
                             "data": {
-                                "comment": null,
-                                "items": [
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "BureniaEarlyGravSpeedBlocks",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "tricks",
-                                            "name": "Speedbooster",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    }
-                                ]
+                                "type": "events",
+                                "name": "BureniaEarlyGravSpeedBlocks",
+                                "amount": 1,
+                                "negate": false
                             }
                         },
                         "Water Pit": {
@@ -12960,6 +12943,15 @@
                                             "amount": 1,
                                             "negate": false
                                         }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "tricks",
+                                            "name": "Speedbooster",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
                                     }
                                 ]
                             }
@@ -12982,7 +12974,7 @@
                     "valid_starting_location": false,
                     "event_name": "BureniaEarlyGravSpeedBlocks",
                     "connections": {
-                        "Dock to Early Gravity Speedboost Room 1 (Lower)": {
+                        "Slope Top": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -14450,10 +14442,6 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "template",
-                                                    "data": "Perform WBJ"
-                                                },
-                                                {
                                                     "type": "resource",
                                                     "data": {
                                                         "type": "events",
@@ -14487,12 +14475,41 @@
                             }
                         },
                         "Event - Early Gravity Blob through Wall": {
-                            "type": "resource",
+                            "type": "or",
                             "data": {
-                                "type": "items",
-                                "name": "Wave",
-                                "amount": 1,
-                                "negate": false
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "Wave",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "https://youtu.be/G0jjmpuke-o",
+                                            "items": [
+                                                {
+                                                    "type": "template",
+                                                    "data": "Shoot Diffusion Beam"
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Pseudo",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }

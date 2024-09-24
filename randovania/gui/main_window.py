@@ -304,6 +304,10 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         # Setting this event only now, so all options changed trigger only once
         options.on_options_changed = self.options_changed_signal.emit
         self._options = options
+        if self._options.dark_mode:
+            monitoring.metrics.incr("gui_starts_with_dark_mode")
+        if self._options.experimental_settings:
+            monitoring.metrics.incr("gui_starts_with_experimental_settings")
         self.tab_game_details.set_main_window(self)
         self.refresh_game_list()
 
@@ -751,7 +755,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
     def _on_menu_action_show_multiworld_banner(self) -> None:
         banner_val = self.menu_action_show_multiworld_banner.isChecked()
-        monitoring.metrics.incr(f"gui_multiworld_banner_option_{"checked" if banner_val else "unchecked"}")
+        monitoring.metrics.incr("gui_multiworld_banner_option_" + ("checked" if banner_val else "unchecked"))
         with self._options as options:
             options.show_multiworld_banner = banner_val
 

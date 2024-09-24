@@ -4,7 +4,7 @@
 #
 #    python tools/update_requirements.py
 #
-build==1.2.1
+build==1.2.2
     # via pip-tools
 click==8.1.7
     # via
@@ -25,13 +25,13 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-wheel==0.43.0
+wheel==0.44.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==24.1.2
+pip==24.2
     # via pip-tools
-setuptools==70.3.0
+setuptools==75.1.0
     # via
     #   -c tools/requirements\../../requirements.txt
     #   pip-tools

@@ -81,6 +81,8 @@ class AM2RPresetDescriber(GamePresetDescriber):
                     },
                 ),
                 {f"Energy per Tank: {configuration.energy_per_tank}": configuration.energy_per_tank != 100},
+                {f"First Suit Damage Reduction {configuration.first_suit_dr}%": configuration.first_suit_dr != 50},
+                {f"Second Suit Damage Reduction {configuration.second_suit_dr}%": configuration.second_suit_dr != 75},
                 {
                     f"Transport Pipes: {configuration.teleporters.description('transporters')}": (
                         not configuration.teleporters.is_vanilla
@@ -102,6 +104,8 @@ class AM2RPresetDescriber(GamePresetDescriber):
                     "Open Missile Doors with Supers": configuration.supers_on_missile_doors,
                 },
                 {
+                    "Horizontally flipped gameplay": configuration.horizontally_flip_gameplay,
+                    "Vertically flipped gameplay": configuration.vertically_flip_gameplay,
                     darkness_probability: darkness_probability is not None,
                     submerged_water_probability: submerged_water_probability is not None,
                     submerged_lava_probability: submerged_lava_probability is not None,
