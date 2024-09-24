@@ -60,4 +60,11 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             ]
         )
 
-        return {"commands": commands}
+        return {
+            "commands": commands,
+            "seed": layout_string,
+            "starting_items": starting_items_text,
+            "starting_location": starting_location_text,
+            "random_door_colors": cosmetic.random_door_colors,
+            "random_welding_colors": cosmetic.random_welding_colors,
+        }
