@@ -95,7 +95,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
 
     @property
     def valid_output_file_types(self) -> list[str]:
-        return ["wbfs", "iso"]
+        return ["iso"]
 
     # Getters
     @property
