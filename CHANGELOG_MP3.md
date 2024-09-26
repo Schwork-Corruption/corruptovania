@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.3] - 
+
+- Changed: The Play Solo Game button will now take you directly to the Corruption splash screen.
+- Fixed: Fast Flying is now correctly implemented.
+
+## [1.2.2] - 2024-09-24
+
+- Fixed: The export window will now only have .iso as a valid export format.
+
+## [1.2.1] - 2024-09-24
+
+- Fixed: Emergency bug fix, gollop's patcher is now actually supplied.
+
 ## [1.2.0] - 2024-09-23
 
 - **Major** - Added: gollop's patcher is now fully integrated into Corruptovania! You can now export you're games directly from the application.

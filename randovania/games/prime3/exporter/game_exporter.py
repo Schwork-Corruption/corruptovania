@@ -117,7 +117,7 @@ class CorruptionGameExporter(GameExporter):
                 "--random-door-colors" if patch_data["random_door_colors"] else "",
                 "--random-welding-colors" if patch_data["random_welding_colors"] else "",
                 "--hyper-hints",
-                "--fast_flying",
+                "--fast-flying",
                 "--require-launcher",
                 "--require-ship-missile",
             ],

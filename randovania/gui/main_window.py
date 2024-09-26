@@ -164,7 +164,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.InitPostShowSignal.connect(self.initialize_post_show)
         self.main_tab_widget.currentChanged.connect(self._on_main_tab_changed)
 
-        self.intro_play_solo_button.clicked.connect(partial(self._set_main_tab, self.tab_game_list))
+        self.intro_play_solo_button.clicked.connect(partial(self._select_game, RandovaniaGame.METROID_PRIME_CORRUPTION))
         self.intro_play_existing_button.clicked.connect(partial(self._set_main_tab, self.tab_play_existing))
         self.intro_play_multiworld_button.clicked.connect(partial(self._set_main_tab, self.tab_multiworld))
 
