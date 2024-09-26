@@ -32,6 +32,18 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         layout_string = gollop_corruption_patcher.layout_string_for_items(pickup_names)
         starting_location = patches.starting_location
 
+        missile_required_mains = [
+            obj.requires_main_item
+            for name, obj in self.configuration.ammo_pickup_configuration.pickups_state.items()
+            if name == "Missile Expansion"
+        ][0]
+
+        ship_missile_required_mains = [
+            obj.requires_main_item
+            for name, obj in self.configuration.ammo_pickup_configuration.pickups_state.items()
+            if name == "Ship Missile Expansion"
+        ][0]
+
         starting_items = patches.starting_resources()
         starting_items.add_resource_gain(
             [
@@ -67,4 +79,6 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             "starting_location": starting_location_text,
             "random_door_colors": cosmetic.random_door_colors,
             "random_welding_colors": cosmetic.random_welding_colors,
+            "missile_required_mains": missile_required_mains,
+            "ship_missile_required_mains": ship_missile_required_mains,
         }

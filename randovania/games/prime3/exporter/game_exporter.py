@@ -118,8 +118,8 @@ class CorruptionGameExporter(GameExporter):
                 "--random-welding-colors" if patch_data["random_welding_colors"] else "",
                 "--hyper-hints",
                 "--fast-flying",
-                "--require-launcher",
-                "--require-ship-missile",
+                "--require-launcher" if patch_data["missile_require_mains"] else "",
+                "--require-ship-missile" if patch_data["ship_missile_required_mains"] else "",
             ],
             check=True,
         )
