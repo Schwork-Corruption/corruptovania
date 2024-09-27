@@ -16,7 +16,6 @@ from randovania.gui.dialog.game_export_dialog import (
     prompt_for_output_file,
     spoiler_path_for,
 )
-from randovania.gui.lib import common_qt_lib
 from randovania.gui.lib.multi_format_output_mixin import MultiFormatOutputMixin
 
 if TYPE_CHECKING:
@@ -45,8 +44,8 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         per_game = options.options_for_game(self.game_enum())
         assert isinstance(per_game, CorruptionPerGameOptions)
 
-        commands = patch_data["commands"]
-        common_qt_lib.set_clipboard(commands)
+        # commands = patch_data["commands"]
+        # common_qt_lib.set_clipboard(commands)
         # self.commands_label.setText(commands)
 
         # Input
