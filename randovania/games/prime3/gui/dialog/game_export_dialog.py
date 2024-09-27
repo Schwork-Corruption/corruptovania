@@ -66,7 +66,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         if per_game.input_path is not None:
             self.input_file_edit.setText(str(per_game.input_path))
         if per_game.output_path is not None:
-            output_path = per_game.output_path
+            output_path = per_game.output_path.joinpath(self._base_output_name)
             self.output_file_edit.setText(str(output_path))
 
         self.iso_radio.toggled.connect(self._on_update_output_format)
@@ -86,7 +86,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
             per_game,
             input_path=Path(self.input_file),
             output_format=CorruptionOutputFormats(self.output_format),
-            output_path=Path(self.output_file),
+            output_path=Path(self.output_file).parent,
         )
 
     @property

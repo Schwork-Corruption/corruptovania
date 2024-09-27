@@ -33,15 +33,15 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         starting_location = patches.starting_location
 
         missile_required_mains = [
-            obj.requires_main_item
-            for name, obj in self.configuration.ammo_pickup_configuration.pickups_state.items()
-            if name == "Missile Expansion"
+            ammo_state.requires_main_item
+            for ammo_definition, ammo_state in self.configuration.ammo_pickup_configuration.pickups_state.items()
+            if ammo_definition.name == "Missile Expansion"
         ][0]
 
         ship_missile_required_mains = [
-            obj.requires_main_item
-            for name, obj in self.configuration.ammo_pickup_configuration.pickups_state.items()
-            if name == "Ship Missile Expansion"
+            ammo_state.requires_main_item
+            for ammo_definition, ammo_state in self.configuration.ammo_pickup_configuration.pickups_state.items()
+            if ammo_definition.name == "Ship Missile Expansion"
         ][0]
 
         starting_items = patches.starting_resources()

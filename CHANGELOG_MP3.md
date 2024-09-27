@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed: The Play Solo Game button will now take you directly to the Corruption splash screen.
 - Changed: The layout editor is now moved to the Edit tab, thus making the splash page load faster.
 - Fixed: Fast Flying is now correctly implemented.
-- Fixed: The external link in the export window are now functional.
+- Fixed: The external links in the export window are now functional.
+- Fixed: Seed hashes will correctly update when exporting multiple games per session.
 
 ## [1.2.2] - 2024-09-24
 
