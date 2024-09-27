@@ -177,5 +177,5 @@ UNKNOWN_VERSION = "0.0.0"
 UNKNOWN_GIT_HASH = b"UNKN"
 
 __version__ = _final_version
-VERSION: str = _final_version or UNKNOWN_VERSION
-GIT_HASH: bytes = version_hash.git_hash or UNKNOWN_GIT_HASH
+VERSION = _final_version
+GIT_HASH = version_hash.git_hash
