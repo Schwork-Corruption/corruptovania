@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>599</width>
+    <width>612</width>
     <height>582</height>
    </rect>
   </property>
@@ -217,8 +217,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>581</width>
-          <height>474</height>
+          <width>98</width>
+          <height>28</height>
          </rect>
         </property>
        </widget>
@@ -489,8 +489,8 @@ For more information, check [Randovania Help](help://tab_multiworld)!</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>599</width>
-     <height>17</height>
+     <width>612</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_open">
@@ -522,6 +522,7 @@ For more information, check [Randovania Help](help://tab_multiworld)!</string>
      <addaction name="menu_action_edit_existing_database"/>
     </widget>
     <addaction name="menu_database"/>
+    <addaction name="menu_action_open_layout_editor"/>
    </widget>
    <widget class="QMenu" name="menu_preferences">
     <property name="title">
@@ -600,6 +601,9 @@ For more information, check [Randovania Help](help://tab_multiworld)!</string>
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Dark Mode</string>
    </property>
@@ -674,6 +678,19 @@ For more information, check [Randovania Help](help://tab_multiworld)!</string>
   <action name="menu_action_verify_installation">
    <property name="text">
     <string>Verify installation</string>
+   </property>
+  </action>
+  <action name="menu_action_show_layout_editor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable Layout Editor</string>
+   </property>
+  </action>
+  <action name="menu_action_open_layout_editor">
+   <property name="text">
+    <string>Layout Editor...</string>
    </property>
   </action>
  </widget>

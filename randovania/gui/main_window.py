@@ -287,6 +287,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.menu_action_timeout_generation_after_a_time_limit.triggered.connect(self._on_generate_time_limit_change)
         self.menu_action_generate_in_another_process.triggered.connect(self._on_generate_in_another_process_change)
         self.menu_action_dark_mode.triggered.connect(self._on_menu_action_dark_mode)
+        self.menu_action_open_layout_editor.triggered.connect(self._on_menu_action_open_layout_editor)
         self.menu_action_show_multiworld_banner.triggered.connect(self._on_menu_action_show_multiworld_banner)
         self.menu_action_experimental_settings.triggered.connect(self._on_menu_action_experimental_settings)
         self.menu_action_open_auto_tracker.triggered.connect(self._open_auto_tracker)
@@ -752,6 +753,12 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
     def _on_menu_action_dark_mode(self):
         with self._options as options:
             options.dark_mode = self.menu_action_dark_mode.isChecked()
+
+    def _on_menu_action_open_layout_editor(self) -> None:
+        from randovania.games.prime3.gui.corruption_layout_editor import CorruptionLayoutEditor
+        self.layout_editor_window = CorruptionLayoutEditor()
+        self.layout_editor_window.show()
+
 
     def _on_menu_action_show_multiworld_banner(self) -> None:
         banner_val = self.menu_action_show_multiworld_banner.isChecked()
