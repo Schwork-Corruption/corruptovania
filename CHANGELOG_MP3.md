@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.3] - 2024-09-27
+## [1.2.8] - 2024-09-27
 
 - Added: You can now toggle required mains for both Missile Launcher and Ship Missiles when making a preset.
 - Changed: The Play Solo Game button will now take you directly to the Corruption splash screen.
