@@ -517,7 +517,7 @@ jobs:
       - name: Find Randovania version
         id: randovania_version
         run: |
-          echo version=$(python tools/get_version_from_artifacts.py "packages/Randovania Linux Executable/") >> $GITHUB_OUTPUT
+          echo version=$(python tools/get_version_from_artifacts.py "packages/Corruptovania Linux Executable/") >> $GITHUB_OUTPUT
 
       - name: Upload binaries to GitHub Release
         uses: svenstaro/upload-release-action@2.9.0
