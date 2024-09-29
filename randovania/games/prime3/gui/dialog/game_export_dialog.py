@@ -39,9 +39,10 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         self.wbfs_radio.setVisible(False)
         self.iso_radio.setVisible(False)
         self.output_format_label.setVisible(False)
-
-        self._base_output_name = f"Corruption Randomizer - {word_hash}"
+        self._selected_output_format = self.output_format
         per_game = options.options_for_game(self.game_enum())
+        self._base_output_name = f"Corruption Randomizer - {word_hash}"
+
         assert isinstance(per_game, CorruptionPerGameOptions)
 
         # commands = patch_data["commands"]
@@ -60,12 +61,10 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         else:
             self.iso_radio.setChecked(True)
 
-        self._selected_output_format = self.output_format
-
         if per_game.input_path is not None:
             self.input_file_edit.setText(str(per_game.input_path))
         if per_game.output_path is not None:
-            output_path = per_game.output_path.joinpath(self._base_output_name)
+            output_path = per_game.output_path.joinpath(f"{self._base_output_name}.{self._selected_output_format}")
             self.output_file_edit.setText(str(output_path))
 
         self.iso_radio.toggled.connect(self._on_update_output_format)
@@ -115,10 +114,10 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
 
     @property
     def output_format(self) -> str:
-        if self.iso_radio.isChecked():
-            return CorruptionOutputFormats.ISO.value
-        else:
+        if self.wbfs_radio.isChecked():
             return CorruptionOutputFormats.WBFS.value
+        else:
+            return CorruptionOutputFormats.ISO.value
 
     # Input file
     def _on_input_file_button(self) -> None:
