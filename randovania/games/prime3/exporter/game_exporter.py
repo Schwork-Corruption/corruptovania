@@ -139,7 +139,17 @@ class CorruptionGameExporter(GameExporter):
         # create iso/wbfs
         progress_update("Converting to ISO...", 0.6)
         subprocess.run(
-            [patcher_path.joinpath("nodtool", "nodtool.exe"), "makewii", extract_path, export_params.output_path],
+            [
+                patcher_path.joinpath("wit", "bin", "wit.exe"),
+                "COPY",
+                "-I" if export_params.output_format == CorruptionOutputFormats.ISO else "-B",
+                "-z",
+                "--trunc",
+                "--auto-split",
+                "--overwrite",
+                Path(extract_path).joinpath("DATA"),
+                export_params.output_path,
+            ],
             check=True,
         )
         shutil.rmtree(extract_path)

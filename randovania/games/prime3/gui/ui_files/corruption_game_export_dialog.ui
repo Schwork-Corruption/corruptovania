@@ -14,10 +14,30 @@
    <string>Game Patching</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="7" column="2">
+    <widget class="QPushButton" name="cancel_button">
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="input_file_button">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Select File</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="description_label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;p&gt;Please note that to export a WBFS for console play, you must either use &lt;a href=&quot;https://wii.hacks.guide/wii-backups#using-wii-backup-manager&quot;&gt;Wii Backup Manager&lt;/a&gt; or &lt;a href=&quot;https://wit.wiimm.de&quot;&gt;Wiimms ISO Tools&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -27,28 +47,15 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QLabel" name="input_file_label">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>20</height>
-      </size>
-     </property>
+   <item row="7" column="0">
+    <widget class="QPushButton" name="accept_button">
      <property name="text">
-      <string>Input File (Vanilla Wii ISO)</string>
+      <string>Accept</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
-    <widget class="QLineEdit" name="input_file_edit">
-     <property name="placeholderText">
-      <string>Path to vanilla Wii ISO</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="input_file_button">
+   <item row="4" column="2">
+    <widget class="QPushButton" name="output_file_button">
      <property name="maximumSize">
       <size>
        <width>100</width>
@@ -80,19 +87,6 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="2">
-    <widget class="QPushButton" name="output_file_button">
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Select File</string>
-     </property>
-    </widget>
-   </item>
    <item row="5" column="0" colspan="2">
     <layout class="QHBoxLayout" name="output_format_layout">
      <item>
@@ -100,16 +94,6 @@
        <property name="text">
         <string>Output Format</string>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="wbfs_radio">
-       <property name="text">
-        <string>.wbfs</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">format_btn_group</string>
-       </attribute>
       </widget>
      </item>
      <item>
@@ -122,26 +106,42 @@
        </attribute>
       </widget>
      </item>
+     <item>
+      <widget class="QRadioButton" name="wbfs_radio">
+       <property name="text">
+        <string>.wbfs</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">format_btn_group</string>
+       </attribute>
+      </widget>
+     </item>
     </layout>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="input_file_label">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Input File (Vanilla Wii ISO)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLineEdit" name="input_file_edit">
+     <property name="placeholderText">
+      <string>Path to vanilla Wii ISO</string>
+     </property>
+    </widget>
    </item>
    <item row="6" column="0">
     <widget class="QCheckBox" name="auto_save_spoiler_check">
      <property name="text">
       <string>Include a spoiler log on same directory</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QPushButton" name="accept_button">
-     <property name="text">
-      <string>Accept</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="2">
-    <widget class="QPushButton" name="cancel_button">
-     <property name="text">
-      <string>Cancel</string>
      </property>
     </widget>
    </item>

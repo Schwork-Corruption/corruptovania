@@ -35,11 +35,6 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
     def __init__(self, options: Options, patch_data: dict, word_hash: str, spoiler: bool, games: list[RandovaniaGame]):
         super().__init__(options, patch_data, word_hash, spoiler, games)
 
-        # support wbfs someday tm
-        self.wbfs_radio.setVisible(False)
-        self.iso_radio.setVisible(False)
-        self.output_format_label.setVisible(False)
-        self._selected_output_format = self.output_format
         per_game = options.options_for_game(self.game_enum())
         self._base_output_name = f"Corruption Randomizer - {word_hash}"
 
@@ -56,10 +51,12 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         self.output_file_button.clicked.connect(self._on_output_file_button)
 
         # Output Format
-        if per_game.output_format == CorruptionOutputFormats.WBFS and False:
+        if per_game.output_format == CorruptionOutputFormats.WBFS:
             self.wbfs_radio.setChecked(True)
         else:
             self.iso_radio.setChecked(True)
+
+        self._selected_output_format = self.output_format
 
         if per_game.input_path is not None:
             self.input_file_edit.setText(str(per_game.input_path))
@@ -93,7 +90,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
 
     @property
     def valid_output_file_types(self) -> list[str]:
-        return ["iso"]
+        return ["iso", "wbfs"]
 
     # Getters
     @property
@@ -136,6 +133,8 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
     # Update
     def _on_update_output_format(self) -> None:
         self._selected_output_format = self.output_format
+        output_path = Path(self.output_file_edit.text())
+        self.output_file_edit.setText(str(output_path.with_suffix(f".{self._selected_output_format}")))
 
     def get_game_export_params(self) -> GameExportParams:
         spoiler_output = spoiler_path_for(self.auto_save_spoiler, self.output_file)
