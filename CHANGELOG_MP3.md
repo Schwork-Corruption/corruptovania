@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] -
+
+- Fixed: Reverted the current build of nodtool to a previous version for exporting reasons.
+
+## [1.3.0] - 2024-09-29
+
+- **Major** - Added: Exporting to WBFS is now supported, enjoy playing on console!
+
 ## [1.2.9] - 2024-09-28
 
 - Fixed: Correctly append the output format to the generated file name.
