@@ -44,7 +44,7 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             if ammo_definition.name == "Ship Missile Expansion"
         ][0]
 
-        mp3_update = self.configuration.use_mp3update
+        mp3_update = CorruptionConfiguration.use_mp3update
 
         starting_items = patches.starting_resources()
         starting_items.add_resource_gain(
