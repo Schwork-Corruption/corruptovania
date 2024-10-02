@@ -137,7 +137,12 @@ class CorruptionGameExporter(GameExporter):
         # %require_ship_missile%
 
         # create iso/wbfs
-        progress_update("Converting to ISO...", 0.6)
+        progress_update(
+            "Converting to ISO..."
+            if export_params.output_format == CorruptionOutputFormats.ISO
+            else "Converting to WBFS...",
+            0.6,
+        )
         subprocess.run(
             [
                 patcher_path.joinpath("wit", "bin", "wit.exe"),
