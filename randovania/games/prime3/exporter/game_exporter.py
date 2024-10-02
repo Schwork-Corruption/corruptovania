@@ -94,8 +94,40 @@ class CorruptionGameExporter(GameExporter):
                 Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
             )
 
+        # MP3Update
+        if export_params["mp3_update"]:
+            update_path = tempfile.mktemp()
+            update_elements = [
+                "FrontEnd",
+                "NoARAM",
+                "Metroid1",
+                "Metroid3",
+                "Metroid4",
+                "Metroid5",
+                "Metroid6",
+                "Metroid7",
+                "UniverseArea",
+            ]
+            progress_update("Applying Update...", 0.2)
+
+            for name in randomize_elements:
+                shutil.copy(Path(extract_path).joinpath("DATA", "files", name), Path(update_path).joinpath(name))
+            for element in update_elements:
+                subprocess.run(
+                    [
+                        patcher_path.joinpath("hpatchz.exe"),
+                        str(Path(update_path)) + f"/{element}.pak",
+                        str(Path(patcher_path).joinpath("MP3Update")) + f"{element}.hdiff",
+                        str(Path(paks_path)) + f"/{element}.pak",
+                    ],
+                    check=True,
+                )
+            shutil.rmtree(update_path)
+        else:
+            pass
+
         # randomize paks
-        progress_update("Randomizing Paks...", 0.2)
+        progress_update("Randomizing Paks...", 0.4)
         starting_items = patch_data["starting_items"].split(" ")
         starting_location = patch_data["starting_location"].split(" ")
         subprocess.run(

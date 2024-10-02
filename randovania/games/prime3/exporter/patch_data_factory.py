@@ -44,6 +44,8 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             if ammo_definition.name == "Ship Missile Expansion"
         ][0]
 
+        mp3_update = self.configuration.use_mp3update
+
         starting_items = patches.starting_resources()
         starting_items.add_resource_gain(
             [
@@ -81,4 +83,5 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             "random_welding_colors": cosmetic.random_welding_colors,
             "missile_required_mains": missile_required_mains,
             "ship_missile_required_mains": ship_missile_required_mains,
+            "mp3_update": mp3_update,
         }

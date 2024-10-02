@@ -10,6 +10,7 @@ from randovania.layout.base.base_configuration import BaseConfiguration
 class CorruptionConfiguration(BaseConfiguration):
     energy_per_tank: int = dataclasses.field(metadata={"min": 1, "max": 1000, "precision": 1})
     start_with_corrupted_hypermode: bool = False
+    use_mp3update: bool
 
     @classmethod
     def game_enum(cls) -> RandovaniaGame:
