@@ -11,6 +11,7 @@ from randovania.games.prime3.gui.generated.corruption_game_export_dialog_ui impo
 from randovania.gui.dialog.game_export_dialog import (
     GameExportDialog,
     add_field_validation,
+    is_file_validator,
     output_file_validator,
     prompt_for_input_file,
     prompt_for_output_file,
@@ -71,6 +72,7 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
         add_field_validation(
             accept_button=self.accept_button,
             fields={
+                self.input_file_edit: lambda: is_file_validator(self.input_file),
                 self.output_file_edit: lambda: output_file_validator(self.output_file),
             },
         )
@@ -134,7 +136,8 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
     def _on_update_output_format(self) -> None:
         self._selected_output_format = self.output_format
         output_path = Path(self.output_file_edit.text())
-        self.output_file_edit.setText(str(output_path.with_suffix(f".{self._selected_output_format}")))
+        if str(output_path) != ".":
+            self.output_file_edit.setText(str(output_path.with_suffix(f".{self._selected_output_format}")))
 
     def get_game_export_params(self) -> GameExportParams:
         spoiler_output = spoiler_path_for(self.auto_save_spoiler, self.output_file)
