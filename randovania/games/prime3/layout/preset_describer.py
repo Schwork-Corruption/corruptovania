@@ -32,6 +32,9 @@ class CorruptionPresetDescriber(GamePresetDescriber):
                         "Ship Missiles needs Main": "Ship Missile Expansion",
                     },
                 ),
+                {
+                    "Uses MP3Update": configuration.MP3Update,
+                },
             ],
         }
         fill_template_strings_from_tree(template_strings, extra_message_tree)

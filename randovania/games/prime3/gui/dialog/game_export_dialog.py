@@ -8,6 +8,7 @@ from randovania.games.game import RandovaniaGame
 from randovania.games.prime3.exporter.game_exporter import CorruptionGameExportParams, CorruptionOutputFormats
 from randovania.games.prime3.exporter.options import CorruptionPerGameOptions
 from randovania.games.prime3.gui.generated.corruption_game_export_dialog_ui import Ui_CorruptionGameExportDialog
+from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
 from randovania.gui.dialog.game_export_dialog import (
     GameExportDialog,
     add_field_validation,
@@ -147,4 +148,5 @@ class CorruptionGameExportDialog(GameExportDialog, Ui_CorruptionGameExportDialog
             input_path=Path(self.input_file),
             output_path=Path(self.output_file),
             output_format=CorruptionOutputFormats(self.output_format),
+            mp3_update=CorruptionConfiguration.MP3Update,
         )

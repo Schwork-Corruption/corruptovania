@@ -124,7 +124,7 @@
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Enable a myraid of Quality of Life changes such as backing out of a flight destination, a menu HUD to prevent softlocks, allowing the peeks of some items via scanning certain objects, removing cutscenes, as well as various fixed crashes</string>
+              <string>Enable a myriad of Quality of Life changes such as backing out of a flight destination, a menu HUD to prevent softlocks, allowing the peeks of some items via scanning certain objects, removing cutscenes, as well as various fixed crashes</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>

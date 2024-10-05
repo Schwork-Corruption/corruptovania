@@ -19,7 +19,7 @@ _FIELDS = [
 ]
 
 
-class CorruptionPrimeQol(PresetTab, Ui_PresetCorruptionQol):
+class PresetCorruptionQol(PresetTab, Ui_PresetCorruptionQol):
     def __init__(self, editor: PresetEditor, game_description: GameDescription, window_manager: WindowManager):
         super().__init__(editor, game_description, window_manager)
         self.setupUi(self)
@@ -50,4 +50,3 @@ class CorruptionPrimeQol(PresetTab, Ui_PresetCorruptionQol):
         config = preset.configuration
         for f in _FIELDS:
             typing.cast(QtWidgets.QCheckBox, getattr(self, f"{f}_check")).setChecked(getattr(config, f))
-        signal_handling.set_combo_with_value(self.cutscene_combo, config.qol_cutscenes)
