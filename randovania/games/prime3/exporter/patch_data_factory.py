@@ -60,17 +60,29 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         )
 
         player_suit_value = self.cosmetic_patches.player_suit.value
-        suit_type_resource, suit_type_quantity = [
+        suit_type_tuple = [
             (resource, quantity)
             for resource, quantity in starting_items.as_resource_gain()
             if resource.long_name == "Suit Type"
-        ][0]
-        if suit_type_quantity > player_suit_value and suit_type_quantity < CorruptionSuit.CORRUPTED_50.value:
-            starting_items.add_resource_gain(
-                [
-                    (suit_type_resource, CorruptionSuit.CORRUPTED_50.value - suit_type_quantity + 1),
-                ]
-            )
+        ]
+        if len(suit_type_tuple) > 0:
+            suit_type_resource, suit_type_quantity = suit_type_tuple[0]
+            if suit_type_quantity > player_suit_value and suit_type_quantity < CorruptionSuit.CORRUPTED_50.value:
+                starting_items.add_resource_gain(
+                    [
+                        (suit_type_resource, CorruptionSuit.CORRUPTED_50.value - suit_type_quantity + 1),
+                    ]
+                )
+
+        ship_grapple_tuple = [
+            (resource, quantity)
+            for resource, quantity in starting_items.as_resource_gain()
+            if resource.long_name == "Ship Grapple"
+        ]
+        if len(ship_grapple_tuple) > 0:
+            _, ship_grapple_quantity = ship_grapple_tuple[0]
+            if ship_grapple_quantity > 0:
+                raise ValueError("Ship Grapple is not a possible starting item.")
 
         if configuration.start_with_corrupted_hypermode:
             hypermode_original = 0
