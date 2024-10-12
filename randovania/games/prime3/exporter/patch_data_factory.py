@@ -4,12 +4,13 @@ from randovania.exporter.patch_data_factory import PatchDataFactory
 from randovania.game_description.resources.pickup_index import PickupIndex
 from randovania.games.game import RandovaniaGame
 from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
-from randovania.games.prime3.layout.corruption_cosmetic_patches import CorruptionCosmeticPatches
+from randovania.games.prime3.layout.corruption_cosmetic_patches import CorruptionCosmeticPatches, CorruptionSuit
 from randovania.games.prime3.patcher import gollop_corruption_patcher
 
 
 class CorruptionPatchDataFactory(PatchDataFactory):
     configuration: CorruptionConfiguration
+    cosmetic_patches: CorruptionCosmeticPatches
 
     def game_enum(self) -> RandovaniaGame:
         return RandovaniaGame.METROID_PRIME_CORRUPTION
@@ -57,6 +58,20 @@ class CorruptionPatchDataFactory(PatchDataFactory):
                 ),
             ]
         )
+
+        player_suit_value = self.cosmetic_patches.player_suit.value
+        suit_type_resource, suit_type_quantity = [
+            (resource, quantity)
+            for resource, quantity in starting_items.as_resource_gain()
+            if resource.long_name == "Suit Type"
+        ][0]
+        if suit_type_quantity > player_suit_value and suit_type_quantity < CorruptionSuit.CORRUPTED_50.value:
+            starting_items.add_resource_gain(
+                [
+                    (suit_type_resource, CorruptionSuit.CORRUPTED_50.value - suit_type_quantity + 1),
+                ]
+            )
+
         if configuration.start_with_corrupted_hypermode:
             hypermode_original = 0
         else:

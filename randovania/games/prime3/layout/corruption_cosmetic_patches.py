@@ -13,6 +13,8 @@ class CorruptionSuit(Enum):
     PED = 2
     CORRUPTED_25 = 3
     CORRUPTED_50 = 4
+    # HAZARD_SHIELD = 5
+    # CORRUPTED_75 = 6
 
 
 @dataclasses.dataclass(frozen=True)
