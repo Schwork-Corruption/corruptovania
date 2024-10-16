@@ -19,9 +19,9 @@ class CorruptionConfiguration(BaseConfiguration):
     def unsupported_features(self) -> list[str]:
         result = super().unsupported_features()
         pickup_state = self.standard_pickup_configuration.pickups_state
-        if any(
+        if not self.MP3Update and any(
             definition.name == "Ship Grapple" and state.num_included_in_starting_pickups > 0
             for definition, state in pickup_state.items()
         ):
-            result.append("Ship Grapple cannot be a starting item.")
+            result.append("Must have MP3Update enabled to have Ship Grapple as a starting item.")
         return result

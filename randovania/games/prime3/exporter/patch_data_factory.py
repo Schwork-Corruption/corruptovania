@@ -81,8 +81,8 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         ]
         if len(ship_grapple_tuple) > 0:
             _, ship_grapple_quantity = ship_grapple_tuple[0]
-            if ship_grapple_quantity > 0:
-                raise ValueError("Ship Grapple is not a possible starting item.")
+            if ship_grapple_quantity > 0 and not mp3_update:
+                raise ValueError("Ship Grapple is not a possible starting item without MP3Update enabled.")
 
         if configuration.start_with_corrupted_hypermode:
             hypermode_original = 0
