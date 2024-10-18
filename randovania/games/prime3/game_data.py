@@ -21,7 +21,7 @@ def _options() -> type[PerGameOptions]:
 
 def _gui() -> game.GameGui:
     from randovania.games.prime3 import gui
-    from randovania.games.prime3.pickup_database import progressive_items
+    from randovania.games.prime3.layout import progressive_items
 
     return game.GameGui(
         tab_provider=gui.prime3_preset_tabs,
