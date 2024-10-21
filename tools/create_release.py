@@ -207,7 +207,7 @@ async def main():
 
     await download_nintendont()
 
-    await download_dotnet()
+    # await download_dotnet()
 
     # HACK: pyintaller calls lipo/codesign on macOS and frequently timeout in github actions
     # There's also timeouts on Windows so we're expanding this to everyone
@@ -219,7 +219,7 @@ async def main():
     compat_path.write_text(compat_text)
 
     subprocess.run([sys.executable, "-m", "PyInstaller", "randovania.spec"], check=True)
-
+    shutil.rmtree(package_folder.joinpath("_internal", "pre_edited_cs"))
     remove_unnecessary_dotnet_deps(package_folder)
 
     if platform.system() == "Windows":
