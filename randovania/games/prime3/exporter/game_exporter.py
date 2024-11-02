@@ -87,18 +87,20 @@ class CorruptionGameExporter(GameExporter):
             "Worlds.pak",
             "Standard.ntwk",
         ]
+        # copy files listed above to paks_path
         for name in randomize_elements:
             shutil.copy(Path(extract_path).joinpath("DATA", "files", name), Path(paks_path).joinpath(name))
 
         # remove attract videos
         dummy_attracts = ["attract01.thp", "Attract02.thp"]
         for name in dummy_attracts:
+            # place supllied dummy attract files directly in extract_path
             shutil.copy(
                 Path(patcher_path).joinpath("dummy_attract", name),
                 Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
             )
 
-        # MP3Update
+        # MP3Update, if applicatble
         if patch_data["mp3_update"]:
             # path to where paks are placed to be updated, then sent back to paks_path
             update_path = tempfile.mkdtemp()
@@ -161,25 +163,13 @@ class CorruptionGameExporter(GameExporter):
                 starting_location[2],
                 "--random-door-colors" if patch_data["random_door_colors"] else "",
                 "--random-welding-colors" if patch_data["random_welding_colors"] else "",
-                "--hyper-hints",
-                "--fast-flying",
+                "--hyper-hints",  # These are forced on because not having them is an active detriment
+                "--fast-flying",  # ''
                 "--require-launcher" if patch_data["missile_required_mains"] else "",
                 "--require-ship-missile" if patch_data["ship_missile_required_mains"] else "",
             ],
             check=True,
         )
-        # --input-path "%input_path%"
-        # --output-path "%output_path%"
-        # --layout %seed%
-        # --starting-items %starting_items%
-        # --starting-location %starting_location%
-        # %random_door_colors%
-        # %random_welding_colors%
-        # %hyper_hints%
-        # %fast_flying%
-        # %phaaze_skip%
-        # %require_launcher%
-        # %require_ship_missile%
 
         # create iso/wbfs
         progress_update(
@@ -202,5 +192,6 @@ class CorruptionGameExporter(GameExporter):
             ],
             check=True,
         )
+        # clean up all extracted files
         shutil.rmtree(extract_path)
         shutil.rmtree(paks_path)
