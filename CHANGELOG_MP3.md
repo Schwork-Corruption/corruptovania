@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2024
+
+- **Major** - Added: The Data Visualiser now has a node map to help make interpreting the logic database easier.
+
+##### Logic Database
+
+- Fixed: Added new templates for a bunch of miscellaneous things to help out with data validation.
+
 ## [1.4.2] - 2024-10-17
 
 - **Major** - Fixed: You can now start with Ship Grapple again, but *only* if you have MP3Update enabled in your preset/rdvgame. Game will refuse to generate otherwise.
