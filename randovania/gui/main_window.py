@@ -756,9 +756,9 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
     def _on_menu_action_open_layout_editor(self) -> None:
         from randovania.games.prime3.gui.corruption_layout_editor import CorruptionLayoutEditor
+
         self.layout_editor_window = CorruptionLayoutEditor()
         self.layout_editor_window.show()
-
 
     def _on_menu_action_show_multiworld_banner(self) -> None:
         banner_val = self.menu_action_show_multiworld_banner.isChecked()
