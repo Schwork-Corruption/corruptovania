@@ -4,7 +4,7 @@ import dataclasses
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from randovania.games.game import RandovaniaGame
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.prime3.exporter.game_exporter import CorruptionGameExportParams, CorruptionOutputFormats
 from randovania.games.prime3.exporter.options import CorruptionPerGameOptions
 from randovania.games.prime3.gui.generated.corruption_game_export_dialog_ui import Ui_CorruptionGameExportDialog

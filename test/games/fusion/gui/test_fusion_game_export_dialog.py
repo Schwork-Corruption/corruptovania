@@ -6,11 +6,11 @@ from unittest.mock import MagicMock
 import pytest
 from PySide6 import QtCore
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.fusion.exporter.game_exporter import FusionGameExportParams
 from randovania.games.fusion.exporter.options import FusionPerGameOptions
 from randovania.games.fusion.gui.dialog.game_export_dialog import FusionGameExportDialog
 from randovania.games.fusion.layout.fusion_cosmetic_patches import FusionCosmeticPatches
-from randovania.games.game import RandovaniaGame
 from randovania.interface_common.options import Options
 
 
@@ -21,11 +21,11 @@ def test_on_output_file_button_exists(skip_qtbot, tmp_path, mocker, has_output_d
 
     if has_output_dir:
         output_path = tmp_path.joinpath("output_path")
-        expected_default_name = str(tmp_path.joinpath("output_path", "MARS - MyHash"))
+        expected_default_name = str(tmp_path.joinpath("output_path", "Fusion - MyHash"))
         output_path.mkdir()
     else:
         output_path = None
-        expected_default_name = "MARS - MyHash"
+        expected_default_name = "Fusion - MyHash"
 
     options = MagicMock()
     options.options_for_game.return_value = FusionPerGameOptions(
@@ -62,7 +62,7 @@ def test_on_output_file_button_cancel(skip_qtbot, tmp_path, mocker):
     skip_qtbot.mouseClick(window.output_file_button, QtCore.Qt.MouseButton.LeftButton)
 
     # Assert
-    mock_prompt.assert_called_once_with(window, "MARS - MyHash.gba", [window.valid_file_type])
+    mock_prompt.assert_called_once_with(window, "Fusion - MyHash.gba", [window.valid_file_type])
     assert window.output_file_edit.text() == ""
 
 
@@ -76,7 +76,7 @@ def test_save_options(skip_qtbot, tmp_path):
     window.save_options()
 
     # Assert
-    assert options.options_for_game(RandovaniaGame.FUSION).output_path == Path("somewhere/foo")
+    assert options.options_for_game(RandovaniaGame.FUSION).output_path == Path("somewhere")
 
 
 @pytest.mark.parametrize("save_spoiler", [False, True])
@@ -95,7 +95,7 @@ def test_get_game_export_params(skip_qtbot, tmp_path, save_spoiler: bool):
 
     # Assert
     assert result == FusionGameExportParams(
-        spoiler_output=tmp_path.joinpath("output", "MARS - MyHash.rdvgame"),
+        spoiler_output=tmp_path.joinpath("output", "Fusion - MyHash.rdvgame"),
         input_path=tmp_path.joinpath("input/game.gba"),
-        output_path=tmp_path.joinpath("output", "MARS - MyHash.gba"),
+        output_path=tmp_path.joinpath("output", "Fusion - MyHash.gba"),
     )

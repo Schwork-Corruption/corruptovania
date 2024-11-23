@@ -1,27 +1,37 @@
 from __future__ import annotations
 
 import dataclasses
+import platform
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.factorio.exporter.game_exporter import FactorioGameExportParams
 from randovania.games.factorio.exporter.options import FactorioPerGameOptions
 from randovania.games.factorio.gui.generated.factorio_game_export_dialog_ui import Ui_FactorioGameExportDialog
-from randovania.games.game import RandovaniaGame
 from randovania.gui.dialog.game_export_dialog import (
     GameExportDialog,
     add_field_validation,
-    prompt_for_input_directory,
+    is_directory_validator,
     prompt_for_output_directory,
     spoiler_path_for_directory,
 )
+from randovania.lib import windows_lib
 
 if TYPE_CHECKING:
     from randovania.interface_common.options import Options, PerGameOptions
 
 
-def _is_valid_input_dir(path: Path) -> bool:
-    return path.joinpath("data", "base", "data.lua").is_file()
+def get_global_user_data_dir() -> Path:
+    match platform.system():
+        case "Windows":
+            return windows_lib.get_appdata().joinpath("Factorio")
+        case "Darwin":
+            return Path("~/Library/Application Support/factorio")
+        case "Linux":
+            return Path("~/.factorio")
+        case _:
+            raise RuntimeError("Unsupported platform")
 
 
 class FactorioGameExportDialog(GameExportDialog, Ui_FactorioGameExportDialog):
@@ -38,31 +48,23 @@ class FactorioGameExportDialog(GameExportDialog, Ui_FactorioGameExportDialog):
         per_game = options.options_for_game(self.game_enum())
         assert isinstance(per_game, FactorioPerGameOptions)
 
-        # Input
-        self.input_file_button.clicked.connect(self._on_input_file_button)
-
         # Output
+        self.use_default_button.clicked.connect(self._on_use_default_button)
         self.output_file_button.clicked.connect(self._on_output_file_button)
-
-        if per_game.input_path is not None:
-            self.input_file_edit.setText(str(per_game.input_path))
 
         if per_game.output_path is not None:
             self.output_file_edit.setText(str(per_game.output_path))
+        else:
+            self._on_use_default_button()
 
         add_field_validation(
             accept_button=self.accept_button,
             fields={
-                self.input_file_edit: lambda: not (self.input_file.is_dir() and _is_valid_input_dir(self.input_file)),
-                self.output_file_edit: lambda: not (self.output_file.is_dir() and self.output_file != self.input_file),
+                self.output_file_edit: lambda: is_directory_validator(self.output_file_edit),
             },
         )
 
     # Getters
-    @property
-    def input_file(self) -> Path:
-        return Path(self.input_file_edit.text())
-
     @property
     def output_file(self) -> Path:
         return Path(self.output_file_edit.text())
@@ -71,14 +73,12 @@ class FactorioGameExportDialog(GameExportDialog, Ui_FactorioGameExportDialog):
     def auto_save_spoiler(self) -> bool:
         return self.auto_save_spoiler_check.isChecked()
 
-    # Input file
-    def _on_input_file_button(self):
-        input_dir = prompt_for_input_directory(self, self.input_file_edit)
-        if input_dir is not None:
-            self.input_file_edit.setText(str(input_dir.absolute()))
+    def _on_use_default_button(self) -> None:
+        global_dir = get_global_user_data_dir()
+        self.output_file_edit.setText(str(global_dir.joinpath("mods")))
 
     # Output File
-    def _on_output_file_button(self):
+    def _on_output_file_button(self) -> None:
         output_dir = prompt_for_output_directory(self, "Factorio Mod", self.output_file_edit)
         if output_dir is not None:
             self.output_file_edit.setText(str(output_dir))
@@ -87,7 +87,6 @@ class FactorioGameExportDialog(GameExportDialog, Ui_FactorioGameExportDialog):
         assert isinstance(per_game, FactorioPerGameOptions)
         return dataclasses.replace(
             per_game,
-            input_path=self.input_file,
             output_path=self.output_file,
         )
 
@@ -98,6 +97,5 @@ class FactorioGameExportDialog(GameExportDialog, Ui_FactorioGameExportDialog):
 
         return FactorioGameExportParams(
             spoiler_output=spoiler_output,
-            input_path=self.input_file,
             output_path=self.output_file,
         )

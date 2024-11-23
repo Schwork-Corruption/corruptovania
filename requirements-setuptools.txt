@@ -6,35 +6,35 @@
 #
 altgraph==0.17.4
     # via pyinstaller
-build==1.2.2
+build==1.2.2.post1
     # via -r tools/requirements/requirements-setuptools.in
 colorama==0.4.6
     # via
-    #   -c tools/requirements\../../requirements.txt
+    #   -c requirements.txt
     #   build
 docopt==0.6.2
     # via pyqt-distutils
-dulwich==0.22.1
+dulwich==0.22.6
     # via
-    #   -c tools/requirements\../../requirements.txt
+    #   -c requirements.txt
     #   -r tools/requirements/requirements-setuptools.in
     #   randovania-scm-version-schema
-packaging==24.1
+packaging==24.2
     # via
-    #   -c tools/requirements\../../requirements.txt
+    #   -c requirements.txt
     #   build
     #   pyinstaller
     #   pyinstaller-hooks-contrib
     #   setuptools-scm
-pefile==2024.8.26
+pefile==2023.2.7
     # via pyinstaller
-pyinstaller==6.10.0
+pyinstaller==6.11.1
     # via -r tools/requirements/requirements-setuptools.in
-pyinstaller-hooks-contrib==2024.8
+pyinstaller-hooks-contrib==2024.10
     # via
     #   -r tools/requirements/requirements-setuptools.in
     #   pyinstaller
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via build
 pyqt-distutils==0.7.3
     # via -r tools/requirements/requirements-setuptools.in
@@ -48,17 +48,15 @@ setuptools-scm==8.1.0
     #   randovania-scm-version-schema
 urllib3==2.2.3
     # via
-    #   -c tools/requirements\../../requirements.txt
+    #   -c requirements.txt
     #   dulwich
-wheel==0.44.0
+wheel==0.45.0
     # via -r tools/requirements/requirements-setuptools.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==75.1.0
+setuptools==75.6.0
     # via
-    #   -c tools/requirements\../../requirements.txt
     #   -r tools/requirements/requirements-setuptools.in
-    #   dulwich
     #   pyinstaller
     #   pyinstaller-hooks-contrib
     #   randovania-scm-version-schema

@@ -5,7 +5,179 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [8.5.x] - 2024-10-??
+## [8.7.x] - 2024-12-??
+
+- Added: Drag and dropping a preset file into the main window now imports it.
+- Added: Options to alert the user via flashing the taskbar/playing a sound when generation completes in the Preferences menu.
+- Added: Show confirmation dialog when deleting a world in Multiworld.
+- Fixed: When editing the preset description after another change in a preset, the cursor position is now retained.
+- Added: Show confirmation dialog when closing the main window or multiplayer session window while generation is in progress.
+- Fixed: Closing the multiplayer session window while generation is in progress will now abort the generation.
+
+### Door Lock Randomizer
+
+- Added: Experimental option that changes Door Lock Rando so that when determining which types a door can be randomized into, the algorithm searches for either side of the door using the resolver. This means some doors are more likely to have locks on them. Generation will also be faster.
+
+### AM2R
+
+- Changed: DNA hints are now sorted. If the DNA is for your own world, it is sorted based on the region, otherwise alphabetically based on the World name.
+
+### Metroid Prime
+
+- Added: The option of "Remove Bars in Great Tree Hall". This feature removes the Boost Ball bars obstacle in Tallon Overworld's Great Tree Hall allowing free movement between the lower and upper levels of the room.
+- Changed: Damage Reduction for Starter Preset and Moderate Challenge is now Additive.
+- Fixed: Setting Screen Brightness in the cosmetic settings mismatching with what appears in-game.
+
+### Metroid Prime 2: Echoes
+
+#### Logic Database
+
+- Fixed: All Seeker Doors without Seekers tricks have been moved into the dock override section thus allowing the corresponding doors to get shuffled in door type rando. To find the requirements of a seeker skip, look in the description of the corresponding dock node in the data visualiser.
+
+### Metroid Dread
+
+#### Logic Database
+
+##### Burenia
+
+- Added: In Main Hub Tower Bottom: Get from Water Space Jump Platform to Alcove Across Grapple Block with just Gravity Suit and Movement (Beginner).
+- Added: In Main Hub Tower Bottom: Get from Alcove Across Grapple Block to Door to Energy Recharge South with Gravity Suit, Morph Ball and Single-wall Wall Jump (Intermediate).
+
+##### Ferenia
+
+- Added: Wall Jump (Beginner) to get from Cold Room (Storm Missile Gate) to Wave Beam Tutorial.
+- Changed: Opening the Storm Missile Gate in Cold Room now requires Screw Attack.
+- Changed: Getting back to the door to Energy Recharge Station after opening the Storm missile Gate now accounts for needing two units of Power Bomb ammo.
+
+### Metroid Prime 2: Echoes
+
+- Removed: The "Fewest Changes" preset was removed.
+
+### Metroid: Samus Returns
+
+- Fixed: When Arachnus is configured to be the final boss, logic now requires collecting all DNA.
+
+## [8.6.1] - 2024-11-03
+
+- Fixed: Exporting Metroid Prime 2: Echoes games when the "Coin Chest" model is used now works.
+
+## [8.6.0] - 2024-11-01
+
+- Changed: The "Customize Preset" window has been given a visual overhaul.
+- Changed: Filtering in the Generation Order tab is now case-insensitive.
+- Changed: The Area View of the Data Visualizer now always has a dark gray background to help with readability.
+- Changed: The progress bar in the Main Window and Game Details window is now in a status bar and only displayed when relevant.
+- Fixed: When an error during exporting occurs, the progress bar will now reset.
+
+### Resolver
+
+- Fixed: Some seeds being considered impossible when finding a progressive item in an area where a later item in the progressive chain is required to leave.
+
+### AM2R
+
+- Changed: Adjusted the spacing of the Hints and Goal entries to be more consistent with other entries.
+- Fixed: An error appearing when going to the Pipe rando preset page with the Depths pipes disabled.
+
+#### Logic Database
+
+- Fixed: The Hideout<->Bubble lair Depths pipes being on the wrong layer.
+
+##### Golden Temple
+
+- Fixed: Guardian Arena: IBJing up to Guardian Storage now requires Morph Ball.
+
+##### Hydro Station
+
+- Fixed: Breeding Grounds Entrance: Using Mid Air Morph to get to the upper part now requires Morph Ball.
+
+##### Industrial Complex
+
+- Fixed: Senjoo Settlement: Using Morph Glides to go from the Gamma Nest to the exterior now requires Morph Ball.
+
+##### The Tower
+
+- Fixed: Tower Exterior South East: Getting to the upper Gamma Nest ledge with Shinesparking and Morph Ball now requires a Beginner Morph Glide instead of an Intermediate Mid Air Morph and also requires Morph Ball.
+- Fixed: Tower Exterior North East: Getting to the Plasma Beam Chamber Access door from below with Morph is now correctly classified as a Morph Glide instead of a Mid Air Morph and also requires Morph Ball.
+- Fixed: Tower Exterior North East: Getting to the Save Station from the Zeta tunnel with Morph is now correctly classified as a Morph Glide instead of a Mid Air Morph and also requires Morph Ball.
+- Fixed: Exterior Zeta Nest East Access: IBJing to the ceiling to get across from the Zeta Nest to the Exterior requires Infinite Bomb Propulsion.
+
+##### Distribution Center
+
+- Fixed: Distribution Center Exterior East: Climbing the room with High Jump and Morph Gliding now requires Morph Ball.
+- Fixed: Distribution Facility Tower East: Morph Gliding over the little gap at the top now requires Morph Ball.
+- Fixed: Distribution Facility Tower East: Walljumping and Morph Gliding from the bottom pipe to the middle pipe now requires Morph Ball.
+- Fixed: Ice Beam Chamber Access: Mid Air Morphing into the pipe now requires Morph Ball.
+
+##### The Depths
+
+- Fixed: Bubble Lair Shinespark Cave: Climbing the upper part of the room with Walljumps and Morph Glides now requires Morph Ball.
+
+##### Genetics Laboratory
+
+- Fixed: Laboratory Entrance: Climbing the room with Walljumps and Morph Glides now requires Morph Ball.
+- Fixed: Laboratory Spiked Hall: Morph Gliding across the room now requires Morph Ball.
+
+### Cave Story
+
+- Changed: The Objective preset entry doesn't enforce a minimum size anymore.
+- Changed: Adjust spacing on the HP preset entry.
+
+### Metroid Dread
+
+- Fixed: Common case where an invalid input RomFS was considered valid.
+
+### Metroid Dread
+
+#### Logic Database
+
+##### Ferenia
+
+- Changed: The trick to pull the Grapple Block in Energy Recharge Station (Gate) using only Power Bombs to break the Bomb Blocks has been upgraded to Movement (Intermediate).
+- Changed: The trick to pull the Grapple Block in Energy Recharge Station (Gate) using only Normal Bombs to break the Bomb Blocks has been upgraded to Movement (Advanced).
+
+### Metroid Prime
+- Added: The Data Visualizer now shows an Area View.
+- Changed: Artifact, Phazon Suit, and Missile Expansion generation weights adjusted resulting in more even item-location probability distribution.
+
+#### Logic Database
+
+- Added: 3 Videos added to the logic database.
+
+##### Chozo Ruins
+
+- Added: In Furnace: Add comments that the standable climb up the spider track does not work on PAL.
+- Added: In Furnace: Add Bomb Space Jump method for climbing the spider track on the West Furnace side.
+
+##### Impact Crater
+
+- Added: In Metroid Prime Lair: Require Combat Visor for Essence fight unless Invisible Objects is set to Advanced.
+
+##### Tallon Overworld
+
+- Added: In Tallon Canyon: Climb to the top of the half-pipe via one of the following: Intermediate Standable, Beginner BSJ, Intermediate Dash, or Intermediate Slope Jump.
+- Added: In Tallon Canyon: Beginner Knowledge to break blocks with Power Bombs.
+- Added: In Tallon Canyon: Advanced Wall Boost to climb the room from Gully.
+- Added: In Gully: Beginner Standables to climb the room.
+
+### Metroid Prime 2: Echoes
+
+- Added: Colorblind-friendly textures for Main Gyro Chamber.
+- Changed: Updated tournament winners scan text for Echoes 2024.
+
+### Metroid: Samus Returns
+
+- Added: Multiworld and item tracker support for console.
+- Fixed: Rare case of the connector not being able to reconnect until Randovania is restarted.
+- Fixed: Speed Booster offworld not displaying correctly for Metroid Dread.
+- Fixed: Map tracker could not be opened if the final boss is Ridley.
+- Changed: The preset entry for Aeion and Energy are now combined into one.
+- Changed: The preset entries for the Goal and Hints don't enforce a minimum size anymore.
+- Changed: Adjust spacing on the Elevator preset entry.
+- Changed: Instead of a path to the RomFS, you now need to provide a decrypted 3ds, cia, cxi or app rom file.
+- Removed: Requirement to provide the ExHeader for multiworld.
+- Removed: Selection of PAL or NTSC region. This is automatically determined by the provided rom file.
+
+## [8.5.0] - 2024-10-01
 
 - Fixed: Improved server performance when importing/generating games with a huge number of worlds.
 
@@ -26,7 +198,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ##### Ghavoran
 
-- Added: In Super Missile Room: Intermediate Single-wall Wall Jump to reach Tunnel to Super Missile Room Access. 
+- Added: In Super Missile Room: Intermediate Single-wall Wall Jump to reach Tunnel to Super Missile Room Access.
 
 ### Metroid: Samus Returns
 
@@ -36,6 +208,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [8.4.0] - 2024-09-04
 
+- Changed: When replacing a preset in a multiworld session, the user playing the world will now be unmarked from being ready.
 - Fixed: The "Last Activity" text on the Multiplayer Session window is not aligned properly.
 
 ### AM2R

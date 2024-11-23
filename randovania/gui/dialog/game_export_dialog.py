@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
     from randovania.exporter.game_exporter import GameExportParams
-    from randovania.games.game import RandovaniaGame
+    from randovania.game.game_enum import RandovaniaGame
     from randovania.interface_common.options import Options, PerGameOptions
     from randovania.patching.patchers.exceptions import UnableToExportError
 
@@ -207,7 +207,7 @@ def output_file_validator(output_file: Path) -> bool:
 
 
 def is_directory_validator(line: QtWidgets.QLineEdit) -> bool:
-    return not line.text() or not Path(line.text()).is_dir()
+    return not line.text() or not Path(line.text()).is_dir() or line.text() == "."
 
 
 def output_input_intersection_validator(output_edit: QtWidgets.QLineEdit, input_edit: QtWidgets.QLineEdit) -> bool:

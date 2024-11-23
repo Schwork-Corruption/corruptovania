@@ -17,8 +17,8 @@ import tenacity
 import randovania
 from randovania import VERSION
 from randovania.cli import database
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games import default_data
-from randovania.games.game import RandovaniaGame
 from randovania.interface_common import installation_check
 from randovania.lib import json_lib
 from randovania.lib.enum_lib import iterate_enum
@@ -134,7 +134,6 @@ def remove_unnecessary_dotnet_deps(package_folder: Path) -> None:
     else:
         raise ValueError("Couldn't determine the OS handle for dotnet cleanup!")
 
-    dotnet_arch = "unknown"
     arch = platform.machine()
     if arch == "AMD64" or arch == "x86_64":
         dotnet_arch = "x64"
@@ -151,7 +150,7 @@ def remove_unnecessary_dotnet_deps(package_folder: Path) -> None:
 
     internal = package_folder.joinpath("_internal")
     for dotnet_lib_path in dotnet_paths_to_clean:
-        for subdir in internal.joinpath(dotnet_lib_path).iterdir():
+        for subdir in list(internal.joinpath(dotnet_lib_path).iterdir()):
             if not subdir.is_dir():
                 continue
             name = subdir.name
@@ -183,8 +182,8 @@ async def main():
 
     icon_path = randovania.get_icon_path()
     shutil.copyfile(icon_path, icon_path.with_name("executable_icon.ico"))
-
-    if (secret := os.environ.get("OBFUSCATOR_SECRET")) is not None:
+    secret = os.environ.get("OBFUSCATOR_SECRET", "")
+    if secret.strip() and not secret.isspace():
         write_obfuscator_secret(
             _ROOT_FOLDER.joinpath("randovania", "lib", "obfuscator_secret.py"),
             secret.encode("ascii"),

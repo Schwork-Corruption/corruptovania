@@ -1,9 +1,9 @@
 {
-    "schema_version": 81,
+    "schema_version": 93,
     "base_preset_uuid": null,
     "name": "Starter Preset",
     "uuid": "51f328a1-3b09-47a1-921f-b84d2cda1e4c",
-    "description": "Basic preset.",
+    "description": "This preset includes a reduced tech tree, with most repeated military upgrades removed. Recommended to play with enemies disabled.",
     "game": "factorio",
     "configuration": {
         "trick_level": {
@@ -23,9 +23,6 @@
         },
         "standard_pickup_configuration": {
             "pickups_state": {
-                "Barrel Handling": {
-                    "num_shuffled_pickups": 1
-                },
                 "Circuit Network": {
                     "num_shuffled_pickups": 1
                 },
@@ -36,6 +33,9 @@
                     "num_shuffled_pickups": 1
                 },
                 "Construction Robotics": {
+                    "num_shuffled_pickups": 1
+                },
+                "Barrel Handling": {
                     "num_shuffled_pickups": 1
                 },
                 "Fluid Storage": {
@@ -53,7 +53,7 @@
                 "Logistic System": {
                     "num_shuffled_pickups": 1
                 },
-                "Optics": {
+                "Lamp": {
                     "num_shuffled_pickups": 1
                 },
                 "Wall": {
@@ -62,7 +62,7 @@
                 "Braking Force": {
                     "num_shuffled_pickups": 1
                 },
-                "Energy Weapons Damage": {},
+                "Laser Weapons Damage": {},
                 "Follower Robot Count": {},
                 "Laser Shooting Speed": {},
                 "Mining Productivity": {
@@ -76,7 +76,7 @@
                 "Research Speed": {
                     "num_shuffled_pickups": 5
                 },
-                "Stack Inserter Capacity Bonus": {
+                "Bulk Inserter Capacity Bonus": {
                     "num_shuffled_pickups": 4
                 },
                 "Steel Axe": {
@@ -114,7 +114,7 @@
                 "Exoskeleton Equipment": {
                     "num_shuffled_pickups": 1
                 },
-                "Fusion Reactor Equipment": {
+                "Fission Reactor Equipment": {
                     "num_shuffled_pickups": 1
                 },
                 "Modular Armor": {
@@ -157,9 +157,6 @@
                     "num_shuffled_pickups": 1
                 },
                 "Plastics": {
-                    "num_shuffled_pickups": 1
-                },
-                "Rocket Control Unit": {
                     "num_shuffled_pickups": 1
                 },
                 "Rocket Fuel": {
@@ -210,6 +207,9 @@
                 "Oil Cracking": {
                     "num_shuffled_pickups": 1
                 },
+                "Oil Gathering": {
+                    "num_shuffled_pickups": 1
+                },
                 "Oil Processing": {
                     "num_shuffled_pickups": 2
                 },
@@ -224,6 +224,9 @@
                 },
                 "Steel Furnace": {
                     "num_shuffled_pickups": 1
+                },
+                "Uranium Mining": {
+                    "num_included_in_starting_pickups": 1
                 },
                 "Uranium Processing": {
                     "num_shuffled_pickups": 2
@@ -302,6 +305,18 @@
                 },
                 "Uranium Ammo": {
                     "num_shuffled_pickups": 1
+                },
+                "Electric Mining Drill": {
+                    "num_shuffled_pickups": 1
+                },
+                "Repair Pack": {
+                    "num_shuffled_pickups": 1
+                },
+                "Radar": {
+                    "num_shuffled_pickups": 1
+                },
+                "Advanced Combinators": {
+                    "num_shuffled_pickups": 1
                 }
             },
             "default_pickups": {},
@@ -316,6 +331,7 @@
         "pickup_model_data_source": "etm",
         "logical_resource_action": "randomly",
         "first_progression_must_be_local": false,
+        "two_sided_door_lock_search": false,
         "minimum_available_locations_for_hint_placement": 0,
         "minimum_location_weight_for_hint_placement": 0.0,
         "dock_rando": {

@@ -6,9 +6,9 @@ import randovania
 from randovania.exporter import item_names, pickup_exporter
 from randovania.exporter.hints import credits_spoiler, guaranteed_item_hint
 from randovania.exporter.patch_data_factory import PatchDataFactory
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description.db.dock_node import DockNode
 from randovania.game_description.db.pickup_node import PickupNode
-from randovania.games.game import RandovaniaGame
 from randovania.games.prime1.exporter.hint_namer import PrimeHintNamer
 from randovania.games.prime1.exporter.vanilla_maze_seeds import VANILLA_MAZE_SEEDS
 from randovania.games.prime1.layout.hint_configuration import ArtifactHintMode, PhazonSuitHintMode
@@ -731,6 +731,15 @@ class PrimePatchDataFactory(PatchDataFactory):
                     "id": 0x00100470,
                     "active": True,
                 }
+            ]
+
+        # Remove Bars in Great Tree Hall
+        if self.configuration.remove_bars_great_tree_hall:
+            level_data["Tallon Overworld"]["rooms"]["Great Tree Hall"]["deleteIds"] = [
+                2359733,  # 0x002401B5 - bar
+                2359744,  # 0x002401C0 - spinner auto-enable timer
+                2359830,  # 0x00240216 - scan front
+                2359829,  # 0x00240215 - scan back
             ]
 
         # serialize room modifications

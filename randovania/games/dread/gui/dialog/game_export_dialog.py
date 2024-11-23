@@ -2,17 +2,16 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 import platform
 from pathlib import Path
 from typing import TYPE_CHECKING
 
 from PySide6 import QtCore, QtGui, QtWidgets
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.dread.exporter.game_exporter import DreadGameExportParams, DreadModPlatform, LinuxRyujinxPath
 from randovania.games.dread.exporter.options import DreadPerGameOptions
 from randovania.games.dread.gui.generated.dread_game_export_dialog_ui import Ui_DreadGameExportDialog
-from randovania.games.game import RandovaniaGame
 from randovania.gui.dialog.game_export_dialog import (
     GameExportDialog,
     is_directory_validator,
@@ -24,8 +23,9 @@ from randovania.gui.dialog.game_export_dialog import (
     update_validation,
 )
 from randovania.gui.lib import common_qt_lib
+from randovania.lib import windows_lib
 from randovania.lib.ftp_uploader import FtpUploader
-from randovania.lib.windows_drives import get_windows_drives
+from randovania.lib.windows_lib import get_windows_drives
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -69,14 +69,18 @@ def romfs_validation(line: QtWidgets.QLineEdit):
         return True
 
     path = Path(line.text())
-    return not all(
-        p.is_file()
-        for p in [
-            path.joinpath("system", "files.toc"),
-            path.joinpath("packs", "system", "system.pkg"),
-            path.joinpath("packs", "maps", "s010_cave", "s010_cave.pkg"),
-            path.joinpath("packs", "maps", "s020_magma", "s020_magma.pkg"),
-        ]
+    return not (
+        all(
+            p.is_file()
+            for p in [
+                path.joinpath("config.ini"),
+                path.joinpath("system", "files.toc"),
+                path.joinpath("packs", "system", "system.pkg"),
+                path.joinpath("packs", "maps", "s010_cave", "s010_cave.pkg"),
+                path.joinpath("packs", "maps", "s020_magma", "s020_magma.pkg"),
+            ]
+        )
+        and not all(p.is_file() for p in [path.joinpath("custom_names.json")])
     )
 
 
@@ -87,7 +91,7 @@ class DreadGameExportDialog(GameExportDialog, Ui_DreadGameExportDialog):
             case "Windows", _:
                 # TODO: double check what ryujinx actually uses for windows. I don't think it reads the Appdata env var
                 # but instead probably the value from QStandardPaths.
-                return Path(os.environ["APPDATA"], *ryujinx_path_tuple)
+                return windows_lib.get_appdata().joinpath(*ryujinx_path_tuple)
 
             case "Linux", LinuxRyujinxPath.NATIVE:
                 base_config_path = QtCore.QStandardPaths.writableLocation(

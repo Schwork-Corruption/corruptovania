@@ -5,10 +5,10 @@ import hashlib
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.fusion.exporter.game_exporter import FusionGameExportParams
 from randovania.games.fusion.exporter.options import FusionPerGameOptions
 from randovania.games.fusion.gui.generated.fusion_game_export_dialog_ui import Ui_FusionGameExportDialog
-from randovania.games.game import RandovaniaGame
 from randovania.gui.dialog.game_export_dialog import (
     GameExportDialog,
     add_field_validation,
@@ -20,7 +20,7 @@ from randovania.gui.dialog.game_export_dialog import (
 )
 
 if TYPE_CHECKING:
-    from randovania.interface_common.options import Options
+    from randovania.interface_common.options import Options, PerGameOptions
 
 
 def is_fusion_validator(path: Path | None) -> bool:
@@ -56,7 +56,7 @@ class FusionGameExportDialog(GameExportDialog, Ui_FusionGameExportDialog):
     def __init__(self, options: Options, patch_data: dict, word_hash: str, spoiler: bool, games: list[RandovaniaGame]):
         super().__init__(options, patch_data, word_hash, spoiler, games)
 
-        self._base_output_name = f"MARS - {word_hash}.{self.valid_file_type}"
+        self._base_output_name = f"Fusion - {word_hash}.{self.valid_file_type}"
         fusion_options = options.options_for_game(self.game_enum())
         assert isinstance(fusion_options, FusionPerGameOptions)
 
@@ -98,25 +98,25 @@ class FusionGameExportDialog(GameExportDialog, Ui_FusionGameExportDialog):
         return self.auto_save_spoiler_check.isChecked()
 
     # Input file
-    def _on_input_file_button(self):
+    def _on_input_file_button(self) -> None:
         input_file = prompt_for_input_file(self, self.input_file_edit, [self.valid_file_type])
         if input_file is not None:
             self.input_file_edit.setText(str(input_file.absolute()))
 
     # Output File
-    def _on_output_file_button(self):
+    def _on_output_file_button(self) -> None:
         output_file = prompt_for_output_file(
             self, [self.valid_file_type], self._base_output_name, self.output_file_edit
         )
         if output_file is not None:
             self.output_file_edit.setText(str(output_file))
 
-    def update_per_game_options(self, fusion_options: FusionPerGameOptions) -> FusionPerGameOptions:
+    def update_per_game_options(self, fusion_options: PerGameOptions) -> FusionPerGameOptions:
         assert isinstance(fusion_options, FusionPerGameOptions)
         return dataclasses.replace(
             fusion_options,
             input_path=self.input_file,
-            output_path=self.output_file,
+            output_path=Path(self.output_file).parent,
         )
 
     def get_game_export_params(self) -> FusionGameExportParams:
