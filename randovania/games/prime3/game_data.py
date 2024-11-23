@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import typing
 
-from randovania.games import game
+from randovania.game.data import GameData
+from randovania.game.development_state import DevelopmentState
+from randovania.game.generator import GameGenerator
+from randovania.game.gui import GameGui
+from randovania.game.layout import GameLayout
 from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
 from randovania.games.prime3.layout.corruption_cosmetic_patches import CorruptionCosmeticPatches
 from randovania.games.prime3.layout.preset_describer import CorruptionPresetDescriber
@@ -19,11 +23,11 @@ def _options() -> type[PerGameOptions]:
     return CorruptionPerGameOptions
 
 
-def _gui() -> game.GameGui:
+def _gui() -> GameGui:
     from randovania.games.prime3 import gui
     from randovania.games.prime3.layout import progressive_items
 
-    return game.GameGui(
+    return GameGui(
         tab_provider=gui.prime3_preset_tabs,
         cosmetic_dialog=gui.CorruptionCosmeticPatchesDialog,
         export_dialog=gui.CorruptionGameExportDialog,
@@ -32,14 +36,14 @@ def _gui() -> game.GameGui:
     )
 
 
-def _generator() -> game.GameGenerator:
+def _generator() -> GameGenerator:
     from randovania.games.prime3.generator.pickup_pool.pool_creator import corruption_specific_pool
     from randovania.generator.base_patches_factory import BasePatchesFactory
     from randovania.generator.filler.weights import ActionWeights
     from randovania.generator.hint_distributor import AllJokesHintDistributor
     from randovania.resolver.bootstrap import MetroidBootstrap
 
-    return game.GameGenerator(
+    return GameGenerator(
         pickup_pool_creator=corruption_specific_pool,
         bootstrap=MetroidBootstrap(),
         base_patches_factory=BasePatchesFactory(),
@@ -66,10 +70,10 @@ def _hash_words() -> list[str]:
     return HASH_WORDS
 
 
-game_data: game.GameData = game.GameData(
+game_data: GameData = GameData(
     short_name="Corruption",
     long_name="Metroid Prime 3: Corruption",
-    development_state=game.DevelopmentState.STABLE,
+    development_state=DevelopmentState.STABLE,
     presets=[{"path": "starter_preset.rdvpreset"}],
     faq=[
         (
@@ -95,7 +99,7 @@ game_data: game.GameData = game.GameData(
         ),
     ],
     hash_words=_hash_words(),
-    layout=game.GameLayout(
+    layout=GameLayout(
         configuration=CorruptionConfiguration,
         cosmetic_patches=CorruptionCosmeticPatches,
         preset_describer=CorruptionPresetDescriber(),
