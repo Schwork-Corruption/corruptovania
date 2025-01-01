@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 def prime3_preset_tabs(editor: PresetEditor, window_manager: WindowManager) -> list[type[PresetTab]]:
     from randovania.games.prime3.gui.preset_settings.corruption_patches_qol import PresetCorruptionQol
     from randovania.games.prime3.gui.preset_settings.corruption_starting_area_tab import PresetCorruptionStartingArea
+    from randovania.games.prime3.gui.preset_settings.corruption_teleporters_tab import PresetTeleportersPrime3
     from randovania.gui.preset_settings.generation_tab import PresetGeneration
     from randovania.gui.preset_settings.location_pool_tab import PresetLocationPool
     from randovania.gui.preset_settings.metroid_item_pool_tab import MetroidPresetItemPool
@@ -25,4 +26,5 @@ def prime3_preset_tabs(editor: PresetEditor, window_manager: WindowManager) -> l
         PresetPatcherEnergy,
         PresetCorruptionStartingArea,
         PresetCorruptionQol,
+        PresetTeleportersPrime3,
     ]

@@ -48,6 +48,7 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         ][0]
 
         mp3_update = self.configuration.MP3Update
+        phaaze_skip = self.configuration.teleporters.skip_final_bosses
 
         starting_items = patches.starting_resources()
         starting_items.add_resource_gain(
@@ -112,5 +113,6 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             "random_welding_colors": cosmetic.random_welding_colors,
             "missile_required_mains": missile_required_mains,
             "ship_missile_required_mains": ship_missile_required_mains,
+            "phaaze_skip": phaaze_skip,
             "mp3_update": mp3_update,
         }

@@ -167,6 +167,7 @@ class CorruptionGameExporter(GameExporter):
                 "--fast-flying",  # ''
                 "--require-launcher" if patch_data["missile_required_mains"] else "",
                 "--require-ship-missile" if patch_data["ship_missile_required_mains"] else "",
+                "--phaaze-skip" if patch_data["phaaze_skip"] else "",
             ],
             check=True,
         )
