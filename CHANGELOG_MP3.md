@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.6.0] - 2025-01-01
 
 - **Major** - Added: Phaaze Skip can now be enabled in your preset under the new elevators tab.
+- Fixed: The play solo game button works again.
 
 ## [1.5.1] - 2024-11-23
 
