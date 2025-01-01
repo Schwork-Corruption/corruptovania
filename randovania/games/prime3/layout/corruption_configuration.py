@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import dataclasses
 
-from games.common.prime_family.layout.lib.prime_trilogy_teleporters import PrimeTrilogyTeleporterConfiguration
-
 from randovania.game.game_enum import RandovaniaGame
+from randovania.games.common.prime_family.layout.lib.prime_trilogy_teleporters import (
+    PrimeTrilogyTeleporterConfiguration,
+)
 from randovania.layout.base.base_configuration import BaseConfiguration
 
 
