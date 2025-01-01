@@ -27,10 +27,8 @@ class PrimeTrilogyTeleporterConfiguration(TeleporterConfiguration):
                 gateway = NodeIdentifier.create("Temple Grounds", "Sky Temple Gateway", "Elevator to Great Temple")
                 static[gateway] = NodeIdentifier.create("Temple Grounds", "Credits", "Event - Dark Samus 3 and 4")
             elif self.game == RandovaniaGame.METROID_PRIME_CORRUPTION:
-                gateway = NodeIdentifier.create("Phaaze", "Landing Site", "Samus Ship")
-                static[gateway] = NodeIdentifier.create(
-                    "Phaaze", "Sanctum (Aurora Unit 313)", "Event - Aurora Unit 313"
-                )
+                phaaze = NodeIdentifier.create("Phaaze", "Landing Site", "Samus Ship")
+                static[phaaze] = NodeIdentifier.create("Phaaze", "Sanctum (Aurora Unit 313)", "Event - Aurora Unit 313")
             else:
                 raise ValueError(f"Unsupported skip_final_bosses and {self.game}")
 

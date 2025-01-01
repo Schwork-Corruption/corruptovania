@@ -96,8 +96,53 @@
                                 "comment": null,
                                 "items": []
                             }
+                        },
+                        "Door to Sanctum (Aurora Unit 313)": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "PhaazeSkip",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
+                },
+                "Door to Sanctum (Aurora Unit 313)": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 34.52,
+                        "y": 29.92,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "door",
+                    "default_connection": {
+                        "region": "Phaaze",
+                        "area": "Sanctum (Aurora Unit 313)",
+                        "node": "Door to Landing Site"
+                    },
+                    "default_dock_weakness": "Normal Door",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {}
                 }
             }
         },
@@ -1239,6 +1284,44 @@
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
                     "connections": {}
+                },
+                "Door to Landing Site": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 355.65,
+                        "y": -0.01,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "door",
+                    "default_connection": {
+                        "region": "Phaaze",
+                        "area": "Landing Site",
+                        "node": "Door to Sanctum (Aurora Unit 313)"
+                    },
+                    "default_dock_weakness": "Normal Door",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Event - Aurora Unit 313": {
+                            "type": "resource",
+                            "data": {
+                                "type": "misc",
+                                "name": "PhaazeSkip",
+                                "amount": 1,
+                                "negate": false
+                            }
+                        }
+                    }
                 }
             }
         }
