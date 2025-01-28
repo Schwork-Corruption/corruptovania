@@ -124,7 +124,7 @@
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Enable a myriad of Quality of Life changes such as backing out of a flight destination, a menu HUD to prevent softlocks, allowing the peeks of some items via scanning certain objects, removing cutscenes, as well as various fixed crashes</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable a myriad of Quality of Life changes such as backing out of a flight destination, a Help Menu to help prevent softlocks, allowing the peeks of some items via scanning certain objects, removing cutscenes, as well as various fixed crashes&lt;/p&gt;&lt;p&gt;To activate the Help Menu in-game: &lt;br/&gt;While simultaneously pressing the A, B, and D-Pad Down buttons, shake both the Wii Remote and Nunchuk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
