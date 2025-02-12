@@ -8,6 +8,7 @@ from randovania.resolver.energy_tank_damage_state import EnergyTankDamageState
 
 if TYPE_CHECKING:
     from randovania.game_description.game_description import GameDescription
+    from randovania.game_description.resources.resource_database import ResourceDatabase
     from randovania.layout.base.base_configuration import BaseConfiguration
     from randovania.resolver.damage_state import DamageState
 
@@ -22,7 +23,9 @@ class CorruptionBootstrap(Bootstrap):
             game.region_list,
         )
 
-    def _get_enabled_misc_resources(self, configuration: CorruptionConfiguration) -> set[str]:
+    def _get_enabled_misc_resources(
+        self, configuration: CorruptionConfiguration, resource_database: ResourceDatabase
+    ) -> set[str]:
         enabled_resources = set()
         if configuration.teleporters.skip_final_bosses:
             enabled_resources.add("PhaazeSkip")
