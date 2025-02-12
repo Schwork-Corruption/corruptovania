@@ -3,10 +3,10 @@ from __future__ import annotations
 import typing
 
 import randovania.game.data
+import randovania.game.development_state
 import randovania.game.generator
 import randovania.game.gui
 import randovania.game.layout
-from randovania.game.development_state import DevelopmentState
 from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
 from randovania.games.prime3.layout.corruption_cosmetic_patches import CorruptionCosmeticPatches
 from randovania.games.prime3.layout.preset_describer import CorruptionPresetDescriber
@@ -73,7 +73,7 @@ def _hash_words() -> list[str]:
 game_data: randovania.game.data.GameData = randovania.game.data.GameData(
     short_name="Corruption",
     long_name="Metroid Prime 3: Corruption",
-    development_state=DevelopmentState.STABLE,
+    development_state=randovania.game.development_state.DevelopmentState.STABLE,
     presets=[{"path": "starter_preset.rdvpreset"}],
     faq=[
         (

@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from random import Random
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, override
 
 from randovania.exporter import item_names
 from randovania.exporter.hints import credits_spoiler, guaranteed_item_hint
-from randovania.exporter.hints.hint_exporter import HintExporter
 from randovania.exporter.patch_data_factory import PatchDataFactory
 from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description.db.dock_node import DockNode
@@ -149,6 +148,7 @@ def _construct_music_shuffle_dict(music_mode: MusicMode, rng: Random) -> dict[st
         "m_met2_caverns3_99",
         "m_met2_caverns4_99",
         "m_met2_metroid_hatching99",
+        "m_met2_metroidnest_10gentei99",
         "m_prologue99",
         "m_select99",
         "m_title99",
@@ -202,6 +202,11 @@ class MSRPatchDataFactory(PatchDataFactory):
 
     def game_enum(self) -> RandovaniaGame:
         return RandovaniaGame.METROID_SAMUS_RETURNS
+
+    @override
+    @classmethod
+    def hint_namer_type(cls) -> type[MSRHintNamer]:
+        return MSRHintNamer
 
     def _calculate_starting_inventory(self, resources: ResourceCollection) -> dict[str, int]:
         result = {}
@@ -269,7 +274,9 @@ class MSRPatchDataFactory(PatchDataFactory):
         alt_model = _ALTERNATIVE_MODELS.get(detail.model, [detail.model.name])
         model_names = alt_model
 
-        resources = get_resources_for_details(detail.original_pickup, detail.conditional_resources, detail.other_player)
+        resources = get_resources_for_details(
+            detail.original_pickup, detail.conditional_resources, detail.is_for_remote_player
+        )
 
         pickup_node = self.game.region_list.node_from_pickup_index(detail.index)
         pickup_type = pickup_node.extra.get("pickup_type", "actor")
@@ -296,16 +303,13 @@ class MSRPatchDataFactory(PatchDataFactory):
         return details
 
     def _encode_hints(self, rng: Random) -> list[dict]:
-        hint_namer = MSRHintNamer(self.description.all_patches, self.players_config)
-        exporter = HintExporter(hint_namer, self.rng, ["A joke hint."])
+        exporter = self.get_hint_exporter(self.description.all_patches, self.players_config, rng, ["A joke hint."])
 
         hints = [
             {
                 "accesspoint_actor": self._teleporter_ref_for(logbook_node),
                 "text": exporter.create_message_for_hint(
                     self.patches.hints[logbook_node.identifier],
-                    self.description.all_patches,
-                    self.players_config,
                     True,
                 ),
             }
@@ -320,7 +324,7 @@ class MSRPatchDataFactory(PatchDataFactory):
             dna_hint_mapping = guaranteed_item_hint.create_guaranteed_hints_for_resources(
                 self.description.all_patches,
                 self.players_config,
-                hint_namer,
+                exporter.namer,
                 hint_config.artifacts == ItemHintMode.HIDE_AREA,
                 artifacts,
                 False,
@@ -358,28 +362,51 @@ class MSRPatchDataFactory(PatchDataFactory):
 
         return hints
 
-    def _create_baby_metroid_hint(self) -> str:
+    def _create_final_boss_hint(self) -> str:
         hint_namer = MSRHintNamer(self.description.all_patches, self.players_config)
         hint_config = self.configuration.hints
 
-        baby_metroid = [(self.game.resource_database.get_item("Baby"))]
-        baby_metroid_hint: str = ""
-        if hint_config.baby_metroid != ItemHintMode.DISABLED:
-            temp_baby_hint = guaranteed_item_hint.create_guaranteed_hints_for_resources(
+        if self.configuration.final_boss == FinalBossConfiguration.RIDLEY:
+            final_boss_item = "Baby"
+            disabled_hint = f"Continue searching for the {final_boss_item} Metroid!"
+        elif self.configuration.final_boss == FinalBossConfiguration.QUEEN:
+            final_boss_item = "Ice"
+            disabled_hint = f"Continue searching for the {final_boss_item} Beam!"
+        elif self.configuration.final_boss == FinalBossConfiguration.DIGGERNAUT:
+            final_boss_item = "Bomb"
+            disabled_hint = f"Continue searching for the {final_boss_item}!"
+        # FIXME: correct for Arachnus but not for Random. Needs to actually check for the misc resources?
+        else:
+            return ""
+
+        final_boss_resource = [(self.game.resource_database.get_item(final_boss_item))]
+        final_boss_hint: str = ""
+
+        if hint_config.final_boss_item != ItemHintMode.DISABLED:
+            temp_final_boss_hint = guaranteed_item_hint.create_guaranteed_hints_for_resources(
                 self.description.all_patches,
                 self.players_config,
                 hint_namer,
-                hint_config.baby_metroid == ItemHintMode.HIDE_AREA,
-                baby_metroid,
+                hint_config.final_boss_item == ItemHintMode.HIDE_AREA,
+                final_boss_resource,
                 False,
             )
-            baby_metroid_hint = "A " + temp_baby_hint[baby_metroid[0]].replace(
-                " Metroid is located in ", "'s Cry can be heard echoing from|"
-            )
+            if final_boss_item == "Baby":
+                final_boss_hint = "A " + temp_final_boss_hint[final_boss_resource[0]].replace(
+                    " Metroid is located in ", "'s Cry can be heard echoing from|"
+                )
+            elif final_boss_item == "Bomb":
+                final_boss_hint = "A " + temp_final_boss_hint[final_boss_resource[0]].replace(
+                    "Bomb is located in ", "small explosion can be heard detonating from|"
+                )
+            elif final_boss_item == "Ice":
+                final_boss_hint = "A " + temp_final_boss_hint[final_boss_resource[0]].replace(
+                    "Ice Beam is located in ", "frosty breeze can be felt blowing in from|"
+                )
         else:
-            baby_metroid_hint = "Continue searching for the Baby Metroid!"
+            final_boss_hint = disabled_hint
 
-        return baby_metroid_hint
+        return final_boss_hint
 
     def _node_for(self, identifier: NodeIdentifier) -> Node:
         return self.game.region_list.node_by_identifier(identifier)
@@ -688,7 +715,7 @@ class MSRPatchDataFactory(PatchDataFactory):
             "text_patches": dict(sorted(self._static_text_changes().items())),
             "spoiler_log": self._credits_spoiler() if self.description.has_spoiler else {},
             "hints": self._encode_hints(self.rng),
-            "baby_metroid_hint": self._create_baby_metroid_hint(),
+            "final_boss_hint": self._create_final_boss_hint(),
             "cosmetic_patches": self._create_cosmetics(
                 self.description.get_seed_for_player(self.players_config.player_index)
             ),

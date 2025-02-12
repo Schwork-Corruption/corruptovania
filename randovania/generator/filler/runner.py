@@ -65,6 +65,7 @@ async def run_filler(
                     minimum_location_weight_for_hint_placement=config.minimum_location_weight_for_hint_placement,
                     single_set_for_pickups_that_solve=config.single_set_for_pickups_that_solve,
                     staggered_multi_pickup_placement=config.staggered_multi_pickup_placement,
+                    fallback_to_reweight_with_unsafe=False,
                 ),
             )
         )
@@ -86,7 +87,9 @@ async def run_filler(
         hint_distributor = player_pool.game_generator.hint_distributor
         results[player_state.index] = FillerPlayerResult(
             game=player_state.game,
-            patches=await hint_distributor.assign_post_filler_hints(patches, rng, player_pool, player_state),
+            patches=await hint_distributor.assign_post_filler_hints(
+                patches, rng, player_pool, player_state, player_pools
+            ),
             unassigned_pickups=player_state.pickups_left,
         )
 

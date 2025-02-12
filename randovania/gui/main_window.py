@@ -31,7 +31,7 @@ from randovania.interface_common.installation_check import find_bad_installation
 from randovania.layout.base.trick_level import LayoutTrickLevel
 from randovania.layout.layout_description import LayoutDescription
 from randovania.layout.versioned_preset import InvalidPreset, VersionedPreset
-from randovania.lib import enum_lib, json_lib
+from randovania.lib import enum_lib, json_lib, version_lib
 from randovania.resolver import debug
 
 if typing.TYPE_CHECKING:
@@ -140,7 +140,6 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
         super().__init__()
         self.setupUi(self)
-
         self.progress_bar.setVisible(False)
         self.stop_background_process_button.setVisible(False)
 
@@ -150,7 +149,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
         self.main_tab_widget.setTabVisible(self.main_tab_widget.count() - 1, False)
         self.intro_play_multiworld_button.setVisible(False)
-        self.setWindowTitle(f"Corruptovania {VERSION}")
+        self.setWindowTitle(f"Randovania {VERSION}")
         self._is_preview_mode = preview
         self.setAcceptDrops(True)
         common_qt_lib.set_default_window_icon(self)
@@ -215,6 +214,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
             image_path = game.data_path.joinpath("assets", "cover.png")
             logo = ClickableLabel(pack_tile)
+            logo.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
             logo.setPixmap(QtGui.QPixmap(os.fspath(image_path)))
             logo.setFrameStyle(QtWidgets.QFrame.Panel | QtWidgets.QFrame.Plain)
             logo.setScaledContents(True)
@@ -547,7 +547,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         await self._on_releases_data(await github_releases_data.get_releases())
 
     async def _on_releases_data(self, releases: list[dict] | None):
-        current_version = update_checker.strict_current_version()
+        current_version = version_lib.current_version()
         last_changelog = self._options.last_changelog_displayed
 
         (all_change_logs, new_change_logs, version_to_display) = update_checker.versions_to_display_for_releases(
@@ -675,7 +675,8 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
             QtWidgets.QMessageBox.critical(self, "Unsupported configuration for Tracker", str(e))
             return
 
-        self._map_tracker.show()
+        if self._map_tracker.confirm_open:
+            self._map_tracker.show()
 
     # Difficulties stuff
 

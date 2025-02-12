@@ -4,7 +4,7 @@ import collections
 import functools
 from typing import TYPE_CHECKING
 
-import wiiload  # type: ignore
+import wiiload  # type: ignore[import-untyped]
 from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtCore import Qt
 from qasync import asyncSlot  # type: ignore

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import typing
 from random import Random
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, override
 
 from randovania import monitoring
 from randovania.exporter import item_names
@@ -132,7 +132,7 @@ class AM2RPatchDataFactory(PatchDataFactory):
     ) -> dict:
         pickup_map_dict = {}
         for pickup in pickup_list:
-            if not pickup.other_player and pickup.conditional_resources[0].resources:
+            if not pickup.is_for_remote_player and pickup.conditional_resources[0].resources:
                 quantity = pickup.conditional_resources[0].resources[0][1]
             else:
                 quantity = 0
@@ -153,7 +153,7 @@ class AM2RPatchDataFactory(PatchDataFactory):
                     "name": pickup.model.name,
                     "speed": model_data.get(pickup.model.name, 0.2),
                 },
-                "item_effect": pickup.original_pickup.name if not pickup.other_player else "Nothing",
+                "item_effect": pickup.original_pickup.name if not pickup.is_for_remote_player else "Nothing",
                 "quantity": quantity,
                 "text": {
                     "header": (
@@ -166,7 +166,11 @@ class AM2RPatchDataFactory(PatchDataFactory):
             pickup_obj = pickup_map_dict[object_name]
             shiny_id = (pickup_obj["item_effect"], pickup_obj["sprite_details"]["name"], pickup_obj["text"]["header"])
 
-            if (shiny_id in self.SHINIES) and not pickup.other_player and rng.randint(0, self._EASTER_EGG_SHINY) == 0:
+            if (
+                (shiny_id in self.SHINIES)
+                and not pickup.is_for_remote_player
+                and rng.randint(0, self._EASTER_EGG_SHINY) == 0
+            ):
                 monitoring.metrics.incr("am2r_rolled_shiny", tags={"item": shiny_id[0]})
                 sprite, text = self.SHINIES[shiny_id]
                 pickup_obj["sprite_details"]["name"] = sprite
@@ -449,6 +453,11 @@ class AM2RPatchDataFactory(PatchDataFactory):
 
     def game_enum(self) -> RandovaniaGame:
         return RandovaniaGame.AM2R
+
+    @override
+    @classmethod
+    def hint_namer_type(cls) -> type[AM2RHintNamer]:
+        return AM2RHintNamer
 
     def _credits_spoiler(self) -> str:
         spoiler = "*Major Item Locations;;"

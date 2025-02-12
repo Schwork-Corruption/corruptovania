@@ -437,7 +437,7 @@ jobs:
 
       -
         name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3.7.1
+        uses: docker/setup-buildx-action@v3.9.0
 
       - name: Should Push
         id: decide_push
@@ -457,7 +457,7 @@ jobs:
       -
         name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v6.9.0
+        uses: docker/build-push-action@v6.13.0
         with:
           context: .
           file: ./Dockerfile.server
@@ -518,6 +518,16 @@ jobs:
         id: randovania_version
         run: |
           echo version=$(python tools/get_version_from_artifacts.py "packages/Corruptovania Linux Executable/") >> $GITHUB_OUTPUT
+
+      - name: Create Sentry release
+        uses: getsentry/action-release@v2
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: randovania
+        with:
+          environment: ${{ steps.decide_env.outputs.env }}
+          projects: randovania-client randovania-bot randovania-server
+          version: "v${{ steps.randovania_version.outputs.version }}"
 
       - name: Upload binaries to GitHub Release
         uses: svenstaro/upload-release-action@2.9.0
