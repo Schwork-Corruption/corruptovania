@@ -169,7 +169,7 @@ networkx==3.4.2
     # via randovania (setup.py)
 nod==1.9.4
     # via randovania (setup.py)
-numpy==2.2.2
+numpy==2.2.3
     # via
     #   contourpy
     #   matplotlib
@@ -212,7 +212,7 @@ propcache==0.2.1
     # via
     #   aiohttp
     #   yarl
-psutil==6.1.1
+psutil==7.0.0
     # via
     #   pid
     #   pytest-xdist
@@ -306,7 +306,7 @@ ruamel-yaml==0.18.10
     # via randovania (setup.py)
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
-sentry-sdk==2.20.0
+sentry-sdk==2.21.0
     # via randovania (setup.py)
 shiboken6==6.8.2.1
     # via pyside6-essentials
