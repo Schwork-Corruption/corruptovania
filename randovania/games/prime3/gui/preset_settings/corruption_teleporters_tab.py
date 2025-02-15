@@ -134,8 +134,8 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
         self.teleporters_description_label.setText("".join(descriptions))
 
         signal_handling.set_combo_with_value(self.teleporters_combo, config_teleporters.mode)
-        can_shuffle_source = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA)
-        can_shuffle_target = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA)
+        can_shuffle_source = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA,)
+        can_shuffle_target = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA,)
         static_nodes = set(config_teleporters.static_teleporters.keys())
 
         for origin, destination in self._teleporters_source_destination.items():
