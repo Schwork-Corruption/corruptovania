@@ -28,7 +28,6 @@ if TYPE_CHECKING:
     )
     from randovania.gui.lib.window_manager import WindowManager
     from randovania.interface_common.preset_editor import PresetEditor
-    from randovania.layout.base.base_configuration import BaseConfiguration
     from randovania.layout.preset import Preset
 
 
@@ -83,7 +82,7 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
             loc: self._create_check_for_source_teleporters(loc) for loc in locations
         }
         self._teleporters_source_for_location = copy.copy(checks)
-        self._teleporters_source_destination = {}
+        self._teleporters_source_destination: dict[NodeIdentifier, NodeIdentifier | None] = {}
 
         for location in sorted(locations):
             if location not in checks:
@@ -124,9 +123,9 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
             )
 
     def on_preset_changed(self, preset: Preset) -> None:
-        config: BaseConfiguration = preset.configuration
+        assert isinstance(preset.configuration, CorruptionConfiguration)
+        config = preset.configuration
         config_teleporters: PrimeTrilogyTeleporterConfiguration = config.teleporters
-        assert isinstance(config, CorruptionConfiguration)
 
         descriptions = [
             "<p>Controls where each elevator connects to.</p>",
@@ -135,27 +134,19 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
         self.teleporters_description_label.setText("".join(descriptions))
 
         signal_handling.set_combo_with_value(self.teleporters_combo, config_teleporters.mode)
-        can_shuffle_source = config_teleporters.mode not in (
-            TeleporterShuffleMode.VANILLA,
-            TeleporterShuffleMode.ECHOES_SHUFFLED,
-        )
-        can_shuffle_target = config_teleporters.mode not in (
-            TeleporterShuffleMode.VANILLA,
-            TeleporterShuffleMode.ECHOES_SHUFFLED,
-            TeleporterShuffleMode.TWO_WAY_RANDOMIZED,
-            TeleporterShuffleMode.TWO_WAY_UNCHECKED,
-        )
+        can_shuffle_source = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA)
+        can_shuffle_target = config_teleporters.mode not in (TeleporterShuffleMode.VANILLA)
         static_nodes = set(config_teleporters.static_teleporters.keys())
 
         for origin, destination in self._teleporters_source_destination.items():
             origin_check = self._teleporters_source_for_location[origin]
-            dest_check = self._teleporters_source_for_location.get(destination)
+            dest_check = self._teleporters_source_for_location.get(destination) if destination is not None else None
 
             assert origin_check or dest_check
 
             is_locked = origin in static_nodes
             if not is_locked and not can_shuffle_target:
-                is_locked = (destination in static_nodes) or (origin_check and not dest_check)
+                is_locked = (destination in static_nodes) or bool(origin_check and not dest_check)
 
             origin_check.setEnabled(can_shuffle_source and not is_locked)
             origin_check.setChecked(origin not in config_teleporters.excluded_teleporters.locations and not is_locked)

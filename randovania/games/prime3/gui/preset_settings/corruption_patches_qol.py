@@ -39,14 +39,14 @@ class PresetCorruptionQol(PresetTab, Ui_PresetCorruptionQol):
     def header_name(cls) -> str | None:
         return None
 
-    def _add_persist_option(self, check: QtWidgets.QCheckBox, attribute_name: str):
-        def persist(value: bool):
+    def _add_persist_option(self, check: QtWidgets.QCheckBox, attribute_name: str) -> None:
+        def persist(value: bool) -> None:
             with self._editor as editor:
                 editor.set_configuration_field(attribute_name, value)
 
         signal_handling.on_checked(check, persist)
 
-    def on_preset_changed(self, preset: Preset):
+    def on_preset_changed(self, preset: Preset) -> None:
         config = preset.configuration
         for f in _FIELDS:
             typing.cast(QtWidgets.QCheckBox, getattr(self, f"{f}_check")).setChecked(getattr(config, f))
