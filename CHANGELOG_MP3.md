@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - See changes for 1.7.0
 
-## [1.7.0] - 20225-02-15
+## [1.7.0] - 2025-02-15
 
-**Major** - Added: MP3Update has been bumped to v6.0, adding more qaulity of life improvements. [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v6.0)
+**Major** - Added: MP3Update has been bumped to v6.0, adding more quality of life improvements. [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v6.0)
 
 #### Logic Database
 
