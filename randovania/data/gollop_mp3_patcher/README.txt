@@ -3,7 +3,11 @@ This is a mod for Corruption intended to be used in conjuction with Gollop's MP3
 
 How To INSTALL:
 
-NOTE: If you are installing for the first time, it is recommended that you re-export your game for clean files, you can do this by deleting the files in the folder "game_files" and "paks" inside Gollop's MP3Randomizer folder, then follow the instructions on their original readme file again.
+NOTE: If you are installing for the first time, you must re-export your game for clean files, you can do this by deleting the files in the folder "game_files" and "paks" inside Gollop's MP3Randomizer folder, then follow the instructions on their original readme file again. 
+(If this is your first time playing the randomizer altogether, ignore this)
+
+It is recommended to do this every now and then so your randomized image doesn't reach a ludicrous size eventually.
+
 
 Step 1: Extract MP3Update inside Gollop's MP3Randomizer folder.
 Step 2: In there, run MP3Update.bat and wait for it to finish.
@@ -12,10 +16,68 @@ After that, the changes are done and you can continue with the standard procedur
 There will be a new folder named "original_paks" which will have files needed for whenever this unevitably gets updated, so leave them there.
 
 How to UPDATE:
-Replace the contents of the new MP3Update folder with the old one (Inside MP3Randomizer) then replace (move) the files of "original_paks" into "paks". Then run MP3Update.bat in the MP3Randomizer folder.
+Replace the contents of the old MP3Update folder with the new one (Inside MP3Randomizer) then replace (move) the files of "original_paks" into "paks". Then run MP3Update.bat in the MP3Randomizer folder.
 
 
 And that's it! Enjoy the following changes:
+
+
+2/4/25 - Update 13
+
+## Base
+- Skipping the cutscene after selecting Save and Enter Ship prompt doesn't need to be done 3 times anymore.
+- Removed a black line seen on the middle of the screen in the Main Menu if internal resolution is higher than native.
+
+## Elysia
+- Added overlooked instant CSI reposition in Chozo Observatory - Weld Interaction.
+- Added a confirmation prompt in Main Docking Bay when Samus calls for her ship after defeating Ghor if it's carrying an object.
+- Re-Added Cancel Takeoff function in Main Docking Bay that was accidentally removed in the previous update.
+- Re-Added "End GunShip Under Attack Sequence" relay in Main Docking Bay that was accidentally removed in the previous update.
+- Removed the Seed Intro cinematic in Main Docking Bay's first arrival.
+- Removed elevator activation cutscene in Observatory Lift.
+- Removed some IFT calls in East Elysia.
+- Adjusted the look direction speed of Ziplines to reduce motion sickness.
+- Raised the floor of Zipline Station Alpha.
+- Added a Camera reset entering Main Docking Bay morphed while Ghor is active.
+
+## Bryyo
+- Shortened the Death Fall delay duration in Gateway and Crash Site.
+- Added the ability to call for a Ship Bombing Run in Jousting Field.
+- Moved Battery's CameraHint related objects to the Default layer in North Jungle Court.
+
+## Pirate Homeworld
+- Removed first landing cutscene in Landing Site Alpha.
+- Landing Site Charlie is now visible on the map.
+
+
+10/2/24 - Update 12
+
+## Base
+- Starting the game with Ship Grapple will now properly switch all the Ship Grapple related layers.
+
+## Elysia
+- The statue in Main Docking Access has been restored, changed Main Docking Bay so it doesn't conflict with the statue layer (I.E Ghor Crash).
+
+## Pirate Homeworld
+- Fixed Demolition Trooper count re-appearing after interacting with any terminal if exited out of Skyway Access.
+- Fixed an oversight in Defense Access related to the room reload prevention patch.
+
+
+2/5/24 - Update 11
+
+## Base
+- The Intro text after starting a new game has been removed.
+- The Mii Bobble Head is now active by default.
+- Added the ability to cancel the ship takeoff after selecting your destination.
+
+## Bryyo
+- Added a softlock prevention in Hangar Bay.
+
+## Elysia
+- Removed the elevator activation cutscene in Baracks Lift.
+
+## Pirate Homeworld
+- Added a softlock/crash prevention in Transit Station Leviathan.
 
 
 12/1/23 - Update 10
@@ -26,6 +88,7 @@ And that's it! Enjoy the following changes:
 - Admiral Dane won't take you to the map screen anymore after the rendezvous call.
 - Shortened the HUDMemo duration of Hall of Remembrance item.
 
+
 11/27/23 - Update 9
 
 - Disabling the Defense System will now deactivate the 1st Pass layer in Skyway Access, to prevent overlapping layer issues.
@@ -34,6 +97,7 @@ And that's it! Enjoy the following changes:
 - Fixed an issue in Zipline Station Delta where if you screw attacked to the middle platform you would get stuck far oob.
 - Shortened various long HUDMemo durations.
 - Removed the HUDMemo in Phaaze after getting permanent hypermode.
+
 
 10/18/23 - Update 8
 

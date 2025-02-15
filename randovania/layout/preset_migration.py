@@ -1105,8 +1105,8 @@ def _migrate_v91(preset: dict) -> dict:
     return preset
 
 
-def _migrate_v92(preset: dict) -> dict:
-    if preset["game"] == "prime1":
+def _migrate_v92(preset: dict, game: RandovaniaGame) -> dict:
+    if game == RandovaniaGame.METROID_PRIME:
         preset["configuration"]["remove_bars_great_tree_hall"] = False
 
     return preset
