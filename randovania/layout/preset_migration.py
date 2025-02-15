@@ -1110,6 +1110,8 @@ def _migrate_v92(preset: dict, game: RandovaniaGame) -> dict:
 
 def _migrate_v1c(preset: dict, game: RandovaniaGame) -> dict:
     if game == RandovaniaGame.METROID_PRIME_CORRUPTION:
+        if "teleporters" in preset["configuration"]:
+            return
         preset["configuration"]["teleporters"] = {
             "mode": "vanilla",
             "excluded_teleporters": [],
@@ -1212,11 +1214,11 @@ _MIGRATIONS = [
     _migrate_v90,  # msr configurable final boss
     _migrate_v91,  # two sided door search
     _migrate_v92,  # remove bars great tree hall
-    _migrate_v1c,  # add Phaaze skip
     _migrate_v93,  # update default dock_rando in Prime 1 to use RP Blast Shield Change
     _migrate_v94,
     _migrate_v95,  # msr rename baby_metroid hint to final_boss_item hint
     _migrate_v96,  # dread disable lights per region
+    _migrate_v1c,  # add Phaaze skip
 ]
 CURRENT_VERSION = migration_lib.get_version(_MIGRATIONS)
 

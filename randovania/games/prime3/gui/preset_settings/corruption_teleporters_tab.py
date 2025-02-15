@@ -8,6 +8,7 @@ from randovania.game_description.db.dock_node import DockNode
 from randovania.games.prime3.gui.generated.preset_teleporters_prime3_ui import (
     Ui_PresetTeleportersPrime3,
 )
+from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
 from randovania.gui.lib import signal_handling
 from randovania.gui.lib.node_list_helper import NodeListHelper
 from randovania.gui.preset_settings.preset_teleporter_tab import PresetTeleporterTab
@@ -25,9 +26,9 @@ if TYPE_CHECKING:
     from randovania.games.common.prime_family.layout.lib.prime_trilogy_teleporters import (
         PrimeTrilogyTeleporterConfiguration,
     )
-    from randovania.games.prime3.layout.corruption_configuration import CorruptionConfiguration
     from randovania.gui.lib.window_manager import WindowManager
     from randovania.interface_common.preset_editor import PresetEditor
+    from randovania.layout.base.base_configuration import BaseConfiguration
     from randovania.layout.preset import Preset
 
 
@@ -123,8 +124,9 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
             )
 
     def on_preset_changed(self, preset: Preset) -> None:
-        config: CorruptionConfiguration = preset.configuration
+        config: BaseConfiguration = preset.configuration
         config_teleporters: PrimeTrilogyTeleporterConfiguration = config.teleporters
+        assert isinstance(config, CorruptionConfiguration)
 
         descriptions = [
             "<p>Controls where each elevator connects to.</p>",
