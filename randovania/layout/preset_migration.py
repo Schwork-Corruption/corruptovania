@@ -1099,17 +1099,13 @@ def _migrate_v96(preset: dict, game: RandovaniaGame) -> None:
         }
 
 
-def _migrate_v91(preset: dict) -> dict:
+def _migrate_v91(preset: dict, game: RandovaniaGame) -> dict:
     preset["configuration"]["two_sided_door_lock_search"] = False
-
-    return preset
 
 
 def _migrate_v92(preset: dict, game: RandovaniaGame) -> dict:
     if game == RandovaniaGame.METROID_PRIME:
         preset["configuration"]["remove_bars_great_tree_hall"] = False
-
-    return preset
 
 
 def _migrate_v1c(preset: dict, game: RandovaniaGame) -> dict:
@@ -1121,7 +1117,6 @@ def _migrate_v1c(preset: dict, game: RandovaniaGame) -> dict:
             "skip_final_bosses": False,
             "allow_unvisited_room_names": True,
         }
-    return preset
 
 
 _MIGRATIONS = [
