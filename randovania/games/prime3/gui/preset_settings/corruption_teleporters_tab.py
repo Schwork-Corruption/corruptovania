@@ -63,14 +63,14 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
         super().__init__(editor, game_description, window_manager)
         signal_handling.on_checked(self.skip_final_bosses_check, self._update_require_final_bosses)
 
-    def setup_ui(self):
+    def setup_ui(self) -> None:
         self.setupUi(self)
 
     @classmethod
     def tab_title(cls) -> str:
         return "Elevators"
 
-    def _create_source_teleporters(self):
+    def _create_source_teleporters(self) -> None:
         row = 0
         region_list = self.game_description.region_list
 
@@ -115,14 +115,14 @@ class PresetTeleportersPrime3(PresetTeleporterTab, Ui_PresetTeleportersPrime3, N
 
             row += 1
 
-    def _update_require_final_bosses(self, checked: bool):
+    def _update_require_final_bosses(self, checked: bool) -> None:
         with self._editor as editor:
             editor.layout_configuration_teleporters = dataclasses.replace(
                 editor.layout_configuration_teleporters,
                 skip_final_bosses=checked,
             )
 
-    def on_preset_changed(self, preset: Preset):
+    def on_preset_changed(self, preset: Preset) -> None:
         config: CorruptionConfiguration = preset.configuration
         config_teleporters: PrimeTrilogyTeleporterConfiguration = config.teleporters
 
