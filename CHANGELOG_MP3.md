@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.7.0] - 20225-02-14
+## [1.7.1] - 2025-02-15
+
+- See changes for 1.7.0
+
+## [1.7.0] - 20225-02-15
 
 **Major** - Added: MP3Update has been bumped to v6.0, adding more qaulity of life improvements. [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v6.0)
 
