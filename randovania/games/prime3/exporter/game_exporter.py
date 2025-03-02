@@ -100,7 +100,7 @@ class CorruptionGameExporter(GameExporter):
                 Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
             )
 
-        # MP3Update, if applicatble
+        # MP3Update, if applicable
         if patch_data["mp3_update"]:
             # path to where paks are placed to be updated, then sent back to paks_path
             update_path = tempfile.mkdtemp()

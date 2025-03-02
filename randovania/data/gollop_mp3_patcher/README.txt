@@ -22,7 +22,16 @@ Replace the contents of the old MP3Update folder with the new one (Inside MP3Ran
 And that's it! Enjoy the following changes:
 
 
-2/4/25 - Update 13
+2/25/25 - Update 14
+
+## Elysia
+- Changed Skybridge Hera bridge movement triggers to only be interactable in order, preventing a death fall infinite loop softlock.
+- Removed previous Spire Dock edits, added a new Kinetic Orb Cannon in Maintenance Shaft AU side that shoots towards Security Station, Junction side changed to shoot towards Maintenance Shaft AU side.
+- Added a PlayerHint in Maintenance Shaft AU that is active when entering the room after placing the bomb in Spire Dock.
+- Improved room load scripting in Podworks.
+
+
+2/14/25 - Update 13
 
 ## Base
 - Skipping the cutscene after selecting Save and Enter Ship prompt doesn't need to be done 3 times anymore.
