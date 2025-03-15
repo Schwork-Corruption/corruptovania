@@ -82,6 +82,10 @@ Extra - asset_id: 4215957264467390882
       Any of the following:
           After Imperial Hall Fuel Gel Walls
           Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner) and Standable Terrain (Beginner)
+  > Morph Ball Door to Gel Cavern
+      After Gel Cavern Shortcut Activated
+  > Event - Fuel Gel Walls
+      Charge Beam or Plasma Beam or Enabled MP3Update
 
 > Door to Refinery Access; Heals? False
   * Layers: default
@@ -631,6 +635,8 @@ Extra - asset_id: 11307336868361004418
               Ice Missile and Missile
               Movement (Intermediate) and Use Screw Attack (No Space Jump)
               Movement (Advanced) and Use Boost Ball
+  > Event - Gel Cavern Shortcut Activated
+      Enabled MP3Update
 
 > Door to Temple Access; Heals? False
   * Layers: default
@@ -643,6 +649,12 @@ Extra - asset_id: 11307336868361004418
   * Layers: default
   * Morph Ball Door to Imperial Hall/Morph Ball Door to Gel Cavern
   * Extra - dock_index: 2
+
+> Event - Gel Cavern Shortcut Activated; Heals? False
+  * Layers: default
+  * Event Ancient Courtyard Halfpipe Wall
+  > Door to Cavern Entry
+      Trivial
 
 ----------------
 Temple Reservoir

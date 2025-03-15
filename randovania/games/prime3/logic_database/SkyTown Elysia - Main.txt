@@ -241,7 +241,9 @@ Extra - asset_id: 3066396911819856814
   > Event - Aurora Vaccine
       Trivial
   > Event - Aurora Circuits
-      Plasma Beam and After Aurora Chamber (Elysia) Reloaded After Vaccine
+      All of the following:
+          Plasma Beam
+          After Aurora Chamber (Elysia) Reloaded After Vaccine or Enabled MP3Update
   > Event - Initiate Bomb Sequence
       After Spire Prep Bomb
 
@@ -975,6 +977,8 @@ Extra - asset_id: 3166066018495772067
   * Layers: default
   * Normal Door to Maintenance Shaft AU/Door to Spire Dock (Post-Bomb)
   * Extra - dock_index: 0
+  > Door to Security Station
+      Enabled MP3Update
 
 > Door to Security Station; Heals? False
   * Layers: default
@@ -987,8 +991,10 @@ Extra - asset_id: 3166066018495772067
   * Layers: default
   * Normal Door to Junction/Door to Spire Dock (Post-Bomb)
   * Extra - dock_index: 2
+  > Door to Maintenance Shaft AU
+      Enabled MP3Update
   > Door to Security Station
-      Morph Ball
+      Morph Ball and Disabled MP3Update
 
 ----------------
 Escape Pod Bay

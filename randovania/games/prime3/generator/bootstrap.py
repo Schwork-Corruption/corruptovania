@@ -30,4 +30,6 @@ class CorruptionBootstrap(Bootstrap):
         enabled_resources = set()
         if configuration.teleporters.skip_final_bosses:
             enabled_resources.add("PhaazeSkip")
+        if configuration.MP3Update:
+            enabled_resources.add("MP3Update")
         return enabled_resources

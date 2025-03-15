@@ -63,7 +63,9 @@ Extra - asset_id: 13906902545873588315
               Morph Ball Bomb
               All of the following:
                   Knowledge (Beginner)
-                  Charge Beam or Missile
+                  Any of the following:
+                      Charge Beam or Missile
+                      Enabled MP3Update and Use Boost Ball
 
 > Door to Scrapvault; Heals? False
   * Layers: default
@@ -71,6 +73,8 @@ Extra - asset_id: 13906902545873588315
   * Extra - dock_index: 1
   > Door to Landing Site Alpha
       After Scrapvault Lift Gate Opened
+  > Event - Gate Opened
+      Enabled MP3Update
 
 > Event - Gate Opened; Heals? False
   * Layers: default

@@ -1135,6 +1135,10 @@
             "TempleOfBryyoGelPickup": {
                 "long_name": "Temple of Bryyo Gel Pickup Collected",
                 "extra": {}
+            },
+            "GelCavernShortcut": {
+                "long_name": "Gel Cavern Shortcut Activated",
+                "extra": {}
             }
         },
         "tricks": {
@@ -1282,6 +1286,10 @@
             },
             "PhaazeSkip": {
                 "long_name": "Phaaze Skip",
+                "extra": {}
+            },
+            "MP3Update": {
+                "long_name": "MP3Update",
                 "extra": {}
             }
         },

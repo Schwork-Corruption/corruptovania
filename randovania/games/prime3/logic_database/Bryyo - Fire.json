@@ -620,6 +620,58 @@
                                     }
                                 ]
                             }
+                        },
+                        "Morph Ball Door to Gel Cavern": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "GelCavernShortcut",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "Event - Fuel Gel Walls": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "ChargeUpgrade",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "PlasmaBeam",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
                 },
@@ -931,8 +983,8 @@
                     "node_type": "event",
                     "heal": false,
                     "coordinates": {
-                        "x": -60.92,
-                        "y": 12.17,
+                        "x": -69.22872814990778,
+                        "y": 6.369130731896071,
                         "z": 0.0
                     },
                     "description": "",
@@ -4691,6 +4743,23 @@
                                     }
                                 ]
                             }
+                        },
+                        "Event - Gel Cavern Shortcut Activated": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
                 },
@@ -4761,6 +4830,31 @@
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
                     "connections": {}
+                },
+                "Event - Gel Cavern Shortcut Activated": {
+                    "node_type": "event",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -33.22,
+                        "y": 64.25,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "event_name": "Event44",
+                    "connections": {
+                        "Door to Cavern Entry": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },

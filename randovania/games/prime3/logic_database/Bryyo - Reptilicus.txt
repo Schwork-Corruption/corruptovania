@@ -1118,6 +1118,7 @@ Extra - asset_id: 17231991603182176876
                   All of the following:
                       Nova Beam
                       X-Ray Visor or Invisible Objects (Intermediate)
+          Knowledge (Advanced) and Enabled MP3Update and Use Ship Missile
 
 ----------------
 Machineworks Bridge
