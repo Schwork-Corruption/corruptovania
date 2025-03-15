@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>508</width>
-    <height>337</height>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="description_label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In order to create a randomized game, an ISO file of Metroid Prime 3: Corruption for the Nintendo Wii is necessary.&lt;/p&gt;&lt;p&gt;Please note that nkit.iso files are &lt;b&gt;not&lt;/b&gt; compatible.&lt;br&gt;&lt;/br&gt; To convert these files, please use &lt;a href = &quot;https://gbatemp.net/download/nkit.36157/&quot;&gt;this tool&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
