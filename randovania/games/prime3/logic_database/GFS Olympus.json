@@ -2200,13 +2200,13 @@
             }
         },
         "Gunship": {
-            "default_node": "Door to Docking Bay 5",
+            "default_node": "Dock to Docking Bay 5",
             "hint_features": [],
             "extra": {
                 "asset_id": 15628730931753443250
             },
             "nodes": {
-                "Door to Docking Bay 5": {
+                "Dock to Docking Bay 5": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -2222,19 +2222,86 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": true,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Docking Bay 5",
-                        "node": "Door to Gunship"
+                        "node": "Dock to Gunship"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
-                    "connections": {}
+                    "connections": {
+                        "Samus Ship": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event1",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "Samus Ship": {
+                    "node_type": "teleporter_network",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -44.63,
+                        "y": 76.75,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "is_unlocked": {
+                        "type": "and",
+                        "data": {
+                            "comment": null,
+                            "items": []
+                        }
+                    },
+                    "network": "default",
+                    "requirement_to_activate": {
+                        "type": "and",
+                        "data": {
+                            "comment": null,
+                            "items": []
+                        }
+                    },
+                    "connections": {
+                        "Dock to Docking Bay 5": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event19",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -2521,7 +2588,7 @@
             }
         },
         "Docking Bay 5": {
-            "default_node": "Door to Gunship",
+            "default_node": "Dock to Gunship",
             "hint_features": [],
             "extra": {
                 "asset_id": 5834535855679580949
@@ -2596,7 +2663,7 @@
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2605,7 +2672,7 @@
                         }
                     }
                 },
-                "Door to Gunship": {
+                "Dock to Gunship": {
                     "node_type": "dock",
                     "heal": true,
                     "coordinates": {
@@ -2621,13 +2688,13 @@
                         "dock_index": 2
                     },
                     "valid_starting_location": true,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Gunship",
-                        "node": "Door to Docking Bay 5"
+                        "node": "Dock to Docking Bay 5"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
@@ -2647,9 +2714,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -22.5,
-                        "y": 2.5,
-                        "z": 50.0
+                        "x": 1.4051023597437293,
+                        "y": -15.650748554461615,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -2672,7 +2739,7 @@
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2697,7 +2764,7 @@
                     "valid_starting_location": false,
                     "event_name": "Event1",
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
                             "type": "and",
                             "data": {
                                 "comment": null,

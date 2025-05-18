@@ -23,6 +23,18 @@ class PresetCorruptionStartingArea(PresetMetroidStartingArea):
             ]
         )
 
+    def _starting_location_on_select_save_station(self) -> None:
+        region_list = self.game_description.region_list
+        saves = [node.identifier for node in region_list.iterate_nodes() if "Samus Ship" in node.name]
+
+        # Remove Olympus saves
+        saves = [i for i in saves if i.region != "G.F.S. Olympus"]
+
+        with self._editor as editor:
+            editor.set_configuration_field(
+                "starting_location", editor.configuration.starting_location.with_elements(saves, self.game_enum)
+            )
+
     def _starting_location_on_select_ships(self) -> None:
         region_list = self.game_description.region_list
         ships = [node.identifier for node in region_list.iterate_nodes() if "Samus Ship" in node.name]
