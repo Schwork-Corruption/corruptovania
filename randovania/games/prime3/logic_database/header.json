@@ -1876,8 +1876,8 @@
     ],
     "starting_location": {
         "region": "G.F.S. Olympus",
-        "area": "MedLab Delta",
-        "node": "Pickup (Phazon Enhancement Device)"
+        "area": "Gunship",
+        "node": "Dock to Docking Bay 5"
     },
     "minimal_logic": {
         "items_to_exclude": [
