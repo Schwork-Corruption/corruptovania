@@ -8,7 +8,7 @@ Extra - asset_id: 1594033074927626820
   > Pickup (Grapple Lasso)
       Trivial
   > Samus Ship
-      After Docking Hub Alpha Gate Unlocked
+      After Docking Hub Alpha Gate Unlocked or Enabled MP3Update
   > Event - Gate Opened
       Hyper Ball and Morph Ball and Open Barriers from Behind (Beginner) and Enter Hypermode
 
@@ -460,7 +460,9 @@ Extra - asset_id: 3044064450317642212
   * Normal Door to Maintenance Station/Door to Cargo Hub
   * Extra - dock_index: 3
   > Door to Hub Access
-      After Cargo Hub Lasso Lock Removed
+      Any of the following:
+          After Cargo Hub Lasso Lock Removed
+          Grapple Lasso and Enabled MP3Update
 
 > Door from Tower Elevator; Heals? False
   * Layers: default

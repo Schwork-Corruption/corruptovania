@@ -106,6 +106,7 @@ class CorruptionGameExporter(GameExporter):
             update_path = tempfile.mkdtemp()
             update_elements = [
                 "FrontEnd",
+                "InGameAudio",
                 "NoARAM",
                 "Metroid1",
                 "Metroid3",
@@ -135,9 +136,13 @@ class CorruptionGameExporter(GameExporter):
                     ],
                     check=True,
                 )
-            # NoARAM.pak is sent back to extract_path separately
+            # NoARAM.pak and InGameAudio.pak are sent back to extract_path separately
             shutil.copy(
                 Path(paks_path).joinpath("NoARAM.pak"), Path(extract_path).joinpath("DATA", "files", "NoARAM.pak")
+            )
+            shutil.copy(
+                Path(paks_path).joinpath("InGameAudio.pak"),
+                Path(extract_path).joinpath("DATA", "files", "InGameAudio.pak"),
             )
             shutil.rmtree(update_path)
 

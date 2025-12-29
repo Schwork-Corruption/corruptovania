@@ -222,7 +222,9 @@ Extra - asset_id: 3594029436312475339
   > Door to Transit Station 1-B
       After Proving Grounds Barrier Removed
   > Door to Proving Grounds Lift
-      After Proving Grounds Barrier Removed
+      Any of the following:
+          After Proving Grounds Barrier Removed
+          After Gandrayda and Enabled MP3Update
   > Event - Gandrayda
       Any of the following:
           All of the following:
