@@ -325,14 +325,17 @@ Extra - asset_id: 975168564662458837
   * Layers: default
   * Normal Door to Gunnery Station/Door to MedLab Delta
   * Extra - dock_index: 0
-  > Pickup (Phazon Enhancement Device)
-      Trivial
 
-> Pickup (Phazon Enhancement Device); Heals? False; Default Node
+> Dock to Control Tower; Heals? False
+  * Layers: default
+  * Open Passage to Control Tower/Dock to MedLab Delta
+  > Door to Gunnery Station
+      # Currently no support giving the player an item here
+      Enter Hypermode
+
+> Pickup (Phazon Enhancement Device); Heals? False
   * Layers: default
   * Pickup 0; Category? Major
-  > Door to Gunnery Station
-      Energy Tank
 
 ----------------
 Disposal Chamber
@@ -505,7 +508,13 @@ Extra - asset_id: 5834535855679580949
   * Layers: default
   * Event Berserker Lord (Olympus)
   > Dock to Gunship
+      Impossible
+  > Dock to Tower Elevator
       Trivial
+
+> Dock to Tower Elevator; Heals? False
+  * Layers: default
+  * Open Passage to Tower Elevator/Dock to Docking Bay 5
 
 ----------------
 Aurora Chamber

@@ -576,7 +576,11 @@ Extra - asset_id: 130975251460127249
   * Layers: default
   * Normal Door to Control Tower/Door to Tower Elevator
   * Extra - dock_index: 1
-  > Door to Cargo Hub
+
+> Dock to Docking Bay 5; Heals? False
+  * Layers: default
+  * Open Passage to Docking Bay 5/Dock to Tower Elevator
+  > Door to Control Tower
       Trivial
 
 ----------------
@@ -593,6 +597,10 @@ Extra - asset_id: 1413887626178850213
   * Layers: default
   * Event Norion Defense Cannon
   * Extra - different_strongly_connected_component: True
-  > Door to Tower Elevator
+  > Dock to MedLab Delta
       Trivial
+
+> Dock to MedLab Delta; Heals? False
+  * Layers: default
+  * Open Passage to MedLab Delta/Dock to Control Tower
 

@@ -3408,12 +3408,48 @@
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
+                    "connections": {}
+                },
+                "Dock to Docking Bay 5": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 0.8,
+                        "y": -26.33,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "G.F.S. Olympus",
+                        "area": "Docking Bay 5",
+                        "node": "Dock to Tower Elevator"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Cargo Hub": {
+                        "Door to Control Tower": {
                             "type": "and",
                             "data": {
-                                "comment": null,
-                                "items": []
+                                "comment": "THIS IS A HIJACK CONNECTION",
+                                "items": [
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": null,
+                                            "items": []
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -3483,7 +3519,7 @@
                     "valid_starting_location": false,
                     "event_name": "Event147",
                     "connections": {
-                        "Door to Tower Elevator": {
+                        "Dock to MedLab Delta": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -3491,6 +3527,34 @@
                             }
                         }
                     }
+                },
+                "Dock to MedLab Delta": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 30.16,
+                        "y": 3.39,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "G.F.S. Olympus",
+                        "area": "MedLab Delta",
+                        "node": "Dock to Control Tower"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {}
                 }
             }
         }

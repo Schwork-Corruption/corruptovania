@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.8.0] - 2026-01-01
 
 **Major** - Added: MP3Update has been bumped to v7.1, [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v7.0)
+- Changed: Exporting has been refactored and now saves about 3GB of working file space.
 
 #### Logic Database
 
-**Major** - Added: It is now possible to start in G.F.S. Olympus, albiet only from the initial Gunship tutorial.
+- Fixed: Games starting in G.F.S. Olympus can now generate successfully.
 **Major** - Added: All changes applied from MP3Update are now considered logical if enabled. The following changelog entries are changes only supplied in MP3Update:
 
 ##### Norion

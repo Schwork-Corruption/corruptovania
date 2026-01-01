@@ -1687,7 +1687,7 @@
             }
         },
         "MedLab Delta": {
-            "default_node": "Pickup (Phazon Enhancement Device)",
+            "default_node": "Event - Phazon Enhancement Device",
             "hint_features": [],
             "extra": {
                 "asset_id": 975168564662458837
@@ -1721,12 +1721,45 @@
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
                     "ui_custom_name": null,
+                    "connections": {}
+                },
+                "Dock to Control Tower": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -31.06,
+                        "y": -2.26,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "Norion",
+                        "area": "Control Tower",
+                        "node": "Dock to MedLab Delta"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Pickup (Phazon Enhancement Device)": {
-                            "type": "and",
+                        "Door to Gunnery Station": {
+                            "type": "or",
                             "data": {
-                                "comment": null,
-                                "items": []
+                                "comment": "Currently no support giving the player an item here",
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Enter Hypermode"
+                                    }
+                                ]
                             }
                         }
                     }
@@ -1735,8 +1768,8 @@
                     "node_type": "pickup",
                     "heal": false,
                     "coordinates": {
-                        "x": -31.46,
-                        "y": -2.38,
+                        "x": -31.472186563970904,
+                        "y": -2.406983311938382,
                         "z": 0.0
                     },
                     "description": "",
@@ -1748,17 +1781,7 @@
                     "pickup_index": 0,
                     "location_category": "major",
                     "hint_features": [],
-                    "connections": {
-                        "Door to Gunnery Station": {
-                            "type": "resource",
-                            "data": {
-                                "type": "items",
-                                "name": "EnergyTank",
-                                "amount": 1,
-                                "negate": false
-                            }
-                        }
-                    }
+                    "connections": {}
                 }
             }
         },
@@ -2765,13 +2788,64 @@
                     "event_name": "Event1",
                     "connections": {
                         "Dock to Gunship": {
+                            "type": "or",
+                            "data": {
+                                "comment": "THIS IS A HIJACK CONNECTION",
+                                "items": [
+                                    {
+                                        "type": "or",
+                                        "data": {
+                                            "comment": null,
+                                            "items": []
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "Dock to Tower Elevator": {
                             "type": "and",
                             "data": {
-                                "comment": null,
-                                "items": []
+                                "comment": "THIS IS A HIJACK CONNECTION",
+                                "items": [
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": null,
+                                            "items": []
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
+                },
+                "Dock to Tower Elevator": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 366.71,
+                        "y": 17.6,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "Norion",
+                        "area": "Tower Elevator",
+                        "node": "Dock to Docking Bay 5"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {}
                 }
             }
         },
