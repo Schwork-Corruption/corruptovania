@@ -14,9 +14,7 @@ if typing.TYPE_CHECKING:
     from randovania.interface_common.preset_editor import PresetEditor
     from randovania.layout.preset import Preset
 
-_FIELDS = [
-    "MP3Update",
-]
+_FIELDS = ["MP3Update", "disable_deflicker"]
 
 
 class PresetCorruptionQol(PresetTab, Ui_PresetCorruptionQol):

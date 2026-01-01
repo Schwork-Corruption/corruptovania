@@ -48,6 +48,7 @@ class CorruptionPatchDataFactory(PatchDataFactory):
         ][0]
 
         mp3_update = self.configuration.MP3Update
+        disable_deflicker = self.configuration.disable_deflicker
         phaaze_skip = self.configuration.teleporters.skip_final_bosses
 
         starting_items = patches.starting_resources()
@@ -115,4 +116,5 @@ class CorruptionPatchDataFactory(PatchDataFactory):
             "ship_missile_required_mains": ship_missile_required_mains,
             "phaaze_skip": phaaze_skip,
             "mp3_update": mp3_update,
+            "disable_deflicker": disable_deflicker,
         }

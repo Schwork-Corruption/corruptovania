@@ -1121,6 +1121,15 @@ def _migrate_v1c(preset: dict, game: RandovaniaGame) -> dict:
         }
 
 
+def _migrate_v2c(preset: dict, game: RandovaniaGame) -> dict:
+    if game == RandovaniaGame.METROID_PRIME_CORRUPTION:
+        config = preset["configuration"]
+        if "MP3Update" not in config:
+            config["MP3Update"] = False
+        if "disable_deflicker" not in config:
+            config["disable_deflicker"] = False
+
+
 _MIGRATIONS = [
     _migrate_v1,  # v1.1.1-247-gaf9e4a69
     _migrate_v2,  # v1.2.2-71-g0fbabe91
@@ -1219,6 +1228,7 @@ _MIGRATIONS = [
     _migrate_v95,  # msr rename baby_metroid hint to final_boss_item hint
     _migrate_v96,  # dread disable lights per region
     _migrate_v1c,  # add Phaaze skip
+    _migrate_v2c,  # add MP3Update and deflicker
 ]
 CURRENT_VERSION = migration_lib.get_version(_MIGRATIONS)
 

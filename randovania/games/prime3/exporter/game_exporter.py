@@ -63,15 +63,69 @@ class CorruptionGameExporter(GameExporter):
         patcher_path = randovania.get_data_path().joinpath("gollop_mp3_patcher")
         # path to where nod extracts the ISO
         extract_path = tempfile.mkdtemp()
-        # path to where the paks are place to be randomized
-        paks_path = tempfile.mkdtemp()
 
-        # Extract Iso to Temp
-        progress_update("Extracting ISO...", 0.0)
+        # Extract iso to extract_path
+        progress_update("Extracting ISO...", 0.1)
         subprocess.run(
             [patcher_path.joinpath("nodtool", "nodtool.exe"), "extract", export_params.input_path, extract_path],
             check=True,
         )
+
+        # remove attract videos
+        progress_update("Removing attract videos...", 0.2)
+        dummy_attracts = ["attract01.thp", "Attract02.thp"]
+        for name in dummy_attracts:
+            # place supplied dummy attract files directly in extract_path
+            shutil.copy(
+                Path(patcher_path).joinpath("dummy_attract", name),
+                Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
+            )
+
+        if patch_data["disable_deflicker"]:
+            progress_update("Disabling Deflicker...", 0.3)
+            # run MP3Update on main.dol directly, agnostic to MP3Update itself
+            subprocess.run(
+                [
+                    patcher_path.joinpath("hpatchz.exe"),
+                    "-f",
+                    Path(extract_path).joinpath("DATA", "sys", "main.dol"),
+                    patcher_path.joinpath("MP3Update", "main.hdiff"),
+                    Path(extract_path).joinpath("DATA", "sys", "main.dol"),
+                ],
+                check=True,
+            )
+
+        # MP3Update, if applicable
+        if patch_data["mp3_update"]:
+            progress_update("Applying Update...", 0.4)
+
+            update_elements = [
+                "FrontEnd",
+                "InGameAudio",
+                "NoARAM",
+                "Metroid1",
+                "Metroid3",
+                "Metroid4",
+                "Metroid5",
+                "Metroid6",
+                "Metroid7",
+                "UniverseArea",
+            ]
+            # run MP3Update on files listed above directly
+            for element in update_elements:
+                subprocess.run(
+                    [
+                        patcher_path.joinpath("hpatchz.exe"),
+                        "-f",
+                        Path(extract_path).joinpath("DATA", "files", f"{element}.pak"),
+                        patcher_path.joinpath("MP3Update", f"{element}.hdiff"),
+                        Path(extract_path).joinpath("DATA", "files", f"{element}.pak"),
+                    ],
+                    check=True,
+                )
+
+        # path to where the paks are placed to be randomized
+        paks_path = tempfile.mkdtemp()
         randomize_elements = [
             "FrontEnd.pak",
             "Logbook.pak",
@@ -88,66 +142,12 @@ class CorruptionGameExporter(GameExporter):
             "Standard.ntwk",
         ]
         # copy files listed above to paks_path
+        progress_update("Copying Paks...", 0.5)
         for name in randomize_elements:
             shutil.copy(Path(extract_path).joinpath("DATA", "files", name), Path(paks_path).joinpath(name))
 
-        # remove attract videos
-        dummy_attracts = ["attract01.thp", "Attract02.thp"]
-        for name in dummy_attracts:
-            # place supllied dummy attract files directly in extract_path
-            shutil.copy(
-                Path(patcher_path).joinpath("dummy_attract", name),
-                Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
-            )
-
-        # MP3Update, if applicable
-        if patch_data["mp3_update"]:
-            # path to where paks are placed to be updated, then sent back to paks_path
-            update_path = tempfile.mkdtemp()
-            update_elements = [
-                "FrontEnd",
-                "InGameAudio",
-                "NoARAM",
-                "Metroid1",
-                "Metroid3",
-                "Metroid4",
-                "Metroid5",
-                "Metroid6",
-                "Metroid7",
-                "UniverseArea",
-            ]
-            progress_update("Applying Update...", 0.2)
-
-            for name in update_elements:
-                # take needed files from extract_path and put them in update_path
-                shutil.copy(
-                    Path(extract_path).joinpath("DATA", "files", f"{name}.pak"),
-                    Path(update_path).joinpath(f"{name}.pak"),
-                )
-            for element in update_elements:
-                # update files and send them to paks_path
-                subprocess.run(
-                    [
-                        patcher_path.joinpath("hpatchz.exe"),
-                        "-f",
-                        Path(update_path).joinpath(f"{element}.pak"),
-                        patcher_path.joinpath("MP3Update", f"{element}.hdiff"),
-                        Path(paks_path).joinpath(f"{element}.pak"),
-                    ],
-                    check=True,
-                )
-            # NoARAM.pak and InGameAudio.pak are sent back to extract_path separately
-            shutil.copy(
-                Path(paks_path).joinpath("NoARAM.pak"), Path(extract_path).joinpath("DATA", "files", "NoARAM.pak")
-            )
-            shutil.copy(
-                Path(paks_path).joinpath("InGameAudio.pak"),
-                Path(extract_path).joinpath("DATA", "files", "InGameAudio.pak"),
-            )
-            shutil.rmtree(update_path)
-
         # randomize paks
-        progress_update("Randomizing Paks...", 0.4)
+        progress_update("Randomizing Paks...", 0.6)
         starting_items = patch_data["starting_items"].split(" ")
         starting_location = patch_data["starting_location"].split(" ")
         subprocess.run(
@@ -179,10 +179,10 @@ class CorruptionGameExporter(GameExporter):
 
         # create iso/wbfs
         progress_update(
-            "Converting to ISO..."
+            "Exporting to ISO..."
             if export_params.output_format == CorruptionOutputFormats.ISO
-            else "Converting to WBFS...",
-            0.6,
+            else "Exporting to WBFS...",
+            0.7,
         )
         subprocess.run(
             [

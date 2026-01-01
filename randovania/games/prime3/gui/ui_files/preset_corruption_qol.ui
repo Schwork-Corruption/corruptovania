@@ -43,8 +43,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>501</width>
-         <height>685</height>
+         <width>661</width>
+         <height>671</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="scroll_layout">
@@ -122,12 +122,26 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label">
+            <widget class="QLabel" name="MP3Update_label">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable a myriad of Quality of Life changes such as backing out of a flight destination, a Help Menu to help prevent softlocks, allowing the peeks of some items via scanning certain objects, removing cutscenes, as well as various fixed crashes&lt;/p&gt;&lt;p&gt;To activate the Help Menu in-game: &lt;br/&gt;While simultaneously pressing the A, B, and D-Pad Down buttons, shake both the Wii Remote and Nunchuk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="disable_deflicker_check">
+             <property name="text">
+              <string>Disable Deflicker</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="deflicker_label">
+             <property name="text">
+              <string>If checked, will make the image of the game sharper. Only advised if you intend to play on console with a Monitor/HDTV.</string>
              </property>
             </widget>
            </item>

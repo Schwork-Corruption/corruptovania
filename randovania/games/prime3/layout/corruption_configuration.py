@@ -15,6 +15,7 @@ class CorruptionConfiguration(BaseConfiguration):
     energy_per_tank: int = dataclasses.field(metadata={"min": 1, "max": 1000, "precision": 1})
     start_with_corrupted_hypermode: bool = False
     MP3Update: bool = False
+    disable_deflicker: bool = False
 
     @classmethod
     def game_enum(cls) -> RandovaniaGame:
