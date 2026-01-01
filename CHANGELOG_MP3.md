@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2026-01-01
+
+**Major** - Added: MP3Update has been bumped to v7.1, [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v7.0)
+
+#### Logic Database
+
+**Major** - Added: All changes applied from MP3Update are now considered logical if enabled. The following changelog entries are changes only supplied in MP3Update:
+
+##### Norion
+
+- Changed: The Grapple Lasso Blast Shields in Hub Access and Cargo Hub can now be openned from behind.
+
+##### Bryyo
+
+- Changed: Korakk can be defeated with Ship Missiles on Knowledge (Advanced).
+- Changed: The shortcut in Bryyo Fire can be taken both ways once it has been taken from the Gel Cavern side.
+
+##### SkyTown, Elysia
+
+- Changed: Aurora Chamber does not need to be reloaded to make the weld panels active.
+- Changed: Access to all three doors in Spire Dock (Post-Bomb) is now possible.
+
+##### Pirate Homeworld
+
+- Changed: The gate flap in Scrapvault Lift can be destroyed with Boost Ball. In addition the gate with automatically be openned if entering from Scrapvault
+
 ## [1.7.2] - 2025-03-02
 
 - Fixed: The main window title now correctly says Corruptovania again
