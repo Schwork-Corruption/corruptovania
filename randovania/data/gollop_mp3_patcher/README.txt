@@ -1,4 +1,4 @@
-This is a mod for Corruption intended to be used in conjuction with Gollop's MP3Randomizer program, since that project is discontinued, this mod takes it's place in terms of updating the game for adding certain Quality of Life improvements.
+This is a mod for Corruption intended to be used in conjunction with Gollop's MP3Randomizer program, since that project is discontinued, this mod takes it's place in terms of updating the game for adding certain Quality of Life improvements.
 
 
 How To INSTALL:
@@ -13,13 +13,70 @@ Step 1: Extract MP3Update inside Gollop's MP3Randomizer folder.
 Step 2: In there, run MP3Update.bat and wait for it to finish.
 
 After that, the changes are done and you can continue with the standard procedure of making a new seed.
-There will be a new folder named "original_paks" which will have files needed for whenever this unevitably gets updated, so leave them there.
+There will be a new folder named "original_paks" which will have files needed for whenever this inevitably gets updated, so leave them there.
 
 How to UPDATE:
 Replace the contents of the old MP3Update folder with the new one (Inside MP3Randomizer) then replace (move) the files of "original_paks" into "paks". Then run MP3Update.bat in the MP3Randomizer folder.
 
 
 And that's it! Enjoy the following changes:
+
+
+
+12/31/25 - Update 16
+
+- Changed the Menu Hotkey Shake input to be D-Pad Down Input.
+- Fixed Docking Bay 5 (Valhalla) Cockpit Cancel Takeoff input not being D-Pad Down.
+- Missed Changelog entries from previous update:
+ - All Blast Shields open the door automatically upon being destroyed.
+
+
+
+12/31/25 - Update 15
+
+## Base
+- Removed some leftover Hints.
+- Adjusted the Ship Cockpit Load ping timer to be longer.
+- Made Pickup Jingles audios get pre-loaded upon room entry.
+- Changed the "Cancel Takeoff" button on the Cockpit to D-Pad Down instead of B.
+
+## Norion
+- Activated Generators A and C.
+- Added an extra Hoppers Intro cutscene trigger in Cargo Dock B that is near the Generator Side (For random start)
+- Changed the Hub Access/Cargo Hub Lasso doors to be openable from both sides.
+- Changed the Pickup size in Substation East to be normal.
+- Removed 2/3 Grapple Grates in Cargo Hub so Lasso only needs to be used once.
+
+## G.F.S Valhalla
+- Removed Pirate Code acquisition cutscene.
+- Removed Pushback triggers in vacuumed rooms.
+
+## Bryyo
+- Changed Door to Crash Site in G.F.S. Theseus to not be locked anymore.
+- Removed the Top Crystal Vines destruction cutscene in Burrow.
+- Removed some Debug stuff in Hidden Court.
+
+## Elysia
+- Restored "Hull Armor Taking Damage" calls due to popular demand.
+- Defeating Ghor now disables all the Ship Under Attack sequence start layers.
+- Main Docking Bay Pickup gets activated after Ghor's Intro instead of Ghor's Outro.
+- Increased the speed of the elevators in Barracks Lift, Aurora Lift, Ballista Lift and Observatory Lift.
+- Increased the speed of Kinetic Orb Cannon Spinners.
+- Fixed a load stuttering issue in Skybridge Hera and enabled the "Shake Rattle And Roll" of the room (Unused from Vanilla).
+- Removed some Debug stuff in Main Docking Bay.
+- Added an Easter Egg somewhere in East Skytown, no I will not tell you what it is.
+
+## Pirate Homeworld
+- Changed Phazon Grubs "Bumps Player back" Triggers in Scrapworks to do less damage.
+- Restored Elevator Recall Triggers in Flux Control for the Voltage lift.
+- Grabbing the Pickup in Proving Grounds activates the elevator if you don't have Grapple Voltage.
+- Fixed Pirate Music sometimes not going away if left Skyway Access when the alarm is active. (Vanilla Fix)
+- Fixed getting stuck on the incorrect side if Solved the Airlock Puzzle while being inside the rotation ball trigger mid-cutscene (Vanilla Fix).
+
+## Phaaze
+- Removed the PermHypermode Cinema in Landing Site
+- Changed Samus' PlayerActor model in the ending cutscenes to show the Power Beam instead of the Hyper Beam
+
 
 
 2/25/25 - Update 14
@@ -29,6 +86,7 @@ And that's it! Enjoy the following changes:
 - Removed previous Spire Dock edits, added a new Kinetic Orb Cannon in Maintenance Shaft AU side that shoots towards Security Station, Junction side changed to shoot towards Maintenance Shaft AU side.
 - Added a PlayerHint in Maintenance Shaft AU that is active when entering the room after placing the bomb in Spire Dock.
 - Improved room load scripting in Podworks.
+
 
 
 2/14/25 - Update 13
@@ -59,6 +117,7 @@ And that's it! Enjoy the following changes:
 - Landing Site Charlie is now visible on the map.
 
 
+
 10/2/24 - Update 12
 
 ## Base
@@ -70,6 +129,7 @@ And that's it! Enjoy the following changes:
 ## Pirate Homeworld
 - Fixed Demolition Trooper count re-appearing after interacting with any terminal if exited out of Skyway Access.
 - Fixed an oversight in Defense Access related to the room reload prevention patch.
+
 
 
 2/5/24 - Update 11
@@ -87,6 +147,7 @@ And that's it! Enjoy the following changes:
 
 ## Pirate Homeworld
 - Added a softlock/crash prevention in Transit Station Leviathan.
+
 
 
 12/1/23 - Update 10
@@ -108,16 +169,19 @@ And that's it! Enjoy the following changes:
 - Removed the HUDMemo in Phaaze after getting permanent hypermode.
 
 
+
 10/18/23 - Update 8
 
 - The ALARM layer in Metroid Processing no longer get disabled after disabling the Pirate Defense System, to prevent a softlock regarding the 1st Pass Fight.
 - Reverted IFT Hint Calls patch due to it causing a different bug and not actually causing the hint calls to not go through.
 
 
+
 9/28/23 - Update 7
 
 - Fixed Weld Panel softlock in Scrapvault that happens when the commando intro cutscene starts while you're welding.
 - Fixed Seed IFTs still playing continously upon world changes.
+
 
 
 9/28/23 - Update 6
@@ -137,6 +201,7 @@ And that's it! Enjoy the following changes:
 - 'Shield Flicker' layers in Temple Generator and Jungle Generator are now active by default.
 
 
+
 9/26/23 - Update 5
 
 - Removed Big Door opening cinematic scripting in Cargo Dock A.
@@ -147,6 +212,7 @@ And that's it! Enjoy the following changes:
 - Shortened the HUDMemo duration of Ballista Storage item.
 - Fixed incorrect CSI positions in Phazon Quarry and Defense Access.
 - Added PAL fix for Mine Lift.
+
 
 
 9/25/23 - Update 4
@@ -184,6 +250,7 @@ And that's it! Enjoy the following changes:
 - Shortened the HUDMemo duration of Pirate Code.
 
 
+
 9/20/23 - Update 3
 
 - Fixed Help Menu scripting misbehaving for the 2nd Time.
@@ -191,10 +258,12 @@ And that's it! Enjoy the following changes:
 - Improved loading scripting for all Transit Station rooms.
 
 
+
 9/19/23 - Update 2
 
 - Fixed the Help Menu not working properly.
 - Fixed Hangar Bay not having a SpawnPoint, putting the player out of bounds when loading the game from here.
+
 
 
 9/19/23 - Update 1
@@ -227,6 +296,7 @@ And that's it! Enjoy the following changes:
 ## Valhalla
 - Added a short cutscene in Auxiliary Lift that shows you what the item is, trigger it by scanning the Panel.
 - Added a reposition in front of the hand panel after inserting the Energy Cell in Docking Bay 5.
+
 
 
 9/17/23 - Release
