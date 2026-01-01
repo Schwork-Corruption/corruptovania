@@ -767,7 +767,7 @@ Extra - asset_id: 14006603351279167667
   > Event - Golem
       All of the following:
           Morph Ball Bomb and Missile and Morph Ball
-          Charge Beam or Plasma Beam
+          Charge Beam or Plasma Beam or Enabled MP3Update
           Any of the following:
               Ice Missile
               Boost Ball and Movement (Intermediate)

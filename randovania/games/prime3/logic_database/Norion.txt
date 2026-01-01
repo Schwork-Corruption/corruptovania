@@ -390,7 +390,7 @@ Extra - asset_id: 12327360187860907075
   * Seeker Missiles Blast Shield to Generator B Access/Door to Cargo Dock B
   * Extra - dock_index: 1
   > Room Center
-      After Cargo Dock B Unlocked
+      After Cargo Dock B Unlocked or Enabled MP3Update
 
 > Samus Ship; Heals? True; Default Node
   * Layers: default

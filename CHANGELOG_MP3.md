@@ -11,14 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Logic Database
 
+**Major** - Added: It is now possible to start in G.F.S. Olympus, albiet only from the initial Gunship tutorial.
 **Major** - Added: All changes applied from MP3Update are now considered logical if enabled. The following changelog entries are changes only supplied in MP3Update:
 
 ##### Norion
 
-- Changed: The Grapple Lasso Blast Shields in Hub Access and Cargo Hub can now be openned from behind.
+- Changed: The Grapple Lasso Blast Shields in Hub Access and Cargo Hub can now be opened from behind.
+- Changed: The Metroid Hopper cutscene in Cargo Dock B and be reached from behind the phazon wall, repositioning Samus on the other side of the door.
 
 ##### Bryyo
 
+- Changed: The fuel gel spout in Hidden Court can be ignited with an uncharged shot.
 - Changed: Korakk can be defeated with Ship Missiles on Knowledge (Advanced).
 - Changed: The shortcut in Bryyo Fire can be taken both ways once it has been taken from the Gel Cavern side.
 
@@ -29,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ##### Pirate Homeworld
 
-- Changed: The gate flap in Scrapvault Lift can be destroyed with Boost Ball. In addition the gate with automatically be openned if entering from Scrapvault
+- Changed: The gate flap in Scrapvault Lift can be destroyed with Boost Ball. In addition the gate will automatically be opened if entering from Scrapvault
 
 ## [1.7.2] - 2025-03-02
 

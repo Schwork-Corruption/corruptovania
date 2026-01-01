@@ -2289,12 +2289,29 @@
                     "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
-                            "type": "resource",
+                            "type": "or",
                             "data": {
-                                "type": "events",
-                                "name": "Event136",
-                                "amount": 1,
-                                "negate": false
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event136",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
