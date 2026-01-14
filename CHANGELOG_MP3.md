@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.1] - 2026-01-13
+
+- Fixed: MP3Update has been bumped to 7.2, which fixes the infinite loading bug when loading into Sanctum.
+
 ## [1.8.0] - 2026-01-01
 
 **Major** - Added: MP3Update has been bumped to v7.1, [See the full changelog for more information](https://github.com/MrMiguel211/MP3Update/releases/tag/MP3Update_v7.0)
