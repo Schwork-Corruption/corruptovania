@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.8.1] - 2026-01-13
 
 - Fixed: MP3Update has been bumped to 7.2, which fixes the infinite loading bug when loading into Sanctum.
+- Fixed: The text to enable MP3Update's help menu has been updated to reflect the new version.
 
 ## [1.8.0] - 2026-01-01
 
