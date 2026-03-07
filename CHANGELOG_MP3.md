@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.2] - 2026-03-07
+
+#### Logic Database
+
+##### Bryyo
+
+- Fixed: Refactored the logic around taking the shortcut between Gel Cavern and Imperial Hall
+
 ## [1.8.1] - 2026-01-13
 
 - Fixed: MP3Update has been bumped to 7.2, which fixes the infinite loading bug when entering Sanctum.
