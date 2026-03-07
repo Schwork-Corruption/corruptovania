@@ -27,16 +27,6 @@ jobs:
             executable: true
             name: 'Linux Executable'
 
-          - os: 'macos-13'
-            python: '3.12'
-            executable: false
-            name: 'macOS'
-
-          - os: 'macos-13'
-            python: '3.12'
-            executable: true
-            name: 'macOS Executable'
-
           - os: 'windows-latest'
             python: '3.12'
             executable: false

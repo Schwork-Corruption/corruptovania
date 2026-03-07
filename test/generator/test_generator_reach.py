@@ -105,7 +105,7 @@ def _compare_actions(
 _ignore_events_for_game = {
     RandovaniaGame.METROID_PRIME: {"Event33"},
     RandovaniaGame.METROID_PRIME_ECHOES: {"Event91", "Event92", "Event97"},
-    RandovaniaGame.METROID_PRIME_CORRUPTION: {"Event1", "Event146", "Event147", "Event148", "Event154"},
+    RandovaniaGame.METROID_PRIME_CORRUPTION: {"Event154"},
     RandovaniaGame.SUPER_METROID: {"Event6"},
     RandovaniaGame.METROID_DREAD: {},
     RandovaniaGame.CAVE_STORY: {
@@ -122,8 +122,8 @@ _ignore_events_for_game = {
 }
 
 _ignore_pickups_for_game = {
-    # These 3 indices are in Olympus and are unreachable given the default preset
-    RandovaniaGame.METROID_PRIME_CORRUPTION: {0, 1, 2},
+    # This index is PED Suit in MedLab Delta, which cannot be altered by gollop's patcher.
+    RandovaniaGame.METROID_PRIME_CORRUPTION: {0},
     # Unknown reason why
     RandovaniaGame.CAVE_STORY: {30, 31, 41, 45},
 }

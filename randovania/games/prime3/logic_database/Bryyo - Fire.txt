@@ -83,7 +83,7 @@ Extra - asset_id: 4215957264467390882
           After Imperial Hall Fuel Gel Walls
           Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner) and Standable Terrain (Beginner)
   > Morph Ball Door to Gel Cavern
-      After Gel Cavern Shortcut Activated
+      After Gel Cavern Shortcut Activated and Enabled MP3Update
   > Event - Fuel Gel Walls
       Charge Beam or Plasma Beam or Enabled MP3Update
 
@@ -628,15 +628,14 @@ Extra - asset_id: 11307336868361004418
   * Extra - dock_index: 0
   > Door to Temple Access
       Trivial
-  > Morph Ball Door to Imperial Hall
+  > Event - Gel Cavern Shortcut Activated
       All of the following:
-          Morph Ball and After Rundas
+          Morph Ball
+          After Rundas or Enabled MP3Update
           Any of the following:
               Ice Missile and Missile
               Movement (Intermediate) and Use Screw Attack (No Space Jump)
               Movement (Advanced) and Use Boost Ball
-  > Event - Gel Cavern Shortcut Activated
-      Enabled MP3Update
 
 > Door to Temple Access; Heals? False
   * Layers: default
@@ -649,11 +648,18 @@ Extra - asset_id: 11307336868361004418
   * Layers: default
   * Morph Ball Door to Imperial Hall/Morph Ball Door to Gel Cavern
   * Extra - dock_index: 2
+  > Door to Cavern Entry
+      All of the following:
+          Enabled MP3Update
+          Any of the following:
+              Ice Missile and Missile
+              Movement (Intermediate) and Use Screw Attack (No Space Jump)
+              Movement (Advanced) and Use Boost Ball
 
 > Event - Gel Cavern Shortcut Activated; Heals? False
   * Layers: default
-  * Event Ancient Courtyard Halfpipe Wall
-  > Door to Cavern Entry
+  * Event Gel Cavern Shortcut Activated
+  > Morph Ball Door to Imperial Hall
       Trivial
 
 ----------------
