@@ -271,7 +271,7 @@ Extra - asset_id: 3594029436312475339
                       Fight Ghor-G
                       Combat (Intermediate) or Damage ≥ 249
   > Event - Barrier
-      Use Grapple Voltage
+      After Gandrayda and Use Grapple Voltage
 
 ----------------
 Metroid Processing
