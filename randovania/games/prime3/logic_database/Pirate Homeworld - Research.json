@@ -2077,8 +2077,25 @@
                             }
                         },
                         "Event - Barrier": {
-                            "type": "template",
-                            "data": "Use Grapple Voltage (Lasso and Voltage)"
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Use Grapple Voltage (Lasso and Voltage)"
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event11",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ],
+                            },
                         }
                     }
                 }
