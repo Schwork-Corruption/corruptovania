@@ -132,7 +132,7 @@ class Permalink:
 
     @classmethod
     def current_randovania_version(cls):
-        return randovania.GIT_HASH
+        return randovania.GIT_HASH or randovania.UNKNOWN_GIT_HASH
 
     @classmethod
     def from_parameters(cls, parameters: GeneratorParameters, seed_hash: bytes | None = None) -> Permalink:

@@ -6,6 +6,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
+import randovania
 from randovania.bitpacking import bitpacking
 from randovania.game.game_enum import RandovaniaGame
 from randovania.layout import generator_parameters
@@ -134,3 +135,9 @@ def test_decode_old_version(permalink: str, version: int):
     )
     with pytest.raises(ValueError, match=re.escape(expect)):
         Permalink.from_str(permalink)
+
+
+def test_current_randovania_version_uses_unknown_fallback(mocker):
+    mocker.patch("randovania.GIT_HASH", None)
+
+    assert Permalink.current_randovania_version() == randovania.UNKNOWN_GIT_HASH
