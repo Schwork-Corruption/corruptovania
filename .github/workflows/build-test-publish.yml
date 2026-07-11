@@ -266,7 +266,7 @@ jobs:
 
       - name: Install Python packages
         run: |
-          python -m pip install --only-binary=:all: --no-build-isolation -e ".[gui,exporters,test]" -c requirements.txt
+          python -m pip install --only-binary=:all: --no-build-isolation -e ".[gui,test]" -c requirements.txt
 
       - name: Prepare universal2 wheels
         run: |
