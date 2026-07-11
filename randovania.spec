@@ -22,7 +22,6 @@ game_assets = [
 datas = [
     ("randovania/data/configuration.json", "data/"),
     ("randovania/data/binary_data", "data/binary_data"),
-    ("randovania/data/ClarisPrimeRandomizer", "data/ClarisPrimeRandomizer"),
     ("randovania/data/gollop_mp3_patcher", "data/gollop_mp3_patcher"),
     ("randovania/data/gui_assets", "data/gui_assets"),
     ("randovania/data/icons", "data/icons"),
@@ -33,6 +32,9 @@ datas = [
     *game_assets,
     ("README.md", "data/"),
 ]
+if platform.system() != "Darwin":
+    datas.append(("randovania/data/ClarisPrimeRandomizer", "data/ClarisPrimeRandomizer"))
+
 datas += copy_metadata("randovania", recursive=True)
 if platform.system() == "Linux":
     linux_datas = [("randovania/data/xdg_assets", "xdg_assets")]
