@@ -121,6 +121,10 @@ def remove_unnecessary_dotnet_deps(package_folder: Path) -> None:
     Some wheels ship dependencies for a lot of OS' and arches.
     Since the randovania executable here for a specific OS+arch, we want to remove everything else for spaces sake.
     """
+    if platform.system() == "Darwin":
+        # The macOS app is built as universal2, so removing one runtime slice would
+        # make that dependency architecture-specific again.
+        return
 
     dotnet_os = "unknown"
     dotnet_arch = "unknown"
@@ -163,6 +167,21 @@ def write_frozen_file_list(package_folder: Path) -> None:
     json_lib.write_path(
         internal.joinpath("data", "frozen_file_list.json"), installation_check.hash_everything_in(internal)
     )
+
+
+def sign_macos_bundle(app_folder: Path) -> None:
+    identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
+    command = ["codesign", "--force", "--deep", "--sign", identity]
+
+    entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
+    if entitlements_path:
+        command.extend(["--entitlements", entitlements_path])
+
+    if identity != "-":
+        command.extend(["--options", "runtime", "--timestamp"])
+
+    command.append(os.fspath(app_folder))
+    subprocess.run(command, check=True)
 
 
 async def main():
@@ -225,6 +244,7 @@ async def main():
         create_windows_zip(package_folder)
         write_frozen_file_list(package_folder)
     elif platform.system() == "Darwin":
+        sign_macos_bundle(app_folder)
         create_macos_zip(app_folder)
     elif platform.system() == "Linux":
         create_linux_zip(package_folder)
@@ -248,8 +268,8 @@ def create_windows_zip(package_folder):
 
 
 def create_macos_zip(folder_to_pack: Path):
-    output = f"dist/{zip_folder}-macos.tar.gz"
-    with tarfile.open(_ROOT_FOLDER.joinpath(f"dist/{zip_folder}-macos.tar.gz"), "w:gz") as release_zip:
+    output = f"dist/{zip_folder}-macos-universal2.tar.gz"
+    with tarfile.open(_ROOT_FOLDER.joinpath(output), "w:gz") as release_zip:
         print(f"Creating {output} from {folder_to_pack}.")
         release_zip.add(folder_to_pack, f"{zip_folder}/Corruptovania.app")
         print("Finished.")

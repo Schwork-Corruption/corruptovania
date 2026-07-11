@@ -37,6 +37,17 @@ Have fun and start randomizing!
 In the [releases page](https://github.com/schwork-corruption/corruptovania/releases), we have zip files
 with everything ready to use. Just extract and run!
 
+macOS releases are published as `corruptovania-<version>-macos-universal2.tar.gz`. Extract the archive and open
+`Corruptovania.app`.
+
+Current macOS release support:
+- Intel `x86_64` and Apple Silicon `arm64` are both included in the same Universal2 app.
+- The current minimum supported macOS version is macOS 12 Monterey.
+- macOS 11 Big Sur is not currently possible with this dependency set because `PySide6-Essentials==6.8.2.1`
+  and `shiboken6==6.8.2.1` only publish `macosx_12_0_universal2` wheels for Python 3.12.
+- CI uses ad-hoc signing when no Apple Developer identity is available, so release builds are signed for local
+  integrity checks but are not notarized by default.
+
 <!-- Begin COMMUNITY -->
 
 # Community
@@ -209,6 +220,22 @@ In order to run the tests:
    3. Run `python -m pip install -r requirements.txt`.
    4. Run `python -m pytest test`.
 
+In order to build the macOS Universal2 application locally:
+   1. Use macOS 12 or newer with Python 3.12 and Xcode command line tools available.
+   2. Export `MACOSX_DEPLOYMENT_TARGET=12.0`.
+   3. Run `python -m pip install --upgrade -r requirements-setuptools.txt`.
+   4. Run `python -m pip install delocate`.
+   5. Run `python -m pip install --only-binary=:all: -r requirements.txt`.
+   6. Run `python -m pip install -e . --no-deps`.
+   7. Run `python tools/bundle_macos_universal_wheels.py`.
+   8. Run `python -m pip install --force-reinstall --no-deps universal_wheels/*.whl`.
+   9. Run `python -u tools/create_release.py`.
+  10. Validate with:
+      1. `file dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      2. `lipo -archs dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      3. `python tools/validate_macos_universal2.py dist/Corruptovania.app`
+      4. `codesign --verify --deep --strict --verbose=2 dist/Corruptovania.app`
+
 In order to run the server:
    1. Run both "Getting started" and "Start Randovania" steps.
    2. Activate the virtual env. Check start_client.bat/sh for details.
@@ -236,6 +263,15 @@ Then make sure that the Python extension is installed and select the Python inst
 There is also a task defined to run all tests. To run individual tests you can utilise the `Testing` section of Visual Studio Code. You can simply run or debug a test there.
 
 To start Randovania you can press CTRL+F5. If you only press F5, Randovania will start with a debugger. Be aware that starting with a debugger makes the application much slower.
+
+## CI builds
+
+GitHub Actions currently builds:
+- Linux source tests, Linux executable, and resolver tests.
+- Windows source tests and Windows executable.
+- macOS source tests on `macos-15`.
+- a macOS Universal2 release app on `macos-15`, with wheel normalization, recursive Mach-O arch validation,
+  ad-hoc signing by default, and a release archive at `dist/corruptovania-<version>-macos-universal2.tar.gz`.
 
 # Documentation
 
