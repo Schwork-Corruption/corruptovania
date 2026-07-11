@@ -309,7 +309,7 @@ jobs:
       - name: Verify macOS archive contents
         shell: bash
         run: |
-          VERSION="$(dist/Corruptovania.app/Contents/MacOS/corruptovania --version)"
+          VERSION="$(python -c 'import randovania; print(randovania.VERSION)')"
           ARCHIVE="dist/corruptovania-${VERSION}-macos-universal2.tar.gz"
           test -f "${ARCHIVE}"
           tar -tzf "${ARCHIVE}" | grep -E "^corruptovania-${VERSION}/Corruptovania\.app/?$"
