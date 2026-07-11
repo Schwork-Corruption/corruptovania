@@ -295,11 +295,7 @@ jobs:
       - name: Smoke-test Prime 3 helpers
         shell: bash
         run: |
-          TOOL_ROOT="$(python - <<'PY'
-from pathlib import Path
-print(Path('randovania/data/gollop_mp3_patcher/macos').resolve())
-PY
-)"
+          TOOL_ROOT="$(python -c 'from pathlib import Path; print(Path("randovania/data/gollop_mp3_patcher/macos").resolve())')"
           file "${TOOL_ROOT}/MP3Randomizer" "${TOOL_ROOT}/liblzokay.dylib" "${TOOL_ROOT}/hpatchz" "${TOOL_ROOT}/wit"
           lipo -archs "${TOOL_ROOT}/MP3Randomizer"
           lipo -archs "${TOOL_ROOT}/liblzokay.dylib"
