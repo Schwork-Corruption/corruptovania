@@ -18,6 +18,7 @@ import json
 import subprocess
 import sys
 import tempfile
+import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -138,8 +139,14 @@ def get_installed_packages() -> dict[str, str]:
 
 def fetch_release_wheels(package_name: str, version: str) -> list[WheelInfo]:
     normalized_name = package_name.replace("_", "-")
-    with urllib.request.urlopen(f"https://pypi.org/pypi/{normalized_name}/{version}/json") as response:
-        data = json.load(response)
+    try:
+        with urllib.request.urlopen(f"https://pypi.org/pypi/{normalized_name}/{version}/json") as response:
+            data = json.load(response)
+    except urllib.error.HTTPError as exception:
+        if exception.code == 404:
+            print(f"Skipping {package_name}=={version}: no matching PyPI release.")
+            return []
+        raise
 
     wheels = []
     for file_entry in data["urls"]:

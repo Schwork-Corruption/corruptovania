@@ -1,6 +1,9 @@
+import urllib.error
+
 from tools.bundle_macos_universal_wheels import (
     WheelInfo,
     build_wheel_plan,
+    fetch_release_wheels,
     parse_macos_platform,
     parse_wheel_filename,
 )
@@ -98,3 +101,16 @@ def test_falls_back_to_pure_python_wheel():
     assert plan is not None
     assert plan.kind == "download"
     assert plan.wheels[0].platform_tag == "any"
+
+
+
+def test_missing_pypi_release_is_skipped(monkeypatch):
+    def raise_not_found(url):
+        raise urllib.error.HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
+
+    monkeypatch.setattr(
+        "tools.bundle_macos_universal_wheels.urllib.request.urlopen",
+        raise_not_found,
+    )
+
+    assert fetch_release_wheels("randovania", "0.1.0.dev18466") == []
