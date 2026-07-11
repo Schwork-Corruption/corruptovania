@@ -276,6 +276,9 @@ jobs:
           python tools/bundle_macos_universal_wheels.py
           python -m pip install --force-reinstall --no-deps universal_wheels/*.whl
 
+      - name: Build UI files
+        run: python setup.py build_ui
+
       - name: Create executable
         run: python -u tools/create_release.py
         env:
