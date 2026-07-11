@@ -43,6 +43,8 @@ Some other miscellaneous notes:
 - The current minimum supported macOS version is macOS 12 Monterey.
 - macOS 11 Big Sur is blocked by the pinned Qt stack: `PySide6-Essentials==6.8.2.1` and `shiboken6==6.8.2.1`
   only publish `macosx_12_0_universal2` wheels for the Python 3.12 build used here.
+- The macOS executable job also rebuilds the Prime 3 helper toolchain as Universal2 before packaging:
+  `MP3Randomizer`, bundled `dotnet`, `liblzokay.dylib`, `hpatchz`, and `wit`.
 - CI validates the main executable with `file` and `lipo -archs`, recursively checks bundled Mach-O files for both
   architectures, verifies `codesign`, and runs a noninteractive startup smoke test.
 - CI signs with an ad-hoc identity when no Developer ID secret is configured. Developer ID signing and notarization

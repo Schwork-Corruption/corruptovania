@@ -11,6 +11,11 @@ from typing import TYPE_CHECKING
 
 import randovania
 from randovania.exporter.game_exporter import GameExporter, GameExportParams
+from randovania.games.prime3.exporter.toolchain import (
+    Prime3Toolchain,
+    extract_prime3_disc_image,
+    resolve_prime3_toolchain,
+)
 
 if TYPE_CHECKING:
     from randovania.lib import status_update_lib
@@ -59,43 +64,31 @@ class CorruptionGameExporter(GameExporter):
         progress_update: status_update_lib.ProgressUpdateCallable,
     ) -> None:
         assert isinstance(export_params, CorruptionGameExportParams)
-        # path to the root of the patcher
         patcher_path = randovania.get_data_path().joinpath("gollop_mp3_patcher")
-        # path to where nod extracts the ISO
-        extract_path = tempfile.mkdtemp()
+        toolchain = resolve_prime3_toolchain()
+        extract_path = Path(tempfile.mkdtemp())
 
-        # Extract iso to extract_path
         progress_update("Extracting ISO...", 0.1)
-        subprocess.run(
-            [patcher_path.joinpath("nodtool", "nodtool.exe"), "extract", export_params.input_path, extract_path],
-            check=True,
-        )
+        extract_prime3_disc_image(toolchain, export_params.input_path, extract_path, progress_update)
 
-        # remove attract videos
         progress_update("Removing attract videos...", 0.2)
         dummy_attracts = ["attract01.thp", "Attract02.thp"]
         for name in dummy_attracts:
-            # place supplied dummy attract files directly in extract_path
             shutil.copy(
                 Path(patcher_path).joinpath("dummy_attract", name),
-                Path(extract_path).joinpath("DATA", "files", "Video", "FrontEnd", name),
+                extract_path.joinpath("DATA", "files", "Video", "FrontEnd", name),
             )
 
         if patch_data["disable_deflicker"]:
             progress_update("Disabling Deflicker...", 0.3)
-            # run MP3Update on main.dol directly, agnostic to MP3Update itself
-            subprocess.run(
-                [
-                    patcher_path.joinpath("hpatchz.exe"),
-                    "-f",
-                    Path(extract_path).joinpath("DATA", "sys", "main.dol"),
+            _run_process(
+                _build_hpatchz_command(
+                    toolchain,
+                    extract_path.joinpath("DATA", "sys", "main.dol"),
                     patcher_path.joinpath("MP3Update", "main.hdiff"),
-                    Path(extract_path).joinpath("DATA", "sys", "main.dol"),
-                ],
-                check=True,
+                ),
             )
 
-        # MP3Update, if applicable
         if patch_data["mp3_update"]:
             progress_update("Applying Update...", 0.4)
 
@@ -111,21 +104,16 @@ class CorruptionGameExporter(GameExporter):
                 "Metroid7",
                 "UniverseArea",
             ]
-            # run MP3Update on files listed above directly
             for element in update_elements:
-                subprocess.run(
-                    [
-                        patcher_path.joinpath("hpatchz.exe"),
-                        "-f",
-                        Path(extract_path).joinpath("DATA", "files", f"{element}.pak"),
+                _run_process(
+                    _build_hpatchz_command(
+                        toolchain,
+                        extract_path.joinpath("DATA", "files", f"{element}.pak"),
                         patcher_path.joinpath("MP3Update", f"{element}.hdiff"),
-                        Path(extract_path).joinpath("DATA", "files", f"{element}.pak"),
-                    ],
-                    check=True,
+                    ),
                 )
 
-        # path to where the paks are placed to be randomized
-        paks_path = tempfile.mkdtemp()
+        paks_path = Path(tempfile.mkdtemp())
         randomize_elements = [
             "FrontEnd.pak",
             "Logbook.pak",
@@ -141,63 +129,92 @@ class CorruptionGameExporter(GameExporter):
             "Worlds.pak",
             "Standard.ntwk",
         ]
-        # copy files listed above to paks_path
         progress_update("Copying Paks...", 0.5)
         for name in randomize_elements:
-            shutil.copy(Path(extract_path).joinpath("DATA", "files", name), Path(paks_path).joinpath(name))
+            shutil.copy(extract_path.joinpath("DATA", "files", name), paks_path.joinpath(name))
 
-        # randomize paks
         progress_update("Randomizing Paks...", 0.6)
-        starting_items = patch_data["starting_items"].split(" ")
-        starting_location = patch_data["starting_location"].split(" ")
-        subprocess.run(
-            [
-                patcher_path.joinpath("MP3Randomizer.exe"),
-                "--input-path",
-                paks_path + os.sep,
-                "--output-path",
-                str(Path(extract_path).joinpath("DATA", "files")) + os.sep,
-                "--layout",
-                patch_data["seed"],
-                "--starting-items",
-                starting_items[0],
-                starting_items[1],
-                "--starting-location",
-                starting_location[0],
-                starting_location[1],
-                starting_location[2],
-                "--random-door-colors" if patch_data["random_door_colors"] else "",
-                "--random-welding-colors" if patch_data["random_welding_colors"] else "",
-                "--hyper-hints",  # These are forced on because not having them is an active detriment
-                "--fast-flying",  # ''
-                "--require-launcher" if patch_data["missile_required_mains"] else "",
-                "--require-ship-missile" if patch_data["ship_missile_required_mains"] else "",
-                "--phaaze-skip" if patch_data["phaaze_skip"] else "",
-            ],
-            check=True,
+        _run_process(
+            _build_randomizer_command(toolchain, patch_data, paks_path, extract_path.joinpath("DATA", "files")),
+            env=toolchain.randomizer_environment,
         )
 
-        # create iso/wbfs
         progress_update(
             "Exporting to ISO..."
             if export_params.output_format == CorruptionOutputFormats.ISO
             else "Exporting to WBFS...",
             0.7,
         )
-        subprocess.run(
-            [
-                patcher_path.joinpath("wit", "bin", "wit.exe"),
-                "COPY",
-                "-I" if export_params.output_format == CorruptionOutputFormats.ISO else "-B",
-                "-z",
-                "--trunc",
-                "--auto-split",
-                "--overwrite",
-                Path(extract_path).joinpath("DATA"),
-                export_params.output_path,
-            ],
-            check=True,
-        )
-        # clean up all extracted files
+        _run_process(_build_wit_command(toolchain, extract_path.joinpath("DATA"), export_params))
         shutil.rmtree(extract_path)
         shutil.rmtree(paks_path)
+
+
+def _optional_flag(flag: str, enabled: bool) -> tuple[str, ...]:
+    if enabled:
+        return (flag,)
+    return ()
+
+
+def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) -> None:
+    process_environment = None if env is None else {**os.environ, **env}
+    subprocess.run(command, check=True, env=process_environment)
+
+
+def _build_hpatchz_command(toolchain: Prime3Toolchain, target_file: Path, patch_file: Path) -> tuple[str, ...]:
+    return (
+        *toolchain.hpatchz_command,
+        "-f",
+        os.fspath(target_file),
+        os.fspath(patch_file),
+        os.fspath(target_file),
+    )
+
+
+def _build_randomizer_command(
+    toolchain: Prime3Toolchain,
+    patch_data: dict,
+    input_path: Path,
+    output_path: Path,
+) -> tuple[str, ...]:
+    starting_items = patch_data["starting_items"].split()
+    starting_location = patch_data["starting_location"].split()
+
+    return (
+        *toolchain.randomizer_command,
+        "--input-path",
+        os.fspath(input_path) + os.sep,
+        "--output-path",
+        os.fspath(output_path) + os.sep,
+        "--layout",
+        patch_data["seed"],
+        "--starting-items",
+        *starting_items,
+        "--starting-location",
+        *starting_location,
+        *_optional_flag("--random-door-colors", patch_data["random_door_colors"]),
+        *_optional_flag("--random-welding-colors", patch_data["random_welding_colors"]),
+        "--hyper-hints",
+        "--fast-flying",
+        *_optional_flag("--require-launcher", patch_data["missile_required_mains"]),
+        *_optional_flag("--require-ship-missile", patch_data["ship_missile_required_mains"]),
+        *_optional_flag("--phaaze-skip", patch_data["phaaze_skip"]),
+    )
+
+
+def _build_wit_command(
+    toolchain: Prime3Toolchain,
+    extracted_data_path: Path,
+    export_params: CorruptionGameExportParams,
+) -> tuple[str, ...]:
+    return (
+        *toolchain.wit_command,
+        "COPY",
+        "-I" if export_params.output_format == CorruptionOutputFormats.ISO else "-B",
+        "-z",
+        "--trunc",
+        "--auto-split",
+        "--overwrite",
+        os.fspath(extracted_data_path),
+        os.fspath(export_params.output_path),
+    )

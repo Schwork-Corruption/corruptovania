@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import importlib
 import os
 import platform
 import shutil
@@ -169,19 +170,36 @@ def write_frozen_file_list(package_folder: Path) -> None:
     )
 
 
-def sign_macos_bundle(app_folder: Path) -> None:
-    identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
-    command = ["codesign", "--force", "--deep", "--sign", identity]
+def is_macho(path: Path) -> bool:
+    if not path.is_file() or path.is_symlink():
+        return False
+    result = subprocess.run(["file", "-b", os.fspath(path)], capture_output=True, text=True, check=True)
+    return "Mach-O" in result.stdout
 
-    entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
-    if entitlements_path:
+
+def iter_macho_files(root: Path) -> list[Path]:
+    return sorted((path for path in root.rglob("*") if is_macho(path)), key=lambda item: len(item.parts), reverse=True)
+
+
+def sign_macos_path(path: Path, identity: str, entitlements_path: str | None) -> None:
+    command = ["codesign", "--force", "--sign", identity]
+
+    if entitlements_path and path.suffix == "":
         command.extend(["--entitlements", entitlements_path])
 
     if identity != "-":
         command.extend(["--options", "runtime", "--timestamp"])
 
-    command.append(os.fspath(app_folder))
+    command.append(os.fspath(path))
     subprocess.run(command, check=True)
+
+
+def sign_macos_bundle(app_folder: Path) -> None:
+    identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
+    entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
+    for macho_path in iter_macho_files(app_folder):
+        sign_macos_path(macho_path, identity, entitlements_path)
+    sign_macos_path(app_folder, identity, entitlements_path)
 
 
 async def main():
@@ -230,9 +248,8 @@ async def main():
     # HACK: pyintaller calls lipo/codesign on macOS and frequently timeout in github actions
     # There's also timeouts on Windows so we're expanding this to everyone
     print("Will patch timeout in PyInstaller compat")
-    import PyInstaller.compat
-
-    compat_path = Path(PyInstaller.compat.__file__)
+    pyinstaller_compat = importlib.import_module("PyInstaller.compat")
+    compat_path = Path(pyinstaller_compat.__file__)
     compat_text = compat_path.read_text().replace("timeout=60", "timeout=180")
     compat_path.write_text(compat_text)
 
