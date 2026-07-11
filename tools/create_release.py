@@ -237,7 +237,9 @@ async def main():
     compat_path.write_text(compat_text)
 
     subprocess.run([sys.executable, "-m", "PyInstaller", "randovania.spec"], check=True)
-    shutil.rmtree(package_folder.joinpath("_internal", "pre_edited_cs"))
+    pre_edited_cs = package_folder.joinpath("_internal", "pre_edited_cs")
+    if pre_edited_cs.exists():
+        shutil.rmtree(pre_edited_cs)
     remove_unnecessary_dotnet_deps(package_folder)
 
     if platform.system() == "Windows":
