@@ -179,6 +179,7 @@ git_describe_command = [
     "--dirty",
     "--tags",
     "--long",
+    "--abbrev=8",
     "--match",
     "v[0-9]*",
 ]

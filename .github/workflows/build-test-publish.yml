@@ -210,6 +210,9 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install -e . --no-deps
 
+      - name: Build UI files
+        run: python setup.py build_ui
+
       - name: Create executable
         run: python -u tools/create_release.py
         env:
