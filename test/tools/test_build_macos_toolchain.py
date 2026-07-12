@@ -276,6 +276,34 @@ def test_patch_wit_setup_script_replaces_gnu_awk_gensub(tmp_path: Path) -> None:
     assert 'printf("%s := %s\\n",substr($1,8),value)' in patched
 
 
+def test_patch_wit_save_restore_alignment_removes_packed_pointer_table(
+    tmp_path: Path,
+) -> None:
+    module = _load_module()
+    project_root = tmp_path.joinpath("project")
+    dclib_root = project_root.joinpath("dclib")
+    dclib_root.mkdir(parents=True)
+
+    header_path = dclib_root.joinpath("dclib-basics.h")
+    header_path.write_text(
+        """typedef struct SaveRestoreTab_t
+{
+    unsigned int offset;
+    unsigned int size;
+    const char *name;
+}
+__attribute__ ((packed)) SaveRestoreTab_t;
+""",
+        encoding="utf-8",
+    )
+
+    module.patch_wit_save_restore_alignment(project_root)
+
+    patched = header_path.read_text(encoding="utf-8")
+    assert "__attribute__ ((packed)) SaveRestoreTab_t;" not in patched
+    assert "\nSaveRestoreTab_t;" in patched
+
+
 def test_publish_mp3_randomizer_uses_portable_framework_dependent_publish(tmp_path: Path, monkeypatch) -> None:
     module = _load_module()
     build_root = tmp_path.joinpath("build")
