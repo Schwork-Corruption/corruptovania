@@ -8,11 +8,22 @@ import sys
 from pathlib import Path
 
 EXPECTED_ARCHES = ("x86_64", "arm64")
-EXECUTABLE_HELPERS = ("MP3Randomizer", "dotnet", "hpatchz", "wit")
+RUNTIME_ARCH_DIRECTORIES = {
+    "dotnet-x64": "x86_64",
+    "dotnet-arm64": "arm64",
+}
+EXECUTABLE_HELPERS = (
+    "data/gollop_mp3_patcher/macos/dotnet-x64/dotnet",
+    "data/gollop_mp3_patcher/macos/dotnet-arm64/dotnet",
+    "data/gollop_mp3_patcher/macos/hpatchz",
+    "data/gollop_mp3_patcher/macos/wit",
+)
 REQUIRED_HELPERS = {
-    "MP3Randomizer": "data/gollop_mp3_patcher/macos/MP3Randomizer",
     "MP3Randomizer.dll": "data/gollop_mp3_patcher/macos/MP3Randomizer.dll",
-    "dotnet": "data/gollop_mp3_patcher/macos/dotnet",
+    "MP3Randomizer.deps.json": "data/gollop_mp3_patcher/macos/MP3Randomizer.deps.json",
+    "MP3Randomizer.runtimeconfig.json": "data/gollop_mp3_patcher/macos/MP3Randomizer.runtimeconfig.json",
+    "dotnet-x64": "data/gollop_mp3_patcher/macos/dotnet-x64/dotnet",
+    "dotnet-arm64": "data/gollop_mp3_patcher/macos/dotnet-arm64/dotnet",
     "liblzokay.dylib": "data/gollop_mp3_patcher/macos/liblzokay.dylib",
     "hpatchz": "data/gollop_mp3_patcher/macos/hpatchz",
     "wit": "data/gollop_mp3_patcher/macos/wit",
@@ -70,25 +81,20 @@ def validate_dependency_paths(path: Path) -> list[str]:
     return failures
 
 
+def expected_arch_for_runtime_path(path: Path) -> str | None:
+    for part in path.parts:
+        if part in RUNTIME_ARCH_DIRECTORIES:
+            return RUNTIME_ARCH_DIRECTORIES[part]
+    return None
+
+
 def validate_required_helpers(bundle: Path) -> list[str]:
     failures = []
     for helper_name, suffix in REQUIRED_HELPERS.items():
         helper_path = find_helper(bundle, suffix)
-        if is_macho(helper_path):
-            arches = arches_for(helper_path)
-            missing = set(EXPECTED_ARCHES) - arches
-            if missing:
-                failures.append(f"{helper_path}: missing {', '.join(sorted(missing))}")
 
-        if helper_name in EXECUTABLE_HELPERS and not is_executable(helper_path):
+        if suffix in EXECUTABLE_HELPERS and not is_executable(helper_path):
             failures.append(f"{helper_path}: expected executable mode")
-
-        if is_macho(helper_path):
-            failures.extend(validate_dependency_paths(helper_path))
-            try:
-                codesign_verify(helper_path)
-            except subprocess.CalledProcessError as exception:
-                failures.append(f"{helper_path}: codesign verification failed: {exception}")
 
     return failures
 
@@ -102,10 +108,22 @@ def validate_all_macho_files(bundle: Path) -> list[str]:
             continue
 
         arches = arches_for(path)
-        missing = set(EXPECTED_ARCHES) - arches
-        if missing:
-            failures.append(f"{path}: missing {', '.join(sorted(missing))}")
+        runtime_arch = expected_arch_for_runtime_path(path)
+        if runtime_arch is None:
+            missing = set(EXPECTED_ARCHES) - arches
+            if missing:
+                failures.append(f"{path}: missing {', '.join(sorted(missing))}")
+        else:
+            if runtime_arch not in arches:
+                failures.append(f"{path}: missing {runtime_arch}")
+            opposite_arch = (set(EXPECTED_ARCHES) - {runtime_arch}) & arches
+            if opposite_arch:
+                failures.append(f"{path}: contains unexpected {', '.join(sorted(opposite_arch))}")
         failures.extend(validate_dependency_paths(path))
+        try:
+            codesign_verify(path)
+        except subprocess.CalledProcessError as exception:
+            failures.append(f"{path}: codesign verification failed: {exception}")
 
     return failures
 
@@ -128,7 +146,7 @@ def main() -> int:
             print(failure, file=sys.stderr)
         return 1
 
-    print(f"All Mach-O files under {bundle} contain: {' '.join(EXPECTED_ARCHES)}")
+    print(f"All required macOS binaries under {bundle} passed architecture and codesign validation.")
     return 0
 
 

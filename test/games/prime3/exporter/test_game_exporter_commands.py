@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import os
+import subprocess
 from pathlib import Path
+
+import pytest
 
 from randovania.games.prime3.exporter.game_exporter import (
     CorruptionGameExportParams,
@@ -9,6 +12,7 @@ from randovania.games.prime3.exporter.game_exporter import (
     _build_hpatchz_command,
     _build_randomizer_command,
     _build_wit_command,
+    _run_process,
 )
 from randovania.games.prime3.exporter.toolchain import Prime3Toolchain
 
@@ -83,3 +87,13 @@ def test_build_wit_command() -> None:
 
     command = _build_wit_command(_toolchain(), Path("DATA"), export_params)
     assert command == ("wit", "COPY", "-B", "-z", "--trunc", "--auto-split", "--overwrite", "DATA", "out.wbfs")
+
+
+def test_run_process_wraps_tool_failures(monkeypatch: pytest.MonkeyPatch) -> None:
+    def fake_run(command, check, env):
+        raise subprocess.CalledProcessError(returncode=23, cmd=command)
+
+    monkeypatch.setattr("subprocess.run", fake_run)
+
+    with pytest.raises(RuntimeError, match="Prime 3 helper failed \\(randomizer, exit code 23\\)"):
+        _run_process(("randomizer", "--flag"), env={"DOTNET_ROOT": "/tmp/dotnet"})

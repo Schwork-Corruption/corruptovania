@@ -197,7 +197,15 @@ def sign_macos_path(path: Path, identity: str, entitlements_path: str | None) ->
 def sign_macos_bundle(app_folder: Path) -> None:
     identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
     entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
-    for macho_path in iter_macho_files(app_folder):
+    macho_paths = iter_macho_files(app_folder)
+    runtime_root = app_folder.joinpath("Contents", "Resources", "_internal", "data", "gollop_mp3_patcher", "macos")
+    for runtime_directory in ("dotnet-x64", "dotnet-arm64"):
+        candidate = runtime_root.joinpath(runtime_directory)
+        if candidate.exists():
+            macho_paths.extend(iter_macho_files(candidate))
+
+    unique_macho_paths = sorted(set(macho_paths), key=lambda item: (len(item.parts), str(item)), reverse=True)
+    for macho_path in unique_macho_paths:
         sign_macos_path(macho_path, identity, entitlements_path)
     sign_macos_path(app_folder, identity, entitlements_path)
 

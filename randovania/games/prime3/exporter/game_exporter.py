@@ -67,87 +67,90 @@ class CorruptionGameExporter(GameExporter):
         patcher_path = randovania.get_data_path().joinpath("gollop_mp3_patcher")
         toolchain = resolve_prime3_toolchain()
         extract_path = Path(tempfile.mkdtemp())
+        paks_path: Path | None = None
+        try:
+            progress_update("Extracting ISO...", 0.1)
+            extract_prime3_disc_image(toolchain, export_params.input_path, extract_path, progress_update)
 
-        progress_update("Extracting ISO...", 0.1)
-        extract_prime3_disc_image(toolchain, export_params.input_path, extract_path, progress_update)
+            progress_update("Removing attract videos...", 0.2)
+            dummy_attracts = ["attract01.thp", "Attract02.thp"]
+            for name in dummy_attracts:
+                shutil.copy(
+                    Path(patcher_path).joinpath("dummy_attract", name),
+                    extract_path.joinpath("DATA", "files", "Video", "FrontEnd", name),
+                )
 
-        progress_update("Removing attract videos...", 0.2)
-        dummy_attracts = ["attract01.thp", "Attract02.thp"]
-        for name in dummy_attracts:
-            shutil.copy(
-                Path(patcher_path).joinpath("dummy_attract", name),
-                extract_path.joinpath("DATA", "files", "Video", "FrontEnd", name),
-            )
-
-        if patch_data["disable_deflicker"]:
-            progress_update("Disabling Deflicker...", 0.3)
-            _run_process(
-                _build_hpatchz_command(
-                    toolchain,
-                    extract_path.joinpath("DATA", "sys", "main.dol"),
-                    patcher_path.joinpath("MP3Update", "main.hdiff"),
-                ),
-            )
-
-        if patch_data["mp3_update"]:
-            progress_update("Applying Update...", 0.4)
-
-            update_elements = [
-                "FrontEnd",
-                "InGameAudio",
-                "NoARAM",
-                "Metroid1",
-                "Metroid3",
-                "Metroid4",
-                "Metroid5",
-                "Metroid6",
-                "Metroid7",
-                "UniverseArea",
-            ]
-            for element in update_elements:
+            if patch_data["disable_deflicker"]:
+                progress_update("Disabling Deflicker...", 0.3)
                 _run_process(
                     _build_hpatchz_command(
                         toolchain,
-                        extract_path.joinpath("DATA", "files", f"{element}.pak"),
-                        patcher_path.joinpath("MP3Update", f"{element}.hdiff"),
+                        extract_path.joinpath("DATA", "sys", "main.dol"),
+                        patcher_path.joinpath("MP3Update", "main.hdiff"),
                     ),
                 )
 
-        paks_path = Path(tempfile.mkdtemp())
-        randomize_elements = [
-            "FrontEnd.pak",
-            "Logbook.pak",
-            "Metroid1.pak",
-            "Metroid3.pak",
-            "Metroid4.pak",
-            "Metroid5.pak",
-            "Metroid6.pak",
-            "Metroid7.pak",
-            "Metroid8.pak",
-            "MiscData.pak",
-            "UniverseArea.pak",
-            "Worlds.pak",
-            "Standard.ntwk",
-        ]
-        progress_update("Copying Paks...", 0.5)
-        for name in randomize_elements:
-            shutil.copy(extract_path.joinpath("DATA", "files", name), paks_path.joinpath(name))
+            if patch_data["mp3_update"]:
+                progress_update("Applying Update...", 0.4)
 
-        progress_update("Randomizing Paks...", 0.6)
-        _run_process(
-            _build_randomizer_command(toolchain, patch_data, paks_path, extract_path.joinpath("DATA", "files")),
-            env=toolchain.randomizer_environment,
-        )
+                update_elements = [
+                    "FrontEnd",
+                    "InGameAudio",
+                    "NoARAM",
+                    "Metroid1",
+                    "Metroid3",
+                    "Metroid4",
+                    "Metroid5",
+                    "Metroid6",
+                    "Metroid7",
+                    "UniverseArea",
+                ]
+                for element in update_elements:
+                    _run_process(
+                        _build_hpatchz_command(
+                            toolchain,
+                            extract_path.joinpath("DATA", "files", f"{element}.pak"),
+                            patcher_path.joinpath("MP3Update", f"{element}.hdiff"),
+                        ),
+                    )
 
-        progress_update(
-            "Exporting to ISO..."
-            if export_params.output_format == CorruptionOutputFormats.ISO
-            else "Exporting to WBFS...",
-            0.7,
-        )
-        _run_process(_build_wit_command(toolchain, extract_path.joinpath("DATA"), export_params))
-        shutil.rmtree(extract_path)
-        shutil.rmtree(paks_path)
+            paks_path = Path(tempfile.mkdtemp())
+            randomize_elements = [
+                "FrontEnd.pak",
+                "Logbook.pak",
+                "Metroid1.pak",
+                "Metroid3.pak",
+                "Metroid4.pak",
+                "Metroid5.pak",
+                "Metroid6.pak",
+                "Metroid7.pak",
+                "Metroid8.pak",
+                "MiscData.pak",
+                "UniverseArea.pak",
+                "Worlds.pak",
+                "Standard.ntwk",
+            ]
+            progress_update("Copying Paks...", 0.5)
+            for name in randomize_elements:
+                shutil.copy(extract_path.joinpath("DATA", "files", name), paks_path.joinpath(name))
+
+            progress_update("Randomizing Paks...", 0.6)
+            _run_process(
+                _build_randomizer_command(toolchain, patch_data, paks_path, extract_path.joinpath("DATA", "files")),
+                env=toolchain.randomizer_environment,
+            )
+
+            progress_update(
+                "Exporting to ISO..."
+                if export_params.output_format == CorruptionOutputFormats.ISO
+                else "Exporting to WBFS...",
+                0.7,
+            )
+            _run_process(_build_wit_command(toolchain, extract_path.joinpath("DATA"), export_params))
+        finally:
+            shutil.rmtree(extract_path, ignore_errors=True)
+            if paks_path is not None:
+                shutil.rmtree(paks_path, ignore_errors=True)
 
 
 def _optional_flag(flag: str, enabled: bool) -> tuple[str, ...]:
@@ -158,7 +161,12 @@ def _optional_flag(flag: str, enabled: bool) -> tuple[str, ...]:
 
 def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) -> None:
     process_environment = None if env is None else {**os.environ, **env}
-    subprocess.run(command, check=True, env=process_environment)
+    try:
+        subprocess.run(command, check=True, env=process_environment)
+    except subprocess.CalledProcessError as exception:
+        raise RuntimeError(
+            f"Prime 3 helper failed ({Path(command[0]).name}, exit code {exception.returncode}): {command}"
+        ) from exception
 
 
 def _build_hpatchz_command(toolchain: Prime3Toolchain, target_file: Path, patch_file: Path) -> tuple[str, ...]:

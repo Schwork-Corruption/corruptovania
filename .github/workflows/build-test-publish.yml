@@ -136,7 +136,7 @@ jobs:
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.x"
+          dotnet-version: "8.0.404"
 
       - name: Install core Python packages
         run: python -m pip install --upgrade -r requirements-setuptools.txt
@@ -230,7 +230,7 @@ jobs:
         run: dist/corruptovania/corruptovania --version
 
       - name: Executable test
-        run: dist/corruptovania/corruptovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py
+        run: dist/corruptovania/corruptovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py --ignore=test/tools/test_build_macos_toolchain.py
 
       - name: Upload artifacts
         if: ${{ (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'merge_group' }}
@@ -250,6 +250,7 @@ jobs:
     env:
       MACOSX_DEPLOYMENT_TARGET: "12.0"
       ARCHFLAGS: "-arch arm64 -arch x86_64"
+      DOTNET_RUNTIME_VERSION: "8.0.11"
 
     steps:
       - name: Checkout
@@ -269,7 +270,7 @@ jobs:
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.x"
+          dotnet-version: "8.0.404"
 
       - name: Test MP3Randomizer project
         run: dotnet test tools/prime3_patcher/MP3Randomizer.Tests/MP3Randomizer.Tests.csproj -c Release
@@ -290,22 +291,32 @@ jobs:
           python -m pip install --force-reinstall --no-deps universal_wheels/*.whl
 
       - name: Build Prime 3 macOS toolchain
-        run: python tools/prime3_patcher/build_macos_toolchain.py
+        run: python tools/prime3_patcher/build_macos_toolchain.py --dotnet-runtime-version "${DOTNET_RUNTIME_VERSION}"
 
       - name: Smoke-test Prime 3 helpers
         shell: bash
         run: |
           TOOL_ROOT="$(python -c 'from pathlib import Path; print(Path("randovania/data/gollop_mp3_patcher/macos").resolve())')"
-          file "${TOOL_ROOT}/MP3Randomizer" "${TOOL_ROOT}/liblzokay.dylib" "${TOOL_ROOT}/hpatchz" "${TOOL_ROOT}/wit"
-          lipo -archs "${TOOL_ROOT}/MP3Randomizer"
+          test -f "${TOOL_ROOT}/MP3Randomizer.dll"
+          test -f "${TOOL_ROOT}/MP3Randomizer.deps.json"
+          test -f "${TOOL_ROOT}/MP3Randomizer.runtimeconfig.json"
+          file "${TOOL_ROOT}/dotnet-x64/dotnet" "${TOOL_ROOT}/dotnet-arm64/dotnet" "${TOOL_ROOT}/liblzokay.dylib" "${TOOL_ROOT}/hpatchz" "${TOOL_ROOT}/wit"
+          lipo -archs "${TOOL_ROOT}/dotnet-x64/dotnet"
+          lipo -archs "${TOOL_ROOT}/dotnet-arm64/dotnet"
           lipo -archs "${TOOL_ROOT}/liblzokay.dylib"
           lipo -archs "${TOOL_ROOT}/hpatchz"
           lipo -archs "${TOOL_ROOT}/wit"
-          otool -L "${TOOL_ROOT}/MP3Randomizer"
+          otool -L "${TOOL_ROOT}/dotnet-x64/dotnet"
+          otool -L "${TOOL_ROOT}/dotnet-arm64/dotnet"
           otool -L "${TOOL_ROOT}/liblzokay.dylib"
           otool -L "${TOOL_ROOT}/hpatchz"
           otool -L "${TOOL_ROOT}/wit"
-          "${TOOL_ROOT}/MP3Randomizer" --help
+          DOTNET_ROOT="${TOOL_ROOT}/dotnet-arm64" \
+          DOTNET_MULTILEVEL_LOOKUP=0 \
+          PATH="${TOOL_ROOT}/dotnet-arm64:${PATH}" \
+          "${TOOL_ROOT}/dotnet-arm64/dotnet" \
+          "${TOOL_ROOT}/MP3Randomizer.dll" \
+          --help
           "${TOOL_ROOT}/hpatchz" -h
           "${TOOL_ROOT}/wit" --version
 
@@ -347,8 +358,16 @@ jobs:
         run: |
           VERSION="$(python -c 'import randovania; print(randovania.VERSION)')"
           ARCHIVE="dist/corruptovania-${VERSION}-macos-universal2.tar.gz"
+          EXTRACT_ROOT="$(mktemp -d)"
+          APP_PATH="${EXTRACT_ROOT}/corruptovania-${VERSION}/Corruptovania.app"
           test -f "${ARCHIVE}"
-          tar -tzf "${ARCHIVE}" | grep -E "^corruptovania-${VERSION}/Corruptovania\.app/?$"
+          tar -xzf "${ARCHIVE}" -C "${EXTRACT_ROOT}"
+          test -d "${APP_PATH}"
+          test -x "${APP_PATH}/Contents/MacOS/corruptovania"
+          file "${APP_PATH}/Contents/MacOS/corruptovania"
+          lipo -archs "${APP_PATH}/Contents/MacOS/corruptovania"
+          python tools/validate_macos_universal2.py "${APP_PATH}"
+          codesign --verify --deep --strict --verbose=2 "${APP_PATH}"
 
       - name: Upload artifacts
         if: ${{ (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'merge_group' }}
@@ -534,7 +553,6 @@ jobs:
         run: python setup.py build_ui
 
       - name: Mypy on modified files
-        continue-on-error: true
         uses: tsuyoshicho/action-mypy@v5
         with:
           github_token: ${{ secrets.github_token }}

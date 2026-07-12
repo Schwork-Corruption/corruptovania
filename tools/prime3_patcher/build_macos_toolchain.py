@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import shutil
 import stat
@@ -11,9 +12,14 @@ from dataclasses import dataclass
 from pathlib import Path
 
 EXPECTED_ARCHES = ("x86_64", "arm64")
+DOTNET_RUNTIME_FAMILY = "8.0"
 DOTNET_ARCH_TO_RUNTIME = {
     "x86_64": "x64",
     "arm64": "arm64",
+}
+RUNTIME_DIRECTORY_NAMES = {
+    "x86_64": "dotnet-x64",
+    "arm64": "dotnet-arm64",
 }
 MACHO_MAGICS = {
     b"\xca\xfe\xba\xbe",
@@ -26,6 +32,18 @@ MACHO_MAGICS = {
     b"\xcf\xfa\xed\xfe",
 }
 ROOT = Path(__file__).resolve().parents[2]
+ALLOWED_LOAD_PREFIXES = ("@executable_path", "@loader_path", "@rpath", "/System/Library/", "/usr/lib/")
+DISALLOWED_LOAD_PREFIXES = ("/opt/homebrew/", "/usr/local/", "/private/tmp/", "/tmp/")
+REQUIRED_RUNTIME_BINARIES = (
+    "dotnet",
+    "libhostfxr.dylib",
+    "libhostpolicy.dylib",
+    "libcoreclr.dylib",
+    "libclrjit.dylib",
+    "libSystem.Native.dylib",
+    "libSystem.IO.Compression.Native.dylib",
+    "libSystem.Security.Cryptography.Native.Apple.dylib",
+)
 
 
 @dataclass(frozen=True)
@@ -50,15 +68,20 @@ WIT_SOURCE = GitSource(
     repository="https://github.com/Wiimm/wiimms-iso-tools.git",
     ref="fc1c0b840cb3ac41ca6e4f1d5e16da12b47eab58",
 )
-HDIFFPATCH_DEPENDENCIES = {
-    "libmd5": "https://github.com/sisong/libmd5.git",
-    "xxHash": "https://github.com/sisong/xxHash.git",
-    "lzma": "https://github.com/sisong/lzma.git",
-    "zstd": "https://github.com/sisong/zstd.git",
-    "zlib": "https://github.com/sisong/zlib.git",
-    "libdeflate": "https://github.com/sisong/libdeflate.git",
-    "bzip2": "https://github.com/sisong/bzip2.git",
-}
+HDIFFPATCH_DEPENDENCIES = (
+    GitSource("libmd5", "https://github.com/sisong/libmd5.git", "51edeb63ec3f456f4950922c5011c326a062fbce"),
+    GitSource("xxHash", "https://github.com/sisong/xxHash.git", "e626a72bc2321cd320e953a0ccf1584cad60f363"),
+    GitSource("lzma", "https://github.com/sisong/lzma.git", "44809544b95bbf2dccec75d954657ff76fc349ff"),
+    GitSource("zstd", "https://github.com/sisong/zstd.git", "68c88c7c7ad22b5e6882a5296ef96d27dc8750c4"),
+    GitSource("zlib", "https://github.com/sisong/zlib.git", "323357a50daba38cedd2b766b3427f4c6d33b10f"),
+    GitSource("libdeflate", "https://github.com/sisong/libdeflate.git", "8f894fab60464e13ddee3846eae722216347fac1"),
+    GitSource("bzip2", "https://github.com/sisong/bzip2.git", "fbc4b11da543753b3b803e5546f56e26ec90c2a7"),
+)
+DOTNET_INSTALL_SCRIPT_URL = (
+    "https://raw.githubusercontent.com/dotnet/install-scripts/"
+    "4a37a9f9d1a061fc389d6515100336db4e51710e/src/dotnet-install.sh"
+)
+DOTNET_INSTALL_SCRIPT_SHA256 = "082f7685e156738a1b2e2ed8381a621870d4ce8e8c59278034556f05c186eb2e"
 
 
 def parse_args() -> argparse.Namespace:
@@ -103,19 +126,21 @@ def clone_source(source: GitSource, checkout_root: Path) -> Path:
 
 
 def clone_hdiffpatch_dependencies(checkout_root: Path) -> None:
-    for name, repository in HDIFFPATCH_DEPENDENCIES.items():
-        destination = checkout_root.joinpath(name)
-        if destination.exists():
-            shutil.rmtree(destination)
-        run(["git", "clone", "--depth", "1", repository, os.fspath(destination)])
+    for dependency in HDIFFPATCH_DEPENDENCIES:
+        clone_source(dependency, checkout_root)
 
 
 def parse_dotnet_runtime_version(output: str) -> str:
+    candidates: list[tuple[int, ...]] = []
     for line in output.splitlines():
         line = line.strip()
         if line.startswith("Microsoft.NETCore.App "):
-            return line.split()[1]
-    raise RuntimeError("Unable to determine installed Microsoft.NETCore.App runtime version.")
+            version = line.split()[1]
+            if version.startswith(f"{DOTNET_RUNTIME_FAMILY}."):
+                candidates.append(tuple(int(part) for part in version.split(".")))
+    if not candidates:
+        raise RuntimeError(f"Unable to determine installed Microsoft.NETCore.App {DOTNET_RUNTIME_FAMILY} runtime.")
+    return ".".join(str(part) for part in max(candidates))
 
 
 def installed_dotnet_runtime_version() -> str:
@@ -131,8 +156,14 @@ def installed_dotnet_runtime_version() -> str:
 def download_dotnet_install_script(work_dir: Path) -> Path:
     work_dir.mkdir(parents=True, exist_ok=True)
     destination = work_dir.joinpath("dotnet-install.sh")
-    with urllib.request.urlopen("https://dot.net/v1/dotnet-install.sh") as response:
-        destination.write_bytes(response.read())
+    with urllib.request.urlopen(DOTNET_INSTALL_SCRIPT_URL) as response:
+        script_bytes = response.read()
+    digest = hashlib.sha256(script_bytes).hexdigest()
+    if digest != DOTNET_INSTALL_SCRIPT_SHA256:
+        raise RuntimeError(
+            f"Unexpected checksum for dotnet-install.sh: {digest} != {DOTNET_INSTALL_SCRIPT_SHA256}"
+        )
+    destination.write_bytes(script_bytes)
     destination.chmod(destination.stat().st_mode | stat.S_IXUSR)
     return destination
 
@@ -164,10 +195,43 @@ def arches_for(path: Path) -> tuple[str, ...]:
     return tuple(result.stdout.strip().split())
 
 
+def macho_load_commands(path: Path) -> tuple[str, ...]:
+    result = subprocess.run(["otool", "-L", os.fspath(path)], check=True, capture_output=True, text=True)
+    commands = []
+    for line in result.stdout.splitlines()[1:]:
+        stripped = line.strip()
+        if stripped:
+            commands.append(stripped.split(" (", maxsplit=1)[0])
+    return tuple(commands)
+
+
+def validate_macho_load_commands(path: Path) -> None:
+    for load_command in macho_load_commands(path):
+        if load_command.startswith(DISALLOWED_LOAD_PREFIXES):
+            raise RuntimeError(f"{path} links against a disallowed path: {load_command}")
+        if load_command.startswith("/"):
+            if not load_command.startswith(ALLOWED_LOAD_PREFIXES):
+                raise RuntimeError(f"{path} links against a non-system absolute path: {load_command}")
+        elif not load_command.startswith(ALLOWED_LOAD_PREFIXES):
+            raise RuntimeError(f"{path} links against an unresolved path: {load_command}")
+
+
 def assert_universal2(path: Path) -> None:
     arches = arches_for(path)
     if tuple(sorted(arches)) != tuple(sorted(EXPECTED_ARCHES)):
         raise RuntimeError(f"{path} does not contain both architectures: {arches}")
+    validate_macho_load_commands(path)
+
+
+def assert_single_arch(path: Path, expected_arch: str) -> None:
+    arches = set(arches_for(path))
+    if expected_arch not in arches:
+        raise RuntimeError(f"{path} does not contain required architecture {expected_arch}: {sorted(arches)}")
+    wrong_arches = set(EXPECTED_ARCHES) - {expected_arch}
+    unexpected = sorted(arches & wrong_arches)
+    if unexpected:
+        raise RuntimeError(f"{path} unexpectedly contains {', '.join(unexpected)} in {expected_arch} runtime tree")
+    validate_macho_load_commands(path)
 
 
 def merge_binary(left: Path, right: Path, output: Path) -> None:
@@ -177,50 +241,41 @@ def merge_binary(left: Path, right: Path, output: Path) -> None:
     assert_universal2(output)
 
 
-def merge_trees(left: Path, right: Path, output: Path) -> None:
-    names = sorted({path.name for path in left.iterdir()} | {path.name for path in right.iterdir()})
-    output.mkdir(parents=True, exist_ok=True)
+def copy_runtime_tree(source: Path, destination: Path) -> None:
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination, symlinks=True, copy_function=shutil.copy2)
 
-    for name in names:
-        left_path = left.joinpath(name)
-        right_path = right.joinpath(name)
-        output_path = output.joinpath(name)
 
-        if left_path.exists() and right_path.exists():
-            if left_path.is_dir() and right_path.is_dir():
-                merge_trees(left_path, right_path, output_path)
-                continue
-            if left_path.is_symlink() and right_path.is_symlink():
-                if left_path.readlink() != right_path.readlink():
-                    raise RuntimeError(f"Mismatched symlink target for {left_path} and {right_path}")
-                if output_path.exists():
-                    output_path.unlink()
-                output_path.symlink_to(left_path.readlink())
-                continue
-            if left_path.is_file() and right_path.is_file():
-                if is_macho(left_path) or is_macho(right_path):
-                    merge_binary(left_path, right_path, output_path)
-                else:
-                    if left_path.read_bytes() != right_path.read_bytes():
-                        raise RuntimeError(f"Mismatched non-Mach-O file between {left_path} and {right_path}")
-                    shutil.copy2(left_path, output_path)
-                continue
-            raise RuntimeError(f"Mismatched path types for {left_path} and {right_path}")
+def find_unique_file(root: Path, filename: str) -> Path:
+    matches = [path for path in root.rglob(filename) if path.is_file()]
+    if not matches:
+        raise RuntimeError(f"Missing required runtime binary: {filename}")
+    if len(matches) > 1:
+        raise RuntimeError(f"Found multiple matches for required runtime binary {filename}: {matches}")
+    return matches[0]
 
-        lone_path = left_path if left_path.exists() else right_path
-        if lone_path is None:  # pragma: no cover - defensive guard
+
+def is_user_executable(path: Path) -> bool:
+    return bool(path.stat().st_mode & stat.S_IXUSR)
+
+
+def validate_runtime_tree(runtime_root: Path, expected_arch: str) -> None:
+    dotnet_path = runtime_root.joinpath("dotnet")
+    if not dotnet_path.is_file():
+        raise RuntimeError(f"Missing required runtime binary: {dotnet_path}")
+    if not is_user_executable(dotnet_path):
+        raise RuntimeError(f"Runtime host is not executable: {dotnet_path}")
+
+    for filename in REQUIRED_RUNTIME_BINARIES:
+        find_unique_file(runtime_root, filename)
+
+    for path in runtime_root.rglob("*"):
+        if not path.is_file() or path.is_symlink():
             continue
-        if is_macho(lone_path):
-            raise RuntimeError(f"Missing matching architecture pair for Mach-O file: {lone_path}")
-        if lone_path.is_dir():
-            shutil.copytree(lone_path, output_path, symlinks=True)
-        elif lone_path.is_symlink():
-            if output_path.exists():
-                output_path.unlink()
-            output_path.symlink_to(lone_path.readlink())
-        else:
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(lone_path, output_path)
+        if not is_macho(path):
+            continue
+        assert_single_arch(path, expected_arch)
 
 
 def install_dotnet_runtime(
@@ -248,46 +303,30 @@ def install_dotnet_runtime(
 
 
 def publish_mp3_randomizer(build_root: Path, output_dir: Path) -> None:
-    publish_root = build_root.joinpath("publish")
+    publish_root = build_root.joinpath("publish-portable")
     ensure_empty_dir(publish_root)
-    published_outputs: dict[str, Path] = {}
-
-    for arch, runtime_identifier in {"x86_64": "osx-x64", "arm64": "osx-arm64"}.items():
-        published_output = publish_root.joinpath(arch)
-        run(
-            [
-                "dotnet",
-                "publish",
-                os.fspath(ROOT.joinpath("tools", "prime3_patcher", "MP3Randomizer", "MP3Randomizer.csproj")),
-                "-c",
-                "Release",
-                "-f",
-                "net8.0",
-                "-r",
-                runtime_identifier,
-                "--self-contained",
-                "false",
-                "-o",
-                os.fspath(published_output),
-            ]
-        )
-        published_outputs[arch] = published_output
-
-    merge_binary(
-        published_outputs["x86_64"].joinpath("MP3Randomizer"),
-        published_outputs["arm64"].joinpath("MP3Randomizer"),
-        output_dir.joinpath("MP3Randomizer"),
+    run(
+        [
+            "dotnet",
+            "publish",
+            os.fspath(ROOT.joinpath("tools", "prime3_patcher", "MP3Randomizer", "MP3Randomizer.csproj")),
+            "-c",
+            "Release",
+            "-f",
+            "net8.0",
+            "--self-contained",
+            "false",
+            "-p:UseAppHost=false",
+            "-o",
+            os.fspath(publish_root),
+        ]
     )
 
-    reference_output = published_outputs["arm64"]
-    for path in reference_output.iterdir():
-        if path.name == "MP3Randomizer":
-            continue
-        if path.is_file():
-            counterpart = published_outputs["x86_64"].joinpath(path.name)
-            if counterpart.exists() and counterpart.is_file() and counterpart.read_bytes() != path.read_bytes():
-                raise RuntimeError(f"Mismatched managed output file between publish directories: {path.name}")
-            shutil.copy2(path, output_dir.joinpath(path.name))
+    for filename in ("MP3Randomizer.dll", "MP3Randomizer.deps.json", "MP3Randomizer.runtimeconfig.json"):
+        source = publish_root.joinpath(filename)
+        if not source.is_file():
+            raise RuntimeError(f"Missing published MP3Randomizer payload file: {source}")
+        shutil.copy2(source, output_dir.joinpath(filename))
 
 
 def build_lzokay(checkout_root: Path, output_path: Path, deployment_target: str) -> None:
@@ -399,7 +438,8 @@ def build_macos_toolchain(output_dir: Path, work_dir: Path, deployment_target: s
         runtime_arch=dotnet_runtime_arch("arm64"),
         install_dir=runtime_arm64,
     )
-    merge_trees(runtime_x64, runtime_arm64, output_dir)
+    copy_runtime_tree(runtime_x64, output_dir.joinpath(RUNTIME_DIRECTORY_NAMES["x86_64"]))
+    copy_runtime_tree(runtime_arm64, output_dir.joinpath(RUNTIME_DIRECTORY_NAMES["arm64"]))
 
     publish_mp3_randomizer(build_root, output_dir)
 
@@ -407,8 +447,8 @@ def build_macos_toolchain(output_dir: Path, work_dir: Path, deployment_target: s
     build_hpatchz(checkout_root, build_root, output_dir.joinpath("hpatchz"), deployment_target)
     build_wit(checkout_root, build_root, output_dir.joinpath("wit"), deployment_target)
 
-    assert_universal2(output_dir.joinpath("MP3Randomizer"))
-    assert_universal2(output_dir.joinpath("dotnet"))
+    validate_runtime_tree(output_dir.joinpath(RUNTIME_DIRECTORY_NAMES["x86_64"]), "x86_64")
+    validate_runtime_tree(output_dir.joinpath(RUNTIME_DIRECTORY_NAMES["arm64"]), "arm64")
     assert_universal2(output_dir.joinpath("hpatchz"))
     assert_universal2(output_dir.joinpath("wit"))
     assert_universal2(output_dir.joinpath("liblzokay.dylib"))

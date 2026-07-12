@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-import nod
+import nod  # type: ignore[import-untyped]
 
 import randovania
 
@@ -36,6 +36,14 @@ def _required_path(path: Path, message: str) -> str:
     return os.fspath(path)
 
 
+def _macos_runtime_directory(machine: str) -> str:
+    if machine in {"arm64", "aarch64"}:
+        return "dotnet-arm64"
+    if machine in {"x86_64", "AMD64"}:
+        return "dotnet-x64"
+    raise RuntimeError(f"Unsupported macOS architecture for Prime 3 export: {machine}")
+
+
 def resolve_prime3_toolchain() -> Prime3Toolchain:
     patcher_root = _patcher_root()
     system = platform.system()
@@ -54,18 +62,26 @@ def resolve_prime3_toolchain() -> Prime3Toolchain:
 
     if system == "Darwin":
         macos_root = patcher_root.joinpath("macos")
+        runtime_root = macos_root.joinpath(_macos_runtime_directory(platform.machine()))
         _required_path(macos_root.joinpath("MP3Randomizer.dll"), "Missing macOS MP3Randomizer managed payload")
-        _required_path(macos_root.joinpath("dotnet"), "Missing bundled macOS dotnet runtime")
+        _required_path(macos_root.joinpath("MP3Randomizer.deps.json"), "Missing macOS MP3Randomizer deps file")
+        _required_path(
+            macos_root.joinpath("MP3Randomizer.runtimeconfig.json"),
+            "Missing macOS MP3Randomizer runtimeconfig file",
+        )
         return Prime3Toolchain(
-            randomizer_command=(_required_path(macos_root.joinpath("MP3Randomizer"), "Missing macOS MP3Randomizer"),),
+            randomizer_command=(
+                _required_path(runtime_root.joinpath("dotnet"), "Missing bundled macOS dotnet runtime"),
+                _required_path(macos_root.joinpath("MP3Randomizer.dll"), "Missing macOS MP3Randomizer managed payload"),
+            ),
             hpatchz_command=(_required_path(macos_root.joinpath("hpatchz"), "Missing macOS hpatchz"),),
             wit_command=(_required_path(macos_root.joinpath("wit"), "Missing macOS wit"),),
             extractor_command=(),
             uses_python_nod=True,
             randomizer_environment={
-                "DOTNET_ROOT": os.fspath(macos_root),
+                "DOTNET_ROOT": os.fspath(runtime_root),
                 "DOTNET_MULTILEVEL_LOOKUP": "0",
-                "PATH": f"{macos_root}{os.pathsep}{os.environ['PATH']}",
+                "PATH": f"{runtime_root}{os.pathsep}{os.environ.get('PATH', '')}",
             },
             lzokay_library=Path(_required_path(macos_root.joinpath("liblzokay.dylib"), "Missing macOS liblzokay")),
         )
