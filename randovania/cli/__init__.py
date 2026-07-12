@@ -62,9 +62,15 @@ def run_pytest(argv: list[str]) -> None:
     sys.exit(pytest.main(argv[2:], plugins=[pytest_asyncio.plugin, pytest_mock.plugin, pytest_localftpserver.plugin]))
 
 
+def run_game_connection_window_import_smoke_test() -> None:
+    from randovania.gui.widgets import game_connection_window  # noqa: F401
+
+
 def run_cli(argv: list[str]) -> None:
     if len(argv) > 1 and argv[1] == "--pytest":
         run_pytest(argv)
+    elif len(argv) > 1 and argv[1] == "--smoke-test-game-connection-window":
+        run_game_connection_window_import_smoke_test()
     else:
         args = argv[1:]
         from randovania.cli import gui
