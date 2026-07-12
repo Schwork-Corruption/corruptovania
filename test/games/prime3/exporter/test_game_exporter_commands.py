@@ -100,7 +100,7 @@ def test_run_process_wraps_tool_failures(monkeypatch: pytest.MonkeyPatch) -> Non
         raise subprocess.CalledProcessError(
             returncode=23,
             cmd=command,
-            stdout="standard output",
+            output="standard output",
             stderr="native helper exploded",
         )
 
