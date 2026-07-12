@@ -552,15 +552,6 @@ jobs:
       - name: Build UI files
         run: python setup.py build_ui
 
-      - name: Mypy on modified files
-        uses: tsuyoshicho/action-mypy@v5
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          setup_method: nothing
-          install_types: false
-          fail_on_error: false
-
       - name: Mypy on required files
         run: python -m mypy --config-file=pyproject.toml
 
