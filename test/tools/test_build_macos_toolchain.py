@@ -59,6 +59,39 @@ def test_is_macho(tmp_path: Path) -> None:
     assert module.is_macho(text_file) is False
 
 
+def test_macho_load_commands_skips_all_fat_binary_headers(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    module = _load_module()
+    macho_path = tmp_path.joinpath("liblzokay.dylib")
+
+    class FakeResult:
+        stdout = f"""{macho_path} (architecture x86_64):
+\t@rpath/liblzokay.dylib (compatibility version 0.0.0, current version 0.0.0)
+\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)
+{macho_path} (architecture arm64):
+\t@rpath/liblzokay.dylib (compatibility version 0.0.0, current version 0.0.0)
+\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)
+"""
+
+    def fake_run(command, *, check, capture_output, text):
+        assert command == ["otool", "-L", str(macho_path)]
+        assert check is True
+        assert capture_output is True
+        assert text is True
+        return FakeResult()
+
+    monkeypatch.setattr(module.subprocess, "run", fake_run)
+
+    assert module.macho_load_commands(macho_path) == (
+        "@rpath/liblzokay.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/liblzokay.dylib",
+        "/usr/lib/libSystem.B.dylib",
+    )
+
+
 def _write_runtime_file(runtime_root: Path, relative_path: str, contents: bytes = b"stub") -> Path:
     path = runtime_root.joinpath(relative_path)
     path.parent.mkdir(parents=True, exist_ok=True)

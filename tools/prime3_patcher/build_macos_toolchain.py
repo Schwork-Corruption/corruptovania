@@ -198,7 +198,12 @@ def arches_for(path: Path) -> tuple[str, ...]:
 def macho_load_commands(path: Path) -> tuple[str, ...]:
     result = subprocess.run(["otool", "-L", os.fspath(path)], check=True, capture_output=True, text=True)
     commands = []
-    for line in result.stdout.splitlines()[1:]:
+    for line in result.stdout.splitlines():
+        # Fat Mach-O output contains one unindented header per architecture.
+        # Only indented lines are install names or linked dependencies.
+        if not line[:1].isspace():
+            continue
+
         stripped = line.strip()
         if stripped:
             commands.append(stripped.split(" (", maxsplit=1)[0])
