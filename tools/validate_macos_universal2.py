@@ -37,7 +37,12 @@ def run(command: list[str]) -> subprocess.CompletedProcess[str]:
 
 
 def is_macho(path: Path) -> bool:
-    return "Mach-O" in run(["file", "-b", os.fspath(path)]).stdout
+    result = subprocess.run(
+        ["file", "-b", os.fspath(path)],
+        capture_output=True,
+        check=True,
+    )
+    return b"Mach-O" in result.stdout
 
 
 def arches_for(path: Path) -> set[str]:

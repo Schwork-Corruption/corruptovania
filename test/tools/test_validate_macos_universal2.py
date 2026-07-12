@@ -95,3 +95,32 @@ def test_otool_loads_skips_every_fat_binary_header(
         "@rpath/helper",
         "/usr/lib/libSystem.B.dylib",
     ]
+
+def test_is_macho_handles_non_utf8_file_output(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    module = _load_module()
+    candidate = tmp_path.joinpath("candidate")
+    candidate.write_bytes(b"binary")
+
+    def fake_run(
+        command: list[str],
+        *,
+        capture_output: bool,
+        check: bool,
+    ) -> subprocess.CompletedProcess[bytes]:
+        assert command == ["file", "-b", str(candidate)]
+        assert capture_output is True
+        assert check is True
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=b"data containing invalid byte \xa9 and Mach-O 64-bit bundle",
+            stderr=b"",
+        )
+
+    monkeypatch.setattr(module.subprocess, "run", fake_run)
+
+    assert module.is_macho(candidate)
+
