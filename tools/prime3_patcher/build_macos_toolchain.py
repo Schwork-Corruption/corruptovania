@@ -130,6 +130,28 @@ def clone_hdiffpatch_dependencies(checkout_root: Path) -> None:
         clone_source(dependency, checkout_root)
 
 
+
+def patch_wit_setup_script(project_root: Path) -> None:
+    setup_path = project_root.joinpath("setup.sh")
+    setup_text = setup_path.read_text(encoding="utf-8")
+
+    gnu_awk_expression = (
+        r"""awk -F= '/^result_/ {printf("%s := %s\n",substr($1,8),gensub(/"/,"","g",$2))}'"""
+    )
+    portable_awk_expression = (
+        r"""awk -F= '/^result_/ {value=$2; gsub(/"/,"",value); """
+        r"""printf("%s := %s\n",substr($1,8),value)}'"""
+    )
+
+    if gnu_awk_expression not in setup_text:
+        raise RuntimeError(f"Unable to patch unsupported GNU awk expression in {setup_path}")
+
+    setup_path.write_text(
+        setup_text.replace(gnu_awk_expression, portable_awk_expression, 1),
+        encoding="utf-8",
+    )
+
+
 def parse_dotnet_runtime_version(output: str) -> str:
     candidates: list[tuple[int, ...]] = []
     for line in output.splitlines():
@@ -388,6 +410,7 @@ def build_hpatchz(checkout_root: Path, build_root: Path, output_path: Path, depl
 def build_wit(checkout_root: Path, build_root: Path, output_path: Path, deployment_target: str) -> None:
     source_root = clone_source(WIT_SOURCE, checkout_root)
     project_root = source_root.joinpath("project")
+    patch_wit_setup_script(project_root)
     binaries: list[Path] = []
 
     for arch in EXPECTED_ARCHES:

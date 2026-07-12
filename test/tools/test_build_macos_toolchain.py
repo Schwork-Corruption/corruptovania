@@ -254,6 +254,28 @@ def test_build_hpatchz_passes_arch_flags_through_environment(
         assert all(not item.startswith(("CFLAGS=", "CXXFLAGS=", "LDFLAGS=")) for item in command)
 
 
+def test_patch_wit_setup_script_replaces_gnu_awk_gensub(tmp_path: Path) -> None:
+    module = _load_module()
+    project_root = tmp_path.joinpath("project")
+    project_root.mkdir()
+    setup_path = project_root.joinpath("setup.sh")
+
+    setup_path.write_text(
+        r"""gcc -E system.c \
+    | awk -F= '/^result_/ {printf("%s := %s\n",substr($1,8),gensub(/"/,"","g",$2))}' \
+    > Makefile.setup
+""",
+        encoding="utf-8",
+    )
+
+    module.patch_wit_setup_script(project_root)
+
+    patched = setup_path.read_text(encoding="utf-8")
+    assert "gensub" not in patched
+    assert 'gsub(/"/,"",value)' in patched
+    assert 'printf("%s := %s\\n",substr($1,8),value)' in patched
+
+
 def test_publish_mp3_randomizer_uses_portable_framework_dependent_publish(tmp_path: Path, monkeypatch) -> None:
     module = _load_module()
     build_root = tmp_path.joinpath("build")
