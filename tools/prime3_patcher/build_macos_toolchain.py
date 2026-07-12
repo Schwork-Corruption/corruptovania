@@ -297,6 +297,44 @@ def assert_single_arch(path: Path, expected_arch: str) -> None:
     validate_macho_load_commands(path)
 
 
+def assert_exported_symbols(
+    path: Path,
+    expected_symbols: tuple[str, ...],
+) -> None:
+    for arch in EXPECTED_ARCHES:
+        result = subprocess.run(
+            [
+                "nm",
+                "-arch",
+                arch,
+                "-g",
+                "-U",
+                "-j",
+                os.fspath(path),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+        exported_symbols = {
+            line.strip()
+            for line in result.stdout.splitlines()
+            if line.strip()
+        }
+        missing_symbols = [
+            symbol
+            for symbol in expected_symbols
+            if f"_{symbol}" not in exported_symbols
+        ]
+
+        if missing_symbols:
+            raise RuntimeError(
+                f"{path} is missing exports for {arch}: "
+                f"{', '.join(missing_symbols)}"
+            )
+
+
 def merge_binary(left: Path, right: Path, output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     run(["lipo", "-create", os.fspath(left), os.fspath(right), "-output", os.fspath(output)])
@@ -400,8 +438,17 @@ def build_lzokay(checkout_root: Path, output_path: Path, deployment_target: str)
         "-dynamiclib",
         *dotnet_arch_flags("x86_64", deployment_target),
         *dotnet_arch_flags("arm64", deployment_target),
+        "-I",
+        os.fspath(source_root),
         os.fspath(source_root.joinpath("lzokay.cpp")),
         os.fspath(source_root.joinpath("lzokay-c", "lzokay-c.cpp")),
+        os.fspath(
+            ROOT.joinpath(
+                "tools",
+                "prime3_patcher",
+                "lzokay_macos_shim.cpp",
+            )
+        ),
         "-install_name",
         "@rpath/liblzokay.dylib",
         "-o",
@@ -409,6 +456,10 @@ def build_lzokay(checkout_root: Path, output_path: Path, deployment_target: str)
     ]
     run(command)
     assert_universal2(output_path)
+    assert_exported_symbols(
+        output_path,
+        ("compress_without_dict", "decompress"),
+    )
 
 
 def build_hpatchz(checkout_root: Path, build_root: Path, output_path: Path, deployment_target: str) -> None:

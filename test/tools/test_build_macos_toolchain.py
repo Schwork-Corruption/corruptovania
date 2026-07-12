@@ -99,6 +99,38 @@ def _write_runtime_file(runtime_root: Path, relative_path: str, contents: bytes 
     return path
 
 
+def test_assert_exported_symbols_checks_both_architectures(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    module = _load_module()
+    dylib_path = tmp_path.joinpath("liblzokay.dylib")
+    checked_arches: list[str] = []
+
+    class FakeResult:
+        stdout = "_compress_without_dict\n_decompress\n"
+
+    def fake_run(command, *, check, capture_output, text):
+        assert command[0] == "nm"
+        assert command[1] == "-arch"
+        assert command[-1] == str(dylib_path)
+        assert check is True
+        assert capture_output is True
+        assert text is True
+
+        checked_arches.append(command[2])
+        return FakeResult()
+
+    monkeypatch.setattr(module.subprocess, "run", fake_run)
+
+    module.assert_exported_symbols(
+        dylib_path,
+        ("compress_without_dict", "decompress"),
+    )
+
+    assert checked_arches == ["x86_64", "arm64"]
+
+
 def test_copy_runtime_tree_preserves_arch_specific_managed_files(tmp_path: Path) -> None:
     module = _load_module()
     source = tmp_path.joinpath("source")
