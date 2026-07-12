@@ -174,8 +174,13 @@ def write_frozen_file_list(package_folder: Path) -> None:
 def is_macho(path: Path) -> bool:
     if not path.is_file() or path.is_symlink():
         return False
-    result = subprocess.run(["file", "-b", os.fspath(path)], capture_output=True, text=True, check=True)
-    return "Mach-O" in result.stdout
+
+    result = subprocess.run(
+        ["file", "-b", os.fspath(path)],
+        capture_output=True,
+        check=True,
+    )
+    return b"Mach-O" in result.stdout
 
 
 def iter_macho_files(root: Path) -> list[Path]:
