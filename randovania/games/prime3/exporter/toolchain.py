@@ -27,7 +27,18 @@ class Prime3Toolchain:
 
 
 def _patcher_root() -> Path:
-    return randovania.get_data_path().joinpath("gollop_mp3_patcher")
+    default_root = randovania.get_data_path().joinpath("gollop_mp3_patcher")
+
+    if platform.system() == "Darwin" and randovania.is_frozen():
+        resources_root = randovania.get_file_path().parent.joinpath(
+            "Resources",
+            "data",
+            "gollop_mp3_patcher",
+        )
+        if resources_root.is_dir():
+            return resources_root
+
+    return default_root
 
 
 def _required_path(path: Path, message: str) -> str:

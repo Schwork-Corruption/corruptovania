@@ -71,6 +71,60 @@ def test_resolve_prime3_toolchain_macos(tmp_path: Path, monkeypatch: pytest.Monk
     assert toolchain.lzokay_library == macos_root.joinpath("liblzokay.dylib")
 
 
+def test_resolve_prime3_toolchain_frozen_macos_uses_resources(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    contents_root = tmp_path.joinpath("Corruptovania.app", "Contents")
+    frameworks_root = contents_root.joinpath("Frameworks")
+    resources_data_root = contents_root.joinpath("Resources", "data")
+    macos_root = resources_data_root.joinpath(
+        "gollop_mp3_patcher",
+        "macos",
+    )
+
+    for relative_path in [
+        "MP3Randomizer.dll",
+        "MP3Randomizer.deps.json",
+        "MP3Randomizer.runtimeconfig.json",
+        "dotnet-arm64/dotnet",
+        "hpatchz",
+        "wit",
+        "liblzokay.dylib",
+    ]:
+        file_path = macos_root.joinpath(relative_path)
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        file_path.write_text("")
+
+    monkeypatch.setattr("platform.system", lambda: "Darwin")
+    monkeypatch.setattr("platform.machine", lambda: "arm64")
+    monkeypatch.setattr("randovania.is_frozen", lambda: True)
+    monkeypatch.setattr("randovania.get_file_path", lambda: frameworks_root)
+    monkeypatch.setattr(
+        "randovania.get_data_path",
+        lambda: frameworks_root.joinpath("data"),
+    )
+
+    toolchain = resolve_prime3_toolchain()
+
+    assert toolchain.randomizer_command == (
+        str(macos_root.joinpath("dotnet-arm64", "dotnet")),
+        str(macos_root.joinpath("MP3Randomizer.dll")),
+    )
+    assert toolchain.hpatchz_command == (
+        str(macos_root.joinpath("hpatchz")),
+    )
+    assert toolchain.wit_command == (
+        str(macos_root.joinpath("wit")),
+    )
+    assert toolchain.randomizer_environment["DOTNET_ROOT"] == str(
+        macos_root.joinpath("dotnet-arm64")
+    )
+    assert toolchain.lzokay_library == macos_root.joinpath(
+        "liblzokay.dylib"
+    )
+
+
 def test_resolve_prime3_toolchain_macos_x64(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     macos_root = tmp_path.joinpath("gollop_mp3_patcher", "macos")
     macos_root.mkdir(parents=True)
