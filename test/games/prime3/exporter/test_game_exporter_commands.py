@@ -116,4 +116,3 @@ def test_run_process_wraps_tool_failures(monkeypatch: pytest.MonkeyPatch) -> Non
     assert "Prime 3 helper failed (randomizer, exit code 23)" in message
     assert "standard output" in message
     assert "native helper exploded" in message
-\n
