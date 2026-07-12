@@ -162,11 +162,32 @@ def _optional_flag(flag: str, enabled: bool) -> tuple[str, ...]:
 def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) -> None:
     process_environment = None if env is None else {**os.environ, **env}
     try:
-        subprocess.run(command, check=True, env=process_environment)
+        subprocess.run(
+            command,
+            check=True,
+            env=process_environment,
+            capture_output=True,
+            text=True,
+        )
     except subprocess.CalledProcessError as exception:
-        raise RuntimeError(
-            f"Prime 3 helper failed ({Path(command[0]).name}, exit code {exception.returncode}): {command}"
-        ) from exception
+        diagnostic_parts = [
+            part.strip()
+            for part in (exception.stdout, exception.stderr)
+            if isinstance(part, str) and part.strip()
+        ]
+        diagnostics = "\n".join(diagnostic_parts)
+        if len(diagnostics) > 12000:
+            diagnostics = diagnostics[-12000:]
+
+        message = (
+            f"Prime 3 helper failed "
+            f"({Path(command[0]).name}, exit code {exception.returncode}): "
+            f"{command}"
+        )
+        if diagnostics:
+            message += f"\n\nHelper output:\n{diagnostics}"
+
+        raise RuntimeError(message) from exception
 
 
 def _build_hpatchz_command(toolchain: Prime3Toolchain, target_file: Path, patch_file: Path) -> tuple[str, ...]:
