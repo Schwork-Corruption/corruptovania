@@ -204,6 +204,56 @@ def test_validate_runtime_tree_rejects_wrong_arch_in_x64_tree(tmp_path: Path, mo
         module.validate_runtime_tree(tmp_path, "x86_64")
 
 
+def test_build_hpatchz_passes_arch_flags_through_environment(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    module = _load_module()
+    source_root = tmp_path.joinpath("HDiffPatch")
+    build_root = tmp_path.joinpath("build")
+    output_path = tmp_path.joinpath("hpatchz")
+    source_root.mkdir()
+    build_root.mkdir()
+
+    calls = []
+
+    monkeypatch.setattr(module, "clone_source", lambda source, checkout_root: source_root)
+    monkeypatch.setattr(module, "clone_hdiffpatch_dependencies", lambda checkout_root: None)
+    monkeypatch.setattr(module, "merge_binary", lambda first, second, output: None)
+
+    def fake_run(command, *, cwd=None, env=None):
+        calls.append((command, cwd, env))
+        if command == ["make", "-j", "hpatchz"]:
+            source_root.joinpath("hpatchz").write_bytes(b"binary")
+
+    monkeypatch.setattr(module, "run", fake_run)
+
+    module.build_hpatchz(
+        tmp_path.joinpath("sources"),
+        build_root,
+        output_path,
+        "12.0",
+    )
+
+    build_calls = [
+        (command, env)
+        for command, _, env in calls
+        if command == ["make", "-j", "hpatchz"]
+    ]
+
+    assert len(build_calls) == 2
+
+    for command, env in build_calls:
+        assert command == ["make", "-j", "hpatchz"]
+        assert env is not None
+        assert env["CC"] == "clang"
+        assert env["CXX"] == "clang++"
+        assert "-arch" in env["CFLAGS"]
+        assert "-mmacosx-version-min=12.0" in env["CFLAGS"]
+        assert env["CXXFLAGS"] == env["CFLAGS"]
+        assert all(not item.startswith(("CFLAGS=", "CXXFLAGS=", "LDFLAGS=")) for item in command)
+
+
 def test_publish_mp3_randomizer_uses_portable_framework_dependent_publish(tmp_path: Path, monkeypatch) -> None:
     module = _load_module()
     build_root = tmp_path.joinpath("build")

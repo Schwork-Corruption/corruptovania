@@ -364,18 +364,20 @@ def build_hpatchz(checkout_root: Path, build_root: Path, output_path: Path, depl
             arch_output.unlink()
 
         run(["make", "clean"], cwd=source_root)
+        arch_flags = " ".join(dotnet_arch_flags(arch, deployment_target))
+        build_env = os.environ.copy()
+        build_env.update(
+            {
+                "CC": "clang",
+                "CXX": "clang++",
+                "CFLAGS": arch_flags,
+                "CXXFLAGS": arch_flags,
+            }
+        )
         run(
-            [
-                "make",
-                "-j",
-                "hpatchz",
-                "CC=clang",
-                "CXX=clang++",
-                f"CFLAGS={' '.join(dotnet_arch_flags(arch, deployment_target))}",
-                f"CXXFLAGS={' '.join(dotnet_arch_flags(arch, deployment_target))}",
-                f"LDFLAGS={' '.join(dotnet_arch_flags(arch, deployment_target))}",
-            ],
+            ["make", "-j", "hpatchz"],
             cwd=source_root,
+            env=build_env,
         )
         shutil.copy2(source_root.joinpath("hpatchz"), arch_output)
         binaries.append(arch_output)
