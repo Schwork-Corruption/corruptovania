@@ -195,6 +195,43 @@ def sign_macos_path(path: Path, identity: str, entitlements_path: str | None) ->
     subprocess.run(command, check=True)
 
 
+def install_macos_split_dotnet_runtimes(app_folder: Path) -> None:
+    source_root = _ROOT_FOLDER.joinpath(
+        "randovania",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
+    destination_root = app_folder.joinpath(
+        "Contents",
+        "Resources",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
+
+    for runtime_directory in ("dotnet-x64", "dotnet-arm64"):
+        source = source_root.joinpath(runtime_directory)
+        destination = destination_root.joinpath(runtime_directory)
+
+        if not source.is_dir():
+            raise FileNotFoundError(
+                f"Missing macOS .NET runtime directory: {source}"
+            )
+
+        if destination.exists():
+            shutil.rmtree(destination)
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(
+            source,
+            destination,
+            symlinks=True,
+        )
+
+
+
+
 def restore_macos_runtime_executable_modes(app_folder: Path) -> None:
     runtime_directory_names = {"dotnet-x64", "dotnet-arm64"}
 
@@ -218,7 +255,13 @@ def sign_macos_bundle(app_folder: Path) -> None:
     identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
     entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
     macho_paths = iter_macho_files(app_folder)
-    runtime_root = app_folder.joinpath("Contents", "Resources", "_internal", "data", "gollop_mp3_patcher", "macos")
+    runtime_root = app_folder.joinpath(
+        "Contents",
+        "Resources",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
     for runtime_directory in ("dotnet-x64", "dotnet-arm64"):
         candidate = runtime_root.joinpath(runtime_directory)
         if candidate.exists():
@@ -281,7 +324,10 @@ async def main():
     compat_text = compat_path.read_text().replace("timeout=60", "timeout=180")
     compat_path.write_text(compat_text)
 
-    subprocess.run([sys.executable, "-m", "PyInstaller", "randovania.spec"], check=True)
+    subprocess.run(
+        [sys.executable, "-m", "PyInstaller", "--clean", "randovania.spec"],
+        check=True,
+    )
     pre_edited_cs = package_folder.joinpath("_internal", "pre_edited_cs")
     if pre_edited_cs.exists():
         shutil.rmtree(pre_edited_cs)
@@ -291,6 +337,7 @@ async def main():
         create_windows_zip(package_folder)
         write_frozen_file_list(package_folder)
     elif platform.system() == "Darwin":
+        install_macos_split_dotnet_runtimes(app_folder)
         restore_macos_runtime_executable_modes(app_folder)
         sign_macos_bundle(app_folder)
         create_macos_zip(app_folder)

@@ -38,18 +38,18 @@ def collect_prime3_macos_assets():
         destination = Path("data/gollop_mp3_patcher/macos").joinpath(relative_path)
         entry = (os.fspath(source_path), os.fspath(destination.parent))
 
-        # Keep architecture-specific .NET runtime trees intact under Resources.
-        # Treating these as PyInstaller binaries moves same-named x64 and arm64
-        # files into Contents/Frameworks, where their architecture identity and
-        # directory separation are lost.
+        # Split .NET runtimes are installed into the finished app manually.
+        # Passing their Mach-O files through Analysis causes PyInstaller to
+        # classify and relocate them into Contents/Frameworks.
         is_dotnet_runtime_file = (
             bool(relative_path.parts)
             and relative_path.parts[0] in {"dotnet-x64", "dotnet-arm64"}
         )
 
         if is_dotnet_runtime_file:
-            datas.append(entry)
-        elif source_path.suffix == ".dylib" or os.access(source_path, os.X_OK):
+            continue
+
+        if source_path.suffix == ".dylib" or os.access(source_path, os.X_OK):
             binaries.append(entry)
         else:
             datas.append(entry)
