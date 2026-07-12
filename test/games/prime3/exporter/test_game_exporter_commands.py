@@ -90,10 +90,21 @@ def test_build_wit_command() -> None:
 
 
 def test_run_process_wraps_tool_failures(monkeypatch: pytest.MonkeyPatch) -> None:
-    def fake_run(command, check, env):
-        raise subprocess.CalledProcessError(returncode=23, cmd=command)
+    def fake_run(command, check, env, capture_output, text):
+        raise subprocess.CalledProcessError(
+            returncode=23,
+            cmd=command,
+            stdout="standard output",
+            stderr="native helper exploded",
+        )
 
     monkeypatch.setattr("subprocess.run", fake_run)
 
-    with pytest.raises(RuntimeError, match="Prime 3 helper failed \\(randomizer, exit code 23\\)"):
-        _run_process(("randomizer", "--flag"), env={"DOTNET_ROOT": "/tmp/dotnet"})
+    with pytest.raises(
+        RuntimeError,
+        match="Prime 3 helper failed \\(randomizer, exit code 23\\).*native helper exploded",
+    ):
+        _run_process(
+            ("randomizer", "--flag"),
+            env={"DOTNET_ROOT": "/tmp/dotnet"},
+        )
