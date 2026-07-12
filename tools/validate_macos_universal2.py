@@ -45,9 +45,14 @@ def arches_for(path: Path) -> set[str]:
 
 
 def otool_loads(path: Path) -> list[str]:
-    lines = run(["otool", "-L", os.fspath(path)]).stdout.splitlines()[1:]
+    lines = run(["otool", "-L", os.fspath(path)]).stdout.splitlines()
     result = []
     for line in lines:
+        # Fat Mach-O output has one unindented header for each architecture.
+        # Only indented lines are install names or linked dependencies.
+        if not line[:1].isspace():
+            continue
+
         stripped = line.strip()
         if not stripped:
             continue
@@ -67,9 +72,27 @@ def find_helper(bundle: Path, suffix: str) -> Path:
     matches = [path for path in bundle.rglob("*") if path.is_file() and path.as_posix().endswith(suffix)]
     if not matches:
         raise FileNotFoundError(f"Missing required helper: {suffix}")
-    if len(matches) > 1:
-        raise RuntimeError(f"Found multiple matches for helper {suffix}: {matches}")
-    return matches[0]
+
+    # PyInstaller's macOS bundle layout can expose the same file through
+    # Resources and Frameworks using symlinks or hardlinks. Collapse aliases
+    # that refer to the same underlying file, but still reject real duplicates.
+    unique_matches: list[Path] = []
+    for match in matches:
+        if any(match.samefile(existing) for existing in unique_matches):
+            continue
+        unique_matches.append(match)
+
+    if len(unique_matches) > 1:
+        raise RuntimeError(f"Found multiple distinct matches for helper {suffix}: {matches}")
+
+    return min(
+        matches,
+        key=lambda candidate: (
+            candidate.is_symlink(),
+            "Contents/Resources" not in candidate.as_posix(),
+            candidate.as_posix(),
+        ),
+    )
 
 
 def validate_dependency_paths(path: Path) -> list[str]:
