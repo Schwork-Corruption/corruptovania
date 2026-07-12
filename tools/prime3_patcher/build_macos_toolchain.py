@@ -170,6 +170,24 @@ def patch_wit_save_restore_alignment(project_root: Path) -> None:
     )
 
 
+def patch_wit_sizeof_info_alignment(project_root: Path) -> None:
+    header_path = project_root.joinpath("dclib", "dclib-basics.h")
+    header_text = header_path.read_text(encoding="utf-8")
+
+    packed_declaration = "}\n__attribute__ ((packed)) sizeof_info_t;"
+    aligned_declaration = "}\nsizeof_info_t;"
+
+    if packed_declaration not in header_text:
+        raise RuntimeError(
+            f"Unable to find packed sizeof_info_t declaration in {header_path}"
+        )
+
+    header_path.write_text(
+        header_text.replace(packed_declaration, aligned_declaration, 1),
+        encoding="utf-8",
+    )
+
+
 def parse_dotnet_runtime_version(output: str) -> str:
     candidates: list[tuple[int, ...]] = []
     for line in output.splitlines():
@@ -430,6 +448,7 @@ def build_wit(checkout_root: Path, build_root: Path, output_path: Path, deployme
     project_root = source_root.joinpath("project")
     patch_wit_setup_script(project_root)
     patch_wit_save_restore_alignment(project_root)
+    patch_wit_sizeof_info_alignment(project_root)
     binaries: list[Path] = []
 
     for arch in EXPECTED_ARCHES:
