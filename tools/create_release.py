@@ -5,6 +5,7 @@ import importlib
 import os
 import platform
 import shutil
+import stat
 import subprocess
 import sys
 import tarfile
@@ -194,6 +195,25 @@ def sign_macos_path(path: Path, identity: str, entitlements_path: str | None) ->
     subprocess.run(command, check=True)
 
 
+def restore_macos_runtime_executable_modes(app_folder: Path) -> None:
+    runtime_directory_names = {"dotnet-x64", "dotnet-arm64"}
+
+    for runtime_root in app_folder.rglob("*"):
+        if not runtime_root.is_dir() or runtime_root.name not in runtime_directory_names:
+            continue
+
+        for candidate in runtime_root.rglob("*"):
+            if not is_macho(candidate):
+                continue
+
+            candidate.chmod(
+                candidate.stat().st_mode
+                | stat.S_IXUSR
+                | stat.S_IXGRP
+                | stat.S_IXOTH
+            )
+
+
 def sign_macos_bundle(app_folder: Path) -> None:
     identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
     entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
@@ -271,6 +291,7 @@ async def main():
         create_windows_zip(package_folder)
         write_frozen_file_list(package_folder)
     elif platform.system() == "Darwin":
+        restore_macos_runtime_executable_modes(app_folder)
         sign_macos_bundle(app_folder)
         create_macos_zip(app_folder)
     elif platform.system() == "Linux":
