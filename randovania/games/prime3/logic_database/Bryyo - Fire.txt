@@ -220,7 +220,7 @@ Extra - asset_id: 691790544662692104
   > Door to Gel Purification Site
       Any of the following:
           After Gel Refinery Site Pipe or Use Screw Attack (Space Jump)
-          Space Jump Boots and Movement (Intermediate)
+          Space Jump Boots and Movement (Beginner)
   > Room Center
       Trivial
 
@@ -246,9 +246,9 @@ Extra - asset_id: 691790544662692104
           Morph Ball Bomb and Space Jump Boots and Morph Ball
           Any of the following:
               # https://youtu.be/ihLjH0TGkIg
-              Bomb/Spring Space Jump (Expert)
+              Bomb/Spring Space Jump (Hypermode)
               # https://youtu.be/_sSWzSqM_0g
-              Bomb/Spring Space Jump (Advanced) and Use Screw Attack (No Space Jump)
+              Bomb/Spring Space Jump (Advanced) and Use Screw Attack (Space Jump)
   > Ledge by Refinery Access Door
       Any of the following:
           Plasma Beam and Can Use Bombs
@@ -273,6 +273,8 @@ Extra - asset_id: 691790544662692104
   > Door to Gel Purification Site
       # https://youtu.be/66_fmkS3vOk
       Movement (Intermediate) and Slope Jump (Beginner) and Use Screw Attack (Space Jump)
+  > Pickup (Missile Expansion)
+      Space Jump Boots and Screw Attack and Knowledge (Advanced) and Slope Jump (Intermediate)
   > Room Center
       Trivial
 
