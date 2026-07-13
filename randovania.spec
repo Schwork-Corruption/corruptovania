@@ -1,5 +1,8 @@
 # -*- mode: python -*-
+import os
 import platform
+from pathlib import Path
+
 from PyInstaller.utils.hooks import copy_metadata
 
 import randovania
@@ -19,11 +22,58 @@ game_assets = [
     if game.data_path.joinpath("assets").exists()
 ]
 
+
+def collect_prime3_macos_assets():
+    datas = []
+    binaries = []
+    macos_root = Path("randovania/data/gollop_mp3_patcher/macos")
+    if not macos_root.exists():
+        return datas, binaries
+
+    for source_path in macos_root.rglob("*"):
+        if not source_path.is_file():
+            continue
+
+        relative_path = source_path.relative_to(macos_root)
+        destination = Path("data/gollop_mp3_patcher/macos").joinpath(relative_path)
+        entry = (os.fspath(source_path), os.fspath(destination.parent))
+
+        # Split .NET runtimes are installed into the finished app manually.
+        # Passing their Mach-O files through Analysis causes PyInstaller to
+        # classify and relocate them into Contents/Frameworks.
+        is_dotnet_runtime_file = (
+            bool(relative_path.parts)
+            and relative_path.parts[0] in {"dotnet-x64", "dotnet-arm64"}
+        )
+
+        if is_dotnet_runtime_file:
+            continue
+
+        if source_path.suffix == ".dylib" or os.access(source_path, os.X_OK):
+            binaries.append(entry)
+        else:
+            datas.append(entry)
+
+    return datas, binaries
+
+
+prime3_common_datas = [
+    ("randovania/data/gollop_mp3_patcher/MP3Update", "data/gollop_mp3_patcher/MP3Update"),
+    ("randovania/data/gollop_mp3_patcher/dummy_attract", "data/gollop_mp3_patcher/dummy_attract"),
+    ("randovania/data/gollop_mp3_patcher/CHANGELOG.txt", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/LICENSE", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/LICENSE.txt", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/MIT-LICENSE.txt", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/README.md", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/README.txt", "data/gollop_mp3_patcher"),
+    ("randovania/data/gollop_mp3_patcher/lzokay/LICENSE", "data/gollop_mp3_patcher/lzokay"),
+    ("randovania/data/gollop_mp3_patcher/nodtool/LICENSE", "data/gollop_mp3_patcher/nodtool"),
+]
+prime3_macos_datas, prime3_macos_binaries = collect_prime3_macos_assets()
+
 datas = [
     ("randovania/data/configuration.json", "data/"),
     ("randovania/data/binary_data", "data/binary_data"),
-    ("randovania/data/ClarisPrimeRandomizer", "data/ClarisPrimeRandomizer"),
-    ("randovania/data/gollop_mp3_patcher", "data/gollop_mp3_patcher"),
     ("randovania/data/gui_assets", "data/gui_assets"),
     ("randovania/data/icons", "data/icons"),
     ("randovania/data/nintendont", "data/nintendont"),
@@ -33,6 +83,14 @@ datas = [
     *game_assets,
     ("README.md", "data/"),
 ]
+if platform.system() != "Darwin":
+    datas.append(("randovania/data/gollop_mp3_patcher", "data/gollop_mp3_patcher"))
+else:
+    datas += prime3_common_datas
+    datas += prime3_macos_datas
+if platform.system() != "Darwin":
+    datas.append(("randovania/data/ClarisPrimeRandomizer", "data/ClarisPrimeRandomizer"))
+
 datas += copy_metadata("randovania", recursive=True)
 if platform.system() == "Linux":
     linux_datas = [("randovania/data/xdg_assets", "xdg_assets")]
@@ -42,7 +100,7 @@ if platform.system() == "Linux":
 a = Analysis(
     ["randovania/__main__.py", "randovania/cli/__init__.py"],
     pathex=[],
-    binaries=[],
+    binaries=prime3_macos_binaries if platform.system() == "Darwin" else [],
     datas=datas,
     hiddenimports=[
         "unittest.mock",
@@ -75,6 +133,7 @@ exe = EXE(
     upx=False,
     icon=icon_path,
     console=True,
+    target_arch="universal2" if platform.system() == "Darwin" else None,
 )
 coll = COLLECT(exe, a.binaries, a.zipfiles, a.datas, strip=False, upx=False, name="corruptovania")
 app = BUNDLE(

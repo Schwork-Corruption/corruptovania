@@ -28,7 +28,7 @@ attrs==25.1.0
     #   referencing
 bidict==0.23.1
     # via python-socketio
-bitstruct==8.19.0
+bitstruct==8.21.0
     # via randovania (setup.py)
 blinker==1.9.0
     # via
@@ -218,7 +218,7 @@ psutil==7.0.0
     #   pytest-xdist
 py-cord==2.6.1
     # via randovania (setup.py)
-py-randomprime==1.27.0
+py-randomprime==1.30.5
     # via
     #   open-prime-rando
     #   randovania (setup.py)

@@ -37,6 +37,20 @@ Have fun and start randomizing!
 In the [releases page](https://github.com/schwork-corruption/corruptovania/releases), we have zip files
 with everything ready to use. Just extract and run!
 
+macOS releases are published as `corruptovania-<version>-macos-universal2.tar.gz`. Extract the archive and open
+`Corruptovania.app`.
+
+Current macOS release support:
+- Intel `x86_64` and Apple Silicon `arm64` are both included in the same Universal2 app.
+- The current minimum supported macOS version is macOS 12 Monterey.
+- macOS 11 Big Sur is not currently possible with this dependency set because `PySide6-Essentials==6.8.2.1`
+  and `shiboken6==6.8.2.1` only publish `macosx_12_0_universal2` wheels for Python 3.12.
+- The macOS build now packages native Prime 3 helper binaries for extraction, patching, and image creation.
+- CI uses ad-hoc signing when no Apple Developer identity is available, so release builds are signed for local
+  integrity checks but are not notarized by default.
+- Maintainers should still run a private Prime 3 export validation on macOS before treating a release as fully
+  verified for Corruption export.
+
 <!-- Begin COMMUNITY -->
 
 # Community
@@ -209,6 +223,31 @@ In order to run the tests:
    3. Run `python -m pip install -r requirements.txt`.
    4. Run `python -m pytest test`.
 
+In order to build the macOS Universal2 application locally:
+   1. Use macOS 12 or newer with Python 3.12 and Xcode command line tools available.
+   2. Export `MACOSX_DEPLOYMENT_TARGET=12.0`.
+   3. Install the .NET 8 SDK so `dotnet publish` can build the native Prime 3 helper.
+   4. Run `python -m pip install --upgrade -r requirements-setuptools.txt`.
+   5. Run `python -m pip install delocate`.
+   6. Run `python -m pip install --only-binary=:all: -r requirements.txt`.
+   7. Run `python -m pip install -e . --no-deps`.
+   8. Run `python tools/bundle_macos_universal_wheels.py`.
+   9. Run `python -m pip install --force-reinstall --no-deps universal_wheels/*.whl`.
+  10. Run `python tools/prime3_patcher/build_macos_toolchain.py`.
+  11. Run `python -u tools/create_release.py`.
+  12. Validate with:
+      1. `file dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      2. `lipo -archs dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      3. `python tools/validate_macos_universal2.py dist/Corruptovania.app`
+      4. `codesign --verify --deep --strict --verbose=2 dist/Corruptovania.app`
+
+Private Prime 3 equivalence testing:
+   1. Set `CORRUPTOVANIA_MP3_TEST_DATA` to a private fixture directory containing an `input/` folder of copied test files.
+   2. Build the modern randomizer with `dotnet build tools/prime3_patcher/MP3Randomizer/MP3Randomizer.csproj -c Release`.
+   3. Run `python tools/prime3_patcher/compare_randomizer_outputs.py --seed <seed>`.
+   4. The script runs the shipped Windows `MP3Randomizer.exe` and the modernized build against separate copies of the
+      same private inputs, then compares every produced output file by SHA-256.
+
 In order to run the server:
    1. Run both "Getting started" and "Start Randovania" steps.
    2. Activate the virtual env. Check start_client.bat/sh for details.
@@ -236,6 +275,23 @@ Then make sure that the Python extension is installed and select the Python inst
 There is also a task defined to run all tests. To run individual tests you can utilise the `Testing` section of Visual Studio Code. You can simply run or debug a test there.
 
 To start Randovania you can press CTRL+F5. If you only press F5, Randovania will start with a debugger. Be aware that starting with a debugger makes the application much slower.
+
+## CI builds
+
+GitHub Actions currently builds:
+- Linux source tests, Linux executable, and resolver tests.
+- Windows source tests and Windows executable.
+- macOS source tests on `macos-15`.
+- a macOS Universal2 release app on `macos-15`, with wheel normalization, a rebuilt native Prime 3 helper toolchain
+  (`MP3Randomizer`, bundled `dotnet`, `liblzokay.dylib`, `hpatchz`, and `wit`), recursive Mach-O arch validation,
+  ad-hoc signing by default, and a release archive at `dist/corruptovania-<version>-macos-universal2.tar.gz`.
+
+Prime 3 macOS helper licensing in-tree:
+- `randovania/data/gollop_mp3_patcher/LICENSE`: MP3Randomizer / gollop
+- `randovania/data/gollop_mp3_patcher/lzokay/LICENSE`: lzokay
+- `randovania/data/gollop_mp3_patcher/LICENSE.txt`: HDiffPatch / hpatchz
+- `randovania/data/gollop_mp3_patcher/wit/GPL-2.0.txt`: WIT
+- `randovania/data/gollop_mp3_patcher/nodtool/LICENSE`: NOD
 
 # Documentation
 

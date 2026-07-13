@@ -178,4 +178,4 @@ UNKNOWN_GIT_HASH = b"UNKN"
 
 __version__ = _final_version
 VERSION = _final_version
-GIT_HASH = version_hash.git_hash
+GIT_HASH = version_hash.git_hash or UNKNOWN_GIT_HASH

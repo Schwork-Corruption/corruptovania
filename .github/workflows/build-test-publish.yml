@@ -9,51 +9,32 @@ on:
       - main
       - stable
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
-  pytest:
+  source-tests:
     strategy:
       fail-fast: false
       matrix:
         include:
-          - os: 'ubuntu-latest'
-            python: '3.12'
-            executable: false
-            name: 'Linux'
+          - os: ubuntu-latest
+            python: "3.12"
+            name: Linux
+            resolver: false
 
-          - os: 'ubuntu-latest'
-            python: '3.12'
-            executable: true
-            name: 'Linux Executable'
+          - os: windows-latest
+            python: "3.12"
+            name: Windows
+            resolver: false
 
-          - os: 'windows-latest'
-            python: '3.12'
-            executable: false
-            name: 'Windows'
-
-          - os: 'windows-latest'
-            python: '3.12'
-            executable: true
-            name: 'Windows Executable'
-
-          - os: 'ubuntu-latest'
-            python: '3.12'
-            executable: false
-            name: 'Resolver'
+          - os: ubuntu-latest
+            python: "3.12"
+            name: Resolver
+            resolver: true
 
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
-
     name: ${{ matrix.name }}
-
-    env:
-      # Due to https://github.com/eventlet/eventlet/issues/670, merely importing eventlet during a test running with
-      # pytest-async causes an error. Settings EVENTLET_IMPORT_VERSION_ONLY allows us to avoid that error, but this
-      # instead causes the flask_socketio to fail importing. Setting FLASK_RUN_FROM_CLI causes it to default to the
-      # threading async method instead, avoiding the issue
-      EVENTLET_IMPORT_VERSION_ONLY: ${{ fromJSON('[0, 1]')[matrix.os == 'macos-13'] }}
-      FLASK_RUN_FROM_CLI: ${{ fromJSON('[0, 1]')[matrix.os == 'macos-13'] }}
 
     steps:
       - name: Checkout
@@ -68,7 +49,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "${{ matrix.python }}"
-          cache: "pip"
+          cache: pip
 
       - name: Apt
         run: sudo apt-get -q update && sudo apt-get -y install xvfb xserver-xephyr tigervnc-standalone-server x11-utils gnumeric libxcb-cursor0 libxkbcommon-x11-0
@@ -77,69 +58,37 @@ jobs:
       - name: Install core Python packages
         run: python -m pip install --upgrade -r requirements-setuptools.txt
 
-      - name: Install Python packages (source)
+      - name: Install Python packages
         run: python -m pip install -r requirements.txt -e ".[gui,exporters,server,test,typing,website]"
-        if: ${{ !matrix.executable }}
 
-      - name: Install Python packages (executable)
-        run: python -m pip install -e . -e ".[gui,exporters,test]" -c requirements.txt
-        if: ${{ matrix.executable }}
-
-      - name: build ui files
+      - name: Build UI files
         run: python setup.py build_ui
 
-      - name: build sdist and wheel
+      - name: Build sdist and wheel
         run: python -m build --no-isolation
-        if: ${{ !matrix.executable && matrix.os == 'ubuntu-latest' }}
+        if: ${{ !matrix.resolver && matrix.os == 'ubuntu-latest' }}
 
-      - name: create test game
+      - name: Create test game
         run: coverage run -m randovania development add-new-game --enum-name TEST_GAME --enum-value test_game --short-name TG --long-name "Test Game"
-        if: ${{ !matrix.executable && !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ !matrix.resolver && !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
 
-      - name: build ui files for test game too
+      - name: Build UI files for test game too
         run: python setup.py build_ui
-        if: ${{ !matrix.executable && !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ !matrix.resolver && !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
 
-      - name: run pytest (no resolver)
+      - name: Run pytest
         run: $PREFIX python -m pytest --cov randovania --cov-append --cov-report=xml --skip-resolver-tests -n auto --durations=100
         shell: bash
         env:
           QT_QPA_PLATFORM: "${{ matrix.os == 'ubuntu-latest' && 'xcb' || '' }}"
           PREFIX: "${{ matrix.os == 'ubuntu-latest' && 'xvfb-run' || '' }}"
-        if: ${{ !matrix.executable && matrix.name != 'Resolver' }}
+        if: ${{ !matrix.resolver }}
 
-      - name: run pytest (resolver)
+      - name: Run pytest (resolver)
         run: python -m pytest --cov randovania --cov-append --cov-report=xml --durations=100 -n auto test/resolver/test_resolver.py test/generator/test_generator_reach.py
-        if: ${{ matrix.name == 'Resolver' }}
+        if: ${{ matrix.resolver }}
 
-      - name: create executable
-        run: python -u tools/create_release.py
-        if: matrix.executable
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OBFUSCATOR_SECRET: ${{ secrets.OBFUSCATOR_SECRET }}
-          SENTRY_CLIENT_URL: ${{ secrets.SENTRY_CLIENT_URL }}
-          PRODUCTION: ${{ startsWith(github.ref, 'refs/tags/v') || startsWith(github.ref, 'refs/heads/stable') }}
-
-      - name: executable check
-        run: dist/corruptovania/corruptovania --version
-        if: matrix.executable
-
-      - name: executable test
-        run: dist/corruptovania/corruptovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py
-        if: matrix.executable
-
-# TODO: this causes CI to hang
-#      - name: executable startup check
-#        run: $PREFIX dist/randovania/randovania gui main --instantly-quit
-#        shell: bash
-#        env:
-#          QT_QPA_PLATFORM: "${{ matrix.os == 'ubuntu-latest' && 'xcb' || '' }}"
-#          PREFIX: "${{ matrix.os == 'ubuntu-latest' && 'xvfb-run' || '' }}"
-#        if: matrix.executable
-
-      - name: codecov
-        if: ${{ !matrix.executable }}
+      - name: Codecov
         uses: Wandalen/wretry.action@master
         with:
           action: codecov/codecov-action@v4
@@ -149,17 +98,6 @@ jobs:
             token: ${{ secrets.CODECOV_TOKEN }}
           attempt_limit: 5
           attempt_delay: 10000
-
-      - name: Upload artifacts
-        if: ${{ matrix.executable && (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'merge_group' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: Corruptovania ${{ matrix.name }}
-          if-no-files-found: error
-          path: |
-            dist/corruptovania-*.zip
-            dist/corruptovania-*.tar.gz
-            dist/corruptovania-*.7z
 
       - name: Upload wheel
         if: ${{ matrix.name == 'Linux' }}
@@ -171,9 +109,282 @@ jobs:
             dist/randovania-*.tar.gz
             dist/randovania-*.whl
 
+  macos-source-tests:
+    runs-on: macos-15
+    timeout-minutes: 30
+    name: macOS Source
+    env:
+      EVENTLET_IMPORT_VERSION_ONLY: "1"
+      FLASK_RUN_FROM_CLI: "1"
+      MACOSX_DEPLOYMENT_TARGET: "12.0"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Workaround for worktree config
+        run: git config --unset-all extensions.worktreeConfig || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.404"
+
+      - name: Install core Python packages
+        run: python -m pip install --upgrade -r requirements-setuptools.txt
+
+      - name: Install Python packages
+        run: |
+          python -m pip install --only-binary=py-randomprime -r requirements.txt
+          python -m pip install -e . --no-deps
+
+      - name: Build UI files
+        run: python setup.py build_ui
+
+      - name: Create test game
+        run: coverage run -m randovania development add-new-game --enum-name TEST_GAME --enum-value test_game --short-name TG --long-name "Test Game"
+        if: ${{ !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Build UI files for test game too
+        run: python setup.py build_ui
+        if: ${{ !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Run pytest
+        run: python -m pytest --cov randovania --cov-append --cov-report=xml --skip-resolver-tests -n auto --durations=100
+
+      - name: Codecov
+        uses: Wandalen/wretry.action@master
+        with:
+          action: codecov/codecov-action@v4
+          with: |
+            fail_ci_if_error: false
+            files: ./coverage.xml
+            token: ${{ secrets.CODECOV_TOKEN }}
+          attempt_limit: 5
+          attempt_delay: 10000
+
+  executable:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.12"
+            name: Linux Executable
+
+          - os: windows-latest
+            python: "3.12"
+            name: Windows Executable
+
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    name: ${{ matrix.name }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Workaround for worktree config
+        run: git config --unset-all extensions.worktreeConfig || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "${{ matrix.python }}"
+          cache: pip
+
+      - name: Apt
+        run: sudo apt-get -q update && sudo apt-get -y install xvfb xserver-xephyr tigervnc-standalone-server x11-utils gnumeric libxcb-cursor0 libxkbcommon-x11-0
+        if: matrix.os == 'ubuntu-latest'
+
+      - name: Install core Python packages
+        run: python -m pip install --upgrade -r requirements-setuptools.txt
+
+      - name: Install Python packages
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install -e . --no-deps
+
+      - name: Build UI files
+        run: python setup.py build_ui
+
+      - name: Create executable
+        run: python -u tools/create_release.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OBFUSCATOR_SECRET: ${{ secrets.OBFUSCATOR_SECRET }}
+          SENTRY_CLIENT_URL: ${{ secrets.SENTRY_CLIENT_URL }}
+          PRODUCTION: ${{ startsWith(github.ref, 'refs/tags/v') || startsWith(github.ref, 'refs/heads/stable') }}
+
+      - name: Executable check
+        run: dist/corruptovania/corruptovania --version
+
+      - name: Executable test
+        run: dist/corruptovania/corruptovania --pytest --skip-gui-tests --skip-echo-tool --skip-resolver-tests --durations=100 --ignore=test/server --ignore=test/cli/commands/test_website.py --ignore=test/cli/commands/test_export_videos.py --ignore=test/tools/test_build_macos_toolchain.py
+
+      - name: Upload artifacts
+        if: ${{ (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'merge_group' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Corruptovania ${{ matrix.name }}
+          if-no-files-found: error
+          path: |
+            dist/corruptovania-*.zip
+            dist/corruptovania-*.tar.gz
+            dist/corruptovania-*.7z
+
+  macos-universal2-executable:
+    runs-on: macos-15
+    timeout-minutes: 45
+    name: macOS Universal2 Executable
+    env:
+      MACOSX_DEPLOYMENT_TARGET: "12.0"
+      ARCHFLAGS: "-arch arm64 -arch x86_64"
+      DOTNET_RUNTIME_VERSION: "8.0.11"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Workaround for worktree config
+        run: git config --unset-all extensions.worktreeConfig || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.404"
+
+      - name: Test MP3Randomizer project
+        run: dotnet test tools/prime3_patcher/MP3Randomizer.Tests/MP3Randomizer.Tests.csproj -c Release
+
+      - name: Install core Python packages
+        run: python -m pip install --upgrade -r requirements-setuptools.txt
+
+      - name: Install delocate
+        run: python -m pip install delocate
+
+      - name: Install Python packages
+        run: |
+          python -m pip install --only-binary=:all: --no-build-isolation -e ".[gui,exporters]" -c requirements.txt
+
+      - name: Prepare universal2 wheels
+        run: |
+          python tools/bundle_macos_universal_wheels.py
+          python -m pip install --force-reinstall --no-deps universal_wheels/*.whl
+
+      - name: Build Prime 3 macOS toolchain
+        run: python tools/prime3_patcher/build_macos_toolchain.py --dotnet-runtime-version "${DOTNET_RUNTIME_VERSION}"
+
+      - name: Smoke-test Prime 3 helpers
+        shell: bash
+        run: |
+          TOOL_ROOT="$(python -c 'from pathlib import Path; print(Path("randovania/data/gollop_mp3_patcher/macos").resolve())')"
+          test -f "${TOOL_ROOT}/MP3Randomizer.dll"
+          test -f "${TOOL_ROOT}/MP3Randomizer.deps.json"
+          test -f "${TOOL_ROOT}/MP3Randomizer.runtimeconfig.json"
+          file "${TOOL_ROOT}/dotnet-x64/dotnet" "${TOOL_ROOT}/dotnet-arm64/dotnet" "${TOOL_ROOT}/liblzokay.dylib" "${TOOL_ROOT}/hpatchz" "${TOOL_ROOT}/wit"
+          lipo -archs "${TOOL_ROOT}/dotnet-x64/dotnet"
+          lipo -archs "${TOOL_ROOT}/dotnet-arm64/dotnet"
+          lipo -archs "${TOOL_ROOT}/liblzokay.dylib"
+          lipo -archs "${TOOL_ROOT}/hpatchz"
+          lipo -archs "${TOOL_ROOT}/wit"
+          otool -L "${TOOL_ROOT}/dotnet-x64/dotnet"
+          otool -L "${TOOL_ROOT}/dotnet-arm64/dotnet"
+          otool -L "${TOOL_ROOT}/liblzokay.dylib"
+          otool -L "${TOOL_ROOT}/hpatchz"
+          otool -L "${TOOL_ROOT}/wit"
+          DOTNET_ROOT="${TOOL_ROOT}/dotnet-arm64" \
+          DOTNET_MULTILEVEL_LOOKUP=0 \
+          PATH="${TOOL_ROOT}/dotnet-arm64:${PATH}" \
+          "${TOOL_ROOT}/dotnet-arm64/dotnet" \
+          "${TOOL_ROOT}/MP3Randomizer.dll" \
+          --help
+          "${TOOL_ROOT}/hpatchz" -h
+          "${TOOL_ROOT}/wit" --version
+
+      - name: Build UI files
+        run: python setup.py build_ui
+
+      - name: Create executable
+        run: python -u tools/create_release.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OBFUSCATOR_SECRET: ${{ secrets.OBFUSCATOR_SECRET }}
+          SENTRY_CLIENT_URL: ${{ secrets.SENTRY_CLIENT_URL }}
+          PRODUCTION: ${{ startsWith(github.ref, 'refs/tags/v') || startsWith(github.ref, 'refs/heads/stable') }}
+          MACOS_CODESIGN_IDENTITY: ${{ secrets.MACOS_CODESIGN_IDENTITY }}
+          MACOS_ENTITLEMENTS_PATH: ${{ secrets.MACOS_ENTITLEMENTS_PATH }}
+
+      - name: Verify main executable architectures
+        run: |
+          file dist/Corruptovania.app/Contents/MacOS/corruptovania
+          lipo -archs dist/Corruptovania.app/Contents/MacOS/corruptovania
+
+      - name: Verify bundled Mach-O files are universal2
+        run: python tools/validate_macos_universal2.py dist/Corruptovania.app
+
+      - name: Verify codesign
+        run: codesign --verify --deep --strict --verbose=2 dist/Corruptovania.app
+
+      - name: Assess with Gatekeeper
+        run: spctl --assess --type execute --verbose=4 dist/Corruptovania.app || true
+
+      - name: Executable check
+        run: dist/Corruptovania.app/Contents/MacOS/corruptovania --version
+
+      - name: Startup smoke test
+        run: python -c "import subprocess; subprocess.run(['dist/Corruptovania.app/Contents/MacOS/corruptovania', 'gui', 'main', '--instantly-quit'], timeout=30, check=True)"
+
+      - name: Connection window import smoke test
+        run: dist/Corruptovania.app/Contents/MacOS/corruptovania --smoke-test-game-connection-window
+        env:
+          QT_QPA_PLATFORM: offscreen
+
+      - name: Verify macOS archive contents
+        shell: bash
+        run: |
+          VERSION="$(python -c 'import randovania; print(randovania.VERSION)')"
+          ARCHIVE="dist/corruptovania-${VERSION}-macos-universal2.tar.gz"
+          EXTRACT_ROOT="$(mktemp -d)"
+          APP_PATH="${EXTRACT_ROOT}/corruptovania-${VERSION}/Corruptovania.app"
+          test -f "${ARCHIVE}"
+          tar -xzf "${ARCHIVE}" -C "${EXTRACT_ROOT}"
+          test -d "${APP_PATH}"
+          test -x "${APP_PATH}/Contents/MacOS/corruptovania"
+          file "${APP_PATH}/Contents/MacOS/corruptovania"
+          lipo -archs "${APP_PATH}/Contents/MacOS/corruptovania"
+          python tools/validate_macos_universal2.py "${APP_PATH}"
+          codesign --verify --deep --strict --verbose=2 "${APP_PATH}"
+
+      - name: Upload artifacts
+        if: ${{ (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'merge_group' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Corruptovania macOS Universal2
+          if-no-files-found: error
+          path: dist/corruptovania-*-macos-universal2.tar.gz
+
   installer:
     runs-on: windows-latest
-    needs: pytest
+    needs: executable
     name: Build Windows Installer
     if: false
     steps:
@@ -183,7 +394,7 @@ jobs:
       - name: Download the executable
         uses: actions/download-artifact@v4
         with:
-          name: Randovania Windows Executable
+          name: Corruptovania Windows Executable
           path: packages/
 
       - name: Get version
@@ -220,44 +431,33 @@ jobs:
       - name: Deploy Advanced Installer
         uses: caphyon/advinst-github-action@v2.0
         with:
-          advinst-version: '22.0'
+          advinst-version: "22.0"
           advinst-license: ${{ secrets.ADVANCED_INSTALLER_LICENSE }}
-          advinst-enable-automation: 'true'
+          advinst-enable-automation: "true"
 
       - name: Make changes for dev installer
         shell: pwsh
         if: ${{ !startsWith(github.ref, 'refs/tags/v') && !startsWith(github.ref, 'refs/heads/stable') }}
         run: |
-          # Load the AIP project from checkout location
           $aipPath = join-path $env:GITHUB_WORKSPACE "tools/Randovania Installer.aip";
           Write-Host "AIP: $aipPath";
           $advinst = new-object -com advancedinstaller;
           $project = $advinst.LoadProject($aipPath);
           $productDetails = $project.ProductDetails;
-
-          # Use dev upgrade code
           $productDetails.UpgradeCode.UpgradeCode = "{7583BC7E-D9ED-4428-A9AD-AE60AE48D4A2}";
-          # Use dev name
           $productDetails.Name = "Randovania Dev";
-
-          # Save the changes
           $project.Save();
 
       - name: Create Windows installer
         shell: pwsh
         run: |
-          # Load the AIP project from checkout location
           $aipPath = join-path $env:GITHUB_WORKSPACE "tools/Randovania Installer.aip";
           Write-Host "AIP: $aipPath";
           $advinst = new-object -com advancedinstaller;
           $project = $advinst.LoadProject($aipPath);
           $productDetails = $project.ProductDetails;
-
-          # Bump the ProductVersion
           $productDetails.Version = "${{ steps.version.outputs.version }}";
           Write-Host "Version: $productDetails.Version";
-
-          # Build the project
           $project.Build();
 
       - name: Upload installer
@@ -270,7 +470,7 @@ jobs:
 
   flatpak:
     runs-on: ubuntu-latest
-    needs: pytest
+    needs: executable
     name: Build Flatpak
     if: false
 
@@ -282,12 +482,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: 'pip'
+          cache: pip
 
       - name: Download the executable
         uses: actions/download-artifact@v4
         with:
-          name: Randovania Linux Executable
+          name: Corruptovania Linux Executable
           path: packages/
 
       - name: Apt
@@ -303,7 +503,7 @@ jobs:
         run: python ./tools/build_flatpak.py --repository ./flatpak-repo packages/*.tar.gz
 
   lint:
-    runs-on: 'windows-latest'
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -332,7 +532,7 @@ jobs:
           git diff --exit-code
 
   mypy:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -347,43 +547,25 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"
+          cache: pip
 
       - name: Install Python packages
         run: |
           python -m pip install --upgrade -r requirements-setuptools.txt
           python -m pip install -r requirements.txt -e ".[gui,exporters,server,test,typing]"
 
-      - name: build ui files
+      - name: Build UI files
         run: python setup.py build_ui
 
-      - name: Mypy on modified files
-        uses: tsuyoshicho/action-mypy@v5
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
-          reporter: github-check
-          setup_method: nothing
-          fail_on_error: false
-
       - name: Mypy on required files
-        uses: tsuyoshicho/action-mypy@v4
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
-          reporter: github-check
-          setup_method: nothing
-          target: --config-file=pyproject.toml
-          fail_on_error: true
-
+        run: python -m mypy --config-file=pyproject.toml
 
   docker:
     runs-on: ubuntu-latest
     name: Docker
     if: false
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -391,8 +573,7 @@ jobs:
       - name: Workaround for worktree config
         run: git config --unset-all extensions.worktreeConfig || true
 
-      -
-        name: Prepare
+      - name: Prepare
         id: prep
         run: |
           DOCKER_IMAGE=randovania/server
@@ -421,31 +602,27 @@ jobs:
           echo tags=${TAGS} >> $GITHUB_OUTPUT
           echo created=$(date -u +'%Y-%m-%dT%H:%M:%SZ') >> $GITHUB_OUTPUT
 
-      -
-        name: Set up QEMU
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.9.0
 
       - name: Should Push
         id: decide_push
         env:
-            SHOULD_PUSH: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' && !startsWith(github.ref, 'refs/heads/stable') }}
+          SHOULD_PUSH: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' && !startsWith(github.ref, 'refs/heads/stable') }}
         run: |
           echo should=${SHOULD_PUSH} >> $GITHUB_OUTPUT
 
-      -
-        name: Login to DockerHub
+      - name: Login to DockerHub
         if: ${{ fromJSON(steps.decide_push.outputs.should) }}
         uses: docker/login-action@v3.3.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      -
-        name: Build and push
+      - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v6.13.0
         with:
@@ -462,16 +639,17 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.licenses=${{ github.event.repository.license.name }}
 
-      -
-        name: Test image
+      - name: Test image
         run: |
           docker run --rm --entrypoint /bin/bash randovania/server:${{ steps.prep.outputs.version }} tools/server_image_test.sh
 
   release:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     name: Release
     needs:
-      - pytest
+      - source-tests
+      - executable
+      - macos-universal2-executable
     if: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' }}
 
     steps:
@@ -488,7 +666,7 @@ jobs:
       - name: Download the executables
         uses: actions/download-artifact@v4.1.0
         with:
-          pattern: '* *'
+          pattern: "* *"
           path: packages/
 
       - name: Install Python packages

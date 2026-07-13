@@ -22,6 +22,7 @@ Creating a major/minor release:
 - Make a (signed) tag, push and wait for CI. This will automatically create a new release.
 - Copy-paste the changelog from CHANGELOG.md into the GH Release created by CI.
 - Website gets automatically updated. For Flathub, [merge the PR](https://github.com/flathub/io.github.randovania.Randovania/pulls) that will get automatically created.
+- For macOS, the CI release artifact is `corruptovania-<version>-macos-universal2.tar.gz`, containing `Corruptovania.app`.
 
 Creating a patch release:
 - Get the fixes to the `stable` branch however you want (commit directly, cherry pick).
@@ -35,3 +36,16 @@ Creating a patch release:
 Some other miscellaneous notes:
 - The server version always has to be in sync with the client version. For this reason, **never** delete releases, nor keep releases in the pre-release state for longer than they're needed. If you want to delete a release, make a new release that reverts the changes.
 - Even if the feature freeze for a major/minor releases is late, the 1st is always when we release (unless of course we decided to skip the release).
+
+## macOS release notes
+
+- The macOS app is built as a single Universal2 `Corruptovania.app` with both `x86_64` and `arm64` slices.
+- The current minimum supported macOS version is macOS 12 Monterey.
+- macOS 11 Big Sur is blocked by the pinned Qt stack: `PySide6-Essentials==6.8.2.1` and `shiboken6==6.8.2.1`
+  only publish `macosx_12_0_universal2` wheels for the Python 3.12 build used here.
+- The macOS executable job also rebuilds the Prime 3 helper toolchain as Universal2 before packaging:
+  `MP3Randomizer`, bundled `dotnet`, `liblzokay.dylib`, `hpatchz`, and `wit`.
+- CI validates the main executable with `file` and `lipo -archs`, recursively checks bundled Mach-O files for both
+  architectures, verifies `codesign`, and runs a noninteractive startup smoke test.
+- CI signs with an ad-hoc identity when no Developer ID secret is configured. Developer ID signing and notarization
+  can be added later by setting `MACOS_CODESIGN_IDENTITY` and the related notarization secrets/workflow steps.
