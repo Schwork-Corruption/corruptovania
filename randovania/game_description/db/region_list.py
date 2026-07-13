@@ -20,6 +20,7 @@ if typing.TYPE_CHECKING:
     from randovania.game_description.db.node_identifier import NodeIdentifier
     from randovania.game_description.db.region import Region
     from randovania.game_description.game_patches import GamePatches
+    from randovania.game_description.hint_features import HintFeature
     from randovania.game_description.requirements.base import Requirement
     from randovania.game_description.resources.pickup_index import PickupIndex
 
@@ -31,6 +32,7 @@ _NodesTuple = tuple[Node | None, ...]
 @dataclasses.dataclass(init=False, slots=True)
 class RegionList(NodeProvider):
     regions: list[Region]
+    flatten_to_set_on_patch: bool
 
     _nodes_to_area: dict[NodeIndex, Area]
     _nodes_to_region: dict[NodeIndex, Region]
@@ -42,14 +44,17 @@ class RegionList(NodeProvider):
     _patches_dock_lock_requirements: list[Requirement | None] | None
     _teleporter_network_cache: dict[str, list[TeleporterNetworkNode]]
     configurable_nodes: dict[NodeIdentifier, Requirement]
+    _feature_to_pickup_nodes: dict[HintFeature, tuple[PickupNode, ...]]
 
     def __deepcopy__(self, memodict: dict) -> RegionList:
         return RegionList(
             regions=copy.deepcopy(self.regions, memodict),
+            flatten_to_set_on_patch=self.flatten_to_set_on_patch,
         )
 
-    def __init__(self, regions: list[Region]):
+    def __init__(self, regions: list[Region], flatten_to_set_on_patch: bool = False):
         self.regions = regions
+        self.flatten_to_set_on_patch = flatten_to_set_on_patch
         self._patched_node_connections = None
         self._patches_dock_open_requirements = None
         self._patches_dock_lock_requirements = None
@@ -80,6 +85,7 @@ class RegionList(NodeProvider):
         self._nodes = None
         self._identifier_to_node = {}
         self._teleporter_network_cache = {}
+        self._feature_to_pickup_nodes = {}
 
     def _iterate_over_nodes(self) -> Iterator[Node]:
         for region in self.regions:
@@ -198,11 +204,25 @@ class RegionList(NodeProvider):
         :param dock_weakness_database
         :return:
         """
+
+        if self.flatten_to_set_on_patch:
+            from randovania.game_description.requirements.requirement_and import RequirementAnd
+            from randovania.game_description.requirements.requirement_or import RequirementOr
+
+            def flatten_to_set(requirement: Requirement) -> Requirement:
+                patched = requirement.patch_requirements(damage_multiplier, context)
+                return RequirementOr(
+                    [RequirementAnd(alternative.values()) for alternative in patched.as_set(context).alternatives]
+                ).simplify()
+        else:
+
+            def flatten_to_set(requirement: Requirement) -> Requirement:
+                return requirement.patch_requirements(damage_multiplier, context).simplify()
+
         # Area Connections
         self._patched_node_connections = {
             node.node_index: {
-                target.node_index: value.patch_requirements(damage_multiplier, context).simplify()
-                for target, value in area.connections[node].items()
+                target.node_index: flatten_to_set(value) for target, value in area.connections[node].items()
             }
             for _, area, node in self.all_regions_areas_nodes
         }
@@ -223,15 +243,11 @@ class RegionList(NodeProvider):
 
         for weakness in sorted(dock_weakness_database.all_weaknesses, key=operator.attrgetter("weakness_index")):
             assert len(self._patches_dock_open_requirements) == weakness.weakness_index
-            self._patches_dock_open_requirements.append(
-                weakness.requirement.patch_requirements(damage_multiplier, context).simplify()
-            )
+            self._patches_dock_open_requirements.append(flatten_to_set(weakness.requirement))
             if weakness.lock is None:
                 self._patches_dock_lock_requirements.append(None)
             else:
-                self._patches_dock_lock_requirements.append(
-                    weakness.lock.requirement.patch_requirements(damage_multiplier, context).simplify()
-                )
+                self._patches_dock_lock_requirements.append(flatten_to_set(weakness.lock.requirement))
 
     def node_by_identifier(self, identifier: NodeIdentifier) -> Node:
         cache_result = self._identifier_to_node.get(identifier)
@@ -304,6 +320,16 @@ class RegionList(NodeProvider):
 
     def get_configurable_node_requirement(self, identifier: NodeIdentifier) -> Requirement:
         return self.configurable_nodes[identifier]
+
+    def pickup_nodes_with_feature(self, feature: HintFeature) -> tuple[PickupNode, ...]:
+        """Returns an iterable tuple of PickupNodes with the given feature (either directly or in their area)"""
+        if feature not in self._feature_to_pickup_nodes:
+            self._feature_to_pickup_nodes[feature] = tuple(
+                node
+                for _, area, node in self.all_regions_areas_nodes
+                if isinstance(node, PickupNode) and ((feature in area.hint_features) or (feature in node.hint_features))
+            )
+        return self._feature_to_pickup_nodes[feature]
 
 
 def _calculate_nodes_to_area_region(regions: Iterable[Region]) -> tuple[dict[NodeIndex, Area], dict[NodeIndex, Region]]:

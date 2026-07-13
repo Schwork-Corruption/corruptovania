@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from randovania.games.game import RandovaniaGame
-from randovania.gui.generated.games_tab_cavestory_widget_ui import Ui_CaveStoryGameTabWidget
+from randovania.game.game_enum import RandovaniaGame
+from randovania.games.cave_story.gui.generated.games_tab_cavestory_widget_ui import Ui_CaveStoryGameTabWidget
 from randovania.gui.widgets.base_game_tab_widget import BaseGameTabWidget
 
 
 class CSGameTabWidget(BaseGameTabWidget, Ui_CaveStoryGameTabWidget):
-    def setup_ui(self):
+    def setup_ui(self) -> None:
         self.setupUi(self)
 
     @classmethod

@@ -6,6 +6,7 @@
     "areas": {
         "Main Docking Bay": {
             "default_node": "Samus Ship (Catch.)",
+            "hint_features": [],
             "extra": {
                 "asset_id": 4133901881028310574
             },
@@ -16,7 +17,7 @@
                     "coordinates": {
                         "x": 0.0,
                         "y": -66.0,
-                        "z": 6.499981999397278
+                        "z": 6.5
                     },
                     "description": "",
                     "layers": [
@@ -37,6 +38,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Expansion)": {
                             "type": "and",
@@ -130,7 +132,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -0.15,
+                        "y": -66.17,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -139,6 +145,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 51,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Main Docking Access": {
                             "type": "and",
@@ -152,7 +159,11 @@
                 "Pickup (Plasma Beam)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.15652759084791387,
+                        "y": -66.53832062210259,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -161,6 +172,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 52,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Samus Ship (Catch.)": {
                             "type": "and",
@@ -174,7 +186,11 @@
                 "Samus Ship (Catch.)": {
                     "node_type": "teleporter_network",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -0.02,
+                        "y": -66.78,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -264,7 +280,11 @@
                 "Event - Ghor": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.16026618812621504,
+                        "y": -66.39064602960968,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -285,7 +305,11 @@
                 "Before Ghor": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.12848811126065504,
+                        "y": -66.15885299835502,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -320,6 +344,7 @@
         },
         "Zipline Station Alpha": {
             "default_node": "Door to Main Docking Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 201801993056581673
             },
@@ -328,9 +353,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.9141387939453125e-06,
-                        "y": 325.15289306640625,
-                        "z": 2.50001391413889
+                        "x": 0.0,
+                        "y": 325.15,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -351,6 +376,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Arrival Station": {
                             "type": "or",
@@ -454,9 +480,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6.9141387939453125e-06,
-                        "y": -325.15289306640625,
-                        "z": 2.49998608586111
+                        "x": -0.0,
+                        "y": -325.15,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -477,6 +503,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Main Docking Access": {
                             "type": "or",
@@ -580,6 +607,7 @@
         },
         "Arrival Station": {
             "default_node": "Door to Zipline Station Alpha",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14742980547553882067
             },
@@ -588,9 +616,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.5987625122070312e-05,
-                        "y": 57.8472785949707,
-                        "z": 2.5000029305115277
+                        "x": 0.0,
+                        "y": 57.85,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -611,8 +639,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Ledge": {
+                        "Room Center": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -639,9 +668,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.3208169937133789,
-                        "y": -35.07712173461914,
-                        "z": 2.4999904932096797
+                        "x": -0.32,
+                        "y": -35.08,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -662,8 +691,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Ledge": {
+                        "Room Center": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -698,7 +728,11 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -99.2,
+                        "y": 33.17,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -707,8 +741,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 53,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
-                        "Ledge": {
+                        "Room Center": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -717,10 +752,14 @@
                         }
                     }
                 },
-                "Ledge": {
+                "Room Center": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.54,
+                        "y": 27.57,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -783,6 +822,7 @@
         },
         "Barracks Access": {
             "default_node": "Door to Transit Hub",
+            "hint_features": [],
             "extra": {
                 "asset_id": 4910606911885883821
             },
@@ -791,9 +831,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.794929504394531e-05,
-                        "y": 57.84728240966797,
-                        "z": 4.500002980232239
+                        "x": 0.0,
+                        "y": 57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -814,6 +854,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Steambot Barracks": {
                             "type": "and",
@@ -837,8 +878,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -35.32747268676758,
-                        "y": 5.507469177246094e-05,
+                        "x": -35.33,
+                        "y": 0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -860,6 +901,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Hub": {
                             "type": "and",
@@ -873,7 +915,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -25.61799664321981,
+                        "y": 32.7795198454869,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -882,6 +928,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 54,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Transit Hub": {
                             "type": "and",
@@ -896,6 +943,7 @@
         },
         "Hub Access": {
             "default_node": "Door to Arrival Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 11556115933702107376
             },
@@ -904,8 +952,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.8472900390625,
-                        "y": 5.0067901611328125e-05,
+                        "x": 57.85,
+                        "y": 0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -927,6 +975,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Arrival Station": {
                             "type": "and",
@@ -941,9 +990,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 4.9114227294921875e-05,
-                        "y": -35.327476501464844,
-                        "z": 4.499998033046722
+                        "x": 0.0,
+                        "y": -35.33,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -964,6 +1013,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Hub": {
                             "type": "and",
@@ -978,6 +1028,7 @@
         },
         "Barracks Lift": {
             "default_node": "Door to Steambot Barracks",
+            "hint_features": [],
             "extra": {
                 "asset_id": 11193898588728046860
             },
@@ -986,8 +1037,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.8472785949707,
-                        "y": 4.792213439941406e-05,
+                        "x": 57.85,
+                        "y": 0.0,
                         "z": 44.5
                     },
                     "description": "",
@@ -1009,6 +1060,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Steambot Barracks": {
                             "type": "and",
@@ -1023,8 +1075,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 35.32747268676758,
-                        "y": -5.602836608886719e-05,
+                        "x": 35.33,
+                        "y": -0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -1046,6 +1098,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zipline Station Bravo": {
                             "type": "and",
@@ -1067,9 +1120,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -1.5974044799804688e-05,
-                        "y": -57.8472785949707,
-                        "z": 4.499997079372406
+                        "x": -0.0,
+                        "y": -57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -1090,6 +1143,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Steambot Barracks": {
                             "type": "and",
@@ -1104,6 +1158,7 @@
         },
         "Aurora Lift": {
             "default_node": "Door to Zipline Station Bravo",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9894117388493814037
             },
@@ -1112,8 +1167,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -35.32747268676758,
-                        "y": 5.507469177246094e-05,
+                        "x": -35.33,
+                        "y": 0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -1135,6 +1190,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zipline Station Bravo": {
                             "type": "resource",
@@ -1200,6 +1256,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zipline Station Bravo": {
                             "type": "and",
@@ -1214,8 +1271,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -57.8472785949707,
-                        "y": -5.1975250244140625e-05,
+                        "x": -57.85,
+                        "y": -0.0,
                         "z": 44.5
                     },
                     "description": "",
@@ -1237,6 +1294,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Aurora Chamber": {
                             "type": "resource",
@@ -1266,7 +1324,11 @@
                 "Event - Lift Activated": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -31.582127902753744,
+                        "y": 25.759971052575356,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1287,7 +1349,11 @@
                 "Event - Aurora Chamber Reloaded": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -10.201517336409665,
+                        "y": 0.7953275011215766,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1309,6 +1375,7 @@
         },
         "Aurora Chamber": {
             "default_node": "Door to Aurora Lift",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3066396911819856814
             },
@@ -1317,9 +1384,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 35.32744216918945,
-                        "y": -9.5367431640625e-07,
-                        "z": 2.5000002499999994
+                        "x": 35.33,
+                        "y": -0.0,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1340,6 +1407,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Aurora Lift": {
                             "type": "and",
@@ -1354,9 +1422,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -35.32744216918945,
-                        "y": 9.5367431640625e-07,
-                        "z": 2.5000002499999994
+                        "x": -35.33,
+                        "y": 0.0,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1377,6 +1445,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Maintenance Shaft AU": {
                             "type": "and",
@@ -1400,29 +1469,12 @@
                                         }
                                     },
                                     {
-                                        "type": "or",
+                                        "type": "resource",
                                         "data": {
-                                            "comment": "You can use Spring Ball to rotate instead of Boost",
-                                            "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "BoostBall",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "Knowledge",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
+                                            "type": "items",
+                                            "name": "BoostBall",
+                                            "amount": 1,
+                                            "negate": false
                                         }
                                     }
                                 ]
@@ -1433,7 +1485,11 @@
                 "Inside Aurora Chamber": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -3.28,
+                        "y": 11.7,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1470,12 +1526,29 @@
                                         }
                                     },
                                     {
-                                        "type": "resource",
+                                        "type": "or",
                                         "data": {
-                                            "type": "events",
-                                            "name": "Event63",
-                                            "amount": 1,
-                                            "negate": false
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "events",
+                                                        "name": "Event63",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "misc",
+                                                        "name": "MP3Update",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -1495,7 +1568,11 @@
                 "Event - Aurora Vaccine": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -11.07,
+                        "y": 37.13,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1516,7 +1593,11 @@
                 "Event - Aurora Circuits": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -35.89,
+                        "y": 23.6,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1537,7 +1618,11 @@
                 "Event - Initiate Bomb Sequence": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 20.1,
+                        "y": 22.78,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1559,6 +1644,7 @@
         },
         "Hoverplat Docking Site": {
             "default_node": "Door to Barracks Lift",
+            "hint_features": [],
             "extra": {
                 "asset_id": 10164050604229640228
             },
@@ -1567,9 +1653,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.9141387939453125e-06,
-                        "y": 134.15286254882812,
-                        "z": 4.5000070333480835
+                        "x": 0.0,
+                        "y": 134.15,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -1590,6 +1676,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Platform": {
                             "type": "template",
@@ -1680,9 +1767,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 299.3489685058594,
-                        "y": -256.68182373046875,
-                        "z": 4.499989986419678
+                        "x": 299.35,
+                        "y": -256.68,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -1703,6 +1790,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Platform": {
                             "type": "template",
@@ -1817,7 +1905,11 @@
                 "Pickup (Ship Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 216.6772915108918,
+                        "y": -67.81483550171976,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1826,6 +1918,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 55,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Center Platform": {
                             "type": "and",
@@ -1839,7 +1932,11 @@
                 "Center Platform": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 216.6772915108918,
+                        "y": -36.37562509346495,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1895,7 +1992,11 @@
                 "Out of Bounds": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 366.8868523503315,
+                        "y": 109.46737874482825,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1930,6 +2031,7 @@
         },
         "Skybridge Hera": {
             "default_node": "Door to Junction",
+            "hint_features": [],
             "extra": {
                 "asset_id": 10733512082794532665
             },
@@ -1961,6 +2063,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Maintenance Shaft GP": {
                             "type": "and",
@@ -2150,8 +2253,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": -210.0,
-                        "y": -24.947729110717773,
-                        "z": 2.499999023162843
+                        "y": -24.95,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -2172,6 +2275,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Junction": {
                             "type": "and",
@@ -2298,7 +2402,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 111.87789741289066,
+                        "y": -51.52569238821592,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2307,6 +2415,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 56,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Pillar Platform": {
                             "type": "and",
@@ -2320,7 +2429,11 @@
                 "Pillar Platform": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 112.64430985494243,
+                        "y": -20.102782264094508,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2518,7 +2631,11 @@
                 "Event - Destroy Bridge": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -68.22902646926869,
+                        "y": 6.721653207716464,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2540,6 +2657,7 @@
         },
         "Zipline Station Charlie": {
             "default_node": "Door to Junction",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17641492364836789457
             },
@@ -2548,9 +2666,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.004770994186401367,
+                        "x": -0.0,
                         "y": -182.0,
-                        "z": 2.4999939005583656
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -2571,6 +2689,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Floating Platform (Powerworks Access)": {
                             "type": "template",
@@ -2686,9 +2805,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.9141387939453125e-06,
-                        "y": 182.3004608154297,
-                        "z": 2.500009029953162
+                        "x": 0.0,
+                        "y": 182.3,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -2709,6 +2828,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Floating Platform (Junction)": {
                             "type": "template",
@@ -2844,7 +2964,11 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 2.1091317353485124,
+                        "y": 31.408078482308042,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2853,6 +2977,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 57,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Floating Platform (Powerworks Access)": {
                             "type": "and",
@@ -2866,7 +2991,11 @@
                 "Floating Platform (Junction)": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -64.99536702483569,
+                        "y": 73.27669736686742,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2962,7 +3091,11 @@
                 "Floating Platform (Powerworks Access)": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 66.63,
+                        "y": -69.48,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3093,7 +3226,11 @@
                 "Event - Zipline": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -1.12,
+                        "y": 127.85,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3114,7 +3251,11 @@
                 "Out of Bounds": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 229.80559334041803,
+                        "y": -47.74081749124255,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3156,6 +3297,7 @@
         },
         "Powerworks Access": {
             "default_node": "Door to Zipline Station Charlie",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17854052165197892560
             },
@@ -3164,9 +3306,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1.5974044799804688e-05,
-                        "y": 57.8472900390625,
-                        "z": 4.500003933906555
+                        "x": 0.0,
+                        "y": 57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3187,6 +3329,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Powerworks": {
                             "type": "and",
@@ -3224,8 +3367,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 35.32747268676758,
-                        "y": 2.6464462280273438e-05,
+                        "x": 35.33,
+                        "y": 0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -3247,6 +3390,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zipline Station Charlie": {
                             "type": "and",
@@ -3279,7 +3423,11 @@
                 "Event - Barrier": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 15.916148600779312,
+                        "y": 51.082390187743535,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3301,6 +3449,7 @@
         },
         "Maintenance Shaft GP": {
             "default_node": "Door to Skybridge Hera",
+            "hint_features": [],
             "extra": {
                 "asset_id": 15917923329011025717
             },
@@ -3309,8 +3458,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.8472900390625,
-                        "y": 5.0067901611328125e-05,
+                        "x": 57.85,
+                        "y": 0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -3332,6 +3481,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Construction Bay": {
                             "type": "and",
@@ -3346,9 +3496,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -9.059906005859375e-06,
-                        "y": -57.847286224365234,
-                        "z": 4.499997079372406
+                        "x": -0.0,
+                        "y": -57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3369,6 +3519,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Skybridge Hera": {
                             "type": "or",
@@ -3425,7 +3576,11 @@
                 "Event - Skybridge Hera Reloaded After Bridge Destroyed": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 22.59,
+                        "y": -43.11,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3447,6 +3602,7 @@
         },
         "Ballista Lift": {
             "default_node": "Door to Construction Bay",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17014153014158531645
             },
@@ -3455,9 +3611,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -3.409385681152344e-05,
-                        "y": 35.327476501464844,
-                        "z": 4.500001907348633
+                        "x": -0.0,
+                        "y": 35.33,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3478,6 +3634,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Construction Bay": {
                             "type": "and",
@@ -3492,8 +3649,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -57.8472785949707,
-                        "y": -5.1975250244140625e-05,
+                        "x": -57.85,
+                        "y": -0.0,
                         "z": 44.5
                     },
                     "description": "",
@@ -3515,6 +3672,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ballista Storage": {
                             "type": "and",
@@ -3529,6 +3687,7 @@
         },
         "Security Tube": {
             "default_node": "Door to Security Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17487489647732344867
             },
@@ -3537,9 +3696,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.8472900390625,
-                        "y": -1.5974044799804688e-05,
-                        "z": 4.500000953674316
+                        "x": 57.85,
+                        "y": -0.0,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3560,6 +3719,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Station": {
                             "type": "and",
@@ -3610,9 +3770,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 0.006815910339355469,
-                        "y": 35.33125686645508,
-                        "z": 4.515638947486877
+                        "x": 0.01,
+                        "y": 35.33,
+                        "z": 4.52
                     },
                     "description": "",
                     "layers": [
@@ -3633,6 +3793,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Skytram West": {
                             "type": "and",
@@ -3729,7 +3890,11 @@
                 "Event - Phazon Vines": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 17.19895468820099,
+                        "y": 35.55889860924181,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -3751,6 +3916,7 @@
         },
         "Junction": {
             "default_node": "Circle Room",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2692588651293388340
             },
@@ -3782,6 +3948,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Circle Room": {
                             "type": "and",
@@ -3796,9 +3963,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.9141387939453125e-06,
-                        "y": 57.84728240966797,
-                        "z": 4.500001907348633
+                        "x": 0.0,
+                        "y": 57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3819,6 +3986,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Circle Room": {
                             "type": "and",
@@ -3833,9 +4001,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.85,
-                        "y": 0.0,
-                        "z": 4.5
+                        "x": 58.39596231493945,
+                        "y": 12.854668261801507,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -3856,6 +4024,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Circle Room": {
                             "type": "and",
@@ -3893,6 +4062,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Circle Room": {
                             "type": "and",
@@ -3907,9 +4077,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6.9141387939453125e-06,
-                        "y": -57.84728240966797,
-                        "z": 4.499997079372406
+                        "x": -0.0,
+                        "y": -57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -3930,6 +4100,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Circle Room": {
                             "type": "and",
@@ -3943,7 +4114,11 @@
                 "Circle Room": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -2.37,
+                        "y": -1.98,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4004,7 +4179,11 @@
                 "Event - Skybridge Hera Reloaded After Bridge Destroyed": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -58.05,
+                        "y": -12.27,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4026,6 +4205,7 @@
         },
         "Landing Site A": {
             "default_node": "Samus Ship",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3381520513235092752
             },
@@ -4034,9 +4214,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.3920994512736797,
-                        "y": -39.35691833496094,
-                        "z": 8.485673904418945
+                        "x": 2.39,
+                        "y": -39.36,
+                        "z": 8.49
                     },
                     "description": "",
                     "layers": [
@@ -4057,6 +4237,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Samus Ship": {
                             "type": "resource",
@@ -4107,7 +4288,11 @@
                 "Samus Ship": {
                     "node_type": "teleporter_network",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 2.3837861794254795,
+                        "y": -40.20666992944247,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4154,7 +4339,11 @@
                 "Event - Landing Site Unlocked": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 2.484388433459766,
+                        "y": -40.01634134072896,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4176,6 +4365,7 @@
         },
         "Maintenance Shaft AU": {
             "default_node": "Door to Aurora Chamber",
+            "hint_features": [],
             "extra": {
                 "asset_id": 722564631842201436
             },
@@ -4184,8 +4374,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 35.32748031616211,
-                        "y": -4.9114227294921875e-05,
+                        "x": 35.33,
+                        "y": -0.0,
                         "z": 4.5
                     },
                     "description": "",
@@ -4207,6 +4397,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge": {
                             "type": "or",
@@ -4235,9 +4426,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.0,
-                        "y": -57.85,
-                        "z": 4.5
+                        "x": 0.1,
+                        "y": -51.42,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -4258,6 +4449,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge": {
                             "type": "or",
@@ -4340,6 +4532,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge": {
                             "type": "or",
@@ -4398,7 +4591,11 @@
                 "Event - Aurora Chamber Reloaded": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 35.040833923721806,
+                        "y": -9.499927677411735,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4419,7 +4616,11 @@
                 "Ledge": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 18.15,
+                        "y": -28.19,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4467,6 +4668,7 @@
         },
         "Construction Bay": {
             "default_node": "Door to Maintenance Shaft GP",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2667502259855056433
             },
@@ -4475,8 +4677,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -57.84701156616211,
-                        "y": 4.291534423828125e-05,
+                        "x": -57.85,
+                        "y": 0.0,
                         "z": 42.5
                     },
                     "description": "",
@@ -4498,6 +4700,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Maintenance Shaft GP": {
                             "type": "and",
@@ -4516,9 +4719,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 6.9141387939453125e-06,
-                        "y": -57.84712600708008,
-                        "z": 2.4999975463256305
+                        "x": 0.0,
+                        "y": -57.85,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -4539,6 +4742,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ballista Lift": {
                             "type": "or",
@@ -4664,7 +4868,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -66.2390945117392,
+                        "y": -85.00684323527527,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4673,6 +4881,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 58,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Ballista Lift": {
                             "type": "template",
@@ -4684,6 +4893,7 @@
         },
         "Main Docking Access": {
             "default_node": "Door to Main Docking Bay",
+            "hint_features": [],
             "extra": {
                 "asset_id": 5767114369935179109
             },
@@ -4692,9 +4902,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -1.0013580322265625e-05,
-                        "y": -57.8472900390625,
-                        "z": 4.499997556209564
+                        "x": -0.0,
+                        "y": -57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -4715,6 +4925,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Main Docking Bay": {
                             "type": "or",
@@ -4794,9 +5005,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.5987625122070312e-05,
-                        "y": 57.8472785949707,
-                        "z": 4.500002980232239
+                        "x": 0.0,
+                        "y": 57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -4817,6 +5028,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zipline Station Alpha": {
                             "type": "and",
@@ -4891,7 +5103,11 @@
                 "Event - Phazon Vines": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -16.763299198145113,
+                        "y": 44.58645970867013,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -4913,6 +5129,7 @@
         },
         "Security Station": {
             "default_node": "Spire Side",
+            "hint_features": [],
             "extra": {
                 "asset_id": 8195940946934839837
             },
@@ -4922,7 +5139,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": 0.0,
-                        "y": 35.32748031616211,
+                        "y": 35.33,
                         "z": 44.5
                     },
                     "description": "",
@@ -4944,6 +5161,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Spire Side": {
                             "type": "resource",
@@ -4960,9 +5178,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -57.85,
-                        "y": -0.0,
-                        "z": 4.5
+                        "x": -58.17,
+                        "y": 12.75,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -4983,6 +5201,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Spire Side": {
                             "type": "and",
@@ -4997,9 +5216,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -57.85,
-                        "y": -0.0,
-                        "z": 4.5
+                        "x": -57.45109989373007,
+                        "y": 5.8035175345377255,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -5020,6 +5239,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Spire Side": {
                             "type": "and",
@@ -5034,9 +5254,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1.6927719116210938e-05,
-                        "y": -57.8472900390625,
-                        "z": 4.499997556209564
+                        "x": 0.0,
+                        "y": -57.85,
+                        "z": 4.5
                     },
                     "description": "",
                     "layers": [
@@ -5057,6 +5277,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Escape Pod Bay Access": {
                             "type": "or",
@@ -5121,8 +5342,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": 21.0,
-                        "y": -25.46993637084961,
-                        "z": 9.34857964515686
+                        "y": -25.47,
+                        "z": 9.35
                     },
                     "description": "",
                     "layers": [
@@ -5143,6 +5364,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Landing Site A": {
                             "type": "and",
@@ -5156,7 +5378,11 @@
                 "Pickup (Ship Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -33.71252391073326,
+                        "y": 23.025621679064823,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5165,6 +5391,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 59,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Spire Side": {
                             "type": "and",
@@ -5178,7 +5405,11 @@
                 "Spire Side": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -33.867678002125395,
+                        "y": 10.147832093517536,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5284,6 +5515,7 @@
         },
         "Steambot Barracks": {
             "default_node": "Door to Barracks Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 12622074872595627812
             },
@@ -5294,7 +5526,7 @@
                     "coordinates": {
                         "x": 36.0,
                         "y": 0.0,
-                        "z": 2.5056610053870827
+                        "z": 2.51
                     },
                     "description": "",
                     "layers": [
@@ -5315,6 +5547,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom Floor": {
                             "type": "resource",
@@ -5332,8 +5565,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": -36.0,
-                        "y": -1.9073486328125e-06,
-                        "z": 42.4807014465332
+                        "y": -0.0,
+                        "z": 42.48
                     },
                     "description": "",
                     "layers": [
@@ -5354,6 +5587,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Expansion)": {
                             "type": "and",
@@ -5446,7 +5680,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 6.0322902646926835,
+                        "y": -17.55958950201884,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5455,6 +5693,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 60,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -5468,7 +5707,11 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 10.22426723493345,
+                        "y": 5.6991214296395984,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5477,6 +5720,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 61,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -5490,7 +5734,11 @@
                 "Event - Steamlord": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -8.436791535815765,
+                        "y": 5.293446238971137,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5511,7 +5759,11 @@
                 "Bottom Floor": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.3528375953342291,
+                        "y": -8.499510243756543,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5631,7 +5883,11 @@
                 "Event - Gate": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 30.50802676835651,
+                        "y": -6.200684163301929,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5652,7 +5908,11 @@
                 "Event - Lift Activated": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -36.02,
+                        "y": -7.78,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5674,6 +5934,7 @@
         },
         "Ballista Storage": {
             "default_node": "Door to Ballista Lift",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9955656508473190866
             },
@@ -5682,9 +5943,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.002716064453125e-05,
-                        "y": 35.32747268676758,
-                        "z": 2.5000014768371557
+                        "x": 0.0,
+                        "y": 35.33,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -5705,6 +5966,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -5718,7 +5980,11 @@
                 "Pickup (Energy Cell)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -0.01347326368860692,
+                        "y": 34.57893428614155,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5727,6 +5993,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 62,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -5740,7 +6007,11 @@
                 "Pickup (Boost Ball)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.4479764575188532,
+                        "y": 35.138655707235785,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5749,6 +6020,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 63,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -5762,7 +6034,11 @@
                 "Event - Defense Drone": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.7962000897263346,
+                        "y": 34.9164762118396,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5783,7 +6059,11 @@
                 "Event - Steamlord": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.45224914012262596,
+                        "y": 34.63661550129248,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5804,7 +6084,11 @@
                 "Bottom Floor": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.4693398705377171,
+                        "y": 34.907930846632055,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5954,7 +6238,11 @@
                 "Event - Skybridge Hera Destroyed": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.7620186288961524,
+                        "y": 35.063883761669764,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -5976,6 +6264,7 @@
         },
         "Powerworks": {
             "default_node": "Door to Powerworks Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 265878788849725085
             },
@@ -5984,9 +6273,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 51.32746887207031,
-                        "y": 2.6941299438476562e-05,
-                        "z": 2.4999997500000006
+                        "x": 51.33,
+                        "y": 0.0,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -6007,6 +6296,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Spider Ball)": {
                             "type": "and",
@@ -6087,7 +6377,11 @@
                 "Pickup (Spider Ball)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 51.33183191266637,
+                        "y": -0.4672872738148647,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6096,6 +6390,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 64,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Back Area": {
                             "type": "and",
@@ -6128,7 +6423,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 51.52810826977718,
+                        "y": -0.10090474054134892,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6137,6 +6436,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 65,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Back Area": {
                             "type": "and",
@@ -6150,7 +6450,11 @@
                 "Back Area": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 51.53184686705548,
+                        "y": -0.7645057574398085,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6234,6 +6538,7 @@
         },
         "Spire Dock (Post-Bomb)": {
             "default_node": "Door to Maintenance Shaft AU",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3166066018495772067
             },
@@ -6242,9 +6547,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 3.910064697265625e-05,
-                        "y": 17.152891159057617,
-                        "z": 5.0916619300842285
+                        "x": 0.0,
+                        "y": 17.15,
+                        "z": 5.09
                     },
                     "description": "",
                     "layers": [
@@ -6265,15 +6570,34 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
-                    "connections": {}
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Door to Security Station": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 },
                 "Door to Security Station": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 260.60205078125,
-                        "y": -468.0001525878906,
-                        "z": 5.091639995574951
+                        "x": 260.6,
+                        "y": -468.0,
+                        "z": 5.09
                     },
                     "description": "",
                     "layers": [
@@ -6294,6 +6618,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Junction": {
                             "type": "resource",
@@ -6310,9 +6635,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -246.825927734375,
+                        "x": -246.83,
                         "y": -468.0,
-                        "z": 5.0916407108306885
+                        "z": 5.09
                     },
                     "description": "",
                     "layers": [
@@ -6333,14 +6658,49 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Security Station": {
-                            "type": "resource",
+                        "Door to Maintenance Shaft AU": {
+                            "type": "or",
                             "data": {
-                                "type": "items",
-                                "name": "MorphBall",
-                                "amount": 1,
-                                "negate": false
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "Door to Security Station": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "MorphBall",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "MP3Update",
+                                            "amount": 1,
+                                            "negate": true
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -6349,6 +6709,7 @@
         },
         "Escape Pod Bay": {
             "default_node": "Door to Escape Pod Bay Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 7293006450314500398
             },
@@ -6357,9 +6718,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.019669055938720703,
-                        "y": -37.88310241699219,
-                        "z": 2.499999023162843
+                        "x": -0.02,
+                        "y": -37.88,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -6380,9 +6741,10 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
-                "Door to Spire": {
+                "Dock to Spire": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -6398,17 +6760,18 @@
                         "dock_index": 1
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "SkyTown, Elysia - Main",
                         "area": "Spire",
-                        "node": "Door to Escape Pod Bay"
+                        "node": "Dock to Escape Pod Bay"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Escape Pod Bay Access": {
                             "type": "and",
@@ -6422,7 +6785,8 @@
             }
         },
         "Spire": {
-            "default_node": "Door to Spire Dock (Pre-Bomb)",
+            "default_node": "Dock to Spire Dock (Pre-Bomb)",
+            "hint_features": [],
             "extra": {
                 "asset_id": 6637485379588009329
             },
@@ -6454,6 +6818,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",
@@ -6466,13 +6831,13 @@
                         }
                     }
                 },
-                "Door to Spire Dock (Pre-Bomb)": {
+                "Dock to Spire Dock (Pre-Bomb)": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -274.94,
-                        "y": -588.26,
-                        "z": 393.75
+                        "x": -89.7,
+                        "y": -494.6,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -6482,17 +6847,18 @@
                         "dock_index": 1
                     },
                     "valid_starting_location": true,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "SkyTown, Elysia - Main",
                         "area": "Spire Dock (Pre-Bomb)",
-                        "node": "Door to Spire"
+                        "node": "Dock to Spire"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6503,7 +6869,7 @@
                         }
                     }
                 },
-                "Door to Escape Pod Bay": {
+                "Dock to Escape Pod Bay": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -6519,23 +6885,28 @@
                         "dock_index": 2
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "SkyTown, Elysia - Main",
                         "area": "Escape Pod Bay",
-                        "node": "Door to Spire"
+                        "node": "Dock to Spire"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Event - Destroy Leviathan Shield": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 20.97,
+                        "y": -300.25,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6556,7 +6927,11 @@
                 "Room Center": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -144.91,
+                        "y": -294.31,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6573,14 +6948,14 @@
                                 "negate": false
                             }
                         },
-                        "Door to Spire Dock (Pre-Bomb)": {
+                        "Dock to Spire Dock (Pre-Bomb)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
                                 "items": []
                             }
                         },
-                        "Door to Escape Pod Bay": {
+                        "Dock to Escape Pod Bay": {
                             "type": "resource",
                             "data": {
                                 "type": "events",
@@ -6604,6 +6979,7 @@
         },
         "Spire Dock (Pre-Bomb)": {
             "default_node": "Door to Maintenance Shaft AU",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2782037876215597956
             },
@@ -6612,9 +6988,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 3.910064697265625e-05,
-                        "y": 17.152891159057617,
-                        "z": 5.0916619300842285
+                        "x": 0.0,
+                        "y": 17.15,
+                        "z": 5.09
                     },
                     "description": "",
                     "layers": [
@@ -6635,8 +7011,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Center": {
+                        "Spire Pod": {
                             "type": "resource",
                             "data": {
                                 "type": "items",
@@ -6651,9 +7028,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 260.60205078125,
-                        "y": -468.0001525878906,
-                        "z": 5.091639995574951
+                        "x": 260.6,
+                        "y": -468.0,
+                        "z": 5.09
                     },
                     "description": "",
                     "layers": [
@@ -6674,8 +7051,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Center": {
+                        "Spire Pod": {
                             "type": "resource",
                             "data": {
                                 "type": "items",
@@ -6713,8 +7091,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Center": {
+                        "Spire Pod": {
                             "type": "resource",
                             "data": {
                                 "type": "items",
@@ -6725,7 +7104,7 @@
                         }
                     }
                 },
-                "Door to Spire": {
+                "Dock to Spire": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -6741,19 +7120,20 @@
                         "dock_index": 3
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "SkyTown, Elysia - Main",
                         "area": "Spire",
-                        "node": "Door to Spire Dock (Pre-Bomb)"
+                        "node": "Dock to Spire Dock (Pre-Bomb)"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Center": {
+                        "Spire Pod": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -6762,10 +7142,14 @@
                         }
                     }
                 },
-                "Center": {
+                "Spire Pod": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 5.872837429174382,
+                        "y": -269.4644483492016,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6800,7 +7184,7 @@
                                 "negate": false
                             }
                         },
-                        "Door to Spire": {
+                        "Dock to Spire": {
                             "type": "resource",
                             "data": {
                                 "type": "events",
@@ -6849,7 +7233,11 @@
                 "Event - Bomb Prepared": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 160.04358332087136,
+                        "y": -266.8513848595118,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6858,7 +7246,7 @@
                     "valid_starting_location": false,
                     "event_name": "Event77",
                     "connections": {
-                        "Center": {
+                        "Spire Pod": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -6871,6 +7259,7 @@
         },
         "Podworks": {
             "default_node": "Morph Ball Door to Spire",
+            "hint_features": [],
             "extra": {
                 "asset_id": 6342289143695945848
             },
@@ -6902,6 +7291,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Podworks Repair": {
                             "type": "and",
@@ -6943,7 +7333,11 @@
                 "Event - Podworks Repair": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -0.01,
+                        "y": 3.74,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -6965,6 +7359,7 @@
         },
         "Skytram West": {
             "default_node": "Door to Security Tube",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1051771406754533733
             },
@@ -6973,9 +7368,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -198.8471221923828,
-                        "y": -34.995235443115234,
-                        "z": 4.999998092651367
+                        "x": -198.85,
+                        "y": -35.0,
+                        "z": 5.0
                     },
                     "description": "",
                     "layers": [
@@ -6996,6 +7391,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to SkyTown, Elysia - Pod": {
                             "type": "and",
@@ -7028,7 +7424,11 @@
                 "Teleporter to SkyTown, Elysia - Pod": {
                     "node_type": "dock",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -198.32,
+                        "y": -34.99,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -7049,6 +7449,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Tube": {
                             "type": "and",
@@ -7063,6 +7464,7 @@
         },
         "Transit Hub": {
             "default_node": "Door to Hub Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 13389753286679728417
             },
@@ -7071,7 +7473,7 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 57.8472900390625,
+                        "x": 57.85,
                         "y": 0.0,
                         "z": 2.5
                     },
@@ -7094,6 +7496,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bomb Part Platform": {
                             "type": "resource",
@@ -7110,9 +7513,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 400.0000305175781,
-                        "y": -242.15296936035156,
-                        "z": 42.4999885559082
+                        "x": 400.0,
+                        "y": -242.15,
+                        "z": 42.5
                     },
                     "description": "",
                     "layers": [
@@ -7133,6 +7536,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hub Access": {
                             "type": "and",
@@ -7185,7 +7589,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": 750.0,
-                        "y": -4.5299530029296875e-06,
+                        "y": -0.0,
                         "z": 100.0
                     },
                     "description": "",
@@ -7207,6 +7611,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bomb Part Platform": {
                             "type": "and",
@@ -7220,7 +7625,11 @@
                 "Pickup (Missile Expansion)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 435.623958800658,
+                        "y": 253.90223755047103,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -7229,6 +7638,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 66,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Bomb Part Platform": {
                             "type": "and",
@@ -7242,7 +7652,11 @@
                 "Bomb Part Platform": {
                     "node_type": "generic",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 598.6471754897563,
+                        "y": 224.14403132944517,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -7381,7 +7795,11 @@
                 "Event - Bomb Part 3": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 599.9410105428443,
+                        "y": 310.8309798863466,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -7403,6 +7821,7 @@
         },
         "Zipline Station Bravo": {
             "default_node": "Door to Barracks Lift",
+            "hint_features": [],
             "extra": {
                 "asset_id": 10719110688968561272
             },
@@ -7411,9 +7830,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -296.15289306640625,
-                        "y": -68.81822967529297,
-                        "z": 12.49999713897705
+                        "x": -296.15,
+                        "y": -68.82,
+                        "z": 12.5
                     },
                     "description": "",
                     "layers": [
@@ -7434,6 +7853,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Aurora Lift": {
                             "type": "or",
@@ -7562,9 +7982,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 192.1748809814453,
-                        "y": -32.34708786010742,
-                        "z": 12.499999046325684
+                        "x": 192.17,
+                        "y": -32.35,
+                        "z": 12.5
                     },
                     "description": "",
                     "layers": [
@@ -7585,6 +8005,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Barracks Lift": {
                             "type": "or",
@@ -7748,9 +8169,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -5.34521484375,
-                        "y": 231.18186950683594,
-                        "z": 69.97505950927734
+                        "x": -5.35,
+                        "y": 231.18,
+                        "z": 69.98
                     },
                     "description": "",
                     "layers": [
@@ -7771,6 +8192,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Aurora Lift": {
                             "type": "and",
@@ -7785,6 +8207,7 @@
         },
         "Escape Pod Bay Access": {
             "default_node": "Door to Escape Pod Bay",
+            "hint_features": [],
             "extra": {
                 "asset_id": 10147956754909178375
             },
@@ -7793,9 +8216,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 0.05172610282897949,
-                        "y": 12.847188949584961,
-                        "z": 48.46122741699219
+                        "x": 0.05,
+                        "y": 12.85,
+                        "z": 48.46
                     },
                     "description": "",
                     "layers": [
@@ -7816,6 +8239,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Station": {
                             "type": "and",
@@ -7830,9 +8254,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 0.019047975540161133,
-                        "y": -12.620346069335938,
-                        "z": -41.687007904052734
+                        "x": 0.02,
+                        "y": -12.62,
+                        "z": -41.69
                     },
                     "description": "",
                     "layers": [
@@ -7853,6 +8277,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Escape Pod Bay": {
                             "type": "and",
@@ -7867,6 +8292,7 @@
         },
         "Save Station A": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17325277017676572028
             },
@@ -7875,9 +8301,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 4.0531158447265625e-06,
+                        "x": 0.0,
                         "y": 21.0,
-                        "z": 2.500000976837157
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -7898,6 +8324,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -7911,7 +8338,11 @@
                 "Save Station": {
                     "node_type": "generic",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.57,
+                        "y": 21.01,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"

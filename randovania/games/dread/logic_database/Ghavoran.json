@@ -11,6 +11,7 @@
     "areas": {
         "Transport to Burenia": {
             "default_node": "Elevator to Burenia",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11000.0,
@@ -71,6 +72,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Right Entrance": {
                             "type": "and",
@@ -113,6 +115,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Left Entrance": {
                             "type": "and",
@@ -163,6 +166,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Right Entrance": {
                             "type": "and",
@@ -177,6 +181,7 @@
         },
         "Right Entrance": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8000.0,
@@ -245,6 +250,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spider Magnet Elevator": {
                             "type": "and",
@@ -287,6 +293,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Robot Fight Arena": {
                             "type": "and",
@@ -350,6 +357,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Total Recharge": {
                             "type": "and",
@@ -465,6 +473,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 97,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Transport to Burenia": {
                             "type": "and",
@@ -507,6 +516,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -963,6 +973,7 @@
         },
         "Robot Fight Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11000.0,
@@ -1023,6 +1034,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Left Entrance": {
                             "type": "resource",
@@ -1105,6 +1117,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Right Entrance": {
                             "type": "resource",
@@ -1218,6 +1231,7 @@
         },
         "Left Entrance": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -15400.0,
@@ -1282,6 +1296,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Floating Platform": {
                             "type": "and",
@@ -1324,6 +1339,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge Grab": {
                             "type": "or",
@@ -1457,6 +1473,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Blue EMMI Introduction": {
                             "type": "and",
@@ -1543,6 +1560,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 108,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Transport to Burenia": {
                             "type": "and",
@@ -1844,6 +1862,7 @@
         },
         "Blue EMMI Introduction": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11000.0,
@@ -1900,6 +1919,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit Southeast": {
                             "type": "or",
@@ -2034,6 +2054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Left Entrance": {
                             "type": "and",
@@ -2086,6 +2107,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Alcove": {
                             "type": "resource",
@@ -2123,6 +2145,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit Southeast": {
                             "type": "and",
@@ -2282,6 +2305,7 @@
         },
         "Navigation Station Access": {
             "default_node": "Start Point 2",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8000.0,
@@ -2338,6 +2362,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station": {
                             "type": "and",
@@ -2387,6 +2412,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Blue EMMI Introduction": {
                             "type": "and",
@@ -2455,6 +2481,7 @@
         },
         "Navigation Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5000.0,
@@ -2515,6 +2542,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flipper Room": {
                             "type": "and",
@@ -2564,6 +2592,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station Access": {
                             "type": "and",
@@ -2617,6 +2646,7 @@
         },
         "Flipper Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3000.0,
@@ -2677,6 +2707,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Elun Transport Access": {
                             "type": "resource",
@@ -2849,6 +2880,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station": {
                             "type": "resource",
@@ -2939,6 +2971,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station": {
                             "type": "resource",
@@ -3005,6 +3038,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Elun Transport Access": {
                             "type": "resource",
@@ -3042,6 +3076,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Elun Transport Access": {
                             "type": "and",
@@ -3084,12 +3119,29 @@
                                         }
                                     },
                                     {
-                                        "type": "resource",
+                                        "type": "or",
                                         "data": {
-                                            "type": "tricks",
-                                            "name": "Knowledge",
-                                            "amount": 2,
-                                            "negate": false
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Knowledge",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "events",
+                                                        "name": "GhavoranSupersRotatable",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -3207,6 +3259,7 @@
         },
         "Dairon Transport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1000.0,
@@ -3275,6 +3328,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Room Access": {
                             "type": "and",
@@ -3317,6 +3371,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Dairon": {
                             "type": "and",
@@ -3430,6 +3485,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 99,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Super Missile Room Access": {
                             "type": "and",
@@ -3512,6 +3568,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Room Access": {
                             "type": "and",
@@ -3551,6 +3608,7 @@
         },
         "Super Missile Room Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3000.0,
@@ -3611,6 +3669,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dairon Transport Access": {
                             "type": "and",
@@ -3653,6 +3712,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Room (Super Lock)": {
                             "type": "and",
@@ -3699,6 +3759,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dairon Transport Access": {
                             "type": "and",
@@ -3844,6 +3905,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 102,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Super Missile Room": {
                             "type": "and",
@@ -3879,6 +3941,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile+ Tank)": {
                             "type": "resource",
@@ -3916,6 +3979,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Dairon Transport Access": {
                             "type": "and",
@@ -3951,6 +4015,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Spider Magnet Elevator": {
                             "type": "and",
@@ -3965,6 +4030,7 @@
         },
         "Super Missile Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5000.0,
@@ -4025,6 +4091,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Room Access (Super Lock)": {
                             "type": "and",
@@ -4067,6 +4134,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Right Entrance": {
                             "type": "and",
@@ -4136,6 +4204,23 @@
                                                         "amount": 1,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": "Perform a Morph-SWJ near the bottom of the 2-block-tall wall under the tunnel entrance",
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "SWJ",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
                                                 }
                                             ]
                                         }
@@ -4177,6 +4262,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -4207,6 +4293,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 100,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -4276,6 +4363,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Room Access (Super Lock)": {
                             "type": "resource",
@@ -4292,6 +4380,7 @@
         },
         "EMMI Zone Exit Southeast": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8000.0,
@@ -4352,6 +4441,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Map Station Access (Lower)": {
                             "type": "and",
@@ -4438,6 +4528,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Blue EMMI Introduction": {
                             "type": "and",
@@ -4677,6 +4768,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Map Station Access (Lower)": {
                             "type": "and",
@@ -4805,6 +4897,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Map Station Access (Upper)": {
                             "type": "or",
@@ -4905,6 +4998,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit West": {
                             "type": "and",
@@ -4919,6 +5013,7 @@
         },
         "Map Station Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5000.0,
@@ -4975,6 +5070,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Map Station": {
                             "type": "and",
@@ -5180,6 +5276,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Map Station": {
                             "type": "template",
@@ -5219,6 +5316,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit Southeast (Lower)": {
                             "type": "template",
@@ -5255,6 +5353,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit Southeast (Lower)": {
                             "type": "template",
@@ -5266,6 +5365,7 @@
         },
         "Map Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3000.0,
@@ -5326,6 +5426,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -5369,6 +5470,7 @@
         },
         "EMMI Zone Exit West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10000.0,
@@ -5429,6 +5531,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Early Ice Room (Upper)": {
                             "type": "and",
@@ -5467,6 +5570,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Platform": {
                             "type": "and",
@@ -5505,6 +5609,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Middle Path (Grapple)": {
                             "type": "and",
@@ -5554,6 +5659,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Early Ice Room (Upper)": {
                             "type": "and",
@@ -5596,6 +5702,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Platform": {
                             "type": "or",
@@ -5744,6 +5851,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Platform": {
                             "type": "and",
@@ -5796,6 +5904,7 @@
         },
         "Early Ice Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12000.0,
@@ -5852,6 +5961,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit West (Upper)": {
                             "type": "and",
@@ -5915,6 +6025,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit West (Lower)": {
                             "type": "and",
@@ -5953,6 +6064,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Spin Boost Ledge": {
                             "type": "and",
@@ -6037,6 +6149,7 @@
         },
         "EMMI Zone Exit Northwest": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10000.0,
@@ -6093,6 +6206,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access": {
                             "type": "template",
@@ -6132,6 +6246,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Central Unit Access": {
                             "type": "and",
@@ -6174,6 +6289,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access": {
                             "type": "and",
@@ -6188,6 +6304,7 @@
         },
         "Central Unit": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -9100.0,
@@ -6268,6 +6385,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Ghavoran Central Unit": {
                             "type": "template",
@@ -6304,6 +6422,7 @@
         },
         "EMMI Zone Middle Path": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8000.0,
@@ -6364,6 +6483,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit West (Power)": {
                             "type": "and",
@@ -6413,6 +6533,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit West (Grapple)": {
                             "type": "and",
@@ -6503,6 +6624,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit West (Power)": {
                             "type": "and",
@@ -6538,6 +6660,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit West (Grapple)": {
                             "type": "and",
@@ -6552,6 +6675,7 @@
         },
         "Central Unit Access": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7000.0,
@@ -6612,6 +6736,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit Northwest": {
                             "type": "or",
@@ -6689,6 +6814,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6731,6 +6857,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit Northeast (Upper)": {
                             "type": "or",
@@ -6838,6 +6965,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Central Unit": {
                             "type": "and",
@@ -7143,6 +7271,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to EMMI Zone Exit Northwest": {
                             "type": "or",
@@ -7240,6 +7369,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 146,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7254,6 +7384,7 @@
         },
         "EMMI Zone Exit Northeast": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3000.0,
@@ -7314,6 +7445,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Spin Boost Tower (Lower)": {
                             "type": "and",
@@ -7407,6 +7539,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Middle Path": {
                             "type": "and",
@@ -7445,6 +7578,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access (Lower)": {
                             "type": "and",
@@ -7506,6 +7640,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access (Lower)": {
                             "type": "and",
@@ -7548,6 +7683,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Spin Boost Tower (Upper)": {
                             "type": "and",
@@ -7583,6 +7719,7 @@
         },
         "Spin Boost Tower": {
             "default_node": "Ammo Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1000.0,
@@ -7643,6 +7780,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge Below PB Tank": {
                             "type": "and",
@@ -7685,6 +7823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Part)": {
                             "type": "and",
@@ -8138,6 +8277,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 96,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Ledge Below PB Tank": {
                             "type": "and",
@@ -8176,6 +8316,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Center Platform": {
                             "type": "or",
@@ -8241,6 +8382,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge": {
                             "type": "and",
@@ -8296,6 +8438,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 105,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Save Station Center": {
                             "type": "and",
@@ -8325,6 +8468,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 109,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "E-Tank Alcove": {
                             "type": "and",
@@ -8417,6 +8561,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station Center": {
                             "type": "and",
@@ -8803,7 +8948,7 @@
                                                     "type": "resource",
                                                     "data": {
                                                         "type": "tricks",
-                                                        "name": "TunnelSlope",
+                                                        "name": "SlopeClimb",
                                                         "amount": 3,
                                                         "negate": false
                                                     }
@@ -8813,7 +8958,7 @@
                                                     "data": {
                                                         "type": "tricks",
                                                         "name": "Walljump",
-                                                        "amount": 3,
+                                                        "amount": 2,
                                                         "negate": false
                                                     }
                                                 }
@@ -8921,6 +9066,7 @@
         },
         "Save Station Center": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2000.0,
@@ -8981,6 +9127,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Warrior Arena": {
                             "type": "and",
@@ -9023,6 +9170,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spin Boost Tower": {
                             "type": "and",
@@ -9073,6 +9221,7 @@
         },
         "Chozo Warrior Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4000.0,
@@ -9133,6 +9282,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Total Recharge Station North": {
                             "type": "or",
@@ -9217,6 +9367,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station Center": {
                             "type": "or",
@@ -9319,6 +9470,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station Center": {
                             "type": "or",
@@ -9398,6 +9550,7 @@
         },
         "Golzuna Tower": {
             "default_node": "Teleporter to Cataris",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4000.0,
@@ -9462,6 +9615,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Energy Recharge Station": {
                             "type": "and",
@@ -9687,6 +9841,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Eyedoor": {
                             "type": "or",
@@ -9774,6 +9929,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station East": {
                             "type": "and",
@@ -9820,6 +9976,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Cataris": {
                             "type": "and",
@@ -9862,6 +10019,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Above Pulse Radar": {
                             "type": "and",
@@ -9891,6 +10049,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 112,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Inside Speed Booster Tunnel": {
                             "type": "and",
@@ -9920,6 +10079,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 113,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Save Station East": {
                             "type": "or",
@@ -10049,6 +10209,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Above Pulse Radar": {
                             "type": "and",
@@ -10195,6 +10356,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Above Pulse Radar": {
                             "type": "and",
@@ -10230,6 +10392,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "or",
@@ -10679,6 +10842,7 @@
         },
         "Teleport to Burenia": {
             "default_node": "Teleporter to Burenia",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4000.0,
@@ -10747,6 +10911,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Total Recharge Station North": {
                             "type": "template",
@@ -10804,6 +10969,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Energy Recharge Station (Top)": {
                             "type": "resource",
@@ -10848,6 +11014,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Burenia": {
                             "type": "template",
@@ -10887,6 +11054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Energy Recharge Station (Bottom)": {
                             "type": "and",
@@ -10922,6 +11090,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Spin Boost Room": {
                             "type": "and",
@@ -10957,6 +11126,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Dock to Energy Recharge Station": {
@@ -10984,6 +11154,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Burenia": {
                             "type": "resource",
@@ -11113,6 +11284,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Total Recharge Station North": {
                             "type": "resource",
@@ -11144,6 +11316,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 103,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Teleporter to Burenia": {
                             "type": "and",
@@ -11271,6 +11444,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Burenia": {
                             "type": "resource",
@@ -11287,6 +11461,7 @@
         },
         "Total Recharge Station North": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6300.0,
@@ -11357,6 +11532,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Burenia (Missile)": {
                             "type": "and",
@@ -11519,6 +11695,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Chozo Warrior Arena": {
                             "type": "and",
@@ -11694,6 +11871,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Chozo Warrior Arena": {
                             "type": "and",
@@ -11847,6 +12025,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 107,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Dock to Teleport to Burenia": {
                             "type": "resource",
@@ -11884,6 +12063,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Burenia (Missile)": {
                             "type": "and",
@@ -12059,6 +12239,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -12150,6 +12331,7 @@
         },
         "Golzuna Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 7000.0,
@@ -12212,6 +12394,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Golzuna": {
                             "type": "resource",
@@ -12246,7 +12429,7 @@
                     "extra": {
                         "actor_name": "breakabletilegroup_011",
                         "actor_def": "actordef:actors/logic/breakabletilegroup/charclasses/breakabletilegroup.bmsad",
-                        "actor_layer": "breakables",
+                        "actor_sublayer": "breakables",
                         "tile_types": [
                             "WEIGHT"
                         ]
@@ -12890,6 +13073,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Golzuna": {
                             "type": "resource",
@@ -12950,6 +13134,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 145,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Cross Bomb Tutorial": {
                             "type": "and",
@@ -13009,6 +13194,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Golzuna": {
                             "type": "resource",
@@ -13032,6 +13218,7 @@
         },
         "Transport to Ferenia": {
             "default_node": "Shuttle to Ferenia",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10000.0,
@@ -13093,6 +13280,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Total Recharge Station North": {
                             "type": "and",
@@ -13128,6 +13316,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Shuttle to Ferenia": {
                             "type": "and",
@@ -13142,6 +13331,7 @@
         },
         "Map Station Access Secret": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3000.0,
@@ -13189,6 +13379,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 101,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Map Station Access": {
                             "type": "and",
@@ -13224,6 +13415,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -13332,6 +13524,7 @@
         },
         "Elun Transport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1000.0,
@@ -13402,6 +13595,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Platform": {
                             "type": "and",
@@ -13444,6 +13638,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Platform": {
                             "type": "and",
@@ -13473,6 +13668,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 111,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Flipper Room": {
                             "type": "and",
@@ -13535,6 +13731,7 @@
         },
         "Spin Boost Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2000.0,
@@ -13583,6 +13780,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 104,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -13708,6 +13906,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "resource",
@@ -13751,6 +13950,7 @@
         },
         "Energy Recharge Station": {
             "default_node": "Life Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2000.0,
@@ -13811,6 +14011,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Teleport to Burenia": {
                             "type": "resource",
@@ -13904,6 +14105,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Life Recharge": {
                             "type": "resource",
@@ -13945,6 +14147,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Teleport to Burenia": {
                             "type": "or",
@@ -14045,6 +14248,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Teleport to Burenia (Bottom)": {
                             "type": "and",
@@ -14080,6 +14284,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left Water Ledge": {
                             "type": "template",
@@ -14472,6 +14677,7 @@
         },
         "Pulse Radar Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2000.0,
@@ -14519,6 +14725,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 110,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -14590,6 +14797,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -14625,12 +14833,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Cross Bomb Tutorial": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10000.0,
@@ -14678,6 +14888,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 98,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Right Alcove": {
                             "type": "and",
@@ -14722,6 +14933,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Alcove": {
                             "type": "template",
@@ -14761,6 +14973,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Hanubia": {
                             "type": "and",
@@ -14803,6 +15016,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Above Golzuna": {
                             "type": "and",
@@ -14868,6 +15082,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Right Alcove": {
@@ -14970,6 +15185,7 @@
         },
         "Transport to Hanubia": {
             "default_node": "Shuttle to Hanubia",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 12000.0,
@@ -15030,6 +15246,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Shuttle to Hanubia": {
                             "type": "and",
@@ -15080,6 +15297,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Cross Bomb Tutorial": {
                             "type": "and",
@@ -15115,6 +15333,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Cross Bomb Tutorial": {
                             "type": "and",
@@ -15129,6 +15348,7 @@
         },
         "Spider Magnet Elevator": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5000.0,
@@ -15189,6 +15409,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Flipper Room (Tunnel)": {
                             "type": "and",
@@ -15350,7 +15571,18 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
-                    "connections": {}
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Event - Lower Spider Magnet Platform": {
+                            "type": "resource",
+                            "data": {
+                                "type": "events",
+                                "name": "GhavoraSupersMagnetPlatformLowered",
+                                "amount": 1,
+                                "negate": false
+                            }
+                        }
+                    }
                 },
                 "Tunnel to Flipper Room (Cannon)": {
                     "node_type": "dock",
@@ -15377,6 +15609,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Flipper Room (Tunnel)": {
                             "type": "resource",
@@ -15414,6 +15647,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Right Entrance": {
                             "type": "and",
@@ -15510,6 +15744,7 @@
         },
         "Above Golzuna": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 7000.0,
@@ -15570,6 +15805,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Cross Bomb Tutorial": {
                             "type": "and",
@@ -15651,6 +15887,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Golzuna Tower": {
                             "type": "and",
@@ -15686,6 +15923,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Golzuna Tower": {
                             "type": "resource",
@@ -15723,12 +15961,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Transport to Elun": {
             "default_node": "Shuttle to Elun",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4000.0,
@@ -15789,6 +16029,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Shuttle to Elun": {
                             "type": "and",
@@ -15832,6 +16073,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Elun Transport Access": {
                             "type": "and",
@@ -15846,6 +16088,7 @@
         },
         "Transport to Dairon": {
             "default_node": "Elevator to Dairon",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4000.0,
@@ -15906,6 +16149,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Dairon": {
                             "type": "and",
@@ -15949,6 +16193,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dairon Transport Access": {
                             "type": "and",
@@ -15963,6 +16208,7 @@
         },
         "Above Pulse Radar": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2000.0,
@@ -16023,6 +16269,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -16052,6 +16299,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 106,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Golzuna Tower": {
                             "type": "and",
@@ -16156,6 +16404,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "template",
@@ -16219,6 +16468,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Tunnel to Golzuna Tower": {
@@ -16246,6 +16496,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -16262,6 +16513,7 @@
         },
         "Save Station East": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 7000.0,
@@ -16322,6 +16574,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",

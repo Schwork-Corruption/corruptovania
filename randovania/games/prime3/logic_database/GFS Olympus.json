@@ -6,6 +6,7 @@
     "areas": {
         "Docking Bay 4": {
             "default_node": "Door to Docking Bay Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 15740040421447045864
             },
@@ -15,7 +16,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": -20.0,
-                        "y": -9.5367431640625e-07,
+                        "y": -0.0,
                         "z": 7.5
                     },
                     "description": "",
@@ -37,6 +38,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Docking Bay Access": {
                             "type": "and",
@@ -52,8 +54,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": 1.0,
-                        "y": -49.000003814697266,
-                        "z": 7.499998092651367
+                        "y": -49.0,
+                        "z": 7.5
                     },
                     "description": "",
                     "layers": [
@@ -62,7 +64,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -74,6 +76,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Station": {
                             "type": "resource",
@@ -90,6 +93,7 @@
         },
         "Save Station B": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14403796150828511218
             },
@@ -98,9 +102,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.18054699897766113,
-                        "y": -18.255311965942383,
-                        "z": -9.5367431640625e-07
+                        "x": -0.18,
+                        "y": -18.26,
+                        "z": -0.0
                     },
                     "description": "",
                     "layers": [
@@ -121,6 +125,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -134,13 +139,17 @@
                 "Save Station": {
                     "node_type": "generic",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.38,
+                        "y": -18.25,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {},
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "connections": {
                         "Door to Repair Bay Shaft": {
                             "type": "and",
@@ -155,6 +164,7 @@
         },
         "Flag Bridge": {
             "default_node": "Door to Flag Bridge Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14348692121215628991
             },
@@ -163,9 +173,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 46.000003814697266,
-                        "y": -9.5367431640625e-07,
-                        "z": 11.000005722045898
+                        "x": 46.0,
+                        "y": -0.0,
+                        "z": 11.0
                     },
                     "description": "",
                     "layers": [
@@ -186,6 +196,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lift Access": {
                             "type": "resource",
@@ -202,9 +213,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 37.1568489074707,
-                        "y": 27.313709259033203,
-                        "z": 10.000001430511475
+                        "x": 37.16,
+                        "y": 27.31,
+                        "z": 10.0
                     },
                     "description": "",
                     "layers": [
@@ -225,6 +236,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lift Access": {
                             "type": "and",
@@ -239,9 +251,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 37.15684509277344,
-                        "y": -27.313701629638672,
-                        "z": 9.999998569488525
+                        "x": 37.16,
+                        "y": -27.31,
+                        "z": 10.0
                     },
                     "description": "",
                     "layers": [
@@ -262,6 +274,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Aurora Access": {
                             "type": "resource",
@@ -293,7 +306,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": 38.0,
-                        "y": -9.5367431640625e-07,
+                        "y": -0.0,
                         "z": 3.5
                     },
                     "description": "",
@@ -303,7 +316,7 @@
                     "extra": {
                         "dock_index": 3
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -315,6 +328,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lift Access": {
                             "type": "and",
@@ -329,6 +343,7 @@
         },
         "Lab Access": {
             "default_node": "Door to Xenoresearch Lab",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9427699631074225391
             },
@@ -337,9 +352,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -65.10659790039062,
-                        "y": 23.10659408569336,
-                        "z": 2.5000012268371563
+                        "x": -65.11,
+                        "y": 23.11,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -348,7 +363,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -360,6 +375,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Pirate Attack": {
                             "type": "and",
@@ -373,7 +389,11 @@
                 "Event - Pirate Attack": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -64.62,
+                        "y": 23.11,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -395,6 +415,7 @@
         },
         "Port Observation Deck": {
             "default_node": "Door to Flag Bridge Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 4548320739784543479
             },
@@ -426,6 +447,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge Access": {
                             "type": "and",
@@ -440,9 +462,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6.106597900390625,
-                        "y": 41.10659408569336,
-                        "z": 2.493699037004262
+                        "x": -6.11,
+                        "y": 41.11,
+                        "z": 2.49
                     },
                     "description": "",
                     "layers": [
@@ -451,7 +473,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -463,6 +485,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Xenoresearch Lab": {
                             "type": "and",
@@ -477,6 +500,7 @@
         },
         "Xenoresearch Lab": {
             "default_node": "Door to Port Observation Deck",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1240494628458491366
             },
@@ -485,9 +509,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 34.143245697021484,
-                        "y": -28.53750228881836,
-                        "z": 2.5000060994416344
+                        "x": 34.14,
+                        "y": -28.54,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -508,6 +532,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Port Observation Deck": {
                             "type": "and",
@@ -548,9 +573,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -34.0699577331543,
-                        "y": -13.537505626678467,
-                        "z": 2.5000073146973136
+                        "x": -34.07,
+                        "y": -13.54,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -559,7 +584,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -571,6 +596,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lab Access": {
                             "type": "and",
@@ -608,12 +634,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Security Station": {
             "default_node": "Door to Docking Bay 4",
+            "hint_features": [],
             "extra": {
                 "asset_id": 13907983853126891218
             },
@@ -633,7 +661,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -645,6 +673,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Access": {
                             "type": "and",
@@ -659,8 +688,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -50.43165588378906,
-                        "y": 0.19776010513305664,
+                        "x": -50.43,
+                        "y": 0.2,
                         "z": 2.5
                     },
                     "description": "",
@@ -682,6 +711,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Docking Bay 4": {
                             "type": "and",
@@ -696,6 +726,7 @@
         },
         "Aurora Access": {
             "default_node": "Door to Flag Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17930423943250813827
             },
@@ -705,7 +736,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": -58.0,
-                        "y": 4.76837158203125e-07,
+                        "y": 0.0,
                         "z": -15.5
                     },
                     "description": "",
@@ -715,7 +746,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -727,8 +758,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Aurora Chamber": {
+                        "Dock to Aurora Chamber": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -737,13 +769,13 @@
                         }
                     }
                 },
-                "Door to Aurora Chamber": {
+                "Dock to Aurora Chamber": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
                         "x": 49.0,
-                        "y": -4.76837158203125e-07,
-                        "z": 18.674118757247925
+                        "y": 0.0,
+                        "z": 18.67
                     },
                     "description": "",
                     "layers": [
@@ -753,17 +785,18 @@
                         "dock_index": 1
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Aurora Chamber",
-                        "node": "Door to Aurora Access"
+                        "node": "Dock to Aurora Access"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "and",
@@ -777,18 +810,19 @@
             }
         },
         "Repair Bay Shaft": {
-            "default_node": "Door to Repair Bay A",
+            "default_node": "Dock to Repair Bay A",
+            "hint_features": [],
             "extra": {
                 "asset_id": 11421266353153196460
             },
             "nodes": {
-                "Door to Docking Bay 5": {
+                "Dock to Docking Bay 5": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
                         "x": 5.0,
                         "y": 0.0,
-                        "z": 4.9999995115814215
+                        "z": 5.0
                     },
                     "description": "",
                     "layers": [
@@ -798,17 +832,18 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Docking Bay 5",
-                        "node": "Door to Repair Bay Shaft"
+                        "node": "Dock to Repair Bay Shaft"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station B": {
                             "type": "and",
@@ -846,8 +881,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Docking Bay 5": {
+                        "Dock to Docking Bay 5": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -856,13 +892,13 @@
                         }
                     }
                 },
-                "Door to Repair Bay A": {
+                "Dock to Repair Bay A": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -83.4228515625,
+                        "x": -83.42,
                         "y": 0.0,
-                        "z": 4.999997807907107
+                        "z": 5.0
                     },
                     "description": "",
                     "layers": [
@@ -871,18 +907,19 @@
                     "extra": {
                         "dock_index": 2
                     },
-                    "valid_starting_location": true,
-                    "dock_type": "door",
+                    "valid_starting_location": false,
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Repair Bay A",
-                        "node": "Door to Repair Bay Shaft"
+                        "node": "Dock to Repair Bay Shaft"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station B": {
                             "type": "and",
@@ -897,6 +934,7 @@
         },
         "Flag Bridge Access": {
             "default_node": "Door to Flag Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 7060956319399124858
             },
@@ -907,7 +945,7 @@
                     "coordinates": {
                         "x": -31.0,
                         "y": 0.0,
-                        "z": 2.4999997500000006
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -916,7 +954,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -928,6 +966,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Command Lift A": {
                             "type": "resource",
@@ -955,7 +994,7 @@
                     "coordinates": {
                         "x": 0.0,
                         "y": 53.5,
-                        "z": -2.4999829169310033
+                        "z": -2.5
                     },
                     "description": "",
                     "layers": [
@@ -976,6 +1015,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "and",
@@ -990,9 +1030,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 8.522589921951294,
-                        "y": -20.930017471313477,
-                        "z": 1.4634060263633728
+                        "x": 8.52,
+                        "y": -20.93,
+                        "z": 1.46
                     },
                     "description": "",
                     "layers": [
@@ -1013,6 +1053,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "and",
@@ -1027,6 +1068,7 @@
         },
         "Command Lift A": {
             "default_node": "Door to Security Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14223261248779109721
             },
@@ -1036,7 +1078,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": 0.0,
-                        "y": -26.000003814697266,
+                        "y": -26.0,
                         "z": 82.5
                     },
                     "description": "",
@@ -1058,6 +1100,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Access": {
                             "type": "and",
@@ -1072,7 +1115,7 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 5.0067901611328125e-06,
+                        "x": 0.0,
                         "y": 26.0,
                         "z": 2.5
                     },
@@ -1083,7 +1126,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1095,6 +1138,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge Access": {
                             "type": "and",
@@ -1109,6 +1153,7 @@
         },
         "Security Access": {
             "default_node": "Door to Security Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9455349673417098581
             },
@@ -1117,9 +1162,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 8.500001907348633,
-                        "y": 2.4999960926513722,
-                        "z": 2.499999261581422
+                        "x": 8.5,
+                        "y": 2.5,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1128,7 +1173,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1140,6 +1185,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Command Lift A": {
                             "type": "and",
@@ -1154,9 +1200,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -55.554588317871094,
-                        "y": -31.60660743713379,
-                        "z": 2.499998046325686
+                        "x": -55.55,
+                        "y": -31.61,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1177,6 +1223,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Security Station": {
                             "type": "and",
@@ -1191,6 +1238,7 @@
         },
         "Lift Access": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 373237702897908369
             },
@@ -1200,8 +1248,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": 0.0,
-                        "y": 13.6818208694458,
-                        "z": 2.5000004999999987
+                        "y": 13.68,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1222,6 +1270,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Command Lift B": {
                             "type": "resource",
@@ -1290,9 +1339,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.500008529952993,
-                        "y": -55.863651275634766,
-                        "z": 2.5000170830689967
+                        "x": 2.5,
+                        "y": -55.86,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1313,6 +1362,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "and",
@@ -1326,13 +1376,17 @@
                 "Save Station": {
                     "node_type": "generic",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -18.93,
+                        "y": -18.14,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {},
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "or",
@@ -1392,6 +1446,7 @@
         },
         "Command Lift B": {
             "default_node": "Door to Gunnery Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1845155541927532448
             },
@@ -1400,9 +1455,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.0010900497436523438,
-                        "y": -22.059234619140625,
-                        "z": 24.191604614257812
+                        "x": -0.0,
+                        "y": -22.06,
+                        "z": 24.19
                     },
                     "description": "",
                     "layers": [
@@ -1411,7 +1466,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1423,6 +1478,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lift Access": {
                             "type": "and",
@@ -1437,9 +1493,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 0.15688109397888184,
-                        "y": 16.786357879638672,
-                        "z": 82.45758056640625
+                        "x": 0.16,
+                        "y": 16.79,
+                        "z": 82.46
                     },
                     "description": "",
                     "layers": [
@@ -1460,6 +1516,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gunnery Station": {
                             "type": "and",
@@ -1474,6 +1531,7 @@
         },
         "Ready Room": {
             "default_node": "Door to Meeting Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14604797390173513666
             },
@@ -1483,8 +1541,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": 0.0,
-                        "y": -23.951297760009766,
-                        "z": 1.4999990463256836
+                        "y": -23.95,
+                        "z": 1.5
                     },
                     "description": "",
                     "layers": [
@@ -1493,7 +1551,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1505,6 +1563,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Briefing": {
                             "type": "and",
@@ -1518,7 +1577,11 @@
                 "Event - Briefing": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.64,
+                        "y": -23.96,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1540,6 +1603,7 @@
         },
         "Gunnery Station": {
             "default_node": "Door to MedLab Delta",
+            "hint_features": [],
             "extra": {
                 "asset_id": 4701238246970930238
             },
@@ -1548,9 +1612,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -40.17128372192383,
-                        "y": 9.501140594482422,
-                        "z": 2.500000976837157
+                        "x": -40.17,
+                        "y": 9.5,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1571,6 +1635,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to MedLab Delta": {
                             "type": "and",
@@ -1585,9 +1650,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 28.501142501831055,
-                        "y": 15.004779815673828,
-                        "z": 2.500000976837157
+                        "x": 28.5,
+                        "y": 15.0,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1596,7 +1661,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1608,6 +1673,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Command Lift B": {
                             "type": "and",
@@ -1621,7 +1687,8 @@
             }
         },
         "MedLab Delta": {
-            "default_node": "Pickup (Phazon Enhancement Device)",
+            "default_node": "Event - Phazon Enhancement Device",
+            "hint_features": [],
             "extra": {
                 "asset_id": 975168564662458837
             },
@@ -1630,9 +1697,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -32.000003814697266,
-                        "y": -2.41408471763134,
-                        "z": 5.951695203781128
+                        "x": -32.0,
+                        "y": -2.41,
+                        "z": 5.95
                     },
                     "description": "",
                     "layers": [
@@ -1653,12 +1720,46 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {}
+                },
+                "Dock to Control Tower": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -31.06,
+                        "y": -2.26,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "Norion",
+                        "area": "Control Tower",
+                        "node": "Dock to MedLab Delta"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Pickup (Phazon Enhancement Device)": {
-                            "type": "and",
+                        "Door to Gunnery Station": {
+                            "type": "or",
                             "data": {
-                                "comment": null,
-                                "items": []
+                                "comment": "Currently no support giving the player an item here",
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Enter Hypermode"
+                                    }
+                                ]
                             }
                         }
                     }
@@ -1666,42 +1767,38 @@
                 "Pickup (Phazon Enhancement Device)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -31.472186563970904,
+                        "y": -2.406983311938382,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {},
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "pickup_index": 0,
                     "location_category": "major",
-                    "connections": {
-                        "Door to Gunnery Station": {
-                            "type": "resource",
-                            "data": {
-                                "type": "items",
-                                "name": "EnergyTank",
-                                "amount": 1,
-                                "negate": false
-                            }
-                        }
-                    }
+                    "hint_features": [],
+                    "connections": {}
                 }
             }
         },
         "Disposal Chamber": {
             "default_node": "Morph Ball Door to Ventilation Shaft",
+            "hint_features": [],
             "extra": {
                 "asset_id": 659263668515774583
             },
             "nodes": {
-                "Door to Repair Bay A": {
+                "Dock to Repair Bay A": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
                         "x": 5.0,
                         "y": 37.5,
-                        "z": 2.5000014768371557
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -1711,17 +1808,18 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Repair Bay A",
-                        "node": "Door to Disposal Chamber"
+                        "node": "Dock to Disposal Chamber"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Morph Ball Door to Ventilation Shaft": {
@@ -1739,7 +1837,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "morph_ball",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1751,8 +1849,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Repair Bay A": {
+                        "Dock to Repair Bay A": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -1793,6 +1892,7 @@
         },
         "Ventilation Shaft": {
             "default_node": "Morph Ball Door to Xenoresearch Lab",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9908630587780032110
             },
@@ -1813,7 +1913,7 @@
                         "dock_index": 0,
                         "different_strongly_connected_component": true
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "morph_ball",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1825,6 +1925,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "and",
@@ -1881,12 +1982,17 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -65.67,
+                        "y": -74.16,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -1897,6 +2003,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 1,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Morph Ball Door to Disposal Chamber": {
                             "type": "resource",
@@ -1913,6 +2020,7 @@
         },
         "Docking Bay Access": {
             "default_node": "Door to Docking Bay 5",
+            "hint_features": [],
             "extra": {
                 "asset_id": 10500207601768265995
             },
@@ -1922,8 +2030,8 @@
                     "heal": false,
                     "coordinates": {
                         "x": 0.0,
-                        "y": 48.4999885559082,
-                        "z": 32.500000953674316
+                        "y": 48.5,
+                        "z": 32.5
                     },
                     "description": "",
                     "layers": [
@@ -1944,6 +2052,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Docking Bay 5": {
                             "type": "and",
@@ -1958,9 +2067,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.49999499320983887,
-                        "y": -25.517187118530273,
-                        "z": 19.99998664855957
+                        "x": -0.5,
+                        "y": -25.52,
+                        "z": 20.0
                     },
                     "description": "",
                     "layers": [
@@ -1969,7 +2078,7 @@
                     "extra": {
                         "dock_index": 1
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -1981,6 +2090,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Docking Bay 4": {
                             "type": "or",
@@ -2040,6 +2150,7 @@
         },
         "Munitions Storage": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "asset_id": 7486162873388959747
             },
@@ -2071,6 +2182,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Launcher)": {
                             "type": "and",
@@ -2084,7 +2196,11 @@
                 "Pickup (Missile Launcher)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.53,
+                        "y": 12.48,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2093,6 +2209,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 2,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Repair Bay A": {
                             "type": "and",
@@ -2106,12 +2223,13 @@
             }
         },
         "Gunship": {
-            "default_node": "Door to Docking Bay 5",
+            "default_node": "Dock to Docking Bay 5",
+            "hint_features": [],
             "extra": {
                 "asset_id": 15628730931753443250
             },
             "nodes": {
-                "Door to Docking Bay 5": {
+                "Dock to Docking Bay 5": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -2127,34 +2245,103 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": true,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Docking Bay 5",
-                        "node": "Door to Gunship"
+                        "node": "Dock to Gunship"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
-                    "connections": {}
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Samus Ship": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event1",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "Samus Ship": {
+                    "node_type": "teleporter_network",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -44.63,
+                        "y": 76.75,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "is_unlocked": {
+                        "type": "and",
+                        "data": {
+                            "comment": null,
+                            "items": []
+                        }
+                    },
+                    "network": "default",
+                    "requirement_to_activate": {
+                        "type": "and",
+                        "data": {
+                            "comment": null,
+                            "items": []
+                        }
+                    },
+                    "connections": {
+                        "Dock to Docking Bay 5": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Event19",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 }
             }
         },
         "Repair Bay A": {
-            "default_node": "Door to Disposal Chamber",
+            "default_node": "Dock to Disposal Chamber",
+            "hint_features": [],
             "extra": {
                 "asset_id": 16233775155696881050
             },
             "nodes": {
-                "Door to Repair Bay Shaft": {
+                "Dock to Repair Bay Shaft": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -83.12681579589844,
-                        "y": 4.76837158203125e-07,
-                        "z": -10.00000262260437
+                        "x": -83.13,
+                        "y": 0.0,
+                        "z": -10.0
                     },
                     "description": "",
                     "layers": [
@@ -2164,19 +2351,20 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Repair Bay Shaft",
-                        "node": "Door to Repair Bay A"
+                        "node": "Dock to Repair Bay A"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Disposal Chamber": {
+                        "Dock to Disposal Chamber": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2189,9 +2377,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -133.45082092285156,
-                        "y": -20.750200271606445,
-                        "z": 7.499999046325684
+                        "x": -133.45,
+                        "y": -20.75,
+                        "z": 7.5
                     },
                     "description": "",
                     "layers": [
@@ -2212,8 +2400,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Disposal Chamber": {
+                        "Dock to Disposal Chamber": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2222,13 +2411,13 @@
                         }
                     }
                 },
-                "Door to Disposal Chamber": {
+                "Dock to Disposal Chamber": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -142.66769409179688,
-                        "y": -4.9790520668029785,
-                        "z": -71.00006103515625
+                        "x": -142.67,
+                        "y": -4.98,
+                        "z": -71.0
                     },
                     "description": "",
                     "layers": [
@@ -2237,20 +2426,21 @@
                     "extra": {
                         "dock_index": 2
                     },
-                    "valid_starting_location": true,
-                    "dock_type": "door",
+                    "valid_starting_location": false,
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Disposal Chamber",
-                        "node": "Door to Repair Bay A"
+                        "node": "Dock to Repair Bay A"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Repair Bay Shaft": {
+                        "Dock to Repair Bay Shaft": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -2337,6 +2527,7 @@
         },
         "Meeting Access": {
             "default_node": "Door to Flag Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 8779228940472058493
             },
@@ -2345,9 +2536,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1.2620624899864197,
-                        "y": -55.863651275634766,
-                        "z": 2.5000170830689967
+                        "x": 1.26,
+                        "y": -55.86,
+                        "z": 2.5
                     },
                     "description": "",
                     "layers": [
@@ -2356,7 +2547,7 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
@@ -2368,6 +2559,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ready Room": {
                             "type": "and",
@@ -2405,6 +2597,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Flag Bridge": {
                             "type": "and",
@@ -2418,18 +2611,19 @@
             }
         },
         "Docking Bay 5": {
-            "default_node": "Door to Gunship",
+            "default_node": "Dock to Gunship",
+            "hint_features": [],
             "extra": {
                 "asset_id": 5834535855679580949
             },
             "nodes": {
-                "Door to Repair Bay Shaft": {
+                "Dock to Repair Bay Shaft": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 2.0000009536743164,
-                        "y": 4.76837158203125e-07,
-                        "z": -9.999999284744263
+                        "x": 2.0,
+                        "y": 0.0,
+                        "z": -10.0
                     },
                     "description": "",
                     "layers": [
@@ -2439,17 +2633,18 @@
                         "dock_index": 0
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Repair Bay Shaft",
-                        "node": "Door to Docking Bay 5"
+                        "node": "Dock to Docking Bay 5"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Berserker Lord": {
                             "type": "resource",
@@ -2466,9 +2661,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 12.500001907348633,
-                        "y": 51.28473663330078,
-                        "z": -4.999995112419128
+                        "x": 12.5,
+                        "y": 51.28,
+                        "z": -5.0
                     },
                     "description": "",
                     "layers": [
@@ -2489,8 +2684,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2499,13 +2695,13 @@
                         }
                     }
                 },
-                "Door to Gunship": {
+                "Dock to Gunship": {
                     "node_type": "dock",
                     "heal": true,
                     "coordinates": {
                         "x": 290.0,
                         "y": -86.0,
-                        "z": 0.4999959468841553
+                        "z": 0.5
                     },
                     "description": "",
                     "layers": [
@@ -2514,18 +2710,19 @@
                     "extra": {
                         "dock_index": 2
                     },
-                    "valid_starting_location": true,
-                    "dock_type": "door",
+                    "valid_starting_location": false,
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Gunship",
-                        "node": "Door to Docking Bay 5"
+                        "node": "Dock to Docking Bay 5"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Docking Bay Access": {
                             "type": "and",
@@ -2536,13 +2733,13 @@
                         }
                     }
                 },
-                "Door to Aurora Chamber": {
+                "Dock to Aurora Chamber": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -22.5,
-                        "y": 2.5,
-                        "z": 50.0
+                        "x": 1.4051023597437293,
+                        "y": -15.650748554461615,
+                        "z": 0.0
                     },
                     "description": "",
                     "layers": [
@@ -2552,19 +2749,20 @@
                         "dock_index": 3
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Aurora Chamber",
-                        "node": "Door to Docking Bay 5"
+                        "node": "Dock to Docking Bay 5"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2576,7 +2774,11 @@
                 "Event - Berserker Lord": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 229.14,
+                        "y": 4.59,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -2585,30 +2787,82 @@
                     "valid_starting_location": false,
                     "event_name": "Event1",
                     "connections": {
-                        "Door to Gunship": {
+                        "Dock to Gunship": {
+                            "type": "or",
+                            "data": {
+                                "comment": "THIS IS A HIJACK CONNECTION",
+                                "items": [
+                                    {
+                                        "type": "or",
+                                        "data": {
+                                            "comment": null,
+                                            "items": []
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "Dock to Tower Elevator": {
                             "type": "and",
                             "data": {
-                                "comment": null,
-                                "items": []
+                                "comment": "THIS IS A HIJACK CONNECTION",
+                                "items": [
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": null,
+                                            "items": []
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
+                },
+                "Dock to Tower Elevator": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 366.71,
+                        "y": 17.6,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "dock_type": "other",
+                    "default_connection": {
+                        "region": "Norion",
+                        "area": "Tower Elevator",
+                        "node": "Dock to Docking Bay 5"
+                    },
+                    "default_dock_weakness": "Open Passage",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {}
                 }
             }
         },
         "Aurora Chamber": {
-            "default_node": "Door to Aurora Access",
+            "default_node": "Dock to Aurora Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 14583031681898448395
             },
             "nodes": {
-                "Door to Aurora Access": {
+                "Dock to Aurora Access": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
                         "x": -44.0,
-                        "y": -4.76837158203125e-07,
-                        "z": 20.019623160362244
+                        "y": 0.0,
+                        "z": 20.02
                     },
                     "description": "",
                     "layers": [
@@ -2617,20 +2871,21 @@
                     "extra": {
                         "dock_index": 0
                     },
-                    "valid_starting_location": true,
-                    "dock_type": "door",
+                    "valid_starting_location": false,
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Aurora Access",
-                        "node": "Door to Aurora Chamber"
+                        "node": "Dock to Aurora Chamber"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Hangar Bay Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Door to Docking Bay 5": {
+                        "Dock to Docking Bay 5": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -2639,7 +2894,7 @@
                         }
                     }
                 },
-                "Door to Docking Bay 5": {
+                "Dock to Docking Bay 5": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -2655,17 +2910,18 @@
                         "dock_index": 1
                     },
                     "valid_starting_location": false,
-                    "dock_type": "door",
+                    "dock_type": "other",
                     "default_connection": {
                         "region": "G.F.S. Olympus",
                         "area": "Docking Bay 5",
-                        "node": "Door to Aurora Chamber"
+                        "node": "Dock to Aurora Chamber"
                     },
-                    "default_dock_weakness": "Normal Door",
+                    "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }

@@ -7,7 +7,7 @@ from randovania.generator.pickup_pool.pickup_creator import create_standard_pick
 from randovania.layout.exceptions import InvalidConfiguration
 
 if TYPE_CHECKING:
-    from randovania.game_description.pickup.ammo_pickup import AmmoPickupDefinition
+    from randovania.game_description.pickup.pickup_definition.ammo_pickup import AmmoPickupDefinition
     from randovania.game_description.pickup.pickup_entry import PickupEntry
     from randovania.game_description.resources.pickup_index import PickupIndex
     from randovania.game_description.resources.resource_database import ResourceDatabase
@@ -53,13 +53,12 @@ def add_standard_pickups(
         ammo, locked_ammo = _find_ammo_for(pickup.ammo, ammo_pickup_configuration)
 
         if state.include_copy_in_original_location:
-            if pickup.original_location is None:
+            if not pickup.original_locations:
                 raise InvalidConfiguration(
                     f"Item {pickup.name} does not exist in the original game, cannot use state {state}",
                 )
-            new_assignment[pickup.original_location] = create_standard_pickup(
-                pickup, state, resource_database, ammo, locked_ammo
-            )
+            for location in pickup.original_locations:
+                new_assignment[location] = create_standard_pickup(pickup, state, resource_database, ammo, locked_ammo)
 
         for _ in range(state.num_shuffled_pickups):
             item_pool.append(create_standard_pickup(pickup, state, resource_database, ammo, locked_ammo))

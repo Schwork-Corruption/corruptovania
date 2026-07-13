@@ -1,5 +1,6 @@
 ----------------
 Starting Area
+Hint Features - Hint Feature 1
 > Spawn Point; Heals? True; Spawn Point; Default Node
   * Layers: default
   > Pickup (Weapon)
@@ -20,10 +21,15 @@ Starting Area
       Trivial
   > Door to Heated Room
       Trivial
+  > Door to Ledge Room
+      Trivial
+  > Event - Post Weapon
+      Collected Intro/Starting Area/Pickup (Weapon)
 
 > Pickup (Weapon); Heals? False
   * Layers: default
   * Pickup 0; Category? Major
+  * Hint Features - Hint Feature 2
   > Spawn Point
       Trivial
 
@@ -74,9 +80,22 @@ Starting Area
   > Spawn Point
       Trivial
 
+> Door to Ledge Room; Heals? False
+  * Layers: default
+  * Normal Door to Ledge Room/Door to Starting Area
+  > Spawn Point
+      Trivial
+
+> Event - Post Weapon; Heals? False
+  * Layers: default
+  * Event Post Weapon
+  > Spawn Point
+      Trivial
+
 ----------------
 Boss Arena
 Extra - map_name: Square
+Hint Features - Boss
 > Door to Starting Area; Heals? False
   * Layers: default
   * Normal Door to Starting Area/Door to Boss Arena
@@ -106,6 +125,7 @@ Extra - map_name: Square
 ----------------
 Explosive Depot
 Extra - map_name: Square
+Hint Features - Hint Feature 1, Hint Feature 2, Hint Feature 3, Hint Feature 4
 > Door to Starting Area; Heals? False
   * Layers: default
   * Normal Door to Starting Area/Door to Explosive Depot
@@ -220,6 +240,7 @@ Extra - map_name: Square
 ----------------
 Heated Room
 Extra - map_name: Orange
+Hint Features - Hint Feature 1, Hint Feature 2, Hint Feature 3
 > Pickup (Health); Heals? False
   * Layers: default
   * Pickup 3; Category? Minor
@@ -232,6 +253,51 @@ Extra - map_name: Orange
   * Normal Door to Starting Area/Door to Heated Room
   > Pickup (Health)
       Normal Damage ≥ 49
+
+----------------
+Ledge Room
+Extra - map_name: Square
+> Door to Starting Area; Heals? False
+  * Layers: default
+  * Normal Door to Starting Area/Door to Ledge Room
+  > High Ledge
+      Trivial
+
+> High Ledge; Heals? False
+  * Layers: default
+  > Door to Starting Area
+      Trivial
+  > Bottom
+      Trivial
+
+> Bottom; Heals? False
+  * Layers: default
+  > High Ledge
+      Double Jump
+  > Low Ledge
+      Can Jump
+  > Pickup (Jump)
+      Trivial
+
+> Low Ledge; Heals? False
+  * Layers: default
+  > Bottom
+      Trivial
+  > Pickup (Double Jump)
+      Trivial
+
+> Pickup (Jump); Heals? False
+  * Layers: default
+  * Pickup 7; Category? Major
+  > Bottom
+      Trivial
+
+> Pickup (Double Jump); Heals? False
+  * Layers: default
+  * Pickup 8; Category? Major
+  * Hint Features - Ledge
+  > Low Ledge
+      Trivial
 
 ----------------
 Empty Area

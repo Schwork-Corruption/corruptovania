@@ -4,6 +4,9 @@
     "areas": {
         "Plantation": {
             "default_node": "Door to Storehouse",
+            "hint_features": [
+                "garden"
+            ],
             "extra": {
                 "map_name": "Cent",
                 "starting_script": "<TRA0056:0090:0118:0083"
@@ -34,6 +37,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -69,6 +73,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -104,6 +109,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -139,6 +145,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Level": {
                             "type": "and",
@@ -174,6 +181,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Level": {
                             "type": "and",
@@ -209,6 +217,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Level": {
                             "type": "and",
@@ -244,6 +253,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Level": {
                             "type": "and",
@@ -279,6 +289,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -314,6 +325,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -503,6 +515,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 44,
                     "location_category": "minor",
+                    "hint_features": [
+                        "underwater"
+                    ],
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -531,6 +546,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 45,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -559,6 +575,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 46,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -587,6 +604,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 47,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Upper Level": {
                             "type": "and",
@@ -615,6 +633,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 48,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Upper Level": {
                             "type": "and",
@@ -838,6 +857,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Level": {
                             "type": "and",
@@ -1004,6 +1024,7 @@
         },
         "Storehouse": {
             "default_node": "Save Point",
+            "hint_features": [],
             "extra": {
                 "map_name": "Itoh",
                 "starting_script": "<TRA0055:0094:0017:0008"
@@ -1034,6 +1055,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Outer Wall": {
                             "type": "and",
@@ -1069,6 +1091,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plantation": {
                             "type": "and",
@@ -1113,6 +1136,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 49,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Plantation": {
                             "type": "and",
@@ -1151,6 +1175,7 @@
         },
         "Passage?": {
             "default_node": "Door to Plantation",
+            "hint_features": [],
             "extra": {
                 "map_name": "Hell4",
                 "starting_script": "<TRA0084:0092:0001:0021"
@@ -1181,6 +1206,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Statue Chamber": {
                             "type": "and",
@@ -1216,6 +1242,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plantation": {
                             "type": "resource",
@@ -1262,6 +1289,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Statue Chamber": {
                             "type": "and",
@@ -1311,6 +1339,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Entered Passage from Above": {
                             "type": "and",
@@ -1350,6 +1379,7 @@
         },
         "Statue Chamber": {
             "default_node": "Door to Passage?",
+            "hint_features": [],
             "extra": {
                 "map_name": "Statue",
                 "starting_script": "<TRA0086:0092:0002:0010"
@@ -1380,6 +1410,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Hint - Numahachi 1": {
                             "type": "and",
@@ -1468,6 +1499,7 @@
         },
         "Rest Area": {
             "default_node": "Door to Plantation",
+            "hint_features": [],
             "extra": {
                 "map_name": "Lounge",
                 "starting_script": "<TRA0059:0090:0026:0008"
@@ -1498,6 +1530,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Megane)": {
                             "type": "and",
@@ -1554,6 +1587,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 50,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Plantation": {
                             "type": "and",
@@ -1592,6 +1626,7 @@
         },
         "Teleporter": {
             "default_node": "Teleporter to Arthur's House",
+            "hint_features": [],
             "extra": {
                 "map_name": "CentW",
                 "starting_script": "<TRA0060:0099:0009:0009"
@@ -1622,6 +1657,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Hub": {
                             "type": "and",
@@ -1752,6 +1788,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Hub": {
                             "type": "and",
@@ -1787,12 +1824,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Jail No. 1": {
             "default_node": "Entrance from Teleporter",
+            "hint_features": [],
             "extra": {
                 "map_name": "Jail1",
                 "starting_script": "<TRA0057:0220:0011:0014"
@@ -1823,6 +1862,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Entrance from Teleporter": {
@@ -1850,6 +1890,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plantation (Upper)": {
                             "type": "and",
@@ -1899,6 +1940,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Pickup (Jail No. 1)": {
@@ -1919,6 +1961,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 51,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Entrance from Teleporter": {
                             "type": "and",
@@ -1957,6 +2000,7 @@
         },
         "Jail No. 2": {
             "default_node": "Teleporter to Shelter",
+            "hint_features": [],
             "extra": {
                 "map_name": "Jail2",
                 "starting_script": "<TRA0061:0099:0007:0013"
@@ -1987,6 +2031,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Shelter": {
                             "type": "or",
@@ -2079,6 +2124,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plantation": {
                             "type": "or",
@@ -2150,6 +2196,9 @@
         },
         "Hideout": {
             "default_node": "Door to Plantation",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Momo",
                 "starting_script": "<TRA0058:0093:0009:0004"
@@ -2180,6 +2229,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Chivalry Sakamoto's Wife)": {
                             "type": "resource",
@@ -2269,6 +2319,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 52,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Plantation": {
                             "type": "and",

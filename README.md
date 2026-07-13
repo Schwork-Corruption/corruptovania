@@ -1,44 +1,29 @@
 <!-- The Begin and End comments throughout this document are used in order to pull specific sections of the readme into the main GUI window at runtime. -->
 
-# Randovania
+# Corruptovania
 
-Welcome to Randovania, a randomizer platform for a multitude of games.
+Welcome to Corruptovania, a fork of [Randovania](https://randovania.org/) dedicated to randomizing Metroid Prime 3: Corruption.
 
-New here or looking to install? Check [our website](https://randovania.github.io/).
+New here or looking to install? Check out [the setup guide](https://github.com/Schwork-Corruption/corruptovania/wiki/Setup-Guide) and [the downloads](https://github.com/schwork-corruption/corruptovania/releases/latest).
 
 <!-- Begin SUPPORTED -->
 
 ### Supported Games
- - Another Metroid 2 Remake
- - Cave Story
- - Metroid Dread
- - Metroid Prime
- - Metroid Prime 2: Echoes
- - Metroid: Samus Returns
+ - Metroid Prime 3: Corruption
 
 <!-- End SUPPORTED -->
 
 <!-- Begin EXPERIMENTAL -->
 
-### Experimental Games
- - Metroid Prime 3: Corruption
- - Super Metroid
-
 <!-- End EXPERIMENTAL -->
 
 <!-- Begin WELCOME -->
 
-Randovania can randomize many aspects of its supported games, all while still ensuring they're completable 
+Corruptovania can randomize many aspects of its supported games, all while still ensuring they're completable
 without using any glitches or exploits. Its features include:
 
 * Randomizing what can be found in each item location. Weapons, keys, and more can end up in
   completely new places.
-
-* Use Multiworld sessions to shuffle items between multiple separate games, alone or with friends.
-  All Multiworld games are compatible with each other - mix and match as you like!
-
-* Randomize how areas connect to one another, or what resources are required to travel between areas.
-  These options are highly customizable, letting you limit or unleash the chaos.
 
 * Randomize your starting equipment and location. Feeling brave? You can even shuffle items
   you normally start with.
@@ -49,18 +34,30 @@ Have fun and start randomizing!
 
 # Installation
 
-In the [releases page](https://github.com/randovania/randovania/releases), we have zip files
+In the [releases page](https://github.com/schwork-corruption/corruptovania/releases), we have zip files
 with everything ready to use. Just extract and run!
 
-For Linux users, we recommend using our [Flatpak](https://flathub.org/apps/io.github.randovania.Randovania) instead.
+macOS releases are published as `corruptovania-<version>-macos-universal2.tar.gz`. Extract the archive and open
+`Corruptovania.app`.
+
+Current macOS release support:
+- Intel `x86_64` and Apple Silicon `arm64` are both included in the same Universal2 app.
+- The current minimum supported macOS version is macOS 12 Monterey.
+- macOS 11 Big Sur is not currently possible with this dependency set because `PySide6-Essentials==6.8.2.1`
+  and `shiboken6==6.8.2.1` only publish `macosx_12_0_universal2` wheels for Python 3.12.
+- The macOS build now packages native Prime 3 helper binaries for extraction, patching, and image creation.
+- CI uses ad-hoc signing when no Apple Developer identity is available, so release builds are signed for local
+  integrity checks but are not notarized by default.
+- Maintainers should still run a private Prime 3 export validation on macOS before treating a release as fully
+  verified for Corruption export.
 
 <!-- Begin COMMUNITY -->
 
 # Community
 
-Join the Randovania Discord: <https://discord.gg/M23gCxj6fw>
+Join the Prime Randomizer Discord: <https://randodiscord.metroidprime.run>
 
-Invite links for specific games' servers can be found in the `#game-communities` channel in our server.
+Invite links for the main Randovania server and other specific games' servers can be found in the `#affiliates` channel in our server.
 
 <!-- End COMMUNITY -->
 
@@ -81,7 +78,7 @@ Linux Flatpak build contributed by [Ethan Lee](https://flibitijibibo.com/).
 
 ## Games
 
-### Metroid Prime 1
+### Metroid Prime
 * Game patching via [randomprime](https://github.com/randovania/randomprime). Originally authored by [April Wade](https://github.com/aprilwade), it is now maintained and developed by [toasterparty](https://github.com/toasterparty) with contributions from [others](https://github.com/randovania/randomprime/graphs/contributors)
 * Room data collected by UltiNaruto, [EthanArmbrust](https://github.com/EthanArmbrust) and [SolventMercury](https://github.com/SolventMercury).
 * Converting Metroid Prime 2 models by [Migs](https://www.twitch.tv/migslive).
@@ -92,16 +89,6 @@ Linux Flatpak build contributed by [Ethan Lee](https://flibitijibibo.com/).
 * [Menu Mod](https://www.dropbox.com/s/yhqqafaxfo3l4vn/Echoes%20Menu.7z) created by Claris. For more information, see the
 [Menu Mod README](https://www.dropbox.com/s/yhqqafaxfo3l4vn/Echoes%20Menu.7z?file_subpath=%2FEchoes+Menu%2Freadme.txt).
 * Converting Metroid Prime models by [Migs](https://www.twitch.tv/migslive).
-
-### Metroid Prime 3: Corruption
-* Game patching written by [gollop](https://github.com/gollop).
-* Room data collected by [Dyceron](https://www.twitch.tv/dyceron) and [KirbymastaH](https://www.twitch.tv/kirbymastah).
-
-### Super Metroid
-* Game Patching and Logic Database by [SolventMercury](https://github.com/SolventMercury).
-* Custom Item PLMs patch by [Kazuto](https://github.com/Kazuto88).
-* Skip Intro Saves patch by [PHOSPHOTiDYL](https://metroidconstruction.com/resource.php?id=265).
-* Other individual patches by [Total](https://github.com/tewtal), Foosda, Leodox, and others.
 
 ### Cave Story
 * Patcher and logic written by [duncathan_salt](https://twitter.com/duncathan_salt).
@@ -153,6 +140,7 @@ Linux Flatpak build contributed by [Ethan Lee](https://flibitijibibo.com/).
   * [Henrique "Darkszero" Gemignani](https://github.com/henriquegemignani/)
   * [duncathan_salt](https://twitter.com/duncathan_salt)
   * Merikatt
+  * [Athebyne](https://github.com/f-raZ0R)
 
 * Logic Database by:
   * [Dyceron](https://www.twitch.tv/dyceron)
@@ -160,11 +148,19 @@ Linux Flatpak build contributed by [Ethan Lee](https://flibitijibibo.com/).
   * [Haxaplax](https://github.com/haxaplax)
 
 ## Auto Tracker
+
+### Primes
 * Game theme assets were provided by [MaskedTAS](https://twitter.com/MaskedTAS).
 * Pixel theme assets were provided by [Uncle Reggie](https://www.twitch.tv/unclereggie).
+
+### AM2R
 * AM2R 1.5.5 item sprites were made by [Eskimode7](https://twitter.com/shmegleskimo) licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 * The AM2R DNA sprite was made by [AbyssalCreature](https://github.com/AbyssalCreature) licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 * The AM2R Morph Ball and Power Grip sprites were made by ShirtyScarab554 licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+### Metroid: Samus Returns
+
+* Game theme assets were provided by [Dyceron](https://www.twitch.tv/dyceron).
 
 ## Multiworld
 Server and logic written by [Henrique "Darkszero" Gemignani](https://github.com/henriquegemignani/).
@@ -182,6 +178,9 @@ The "unplug" icon is by tezar tantular from [Noun Project](https://thenounprojec
 ### Another Metroid 2 Remake
 Integration written by [Miepee](https://github.com/Miepee). Offworld sprites are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and are made by [AbyssalCreature](https://github.com/AbyssalCreature), ShirtyScarab554 and [many others](https://github.com/randovania/YAMS/blob/main/YAMS-LIB/sprites/Attribution.md).
 
+### Metroid: Samus Returns
+Integration written by [Thanatos](https://github.com/ThanatosGit).
+
 <!-- End CREDITS -->
 
 # Developer Help
@@ -194,7 +193,7 @@ Integration written by [Miepee](https://github.com/Miepee). Offworld sprites are
 ## Setup
 
 Getting started:
-   1. Clone this repository. (downloading the zip is *not* supported and will not work)
+   1. Clone this repository. If you want to clone your fork, make sure that during the forking process you **uncheck** the `Copy main branch only` checkbox. Because the git history is needed, downloading the zip is *not* supported and will not work.
    2. Open a terminal in the repository root
    3. Run the following file:
       1. Windows: `tools/prepare_virtual_env.bat`
@@ -224,6 +223,31 @@ In order to run the tests:
    3. Run `python -m pip install -r requirements.txt`.
    4. Run `python -m pytest test`.
 
+In order to build the macOS Universal2 application locally:
+   1. Use macOS 12 or newer with Python 3.12 and Xcode command line tools available.
+   2. Export `MACOSX_DEPLOYMENT_TARGET=12.0`.
+   3. Install the .NET 8 SDK so `dotnet publish` can build the native Prime 3 helper.
+   4. Run `python -m pip install --upgrade -r requirements-setuptools.txt`.
+   5. Run `python -m pip install delocate`.
+   6. Run `python -m pip install --only-binary=:all: -r requirements.txt`.
+   7. Run `python -m pip install -e . --no-deps`.
+   8. Run `python tools/bundle_macos_universal_wheels.py`.
+   9. Run `python -m pip install --force-reinstall --no-deps universal_wheels/*.whl`.
+  10. Run `python tools/prime3_patcher/build_macos_toolchain.py`.
+  11. Run `python -u tools/create_release.py`.
+  12. Validate with:
+      1. `file dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      2. `lipo -archs dist/Corruptovania.app/Contents/MacOS/corruptovania`
+      3. `python tools/validate_macos_universal2.py dist/Corruptovania.app`
+      4. `codesign --verify --deep --strict --verbose=2 dist/Corruptovania.app`
+
+Private Prime 3 equivalence testing:
+   1. Set `CORRUPTOVANIA_MP3_TEST_DATA` to a private fixture directory containing an `input/` folder of copied test files.
+   2. Build the modern randomizer with `dotnet build tools/prime3_patcher/MP3Randomizer/MP3Randomizer.csproj -c Release`.
+   3. Run `python tools/prime3_patcher/compare_randomizer_outputs.py --seed <seed>`.
+   4. The script runs the shipped Windows `MP3Randomizer.exe` and the modernized build against separate copies of the
+      same private inputs, then compares every produced output file by SHA-256.
+
 In order to run the server:
    1. Run both "Getting started" and "Start Randovania" steps.
    2. Activate the virtual env. Check start_client.bat/sh for details.
@@ -240,7 +264,34 @@ the `prepare_virtual_env` scripts.
 
 Suggested IDE: [PyCharm Community](https://www.jetbrains.com/pycharm/download/)
 
-_*If using Visual Studio Code, make sure to set `"qtForPython.uic.liveExecution.enabled": false` when using the QT extension._
+## Visual Studio Code
+
+Clone this repository and open the folder in Visual Studio Code. It suggests several useful plugins for developing which you should download and install.
+
+If your Python is setup properly, you can use the `Create venv with all exporters` task by pressing CTRL+SHIFT+P, type in `Task`, select `Tasks: Run task` and then select the task. It will create the venv with all the dependencies installed for you.
+
+Then make sure that the Python extension is installed and select the Python installation from the venv via CTRL+SHIFT+P and `Select Python: Interpreter`.
+
+There is also a task defined to run all tests. To run individual tests you can utilise the `Testing` section of Visual Studio Code. You can simply run or debug a test there.
+
+To start Randovania you can press CTRL+F5. If you only press F5, Randovania will start with a debugger. Be aware that starting with a debugger makes the application much slower.
+
+## CI builds
+
+GitHub Actions currently builds:
+- Linux source tests, Linux executable, and resolver tests.
+- Windows source tests and Windows executable.
+- macOS source tests on `macos-15`.
+- a macOS Universal2 release app on `macos-15`, with wheel normalization, a rebuilt native Prime 3 helper toolchain
+  (`MP3Randomizer`, bundled `dotnet`, `liblzokay.dylib`, `hpatchz`, and `wit`), recursive Mach-O arch validation,
+  ad-hoc signing by default, and a release archive at `dist/corruptovania-<version>-macos-universal2.tar.gz`.
+
+Prime 3 macOS helper licensing in-tree:
+- `randovania/data/gollop_mp3_patcher/LICENSE`: MP3Randomizer / gollop
+- `randovania/data/gollop_mp3_patcher/lzokay/LICENSE`: lzokay
+- `randovania/data/gollop_mp3_patcher/LICENSE.txt`: HDiffPatch / hpatchz
+- `randovania/data/gollop_mp3_patcher/wit/GPL-2.0.txt`: WIT
+- `randovania/data/gollop_mp3_patcher/nodtool/LICENSE`: NOD
 
 # Documentation
 

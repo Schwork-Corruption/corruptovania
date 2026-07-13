@@ -8,7 +8,7 @@ from pathlib import Path
 
 import randovania
 from randovania import monitoring
-from randovania.exporter.game_exporter import GameExporter, GameExportParams
+from randovania.exporter.game_exporter import GameExporter, GameExportParams, input_hash_for_directory
 from randovania.lib import json_lib, status_update_lib
 
 
@@ -31,12 +31,17 @@ class DreadGameExportParams(GameExportParams):
     clean_output_path: bool
     post_export: Callable[[status_update_lib.ProgressUpdateCallable], None] | None
 
+    def calculate_input_hash(self) -> dict[str, str | None]:
+        return {
+            "input_path": input_hash_for_directory(self.input_path),
+        }
+
 
 class DreadGameExporter(GameExporter):
     _busy: bool = False
 
     @property
-    def is_busy(self) -> bool:
+    def can_start_new_export(self) -> bool:
         """
         Checks if the exporter is busy right now
         """

@@ -3,9 +3,11 @@ from __future__ import annotations
 import dataclasses
 from typing import TYPE_CHECKING
 
+from randovania.games.prime3.gui.generated.corruption_cosmetic_patches_dialog_ui import (
+    Ui_CorruptionCosmeticPatchesDialog,
+)
 from randovania.games.prime3.layout.corruption_cosmetic_patches import CorruptionCosmeticPatches, CorruptionSuit
 from randovania.gui.dialog.base_cosmetic_patches_dialog import BaseCosmeticPatchesDialog
-from randovania.gui.generated.corruption_cosmetic_patches_dialog_ui import Ui_CorruptionCosmeticPatchesDialog
 from randovania.gui.lib.signal_handling import set_combo_with_value
 
 if TYPE_CHECKING:
@@ -13,13 +15,17 @@ if TYPE_CHECKING:
 
     from PySide6 import QtWidgets
 
+    from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
+
 
 class CorruptionCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_CorruptionCosmeticPatchesDialog):
     _cosmetic_patches: CorruptionCosmeticPatches
 
-    def __init__(self, parent: QtWidgets.QWidget | None, current: CorruptionCosmeticPatches):
-        super().__init__(parent)
+    def __init__(self, parent: QtWidgets.QWidget | None, current: BaseCosmeticPatches):
+        super().__init__(parent, current)
         self.setupUi(self)
+
+        assert isinstance(current, CorruptionCosmeticPatches)
         self._cosmetic_patches = current
 
         for player_suit in CorruptionSuit:

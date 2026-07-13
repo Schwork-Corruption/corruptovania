@@ -50,9 +50,7 @@ Extra - asset_id: collision_camera_000
   > Door to Navigation Station South
       Can Slide and Shoot Missile
   > Above Breakable
-      Any of the following:
-          Can Slide Underwater
-          Before Artaria - EMMI Zone Water Device and Can Slide
+      Can Slide
   > Tunnel to First Tutorial Access
       Trivial
 
@@ -76,13 +74,7 @@ Extra - asset_id: collision_camera_000
   > Event - First Tutorial Blob
       Shoot Diffusion or Wave
   > Ammo Recharge
-      Any of the following:
-          All of the following:
-              Can Slide Underwater
-              Any of the following:
-                  Gravity Suit or Simple IBJ or Use Spin Boost
-                  Flash Shift and Wall Jump (Beginner)
-          Before Artaria - EMMI Zone Water Device and Can Slide
+      Can Slide
 
 > Tunnel to First Tutorial Access; Heals? False
   * Layers: default
@@ -315,6 +307,10 @@ Extra - asset_id: collision_camera_003
   * Extra - start_point_actor_def: actordef:actors/logic/startpoint/charclasses/startpoint.bmsad
   > Pickup (Missile Tank 2)
       Trivial
+  > Event - Proto EMMI Blob (East Side)
+      Any of the following:
+          After Artaria - Proto EMMI Blob or Shoot Diffusion or Wave
+          Morph Ball and Wide Beam and Pseudo-Wave Beam (Intermediate) and Shoot Charge Beam
   > West of Blob
       Morph Ball and After Artaria - Proto EMMI Blob
 
@@ -383,9 +379,7 @@ Extra - asset_id: collision_camera_004
   > Door to Save Station South
       Trivial
   > Next to Water Introduction Blob
-      Any of the following:
-          Can Slide Underwater
-          Before Artaria - Water Introduction Blob and Can Slide
+      Can Slide
 
 > Door to Save Station South; Heals? False
   * Layers: default
@@ -452,13 +446,11 @@ Extra - asset_id: collision_camera_004
 > Next to Water Introduction Blob; Heals? False
   * Layers: default
   > Door to Melee Tutorial Room
-      Any of the following:
-          Can Slide Underwater
-          Before Artaria - Water Introduction Blob and Can Slide
+      Can Slide
   > Dock to EMMI Zone First Entrance (Lower)
       Any of the following:
           Gravity Suit or After Artaria - Water Introduction Blob or Use Spin Boost
-          Slide and Speed Booster and Before Artaria - Water Introduction Blob and Speed Booster Conservation (Beginner) and Disabled Door Lock Randomizer
+          Slide and Speed Booster and Speed Booster Conservation (Beginner) and Disabled Door Lock Randomizer
   > Event - Water Introduction Blob
       Lay Small Bomb or Shoot Beam
 
@@ -620,6 +612,13 @@ Extra - asset_id: collision_camera_006
           # Spider ceiling wall here. Probably don't need an event for it.
           Spider Magnet or Simple IBJ or Use Spin Boost
           Speed Booster and Disabled Door Lock Randomizer
+          All of the following:
+              # https://www.youtube.com/watch?v=DygpVK2XWJM
+              Grapple Beam
+              Any of the following:
+                  # a lot more lenient with a walljump
+                  Grapple Movement (Intermediate)
+                  Grapple Movement (Beginner) and Wall Jump (Beginner)
   > Door to EMMI Zone Ballspark Hallway
       Any of the following:
           Flash Shift or Simple IBJ or Use Spin Boost
@@ -1221,10 +1220,7 @@ Extra - asset_id: collision_camera_011
   * Extra - actor_name: item_missiletank_003
   * Extra - actor_def: actordef:actors/items/item_missiletank/charclasses/item_missiletank.bmsad
   > Door to Chain Reaction Access
-      All of the following:
-          # TODO: The dock is a charge beam door with a super missile lock. Handle this with the dock, and not with a node path.
-          Lay Any Bomb
-          Enabled Door Lock Randomizer or Open Charge Door
+      Lay Any Bomb
 
 > Door to Chain Reaction Access; Heals? False
   * Layers: default
@@ -1235,6 +1231,9 @@ Extra - asset_id: collision_camera_011
   * Extra - left_shield_def: actordef:actors/props/doorshieldsupermissile/charclasses/doorshieldsupermissile.bmsad
   * Extra - right_shield_entity: {EMPTY}
   * Extra - right_shield_def: None
+  * Override default lock requirement:
+    Open Charge Door and Shoot Super Missile
+
   > Pickup (Missile Tank, Supers-locked)
       Lay Any Bomb
 
@@ -1592,11 +1591,7 @@ Extra - asset_id: collision_camera_015
   > Door to White EMMI Arena (Top)
       Any of the following:
           Space Jump
-          All of the following:
-              Movement (Beginner)
-              Any of the following:
-                  Use Spin Boost
-                  Speed Booster and Speed Booster Upgrade and Disabled Door Lock Randomizer
+          Climb Sloped Surfaces (Beginner) and Use Spin Boost
   > Tunnel to White EMMI Arena
       Trivial
   > Event - EMMI Magnet Platform Lowered
@@ -1651,10 +1646,16 @@ Extra - asset_id: collision_camera_015
       Trivial
   > Pickup (Missile Tank)
       Any of the following:
-          Grapple Beam
+          After Artaria - EMMI Spinner Pulled
           Before Artaria - EMMI Spinner Rotated and Enabled Door Lock Randomizer and Enabled Highly Dangerous Logic
   > Door to White EMMI Introduction
-      After Artaria - EMMI Spinner Rotated
+      All of the following:
+          After Artaria - EMMI Spinner Rotated
+          Any of the following:
+              After Artaria - EMMI Spinner Rotated Again
+              Before Artaria - EMMI Spinner Pulled and Enabled Door Lock Randomizer and Enabled Highly Dangerous Logic
+  > Event - EMMI Spinner Pulled
+      Grapple Beam and After Artaria - EMMI Spinner Rotated
 
 > Door to Wide Beam Block Room; Heals? False
   * Layers: default
@@ -1683,6 +1684,8 @@ Extra - asset_id: collision_camera_015
       Trivial
   > Event - EMMI Spinner Rotated
       Trivial
+  > Event - EMMI Spinner Rotated Again
+      After Artaria - EMMI Spinner Pulled
 
 > Tunnel to White EMMI Arena; Heals? False
   * Layers: default
@@ -1691,10 +1694,20 @@ Extra - asset_id: collision_camera_015
       Any of the following:
           Space Jump
           All of the following:
-              Movement (Beginner) and Use Spin Boost
-              Speed Booster or Simple IBJ
+              Climb Sloped Surfaces (Beginner) and Use Spin Boost
+              Speed Booster or Wall Jump (Beginner) or Simple IBJ
   > Door to White EMMI Arena (Bottom)
       Trivial
+  > Door to White EMMI Arena (Top)
+      Any of the following:
+          # https://youtu.be/RUvZaIl5vts
+          Diagonal Bomb Jump (Advanced) and Lay Normal Bomb
+          # https://youtu.be/otd7WX_dU_s
+          Speed Booster and Infinite Bomb Jump (Intermediate) and Speed Booster Conservation (Advanced) and Lay Normal Bomb
+          # https://youtu.be/OFHELQQbO4w
+          Speed Booster and Infinite Bomb Jump (Beginner) and Speed Booster Conservation (Intermediate) and Lay Cross Bomb
+          # https://youtu.be/vlhzedSfhEA
+          Morph Ball and Speed Booster and Speed Booster Conservation (Beginner) and Wall Jump (Beginner) and Use Spin Boost
 
 > Event - EMMI Magnet Platform Lowered; Heals? False
   * Layers: default
@@ -1711,6 +1724,18 @@ Extra - asset_id: collision_camera_015
 > Start Point; Heals? False; Default Node
   * Layers: default
   > Door to Wide Beam Block Room
+      Trivial
+
+> Event - EMMI Spinner Pulled; Heals? False
+  * Layers: default
+  * Event Artaria - EMMI Spinner Pulled
+  > Door to White EMMI Arena (Top)
+      Trivial
+
+> Event - EMMI Spinner Rotated Again; Heals? False
+  * Layers: default
+  * Event Artaria - EMMI Spinner Rotated Again
+  > Door to White EMMI Arena (Top)
       Trivial
 
 ----------------
@@ -1969,7 +1994,7 @@ Extra - asset_id: collision_camera_020
   * Power Beam Door to Phantom Cloak Tutorial/Door to Corpius Arena; Excluded from Dock Lock Rando
   * Extra - actor_name: Door054 (PW-PW)
   * Extra - actor_def: actordef:actors/props/doorpowerpower/charclasses/doorpowerpower.bmsad
-  * Extra - actor_layer: Boss
+  * Extra - actor_sublayer: Boss
   * Extra - left_shield_entity: {EMPTY}
   * Extra - left_shield_def: None
   * Extra - right_shield_entity: {EMPTY}
@@ -2889,10 +2914,12 @@ Extra - asset_id: collision_camera_048
           Spider Magnet or Simple IBJ or Use Spin Boost
           Grapple Beam and Grapple Movement (Beginner)
           Speed Booster and Disabled Door Lock Randomizer
-  > Event - EMMI Single Use Slide
+  > Event - EMMI Single Use Slide Down
       Before Artaria - EMMI Single Use Slide and Can Slide
   > Start Point
       Trivial
+  > Event - EMMI Single Use Slide Up
+      After Artaria - EMMI Single Use Slide
 
 > Door to EMMI Zone Exit Northwest; Heals? False
   * Layers: default
@@ -2930,7 +2957,9 @@ Extra - asset_id: collision_camera_048
       Shoot Beam
   > Tunnel to EMMI Zone Exit North
       Morph Ball and After Artaria - Slide Alternative Blob
-  > Event - EMMI Single Use Slide
+  > Event - EMMI Single Use Slide Down
+      After Artaria - EMMI Single Use Slide and Can Slide
+  > Event - EMMI Single Use Slide Up
       Morph Ball and Before Artaria - EMMI Single Use Slide
 
 > Tunnel to EMMI Zone Exit North; Heals? False
@@ -2939,11 +2968,9 @@ Extra - asset_id: collision_camera_048
   > Below Slide
       Morph Ball and After Artaria - Slide Alternative Blob
 
-> Event - EMMI Single Use Slide; Heals? False
+> Event - EMMI Single Use Slide Down; Heals? False
   * Layers: default
   * Event Artaria - EMMI Single Use Slide
-  > Door to EMMI Zone Exit North
-      Morph Ball
   > Below Slide
       Can Slide
 
@@ -2961,6 +2988,12 @@ Extra - asset_id: collision_camera_048
   * Extra - actor_def: actordef:actors/props/breakablecave009/charclasses/breakablecave009.bmsad
   > Start Point
       Trivial
+
+> Event - EMMI Single Use Slide Up; Heals? False
+  * Layers: default
+  * Event Artaria - EMMI Single Use Slide
+  > Door to EMMI Zone Exit North
+      Morph Ball
 
 ----------------
 Central Unit Access
@@ -3300,6 +3333,9 @@ Extra - asset_id: collision_camera_055
   * Extra - left_shield_def: actordef:actors/props/doorshieldsupermissile/charclasses/doorshieldsupermissile.bmsad
   * Extra - right_shield_entity: {EMPTY}
   * Extra - right_shield_def: None
+  * Override default lock requirement:
+    Open Charge Door and Shoot Super Missile
+
   > Room Middle
       Trivial
 
@@ -3326,8 +3362,7 @@ Extra - asset_id: collision_camera_055
   > Door to Chain Reaction Room
       Morph Ball
   > Door to Teleport to Cataris
-      # TODO: The dock is a charge beam door with a super missile lock. Handle this with the dock, and not with a node path.
-      Open Charge Door
+      Trivial
   > Tunnel to Teleport to Cataris (Tunnel)
       Trivial
 
@@ -3352,7 +3387,7 @@ Extra - asset_id: collision_camera_056
   * Extra - right_shield_def: None
   > Dock to Water Tunnel under Map
       Trivial
-  > Event - Prepare Speeboost in Map Station
+  > Event - Prepare Speedboost in Map Station
       Disabled Door Lock Randomizer
 
 > Door to Save Station West; Heals? False
@@ -3482,10 +3517,11 @@ Extra - asset_id: collision_camera_056
       Trivial
   > Door to Behind Waterfall
       Any of the following:
-          Flash Shift or Movement (Advanced) or Use Spin Boost
+          Flash Shift or Climb Sloped Surfaces (Expert) or Use Spin Boost
           Speed Booster and Disabled Door Lock Randomizer
           Movement (Beginner) and Lay Cross Bomb
           Diagonal Bomb Jump (Intermediate) and Lay Normal Bomb
+          Phantom Cloak and Climb Sloped Surfaces (Advanced)
   > Right of Rotatable
       Trivial
 
@@ -3497,8 +3533,9 @@ Extra - asset_id: collision_camera_056
       Trivial
   > Tower Middle
       Any of the following:
-          Use Spin Boost
+          Space Jump
           Speed Booster and After Artaria - Waterfall Rotatable and Speed Booster Conservation (Intermediate) and Disabled Door Lock Randomizer and Shoot Plasma Beam
+          Climb Sloped Surfaces (Beginner) and Use Spin Boost
   > Event - Waterfall Rotatable (Above)
       Wave Beam
 
@@ -3508,7 +3545,7 @@ Extra - asset_id: collision_camera_056
   > Right of Rotatable
       Trivial
 
-> Event - Prepare Speeboost in Map Station; Heals? False
+> Event - Prepare Speedboost in Map Station; Heals? False
   * Layers: default
   * Event Artaria - Prepare Speed Booster in Map Station
   > Door to Map Station
@@ -4412,7 +4449,7 @@ Extra - asset_id: collision_camera_073
   * Power Beam Door to Corpius Arena/Door to Phantom Cloak Tutorial; Excluded from Dock Lock Rando
   * Extra - actor_name: Door054 (PW-PW)
   * Extra - actor_def: actordef:actors/props/doorpowerpower/charclasses/doorpowerpower.bmsad
-  * Extra - actor_layer: Boss
+  * Extra - actor_sublayer: Boss
   * Extra - left_shield_entity: {EMPTY}
   * Extra - left_shield_def: None
   * Extra - right_shield_entity: {EMPTY}
@@ -4794,12 +4831,12 @@ Extra - asset_id: collision_camera_081
   * Extra - right_shield_def: None
   > Next to Upper Tank
       All of the following:
-          Before Artaria - Screw Attack Rotatable
+          Before Artaria - Screw Attack Rotatable and Enabled Highly Dangerous Logic
           Any of the following:
               Flash Shift or Movement (Beginner) or Lay Cross Bomb
               Speed Booster and Shoot Missile
   > Event - Screw Attack Rotatable
-      Before Artaria - Screw Attack Rotatable
+      Trivial
   > Under left side blocks
       All of the following:
           After Artaria - Screw Attack Rotatable
@@ -4896,7 +4933,7 @@ Extra - asset_id: collision_camera_081
           Water Bomb Jump (Beginner) and Lay Cross Bomb
           Water Bomb Jump (Intermediate) and Lay Normal Bomb
           All of the following:
-              Before Artaria - Screw Attack Rotatable
+              Before Artaria - Screw Attack Rotatable and Enabled Highly Dangerous Logic
               Simple IBJ or Use Spin Boost
               Morph Ball or Screw Attack
 
@@ -4976,17 +5013,17 @@ Extra - asset_id: collision_camera_081
           All of the following:
               Gravity Suit
               Any of the following:
-                  Before Artaria - Screw Attack Water Blob
+                  Before Artaria - Screw Attack Water Blob and Enabled Highly Dangerous Logic
                   All of the following:
                       After Artaria - Screw Attack Water Blob
                       Simple IBJ or Use Spin Boost
-          Before Artaria - Screw Attack Water Blob and Perform WBJ
+          Before Artaria - Screw Attack Water Blob and Enabled Highly Dangerous Logic and Perform WBJ
   > Blob - Right
       After Artaria - Screw Attack Water Blob
   > Early SA Platform
       Any of the following:
           Gravity Suit or Perform WBJ
-          Before Artaria - Screw Attack Water Blob and Use Spin Boost
+          Before Artaria - Screw Attack Water Blob and Enabled Highly Dangerous Logic and Use Spin Boost
 
 > Next to Upper Tank; Heals? False
   * Layers: default
@@ -4994,7 +5031,7 @@ Extra - asset_id: collision_camera_081
       Trivial
   > Door to Transport to Burenia
       All of the following:
-          Before Artaria - Screw Attack Rotatable
+          Before Artaria - Screw Attack Rotatable and Enabled Highly Dangerous Logic
           Flash Shift or Movement (Beginner) or Lay Cross Bomb
   > Total Recharge
       After Artaria - Screw Attack Rotatable
@@ -5017,7 +5054,7 @@ Extra - asset_id: collision_camera_081
       Any of the following:
           Gravity Suit or Perform WBJ
           Infinite Bomb Jump (Beginner) and Lay Cross Bomb
-          Screw Attack and Before Artaria - Screw Attack Rotatable
+          Screw Attack and Before Artaria - Screw Attack Rotatable and Enabled Highly Dangerous Logic
   > Early SA Platform
       Trivial
 

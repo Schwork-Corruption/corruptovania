@@ -4,6 +4,7 @@
     "areas": {
         "Sand Zone": {
             "default_node": "Teleporter to Arthur's House",
+            "hint_features": [],
             "extra": {
                 "map_name": "Sand",
                 "starting_script": "<TRA0010:0099:0036:0033"
@@ -34,6 +35,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Outside Jenka's House": {
                             "type": "and",
@@ -69,6 +71,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Outside Sand Zone Residence": {
                             "type": "or",
@@ -409,6 +412,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Outside Sand Zone Residence": {
                             "type": "and",
@@ -462,6 +466,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 57,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Above Sunstones": {
                             "type": "and",
@@ -753,6 +758,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 58,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Pawprint Spot": {
                             "type": "and",
@@ -781,6 +787,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 59,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Pawprint Spot": {
                             "type": "and",
@@ -816,6 +823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Side": {
                             "type": "and",
@@ -844,6 +852,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 60,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Lower Side": {
                             "type": "and",
@@ -872,6 +881,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 61,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Outside Sand Zone Storehouse": {
                             "type": "and",
@@ -907,6 +917,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Above Sunstones": {
@@ -2906,6 +2917,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Outside Sand Zone Storehouse": {
                             "type": "and",
@@ -3204,6 +3216,9 @@
         },
         "Sand Zone Residence": {
             "default_node": "Door to Sand Zone",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Curly",
                 "starting_script": "<TRA0029:0090:0018:0009"
@@ -3234,6 +3249,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Curly Boss)": {
                             "type": "and",
@@ -3339,6 +3355,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 62,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sand Zone": {
                             "type": "and",
@@ -3374,6 +3391,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sand Zone": {
                             "type": "resource",
@@ -3486,6 +3504,9 @@
         },
         "Small Room": {
             "default_node": "Save Point",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "CurlyS",
                 "starting_script": "<TRA0032:0094:0004:0009",
@@ -3517,6 +3538,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Puppy (Curly))": {
                             "type": "and",
@@ -3559,6 +3581,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 63,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sand Zone Residence": {
                             "type": "and",
@@ -3587,6 +3610,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 64,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sand Zone Residence": {
                             "type": "and",
@@ -3656,6 +3680,9 @@
         },
         "Jenka's House": {
             "default_node": "Door to Sand Zone",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Jenka2",
                 "starting_script": "<EVE0+10",
@@ -3691,6 +3718,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Jenka)": {
                             "type": "resource",
@@ -3744,6 +3772,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 65,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sand Zone": {
                             "type": "and",
@@ -3883,6 +3912,9 @@
         },
         "Deserted House": {
             "default_node": "Save Point",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Dark",
                 "starting_script": "<TRA0034:0094:0012:0011"
@@ -3913,6 +3945,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Puppy (Dark))": {
                             "type": "and",
@@ -3948,6 +3981,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 66,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sand Zone": {
                             "type": "and",
@@ -3986,6 +4020,11 @@
         },
         "Sand Zone Storehouse": {
             "default_node": "Entrance from Sand Zone",
+            "hint_features": [
+                "boss",
+                "garden",
+                "hero"
+            ],
             "extra": {
                 "map_name": "Gard"
             },
@@ -4015,6 +4054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Toroko+": {
                             "type": "and",
@@ -4201,6 +4241,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 67,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Exit to Labyrinth I": {
                             "type": "and",
@@ -4236,6 +4277,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }

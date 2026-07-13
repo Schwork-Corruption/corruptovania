@@ -9,6 +9,7 @@ import typing
 from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtCore import Qt
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description.assignment import PickupTarget
 from randovania.game_description.db.configurable_node import ConfigurableNode
 from randovania.game_description.db.dock_node import DockNode
@@ -19,7 +20,7 @@ from randovania.game_description.requirements.base import Requirement
 from randovania.game_description.requirements.requirement_and import RequirementAnd
 from randovania.game_description.requirements.resource_requirement import ResourceRequirement
 from randovania.game_description.resources import search
-from randovania.games.game import RandovaniaGame
+from randovania.games.common import elevators
 from randovania.games.prime2.layout import translator_configuration
 from randovania.games.prime2.layout.echoes_configuration import EchoesConfiguration
 from randovania.games.prime2.layout.translator_configuration import LayoutTranslatorRequirement
@@ -34,7 +35,6 @@ from randovania.layout import filtered_database
 from randovania.layout.lib.teleporters import TeleporterConfiguration, TeleporterShuffleMode
 from randovania.layout.versioned_preset import InvalidPreset, VersionedPreset
 from randovania.lib import json_lib
-from randovania.patching.prime import elevators
 from randovania.resolver.logic import Logic
 from randovania.resolver.resolver_reach import ResolverReach
 from randovania.resolver.state import State, add_pickup_to_state
@@ -101,6 +101,9 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
     _widget_for_pickup: dict[PickupEntry, QtWidgets.QCheckBox | ScrollProtectedSpinBox]
     _during_setup = False
 
+    # Confirmation to open the tracker
+    confirm_open = True
+
     @classmethod
     async def create_new(cls, persistence_path: Path, preset: Preset) -> TrackerWindow:
         result = cls(persistence_path, preset)
@@ -111,6 +114,9 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
         if isinstance(preset.configuration, EchoesConfiguration):
             if preset.configuration.portal_rando:
                 raise InvalidLayoutForTracker("Tracker does not support Portal rando")
+
+        if preset.game == RandovaniaGame.FACTORIO:
+            raise InvalidLayoutForTracker("Tracker does not support Factorio")
 
         await result.configure()
         return result
@@ -202,6 +208,10 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
 
         if not self.apply_previous_state(previous_state):
             self.setup_starting_location(None)
+
+            # Don't save the tracker if opening the tracker was cancelled
+            if not self.confirm_open:
+                return
 
             VersionedPreset.with_preset(self.preset).save_to_file(_persisted_preset_path(self.persistence_path))
             self._add_new_action(self._initial_state.node)
@@ -432,7 +442,14 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
                         is_collected = resource_node.is_collected(context)
                         is_visible = is_visible and not (self._hide_collected_resources and is_collected)
 
-                        node_item.setDisabled(not resource_node.can_collect(context))
+                        node_item.setDisabled(
+                            not (
+                                resource_node.should_collect(context)
+                                and resource_node.requirement_to_collect().satisfied(
+                                    context, state.health_for_damage_requirements
+                                )
+                            )
+                        )
                         node_item.setCheckState(
                             0, QtCore.Qt.CheckState.Checked if is_collected else QtCore.Qt.CheckState.Unchecked
                         )
@@ -451,7 +468,6 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
         self.persist_current_state()
 
     def persist_current_state(self):
-        region_list = self.game_description.region_list
         json_lib.write_path(
             self.persistence_path.joinpath("state.json"),
             {
@@ -468,7 +484,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
                     gate.as_string: combo.currentData().value if combo.currentIndex() > 0 else None
                     for gate, combo in self._translator_gate_to_combo.items()
                 },
-                "starting_location": region_list.identifier_for_node(self._initial_state.node).as_json,
+                "starting_location": self._initial_state.node.identifier.as_json,
             },
         )
 
@@ -503,7 +519,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
                         node_item.setFlags(node_item.flags() & ~Qt.ItemIsUserCheckable)
                     self._node_to_item[node] = node_item
 
-    def setup_teleporters(self):
+    def setup_teleporters(self) -> None:
         self._teleporter_id_to_combo = {}
 
         if not hasattr(self.game_configuration, "teleporters"):
@@ -522,11 +538,9 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
                 nodes_by_region[name].append(node)
 
                 location = node.identifier
-                targets[
-                    elevators.get_short_elevator_or_area_name(
-                        self.game_configuration.game, region_list, location.area_identifier, True
-                    )
-                ] = location
+                targets[elevators.get_elevator_or_area_name(self.game_description, region_list, location, True)] = (
+                    location
+                )
 
         if teleporters_config.mode == TeleporterShuffleMode.ONE_WAY_ANYTHING:
             targets = {}
@@ -540,9 +554,9 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
 
         for region_name in sorted(nodes_by_region.keys()):
             nodes = nodes_by_region[region_name]
-            nodes_locations = [region_list.identifier_for_node(node).area_identifier for node in nodes]
+            nodes_locations = [node.identifier for node in nodes]
             nodes_names = [
-                elevators.get_short_elevator_or_area_name(self.game_configuration.game, region_list, location, False)
+                elevators.get_elevator_or_area_name(self.game_description, region_list, location, False)
                 for location in nodes_locations
             ]
 
@@ -571,7 +585,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
 
                 combo.setMinimumContentsLength(11)
                 combo.currentIndexChanged.connect(self.update_locations_tree_for_reachable_nodes)
-                self._teleporter_id_to_combo[region_list.identifier_for_node(node)] = combo
+                self._teleporter_id_to_combo[node.identifier] = combo
                 layout.addWidget(combo, i, 1)
 
     def update_translator_gates(self) -> None:
@@ -613,7 +627,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
         assert isinstance(configuration, EchoesConfiguration)
 
         gates = {
-            f"{area.name} ({node.name})": region_list.identifier_for_node(node)
+            f"{area.name} ({node.name})": node.identifier
             for region, area, node in region_list.all_regions_areas_nodes
             if isinstance(node, ConfigurableNode)
         }
@@ -656,10 +670,10 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
                 location_names = [
                     region_list.node_name(region_list.node_by_identifier(it), with_region=True) for it in node_locations
                 ]
-                selected_name = QtWidgets.QInputDialog.getItem(
+                selected_name, self.confirm_open = QtWidgets.QInputDialog.getItem(
                     self, "Starting Location", "Select starting location", location_names, 0, False
                 )
-                node_location = node_locations[location_names.index(selected_name[0])]
+                node_location = node_locations[location_names.index(selected_name)]
             elif locations_len == 1:
                 node_location = self.game_configuration.starting_location.locations[0]
             else:
@@ -759,7 +773,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
 
         for pickup, quantity in pickup_with_quantity.items():
             self._collected_pickups[pickup] = 0
-            parent_widget, parent_layout = parent_widgets.get(pickup.pickup_category.name, major_pickup_parent_widgets)
+            parent_widget, parent_layout = parent_widgets.get(pickup.gui_category.name, major_pickup_parent_widgets)
 
             row = row_for_parent[parent_widget]
 
@@ -812,7 +826,7 @@ class TrackerWindow(QtWidgets.QMainWindow, Ui_TrackerWindow):
         if self._actions:
             state.node = self._actions[-1]
 
-        region_list = state.region_list
+        region_list = self.game_description.region_list
 
         state.patches = state.patches.assign_dock_connections(
             (

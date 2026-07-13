@@ -4,8 +4,8 @@ from pathlib import Path
 
 from appdirs import AppDirs
 
-local_dirs = AppDirs("Randovania", False, roaming=False)
-roaming_dirs = AppDirs("Randovania", False, roaming=True)
+local_dirs = AppDirs("Corruptovania", False, roaming=False)
+roaming_dirs = AppDirs("Corruptovania", False, roaming=True)
 
 
 def local_data_dir() -> Path:

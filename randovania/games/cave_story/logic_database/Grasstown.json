@@ -4,9 +4,10 @@
     "areas": {
         "Grasstown": {
             "default_node": "Teleporter to Arthur's House",
+            "hint_features": [],
             "extra": {
                 "map_name": "Weed",
-                "starting_script": "<TRA0006:0098:0004:0018"
+                "starting_script": "<TRA0006:0097:0004:0018"
             },
             "nodes": {
                 "Door to Santa's House": {
@@ -34,6 +35,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -62,6 +64,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 4,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -90,6 +93,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 5,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -125,6 +129,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "West Side": {
                             "type": "or",
@@ -327,6 +332,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Entered Grasstown from Chaco Fireplace": {
                             "type": "and",
@@ -362,6 +368,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -397,6 +404,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -432,6 +440,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -467,6 +476,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -502,6 +512,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -537,6 +548,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Near Hint": {
                             "type": "and",
@@ -565,6 +577,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 6,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -593,6 +606,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 7,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -621,6 +635,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 8,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -1270,6 +1285,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -1298,6 +1314,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 9,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -1716,6 +1733,9 @@
         },
         "Santa's House": {
             "default_node": "Save Point",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Santa",
                 "starting_script": "<TRA0007:0094:0018:0008"
@@ -1746,6 +1766,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Santa)": {
                             "type": "resource",
@@ -1792,6 +1813,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 10,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "and",
@@ -1806,8 +1828,8 @@
                     "node_type": "pickup",
                     "heal": false,
                     "coordinates": {
-                        "x": 245.5102375102375,
-                        "y": 164.92055692055692,
+                        "x": 245.51,
+                        "y": 164.92,
                         "z": 0.0
                     },
                     "description": "",
@@ -1820,6 +1842,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 11,
                     "location_category": "minor",
+                    "hint_features": [
+                        "fireplace"
+                    ],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "and",
@@ -1889,6 +1914,9 @@
         },
         "Chaco's House": {
             "default_node": "Save Point",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Chako",
                 "starting_script": "<TRA0008:0094:0007:0003"
@@ -1919,6 +1947,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Exit to Grasstown": {
                             "type": "resource",
@@ -1988,6 +2017,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Event - Summon Jellies": {
@@ -2033,6 +2063,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 12,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "and",
@@ -2095,6 +2126,9 @@
         },
         "Power Room": {
             "default_node": "Door to Grasstown",
+            "hint_features": [
+                "boss"
+            ],
             "extra": {
                 "map_name": "Malco",
                 "starting_script": "<TRA0025:0094:0016:0007"
@@ -2125,6 +2159,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Activated Fans": {
                             "type": "and",
@@ -2392,6 +2427,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 13,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "and",
@@ -2442,6 +2478,7 @@
         },
         "Save Point": {
             "default_node": "Save Point",
+            "hint_features": [],
             "extra": {
                 "map_name": "WeedS",
                 "starting_script": "<TRA0026:0094:0009:0007"
@@ -2472,6 +2509,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Point": {
                             "type": "and",
@@ -2541,6 +2579,7 @@
         },
         "Grasstown Hut": {
             "default_node": "Door to Grasstown",
+            "hint_features": [],
             "extra": {
                 "map_name": "WeedB",
                 "starting_script": "<TRA0030:0094:0007:0009"
@@ -2571,6 +2610,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Grasstown Hut)": {
                             "type": "and",
@@ -2599,6 +2639,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 14,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "or",
@@ -2627,6 +2668,7 @@
         },
         "Execution Chamber": {
             "default_node": "Door to Grasstown",
+            "hint_features": [],
             "extra": {
                 "map_name": "WeedD",
                 "starting_script": "<TRA0027:0094:0010:0009"
@@ -2657,6 +2699,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Execution Chamber)": {
                             "type": "or",
@@ -2742,6 +2785,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 15,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Grasstown": {
                             "type": "and",
@@ -2756,6 +2800,9 @@
         },
         "Gum": {
             "default_node": "Door to Grasstown",
+            "hint_features": [
+                "boss"
+            ],
             "extra": {
                 "map_name": "Frog",
                 "starting_script": "<TRA0028:0094:0006:0013"
@@ -2786,6 +2833,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Gum Chest)": {
                             "type": "and",
@@ -2814,6 +2862,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 16,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Event - Balfrog": {
                             "type": "or",
@@ -2971,6 +3020,7 @@
         },
         "Shelter": {
             "default_node": "Teleporter to Jail No. 2",
+            "hint_features": [],
             "extra": {
                 "map_name": "Shelt",
                 "starting_script": "<TRA0018:0099:0015:0010"
@@ -3001,6 +3051,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Jail No. 2": {
                             "type": "and",
@@ -3092,6 +3143,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Grasstown": {
                             "type": "resource",

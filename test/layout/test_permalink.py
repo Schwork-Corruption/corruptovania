@@ -6,14 +6,15 @@ from unittest.mock import MagicMock
 
 import pytest
 
+import randovania
 from randovania.bitpacking import bitpacking
-from randovania.games.game import RandovaniaGame
+from randovania.game.game_enum import RandovaniaGame
 from randovania.layout import generator_parameters
 from randovania.layout.generator_parameters import GeneratorParameters
 from randovania.layout.permalink import Permalink, UnsupportedPermalink
 
 
-@pytest.fixture()
+@pytest.fixture
 def fake_generator_parameters() -> GeneratorParameters:
     parameters = MagicMock(spec=GeneratorParameters)
     parameters.as_bytes = b"\xa0\xb0\xc0"
@@ -134,3 +135,9 @@ def test_decode_old_version(permalink: str, version: int):
     )
     with pytest.raises(ValueError, match=re.escape(expect)):
         Permalink.from_str(permalink)
+
+
+def test_current_randovania_version_uses_unknown_fallback(mocker):
+    mocker.patch("randovania.GIT_HASH", None)
+
+    assert Permalink.current_randovania_version() == randovania.UNKNOWN_GIT_HASH

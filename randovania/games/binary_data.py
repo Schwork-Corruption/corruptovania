@@ -8,6 +8,7 @@ from construct import (
     Byte,
     Compressed,
     Const,
+    Default,
     Flag,
     Float32b,
     Float64b,
@@ -19,15 +20,22 @@ from construct import (
     VarInt,
 )
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description import game_migration
 from randovania.game_description.db.hint_node import HintNodeKind
-from randovania.games.game import RandovaniaGame
-from randovania.lib.construct_lib import ConstructDict, JsonEncodedValue, OptionalValue, String, convert_to_raw_python
+from randovania.lib.construct_lib import (
+    ConstructDict,
+    DefaultsAdapter,
+    JsonEncodedValue,
+    OptionalValue,
+    String,
+    convert_to_raw_python,
+)
 
 if TYPE_CHECKING:
     from pathlib import Path
 
-current_format_version = 10
+current_format_version = 11
 
 _EXPECTED_FIELDS = [
     "schema_version",
@@ -35,11 +43,12 @@ _EXPECTED_FIELDS = [
     "resource_database",
     "layers",
     "starting_location",
-    "initial_states",
     "minimal_logic",
     "victory_condition",
     "dock_weakness_database",
+    "hint_feature_database",
     "used_trick_levels",
+    "flatten_to_set_on_patch",
     "regions",
 ]
 
@@ -120,10 +129,11 @@ ConstructResourceRequirement = Struct(
 requirement_type_map = {
     "resource": ConstructResourceRequirement,
     "template": String,
+    "node": ConstructNodeIdentifier,
 }
 
 ConstructRequirement = Struct(
-    type=construct.Enum(Byte, resource=0, **{"and": 1, "or": 2}, template=3),
+    type=construct.Enum(Byte, resource=0, **{"and": 1, "or": 2}, template=3, node=4),
     data=Switch(lambda this: this.type, requirement_type_map),
 )
 ConstructRequirementArray = Struct(
@@ -191,7 +201,7 @@ class NodeAdapter(construct.Adapter):
     def _decode(self, obj: construct.Container, context, path):
         result = construct.Container(node_type=obj["node_type"])
         result.update(obj["data"])
-        result.move_to_end("connections")
+        result["connections"] = result.pop("connections")
         return result
 
     def _encode(self, obj: construct.Container, context, path):
@@ -222,11 +232,13 @@ ConstructNode = NodeAdapter(
                     incompatible_dock_weaknesses=PrefixedArray(VarInt, String),
                     override_default_open_requirement=OptionalValue(ConstructRequirement),
                     override_default_lock_requirement=OptionalValue(ConstructRequirement),
+                    ui_custom_name=OptionalValue(String),
                 ),
                 "pickup": Struct(
                     **NodeBaseFields,
                     pickup_index=VarInt,
                     location_category=construct.Enum(Byte, major=0, minor=1),
+                    hint_features=PrefixedArray(VarInt, String),
                 ),
                 "event": Struct(
                     **NodeBaseFields,
@@ -253,6 +265,7 @@ ConstructNode = NodeAdapter(
 
 ConstructArea = Struct(
     default_node=OptionalValue(String),
+    hint_features=PrefixedArray(VarInt, String),
     extra=JsonEncodedValue,
     nodes=ConstructDict(ConstructNode),
 )
@@ -319,6 +332,18 @@ ConstructDockWeaknessDatabase = Struct(
 
 ConstructUsedTrickLevels = OptionalValue(ConstructDict(PrefixedArray(VarInt, construct.Byte)))
 
+ConstructHintFeatureDatabase = ConstructDict(
+    DefaultsAdapter(
+        Struct(
+            long_name=String,
+            hint_details=String[2],
+            hidden=Default(Flag, False),
+            description=Default(String, ""),
+        )
+    )
+)
+
+
 ConstructGame = Struct(
     magic_number=Const(b"Req."),
     format_version=Const(current_format_version, Int32ub),
@@ -329,11 +354,12 @@ ConstructGame = Struct(
             resource_database=ConstructResourceDatabase,
             layers=PrefixedArray(VarInt, String),
             starting_location=ConstructNodeIdentifier,
-            initial_states=ConstructDict(PrefixedArray(VarInt, ConstructResourceGain)),
             minimal_logic=OptionalValue(ConstructMinimalLogicDatabase),
             victory_condition=ConstructRequirement,
             dock_weakness_database=ConstructDockWeaknessDatabase,
+            hint_feature_database=ConstructHintFeatureDatabase,
             used_trick_levels=ConstructUsedTrickLevels,
+            flatten_to_set_on_patch=Flag,
             regions=PrefixedArray(VarInt, ConstructRegion),
         ),
         "lzma",

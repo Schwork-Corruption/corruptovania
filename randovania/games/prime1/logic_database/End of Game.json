@@ -6,6 +6,7 @@
     "areas": {
         "Credits": {
             "default_node": "Event - Credits",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3031702600,
                 "size_index": 0.3
@@ -14,7 +15,11 @@
                 "Event - Credits": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"

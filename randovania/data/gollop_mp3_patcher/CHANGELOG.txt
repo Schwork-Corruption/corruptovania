@@ -1,0 +1,152 @@
+## [0.4.1] - 2020-11-28
+
+Fixed: Rooms with multiple (ship) missile expansions give the correct number of (ship) missiles
+if a "require main item" command line option is used.
+
+Fixed: Airshaft's cutscene now plays if Gandrayda has already been fought.
+
+## [0.4.0] - 2020-11-26
+
+Added: Command line option to require Missile Launcher/Ship Missile to use missiles/ship missiles.
+
+Fixed: Progressive upgrades function correctly with Hangar Bay and SkyTown Federation Landing Site.
+
+Added: Command line option to skip Phaaze when flying there, instead going to the end cutscene.
+
+Fixed: Additional pickup cutscenes have been removed.
+
+Changed: Metroid8.pak (Space) is effectively removed, reducing the overall game size by ~32 megabytes.
+
+Fixed: The roof in Processing Access is open if you are moved out of the room while the
+alarm is active after hitting the phazite targets.
+
+Removed: IFT messages for Powerworks/Proving Grounds/SkyTown Federation Landing Site.
+
+Changed: "default" starting location is called "olympus". 
+
+Changed: If no starting location is provided, "norion" will be used.
+
+Changed: Several starting item options have been removed. "original" is used instead of "default".
+
+Changed: Some Energy Cell item messages no longer pause gameplay.
+
+Removed: Room/world reveal cutscenes.
+
+Fixed: A cutscene in Aurora Chamber (Elysia) can be properly skipped.
+
+Fixed: Collision in Proving Grounds Lift from the elevator has been removed.
+
+Fixed: Hall of Remembrance's lower pickup plays the correct music.
+
+Fixed: Disappearing music in Xenoresearch B and Proving Grounds.
+
+Fixed: Ship Missiles can be used in Gateway Hall.
+
+Fixed: Removed softlock in Main Cavern if you hit the Nova Beam targets during the mining
+cannon sequence.
+
+Fixed: Aeromines no longer appear in Cargo Hub, and the terminal is available immediately.
+
+Fixed: Prevented infinite loading if skipping a cutscene in Aurora Chamber (Olympus).
+
+Fixed: The door to Transit Tunnel 1104 will not be blocked off if you have disabled the 
+Pirate Homeworld defense system and haven't opened the morph tunnel to Defense Access.
+
+Fixed: You can no longer fly immediately out of Olympus, preventing a crash.
+
+## [0.3.0] - 2020-11-18
+
+Fixed: The Command Visor can be used to land the gunship in Cliffside
+Airdock without flying there first.
+
+Fixed: Disabled "Seed Flyby" Layer in Cliffside Airdock to prevent
+collision issues in Gateway Hall.
+
+Changed: Almost all cutscenes can be skipped, including cutscenes that cannot
+be skipped in the original game.
+
+Changed: Cutscenes can be skipped without having watched them before
+on a save file.
+
+Fixed: The Ship Grapple icons in Turbine Chamber and Chozo Observatory can no
+longer be used without Ship Grapple.
+
+Added: Progressive Beam. Collecting a progressive beam gives 
+Plasma Beam if you do not have Plasma Beam; otherwise, it
+gives Nova Beam.
+
+Added: Progressive Missile. Collecting a progressive missile gives 
+Ice Missile if you do not have Ice Missile; otherwise, it
+gives Seeker Missile.
+
+Changed: Skybridge Hera's "2nd Pass" layer will be activated
+after removing the third grapple gate and reloading the room.
+
+Fixed: The ship can no longer be ordered to land with the Command Visor
+during/after the Ghor battle until the room is reloaded.
+
+Fixed: Various Norion rooms have been put in a post-invasion state.
+
+Fixed: Music wiil now continue playing after collecting some pickups.
+
+Removed: Additional pickup cutscenes.
+
+Removed: Several IFT messages.
+
+Fixed: Dependencies in the dependencies list/resource table have been 
+reordered so that a file's dependencies precede it, eliminating most 
+stuttering during room loads.
+
+Fixed: Dependencies are now actually added to the area dependencies 
+list, removing stuttering when a room is loaded.
+
+Changed: The credits are now 40 seconds long (almost 4 minutes faster).
+
+Changed: Attract files can now be removed/emptied without the game crashing.
+
+Fixed: A model during the post-Rundas cutscene now uses the 
+intended model.
+
+Fixed: Talking to the AU in Elysia's Aurora Chamber will unlock the doors 
+if you fix the circuit boards after putting the Theoronian bomb in the 
+Spire Pod.
+
+Fixed: MedLab Alpha's second pickup uses the correct model while it's moving.
+
+Added: Command line option to increase the speed of gunship travel.
+
+Changed: An error is displayed when using invalid starting items or starting 
+location options.
+
+Fixed: Removed invisible collision from Proving Grounds Lift.
+
+Fixed: The elevator in Proving Grounds is in the correct position if coming 
+from the transit station.
+
+## [0.2.0] - 2020-11-08
+
+Changed: Made it easier to use the optional command line flags with the batch file.
+
+Changed: Elysia's Aurora Chamber layers starts in its post Ballista Storage state, with the door locks
+removed. 
+
+Changed: After fighting Ghor, reloading Main Docking Bay will repair the gunship.
+
+Changed: Arrival Station's kinetic orb cannon is always active.
+
+Removed: Several IFT messages.
+
+Added: "--hyper-hints" command line option, which places hints for Hyper Missile and Hyper Grapple on
+the Scanbots in Hangar A Access and Security Access.
+
+Changed: The Grand Court golem can be activated on first visit.
+
+Changed: Command Station's morph ball slot can be activated without visiting Main Cavern.
+
+Fixed: Proving Grounds Lift's elevator hologram appears on first visit.
+
+Fixed: The cutscene in Cargo Dock A no longer gives Command Visor.
+
+Fixed: The fuel gel item in Temple of Bryyo no longer disappears under some circumstances.
+
+Fixed: Custom starting items are properly handled for Hyper Missile.

@@ -11,14 +11,15 @@ from randovania.layout.base.ammo_pickup_state import AmmoPickupState
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-    from randovania.game_description.pickup.ammo_pickup import AmmoPickupDefinition
+    from randovania.game_description.pickup.pickup_definition.ammo_pickup import AmmoPickupDefinition
     from randovania.interface_common.preset_editor import PresetEditor
     from randovania.layout.preset import Preset
 
 
 class AmmoPickupWidgets(NamedTuple):
     pickup_spinbox: QtWidgets.QSpinBox
-    expected_count: QtWidgets.QLabel
+    expected_count: QtWidgets.QLabel | None
+    expected_template: str
     pickup_box: QtWidgets.QGroupBox
     require_main_item_check: QtWidgets.QCheckBox | None
 
@@ -80,10 +81,13 @@ class SplitAmmoWidget(QtWidgets.QCheckBox):
                 ref = ammo_configuration.pickups_state[self.unified_ammo]
                 for i, split in enumerate(self.split_ammo):
                     new_count = current_total // len(self.split_ammo)
+                    ammo_multiplier = 0
+                    if current_total > 0:
+                        ammo_multiplier = current_total / new_count
                     new_states[split] = AmmoPickupState(
                         ammo_count=(
                             math.ceil(
-                                ref.ammo_count[i] * (current_total / new_count),
+                                ref.ammo_count[i] * ammo_multiplier,
                             ),
                         ),
                         pickup_count=new_count,
@@ -96,12 +100,12 @@ class SplitAmmoWidget(QtWidgets.QCheckBox):
             else:
                 for split in self.split_ammo:
                     new_states[split] = AmmoPickupState(ammo_count=(0,), pickup_count=0)
+                ammo_multiplier = 0
+                if current_total > 0:
+                    ammo_multiplier = ammo_configuration.pickups_state[split].pickup_count / current_total
                 new_states[self.unified_ammo] = AmmoPickupState(
                     ammo_count=tuple(
-                        math.ceil(
-                            ammo_configuration.pickups_state[split].ammo_count[0]
-                            * (ammo_configuration.pickups_state[split].pickup_count / current_total)
-                        )
+                        math.ceil(ammo_configuration.pickups_state[split].ammo_count[0] * ammo_multiplier)
                         for split in self.split_ammo
                     ),
                     pickup_count=current_total,

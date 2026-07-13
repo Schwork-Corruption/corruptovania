@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import dataclasses
+from typing import TYPE_CHECKING
 
 from PySide6 import QtGui, QtWidgets
 
+from randovania.games.cave_story.gui.generated.cs_cosmetic_patches_dialog_ui import Ui_CSCosmeticPatchesDialog
 from randovania.games.cave_story.layout.cs_cosmetic_patches import (
     CSCosmeticPatches,
     CSSong,
@@ -12,17 +14,21 @@ from randovania.games.cave_story.layout.cs_cosmetic_patches import (
     SongGame,
 )
 from randovania.gui.dialog.base_cosmetic_patches_dialog import BaseCosmeticPatchesDialog
-from randovania.gui.generated.cs_cosmetic_patches_dialog_ui import Ui_CSCosmeticPatchesDialog
 from randovania.gui.lib import signal_handling
 from randovania.gui.lib.signal_handling import set_combo_with_value
+
+if TYPE_CHECKING:
+    from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
 
 
 class CSCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_CSCosmeticPatchesDialog):
     _cosmetic_patches: CSCosmeticPatches
 
-    def __init__(self, parent: QtWidgets.QWidget | None, current: CSCosmeticPatches):
-        super().__init__(parent)
+    def __init__(self, parent: QtWidgets.QWidget | None, current: BaseCosmeticPatches):
+        super().__init__(parent, current)
         self.setupUi(self)
+
+        assert isinstance(current, CSCosmeticPatches)
         self._cosmetic_patches = current
 
         for i, value in enumerate(MusicRandoType):

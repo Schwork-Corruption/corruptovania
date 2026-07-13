@@ -11,6 +11,7 @@
     "areas": {
         "Caves Intersection Terminal": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3100.0,
@@ -98,6 +99,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 82,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -369,6 +371,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -409,6 +412,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "or",
@@ -466,6 +470,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -523,6 +528,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -561,6 +567,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "template",
@@ -618,6 +625,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "resource",
@@ -655,6 +663,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "resource",
@@ -692,6 +701,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel": {
                             "type": "and",
@@ -756,6 +766,7 @@
         },
         "Spazer Beam Chamber": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6400.0,
@@ -803,6 +814,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 84,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door from Amethyst Altars": {
                             "type": "and",
@@ -841,6 +853,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Spazer Beam)": {
                             "type": "and",
@@ -933,6 +946,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Amethyst Altars": {
                             "type": "and",
@@ -947,8 +961,8 @@
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
-                        "x": -5793.476044852192,
-                        "y": -3619.457186544342,
+                        "x": -5793.48,
+                        "y": -3619.46,
                         "z": 0.0
                     },
                     "description": "",
@@ -956,9 +970,9 @@
                         "default"
                     ],
                     "extra": {
-                        "start_point_actor_name": "ST_Checkpoint_003"
+                        "start_point_actor_name": "ST_CheckPoint_003"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door from Amethyst Altars": {
                             "type": "and",
@@ -973,6 +987,7 @@
         },
         "Crumble Catwalk": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 7400.0,
@@ -1020,6 +1035,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 81,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Caves Intersection Terminal": {
                             "type": "and",
@@ -1077,6 +1093,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Caves Intersection Terminal": {
                             "type": "and",
@@ -1178,6 +1195,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Hang Ledge": {
@@ -1312,6 +1330,7 @@
         },
         "Lava Pond": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -850.0,
@@ -1368,6 +1387,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gamma Arena Access South": {
                             "type": "and",
@@ -1527,6 +1547,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Caves Intersection Terminal": {
                             "type": "and",
@@ -1588,6 +1609,7 @@
         },
         "Transport to Area 3 and Crystal Mines": {
             "default_node": "Elevator to Area 3 Factory Exterior",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8100.0,
@@ -1687,6 +1709,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 78,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Next to Pickup": {
                             "type": "and",
@@ -1726,6 +1749,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Area 4 Chozo Seal Elevator West",
                     "connections": {
                         "Chozo Seal Top": {
                             "type": "or",
@@ -1883,7 +1907,7 @@
                         "actor_type": "weightactivatedplatform",
                         "start_point_actor_name": "ST_FromArea05"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "dock_type": "elevator",
                     "default_connection": {
                         "region": "Area 4 Crystal Mines",
@@ -1895,6 +1919,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Area 4 Chozo Seal Elevator East",
                     "connections": {
                         "Chozo Seal Bottom": {
                             "type": "and",
@@ -1979,7 +2004,7 @@
                         "actor_type": "weightactivatedplatform",
                         "start_point_actor_name": "ST_ChozoUnlockAreaDNA_Checkpoint"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "kind": "generic",
                     "requirement_to_collect": {
                         "type": "and",
@@ -2559,7 +2584,7 @@
                         "actor_type": "weightactivatedplatform",
                         "start_point_actor_name": "ST_ChozoUnlockAreaDNA_Checkpoint_002"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "kind": "generic",
                     "requirement_to_collect": {
                         "type": "and",
@@ -2588,43 +2613,98 @@
                                         }
                                     },
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Area 4 (Central Caves) - Transport to Area 3 and Crystal Mines Grapple Block Pull Right",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
                                         "type": "or",
                                         "data": {
-                                            "comment": "Get up",
+                                            "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "template",
-                                                    "data": "Climb Rooms Vertically (High Jump)"
-                                                },
-                                                {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "Walljump",
-                                                        "amount": 1,
-                                                        "negate": false
+                                                        "comment": "Normal way",
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "Area 4 (Central Caves) - Transport to Area 3 and Crystal Mines Grapple Block Right",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "or",
+                                                                "data": {
+                                                                    "comment": "Get Up",
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Climb Rooms Vertically (High Jump)"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "Walljump",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "SuperJump",
+                                                                                            "amount": 2,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "UnmorphExtend",
+                                                                                            "amount": 1,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "SWJ",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
                                                     "type": "and",
                                                     "data": {
-                                                        "comment": null,
+                                                        "comment": "Space Jump OOB - https://youtu.be/YLPIWNV-5Fc",
                                                         "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
+                                                            },
                                                             {
                                                                 "type": "resource",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "SuperJump",
-                                                                    "amount": 2,
+                                                                    "type": "items",
+                                                                    "name": "Space",
+                                                                    "amount": 1,
                                                                     "negate": false
                                                                 }
                                                             },
@@ -2632,21 +2712,21 @@
                                                                 "type": "resource",
                                                                 "data": {
                                                                     "type": "tricks",
-                                                                    "name": "UnmorphExtend",
+                                                                    "name": "SpiderClip",
                                                                     "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
+                                                                    "amount": 2,
                                                                     "negate": false
                                                                 }
                                                             }
                                                         ]
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "SWJ",
-                                                        "amount": 1,
-                                                        "negate": false
                                                     }
                                                 }
                                             ]
@@ -2761,13 +2841,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Bomb",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Lay Bomb"
                                                             },
                                                             {
                                                                 "type": "resource",
@@ -2793,13 +2868,8 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Spring",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
+                                                                            "type": "template",
+                                                                            "data": "Use Spring Ball"
                                                                         }
                                                                     ]
                                                                 }
@@ -2854,6 +2924,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Caves Intersection Terminal (Bottom)": {
                             "type": "and",
@@ -2892,6 +2963,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal Top": {
                             "type": "and",
@@ -3063,6 +3135,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal Bottom": {
                             "type": "and",
@@ -3098,6 +3171,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal Top": {
                             "type": "and",
@@ -3133,6 +3207,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal Bottom": {
                             "type": "template",
@@ -3144,13 +3219,8 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
-                                            "name": "Spider",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
+                                        "type": "template",
+                                        "data": "Use Spider Ball"
                                     },
                                     {
                                         "type": "template",
@@ -3186,6 +3256,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Venomous Pond": {
                             "type": "and",
@@ -3193,13 +3264,8 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
-                                            "name": "Spider",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
+                                        "type": "template",
+                                        "data": "Use Spider Ball"
                                     },
                                     {
                                         "type": "template",
@@ -3364,6 +3430,7 @@
         },
         "Alpha+ Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 100.0,
@@ -3411,6 +3478,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 79,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Alpha+ Arena Access": {
                             "type": "and",
@@ -3569,6 +3637,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3629,6 +3698,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -3717,12 +3787,29 @@
                                         }
                                     },
                                     {
-                                        "type": "resource",
+                                        "type": "and",
                                         "data": {
-                                            "type": "tricks",
-                                            "name": "UnmorphExtend",
-                                            "amount": 2,
-                                            "negate": false
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Morph",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "UnmorphExtend",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
                                         }
                                     },
                                     {
@@ -3790,6 +3877,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 187,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3804,6 +3892,7 @@
         },
         "Transit Tunnel": {
             "default_node": "Door to Caves Intersection Terminal",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6500.0,
@@ -3856,7 +3945,7 @@
                         "actor_name": "Door007",
                         "actor_type": "doorchargecharge"
                     },
-                    "valid_starting_location": true,
+                    "valid_starting_location": false,
                     "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
@@ -3868,6 +3957,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Alpha+ Arena Access (Top)": {
                             "type": "and",
@@ -3906,6 +3996,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Caves Intersection Terminal": {
                             "type": "and",
@@ -3991,6 +4082,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Pickup": {
                             "type": "template",
@@ -4017,6 +4109,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 88,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Pickup": {
                             "type": "and",
@@ -4062,6 +4155,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Grapple Blocks": {
                             "type": "and",
@@ -4322,13 +4416,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "and",
@@ -4394,6 +4483,7 @@
         },
         "Fleech Swarm Cave": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3100.0,
@@ -4441,6 +4531,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 80,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Caves Intersection Terminal": {
                             "type": "and",
@@ -4519,6 +4610,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Aeion Tank)": {
                             "type": "and",
@@ -4581,6 +4673,7 @@
         },
         "Hostile Hangout": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6800.0,
@@ -4634,6 +4727,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "template",
@@ -4701,6 +4795,7 @@
         },
         "Gamma Arena": {
             "default_node": "Inside Arena",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -850.0,
@@ -4757,6 +4852,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Inside Arena": {
                             "type": "and",
@@ -4786,8 +4882,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 85,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
-                        "Dock to Gamma Arena Access South": {
+                        "Door to Gamma Arena Access South": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -4796,31 +4893,38 @@
                         }
                     }
                 },
-                "Dock to Gamma Arena Access South": {
+                "Door to Gamma Arena Access South": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -820.7964340536072,
-                        "y": 2428.9863029873654,
+                        "x": -820.8,
+                        "y": 2400.0,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_003",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 235,
+                        "location_y_override": 3100.0,
+                        "append_entity_group": "PostGamma_001"
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Gamma Arena Access South",
-                        "node": "Dock to Gamma Arena"
+                        "node": "Door to Gamma Arena"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -4945,7 +5049,7 @@
                                 "items": []
                             }
                         },
-                        "Dock to Gamma Arena Access South": {
+                        "Door to Gamma Arena Access South": {
                             "type": "template",
                             "data": "Lay Any Bomb"
                         },
@@ -4974,6 +5078,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 197,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Inside Arena": {
                             "type": "and",
@@ -4988,6 +5093,7 @@
         },
         "Gamma Arena Access South": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7200.0,
@@ -5043,6 +5149,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 83,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Lava Pond": {
                             "type": "and",
@@ -5112,6 +5219,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Aeion Tank)": {
                             "type": "and",
@@ -5206,7 +5314,7 @@
                                 ]
                             }
                         },
-                        "Dock to Outward Climb": {
+                        "Door to Outward Climb": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -5354,7 +5462,7 @@
                                 ]
                             }
                         },
-                        "Dock to Gamma Arena": {
+                        "Door to Gamma Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5407,8 +5515,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Dock to Gamma Arena": {
+                        "Door to Gamma Arena": {
                             "type": "resource",
                             "data": {
                                 "type": "items",
@@ -5419,31 +5528,37 @@
                         }
                     }
                 },
-                "Dock to Outward Climb": {
+                "Door to Outward Climb": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -7172.784810126583,
-                        "y": 571.4266877637128,
+                        "x": -7150.0,
+                        "y": 571.43,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 182,
+                        "location_y_override": 1100.0
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Outward Climb",
-                        "node": "Dock to Gamma Arena Access South"
+                        "node": "Door to Gamma Arena Access South"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Pond": {
                             "type": "or",
@@ -5595,11 +5710,11 @@
                         }
                     }
                 },
-                "Dock to Gamma Arena": {
+                "Door to Gamma Arena": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -802.68,
+                        "x": -800.0,
                         "y": 2414.36,
                         "z": 0.0
                     },
@@ -5607,19 +5722,26 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_003",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 234,
+                        "location_y_override": 3100.0,
+                        "append_entity_group": "PostGamma_001"
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Gamma Arena",
-                        "node": "Dock to Gamma Arena Access South"
+                        "node": "Door to Gamma Arena Access South"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Pond": {
                             "type": "and",
@@ -5678,7 +5800,7 @@
                     "valid_starting_location": false,
                     "event_name": "Area 4 (Central Caves) - Gamma Arena Access South Grapple Block",
                     "connections": {
-                        "Dock to Gamma Arena": {
+                        "Door to Gamma Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5691,6 +5813,7 @@
         },
         "Outward Climb": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -9000.0,
@@ -5727,33 +5850,39 @@
                 "asset_id": "collision_camera_015"
             },
             "nodes": {
-                "Dock to Gamma Arena Access South": {
+                "Door to Gamma Arena Access South": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -7131.9518243003895,
-                        "y": 592.5079702444204,
+                        "x": -7150.0,
+                        "y": 550.0,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 181,
+                        "location_y_override": 1100.0
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Gamma Arena Access South",
-                        "node": "Dock to Outward Climb"
+                        "node": "Door to Outward Climb"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Dock to Gamma Arena Access North": {
+                        "Door to Gamma Arena Access North": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5762,33 +5891,39 @@
                         }
                     }
                 },
-                "Dock to Gamma Arena Access North": {
+                "Door to Gamma Arena Access North": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -7035.246191994333,
-                        "y": 3544.3322706340773,
+                        "x": -7050.0,
+                        "y": 3534.82,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_002",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 248,
+                        "location_y_override": 4300.0
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Gamma Arena Access North",
-                        "node": "Dock to Outward Climb"
+                        "node": "Door to Outward Climb"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Dock to Gamma Arena Access South": {
+                        "Door to Gamma Arena Access South": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5801,6 +5936,7 @@
         },
         "Amethyst Altars": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4050.0,
@@ -5857,6 +5993,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Spazer Beam Chamber": {
                             "type": "and",
@@ -5902,6 +6039,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spazer Beam Chamber": {
                             "type": "and",
@@ -5931,6 +6069,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 86,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Below Pickup": {
                             "type": "and",
@@ -5976,6 +6115,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Pickup": {
                             "type": "and",
@@ -6184,6 +6324,36 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": "Spider Ball along ceiling and SWJ to climb up: https://youtu.be/1JuscAlYNIY",
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "SWJ",
+                                                                    "amount": 4,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Movement",
+                                                                    "amount": 3,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
                                                 }
                                             ]
                                         }
@@ -6204,6 +6374,7 @@
         },
         "Gamma Arena Access North": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7100.0,
@@ -6260,8 +6431,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Dock to Outward Climb": {
+                        "Door to Outward Climb": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -6418,31 +6590,37 @@
                         }
                     }
                 },
-                "Dock to Outward Climb": {
+                "Door to Outward Climb": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -7060.342746801834,
-                        "y": 3517.575830718481,
+                        "x": -7050.0,
+                        "y": 3517.58,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_002",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 249,
+                        "location_y_override": 4300.0
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 4 Central Caves",
                         "area": "Outward Climb",
-                        "node": "Dock to Gamma Arena Access North"
+                        "node": "Door to Gamma Arena Access North"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gamma Arena": {
                             "type": "or",
@@ -6609,7 +6787,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Gamma Arena": {
                             "type": "and",
@@ -6624,6 +6802,7 @@
         },
         "Alpha+ Arena Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4900.0,
@@ -6680,6 +6859,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Transit Tunnel": {
                             "type": "resource",
@@ -6736,6 +6916,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel": {
                             "type": "resource",
@@ -6776,6 +6957,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel": {
                             "type": "resource",
@@ -6813,6 +6995,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel": {
                             "type": "resource",
@@ -6840,7 +7023,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Alpha_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Transit Tunnel": {
                             "type": "and",
@@ -6855,6 +7038,7 @@
         },
         "Venomous Pond": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 14050.0,
@@ -6919,6 +7103,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Acid Pool": {
                             "type": "or",
@@ -6985,6 +7170,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Acid Pool": {
                             "type": "resource",
@@ -7280,6 +7466,7 @@
         },
         "Transport to Area 5": {
             "default_node": "Elevator to Area 5 Tower Lobby",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10100.0,
@@ -7345,6 +7532,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Central Caves Elevator South",
                     "connections": {
                         "Door to Venomous Pond": {
                             "type": "and",
@@ -7392,6 +7580,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Grapple Block": {
                             "type": "and",
@@ -7449,6 +7638,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Area 5 Tower Lobby": {
                             "type": "and",
@@ -7478,6 +7668,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 87,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Grapple Block": {
                             "type": "and",
@@ -7513,6 +7704,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Grapple Block": {
                             "type": "resource",

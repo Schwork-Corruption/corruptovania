@@ -6,6 +6,7 @@
     "areas": {
         "Egg Corridor?": {
             "default_node": "Teleporter to Arthur's House",
+            "hint_features": [],
             "extra": {
                 "map_name": "Eggs2",
                 "in_dark_aether": false,
@@ -37,6 +38,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Area Centre": {
                             "type": "and",
@@ -80,6 +82,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -416,6 +419,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 53,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -451,6 +455,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Area Centre": {
                             "type": "and",
@@ -494,6 +499,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -529,6 +535,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -564,6 +571,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "East Side": {
                             "type": "and",
@@ -599,6 +607,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "West Side": {
                             "type": "and",
@@ -763,6 +772,7 @@
         },
         "Cthulhu's Abode?": {
             "default_node": "Door to Egg Corridor? (Lower)",
+            "hint_features": [],
             "extra": {
                 "map_name": "Cthu2",
                 "in_dark_aether": false,
@@ -794,6 +804,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Egg Corridor? (Lower)": {
                             "type": "and",
@@ -924,6 +935,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Egg Corridor? (Upper)": {
                             "type": "and",
@@ -1033,6 +1045,9 @@
         },
         "Egg Observation Room?": {
             "default_node": "Door to Egg Corridor? (Western)",
+            "hint_features": [
+                "boss"
+            ],
             "extra": {
                 "map_name": "EggR2",
                 "in_dark_aether": false,
@@ -1064,6 +1079,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Egg Corridor? (Eastern)": {
                             "type": "and",
@@ -1099,6 +1115,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Egg Corridor? (Western)": {
                             "type": "or",
@@ -1157,6 +1174,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 54,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Egg Corridor? (Western)": {
                             "type": "and",
@@ -1454,6 +1472,7 @@
         },
         "Side Room": {
             "default_node": "Save Point",
+            "hint_features": [],
             "extra": {
                 "map_name": "EgEnd2",
                 "in_dark_aether": false,
@@ -1485,6 +1504,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Point": {
                             "type": "and",
@@ -1554,6 +1574,7 @@
         },
         "Egg No. 00": {
             "default_node": "Door to Egg Corridor?",
+            "hint_features": [],
             "extra": {
                 "map_name": "EggX2",
                 "in_dark_aether": false,
@@ -1585,6 +1606,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Outer Wall": {
                             "type": "resource",
@@ -1622,6 +1644,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Egg Corridor?": {
                             "type": "and",
@@ -1636,6 +1659,7 @@
         },
         "Outer Wall": {
             "default_node": "Room Bottom",
+            "hint_features": [],
             "extra": {
                 "map_name": "Oside",
                 "in_dark_aether": true,
@@ -1667,6 +1691,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -1702,6 +1727,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "template",
@@ -1858,6 +1884,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Entered Outer Wall from Storehouse": {
                             "type": "and",
@@ -2022,6 +2049,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Entered Outer Wall from Clock Room": {
                             "type": "and",
@@ -2130,6 +2158,9 @@
         },
         "Little House": {
             "default_node": "Door to Outer Wall",
+            "hint_features": [
+                "house"
+            ],
             "extra": {
                 "map_name": "Little",
                 "in_dark_aether": true,
@@ -2161,6 +2192,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Little House)": {
                             "type": "and",
@@ -2215,6 +2247,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 55,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Outer Wall": {
                             "type": "and",
@@ -2265,6 +2298,7 @@
         },
         "Clock Room": {
             "default_node": "Door to Outer Wall",
+            "hint_features": [],
             "extra": {
                 "map_name": "Clock",
                 "in_dark_aether": true,
@@ -2296,6 +2330,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Clock Room)": {
                             "type": "and",
@@ -2324,6 +2359,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 56,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Outer Wall": {
                             "type": "and",

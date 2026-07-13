@@ -4,6 +4,7 @@ import dataclasses
 from functools import partial
 from typing import TYPE_CHECKING
 
+from randovania.games.dread.gui.generated.dread_cosmetic_patches_dialog_ui import Ui_DreadCosmeticPatchesDialog
 from randovania.games.dread.layout.dread_cosmetic_patches import (
     DreadCosmeticPatches,
     DreadMissileCosmeticType,
@@ -11,20 +12,23 @@ from randovania.games.dread.layout.dread_cosmetic_patches import (
     DreadShieldType,
 )
 from randovania.gui.dialog.base_cosmetic_patches_dialog import BaseCosmeticPatchesDialog
-from randovania.gui.generated.dread_cosmetic_patches_dialog_ui import Ui_DreadCosmeticPatchesDialog
 from randovania.gui.lib import signal_handling, slider_updater
 from randovania.gui.lib.signal_handling import set_combo_with_value
 
 if TYPE_CHECKING:
     from PySide6 import QtWidgets
 
+    from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
+
 
 class DreadCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_DreadCosmeticPatchesDialog):
     _cosmetic_patches: DreadCosmeticPatches
 
-    def __init__(self, parent: QtWidgets.QWidget | None, current: DreadCosmeticPatches):
-        super().__init__(parent)
+    def __init__(self, parent: QtWidgets.QWidget | None, current: BaseCosmeticPatches):
+        super().__init__(parent, current)
         self.setupUi(self)
+
+        assert isinstance(current, DreadCosmeticPatches)
         self._cosmetic_patches = current
 
         for room_gui_type in DreadRoomGuiType:

@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import asyncio
+import importlib
 import os
 import platform
 import shutil
+import stat
 import subprocess
 import sys
 import tarfile
@@ -17,15 +19,15 @@ import tenacity
 import randovania
 from randovania import VERSION
 from randovania.cli import database
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games import default_data
-from randovania.games.game import RandovaniaGame
 from randovania.interface_common import installation_check
 from randovania.lib import json_lib
 from randovania.lib.enum_lib import iterate_enum
 
 _ROOT_FOLDER = Path(__file__).parents[1]
 _NINTENDONT_DOWNLOAD_URL = "https://github.com/randovania/Nintendont/releases/download/v5-multiworld/boot.dol"
-zip_folder = f"randovania-{VERSION}"
+zip_folder = f"corruptovania-{VERSION}"
 
 
 def is_production():
@@ -116,6 +118,52 @@ secret = b"".join(
     )
 
 
+def remove_unnecessary_dotnet_deps(package_folder: Path) -> None:
+    """
+    Some wheels ship dependencies for a lot of OS' and arches.
+    Since the randovania executable here for a specific OS+arch, we want to remove everything else for spaces sake.
+    """
+    if platform.system() == "Darwin":
+        # The macOS app is built as universal2, so removing one runtime slice would
+        # make that dependency architecture-specific again.
+        return
+
+    dotnet_os = "unknown"
+    dotnet_arch = "unknown"
+    system = platform.system()
+    if system == "Windows":
+        dotnet_os = "win"
+    elif system == "Darwin":
+        dotnet_os = "osx"
+    elif system == "Linux":
+        dotnet_os = "linux"  # Might break for musl, I dont care.
+    else:
+        raise ValueError("Couldn't determine the OS handle for dotnet cleanup!")
+
+    arch = platform.machine()
+    if arch == "AMD64" or arch == "x86_64":
+        dotnet_arch = "x64"
+    elif arch == "arm64" or arch == "aarch64":
+        dotnet_arch = "arm64"
+    else:
+        raise ValueError("Couldn't determine the architecture handle for dotnet cleanup!")
+
+    dotnet_rid = f"{dotnet_os}-{dotnet_arch}"
+
+    dotnet_paths_to_clean = [
+        "am2r_yams/yams/runtimes",
+    ]
+
+    internal = package_folder.joinpath("_internal")
+    for dotnet_lib_path in dotnet_paths_to_clean:
+        for subdir in list(internal.joinpath(dotnet_lib_path).iterdir()):
+            if not subdir.is_dir():
+                continue
+            name = subdir.name
+            if name.endswith(("64", "x86")) and "-" in name and name != dotnet_rid:
+                shutil.rmtree(subdir)
+
+
 def write_frozen_file_list(package_folder: Path) -> None:
     internal = package_folder.joinpath("_internal")
     json_lib.write_path(
@@ -123,12 +171,119 @@ def write_frozen_file_list(package_folder: Path) -> None:
     )
 
 
+def is_macho(path: Path) -> bool:
+    if not path.is_file() or path.is_symlink():
+        return False
+
+    result = subprocess.run(
+        ["file", "-b", os.fspath(path)],
+        capture_output=True,
+        check=True,
+    )
+    return b"Mach-O" in result.stdout
+
+
+def iter_macho_files(root: Path) -> list[Path]:
+    return sorted((path for path in root.rglob("*") if is_macho(path)), key=lambda item: len(item.parts), reverse=True)
+
+
+def sign_macos_path(path: Path, identity: str, entitlements_path: str | None) -> None:
+    command = ["codesign", "--force", "--sign", identity]
+
+    if entitlements_path and path.suffix == "":
+        command.extend(["--entitlements", entitlements_path])
+
+    if identity != "-":
+        command.extend(["--options", "runtime", "--timestamp"])
+
+    command.append(os.fspath(path))
+    subprocess.run(command, check=True)
+
+
+def install_macos_split_dotnet_runtimes(app_folder: Path) -> None:
+    source_root = _ROOT_FOLDER.joinpath(
+        "randovania",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
+    destination_root = app_folder.joinpath(
+        "Contents",
+        "Resources",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
+
+    for runtime_directory in ("dotnet-x64", "dotnet-arm64"):
+        source = source_root.joinpath(runtime_directory)
+        destination = destination_root.joinpath(runtime_directory)
+
+        if not source.is_dir():
+            raise FileNotFoundError(
+                f"Missing macOS .NET runtime directory: {source}"
+            )
+
+        if destination.exists():
+            shutil.rmtree(destination)
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(
+            source,
+            destination,
+            symlinks=True,
+        )
+
+
+
+
+def restore_macos_runtime_executable_modes(app_folder: Path) -> None:
+    runtime_directory_names = {"dotnet-x64", "dotnet-arm64"}
+
+    for runtime_root in app_folder.rglob("*"):
+        if not runtime_root.is_dir() or runtime_root.name not in runtime_directory_names:
+            continue
+
+        for candidate in runtime_root.rglob("*"):
+            if not is_macho(candidate):
+                continue
+
+            candidate.chmod(
+                candidate.stat().st_mode
+                | stat.S_IXUSR
+                | stat.S_IXGRP
+                | stat.S_IXOTH
+            )
+
+
+def sign_macos_bundle(app_folder: Path) -> None:
+    identity = os.environ.get("MACOS_CODESIGN_IDENTITY") or "-"
+    entitlements_path = os.environ.get("MACOS_ENTITLEMENTS_PATH") or None
+    macho_paths = iter_macho_files(app_folder)
+    runtime_root = app_folder.joinpath(
+        "Contents",
+        "Resources",
+        "data",
+        "gollop_mp3_patcher",
+        "macos",
+    )
+    for runtime_directory in ("dotnet-x64", "dotnet-arm64"):
+        candidate = runtime_root.joinpath(runtime_directory)
+        if candidate.exists():
+            macho_paths.extend(iter_macho_files(candidate))
+
+    unique_macho_paths = sorted(set(macho_paths), key=lambda item: (len(item.parts), str(item)), reverse=True)
+    for macho_path in unique_macho_paths:
+        sign_macos_path(macho_path, identity, entitlements_path)
+    sign_macos_path(app_folder, identity, entitlements_path)
+
+
 async def main():
-    package_folder = Path("dist", "randovania")
+    package_folder = Path("dist", "corruptovania")
     if package_folder.exists():
         shutil.rmtree(package_folder, ignore_errors=False)
 
-    app_folder = Path("dist", "Randovania.app")
+    app_folder = Path("dist", "Corruptovania.app")
     if app_folder.exists():
         shutil.rmtree(app_folder, ignore_errors=False)
 
@@ -140,8 +295,8 @@ async def main():
 
     icon_path = randovania.get_icon_path()
     shutil.copyfile(icon_path, icon_path.with_name("executable_icon.ico"))
-
-    if (secret := os.environ.get("OBFUSCATOR_SECRET")) is not None:
+    secret = os.environ.get("OBFUSCATOR_SECRET", "")
+    if secret.strip() and not secret.isspace():
         write_obfuscator_secret(
             _ROOT_FOLDER.joinpath("randovania", "lib", "obfuscator_secret.py"),
             secret.encode("ascii"),
@@ -164,23 +319,32 @@ async def main():
 
     await download_nintendont()
 
-    await download_dotnet()
+    # await download_dotnet()
 
     # HACK: pyintaller calls lipo/codesign on macOS and frequently timeout in github actions
     # There's also timeouts on Windows so we're expanding this to everyone
     print("Will patch timeout in PyInstaller compat")
-    import PyInstaller.compat
-
-    compat_path = Path(PyInstaller.compat.__file__)
+    pyinstaller_compat = importlib.import_module("PyInstaller.compat")
+    compat_path = Path(pyinstaller_compat.__file__)
     compat_text = compat_path.read_text().replace("timeout=60", "timeout=180")
     compat_path.write_text(compat_text)
 
-    subprocess.run([sys.executable, "-m", "PyInstaller", "randovania.spec"], check=True)
+    subprocess.run(
+        [sys.executable, "-m", "PyInstaller", "--clean", "randovania.spec"],
+        check=True,
+    )
+    pre_edited_cs = package_folder.joinpath("_internal", "pre_edited_cs")
+    if pre_edited_cs.exists():
+        shutil.rmtree(pre_edited_cs)
+    remove_unnecessary_dotnet_deps(package_folder)
 
     if platform.system() == "Windows":
         create_windows_zip(package_folder)
         write_frozen_file_list(package_folder)
     elif platform.system() == "Darwin":
+        install_macos_split_dotnet_runtimes(app_folder)
+        restore_macos_runtime_executable_modes(app_folder)
+        sign_macos_bundle(app_folder)
         create_macos_zip(app_folder)
     elif platform.system() == "Linux":
         create_linux_zip(package_folder)
@@ -204,10 +368,10 @@ def create_windows_zip(package_folder):
 
 
 def create_macos_zip(folder_to_pack: Path):
-    output = f"dist/{zip_folder}-macos.tar.gz"
-    with tarfile.open(_ROOT_FOLDER.joinpath(f"dist/{zip_folder}-macos.tar.gz"), "w:gz") as release_zip:
+    output = f"dist/{zip_folder}-macos-universal2.tar.gz"
+    with tarfile.open(_ROOT_FOLDER.joinpath(output), "w:gz") as release_zip:
         print(f"Creating {output} from {folder_to_pack}.")
-        release_zip.add(folder_to_pack, f"{zip_folder}/Randovania.app")
+        release_zip.add(folder_to_pack, f"{zip_folder}/Corruptovania.app")
         print("Finished.")
 
 

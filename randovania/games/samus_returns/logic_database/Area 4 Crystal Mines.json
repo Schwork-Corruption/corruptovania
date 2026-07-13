@@ -11,6 +11,7 @@
     "areas": {
         "Mines Intersection Terminal": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2400.0,
@@ -106,6 +107,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 94,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Upper Pickup": {
                             "type": "and",
@@ -293,6 +295,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile Tank Bottom)": {
                             "type": "template",
@@ -328,6 +331,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -366,6 +370,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -404,6 +409,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Super Missile Chamber (Bottom)": {
                             "type": "and",
@@ -568,6 +574,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Aeion Refill": {
                             "type": "and",
@@ -606,6 +613,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -644,6 +652,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -689,6 +698,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Aeion Refill": {
                             "type": "or",
@@ -734,29 +744,12 @@
                                         }
                                     },
                                     {
-                                        "type": "and",
+                                        "type": "resource",
                                         "data": {
-                                            "comment": "Super Jump + UE:",
-                                            "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "SuperJump",
-                                                        "amount": 2,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "UnmorphExtend",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
+                                            "type": "tricks",
+                                            "name": "SuperJump",
+                                            "amount": 2,
+                                            "negate": false
                                         }
                                     },
                                     {
@@ -827,6 +820,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 101,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Space Jump Chamber (Bottom)": {
                             "type": "and",
@@ -862,6 +856,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "resource",
@@ -899,6 +894,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Aeion Refill": {
                             "type": "resource",
@@ -936,6 +932,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Upper Pickup": {
                             "type": "and",
@@ -971,6 +968,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Space Jump Chamber (Bottom)": {
                             "type": "and",
@@ -992,17 +990,17 @@
                                             "comment": null,
                                             "items": [
                                                 {
+                                                    "type": "template",
+                                                    "data": "Lay Power Bomb"
+                                                },
+                                                {
                                                     "type": "resource",
                                                     "data": {
                                                         "type": "items",
-                                                        "name": "PBAmmo",
+                                                        "name": "Wave",
                                                         "amount": 1,
                                                         "negate": false
                                                     }
-                                                },
-                                                {
-                                                    "type": "template",
-                                                    "data": "Shoot Wave Beam"
                                                 }
                                             ]
                                         }
@@ -1500,6 +1498,7 @@
         },
         "Super Missile Chamber": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2500.0,
@@ -1547,6 +1546,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 98,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Mines Intersection Terminal (Top)": {
                             "type": "or",
@@ -1640,6 +1640,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Mines Intersection Terminal (Top)": {
                             "type": "or",
@@ -1743,6 +1744,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile)": {
                             "type": "and",
@@ -1775,7 +1777,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_CheckPoint_003"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Pickup (Super Missile)": {
                             "type": "and",
@@ -1790,6 +1792,7 @@
         },
         "Pink Crystal Preserve": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8850.0,
@@ -1837,6 +1840,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 96,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Under Pickup": {
                             "type": "and",
@@ -1885,6 +1889,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -1927,6 +1932,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -2056,6 +2062,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -2903,13 +2910,8 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Spider",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
+                                                                            "type": "template",
+                                                                            "data": "Use Spider Ball"
                                                                         },
                                                                         {
                                                                             "type": "resource",
@@ -3003,7 +3005,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Zeta_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Zeta Arena": {
                             "type": "and",
@@ -3018,6 +3020,7 @@
         },
         "Transport to Central Caves": {
             "default_node": "Elevator to Area 4 Central Caves",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7800.0,
@@ -3083,6 +3086,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Crystal Mines Elevator",
                     "connections": {
                         "Door to Mines Entrance": {
                             "type": "and",
@@ -3121,6 +3125,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Area 4 Central Caves": {
                             "type": "and",
@@ -3135,6 +3140,7 @@
         },
         "Lava Reservoir": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2400.0,
@@ -3182,6 +3188,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 97,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Gemstone Gorge": {
                             "type": "and",
@@ -3201,12 +3208,29 @@
                             }
                         },
                         "Door to Mines Intersection Terminal": {
-                            "type": "resource",
+                            "type": "and",
                             "data": {
-                                "type": "items",
-                                "name": "Gravity",
-                                "amount": 1,
-                                "negate": false
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "Varia",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "Gravity",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -3239,6 +3263,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -3287,6 +3312,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -3343,6 +3369,15 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "items",
+                                            "name": "Varia",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
                                     }
                                 ]
                             }
@@ -3353,6 +3388,7 @@
         },
         "Dual Pond Alcove": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1900.0,
@@ -3400,6 +3436,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 92,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Mines Intersection Terminal": {
                             "type": "and",
@@ -3478,6 +3515,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "and",
@@ -3515,6 +3553,7 @@
         },
         "Zeta Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11400.0,
@@ -3571,6 +3610,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3631,6 +3671,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3815,6 +3856,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 203,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3829,6 +3871,7 @@
         },
         "Gamma Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 14400.0,
@@ -3882,6 +3925,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -3955,6 +3999,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 198,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -4074,6 +4119,7 @@
         },
         "Gawron Groove": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5500.0,
@@ -4158,6 +4204,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Basalt Basin (Left)": {
                             "type": "and",
@@ -4222,12 +4269,29 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "UnmorphExtend",
-                                                        "amount": 2,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "UnmorphExtend",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -4341,6 +4405,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 100,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Green Crystal Dugout": {
                             "type": "and",
@@ -4430,6 +4495,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Basalt Basin (Right)": {
                             "type": "and",
@@ -4441,15 +4507,6 @@
                                         "data": {
                                             "type": "items",
                                             "name": "SMAmmo",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
-                                            "name": "Morph",
                                             "amount": 1,
                                             "negate": false
                                         }
@@ -4594,6 +4651,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Green Crystal Dugout": {
                             "type": "resource",
@@ -4631,6 +4689,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gamma Arena": {
                             "type": "and",
@@ -4800,6 +4859,7 @@
         },
         "Basalt Basin": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 11400.0,
@@ -4869,6 +4929,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gawron Groove (Right)": {
                             "type": "and",
@@ -4927,6 +4988,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gawron Groove (Left)": {
                             "type": "and",
@@ -4986,6 +5048,7 @@
         },
         "Mines Entrance": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5500.0,
@@ -5042,6 +5105,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Diggernaut Excavation Tunnels": {
                             "type": "and",
@@ -5056,8 +5120,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -3056.4209407684993,
-                        "y": -2013.4645860133862,
+                        "x": -3056.42,
+                        "y": -2013.46,
                         "z": 0.0
                     },
                     "description": "",
@@ -5080,6 +5144,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Diggernaut Excavation Tunnels": {
                             "type": "and",
@@ -5118,6 +5183,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Central Caves": {
                             "type": "and",
@@ -5174,6 +5240,7 @@
         },
         "Tsumuri Tunnel": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3100.0,
@@ -5206,8 +5273,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -3057.6119338543244,
-                        "y": -2018.1589473217828,
+                        "x": -3057.61,
+                        "y": -2018.16,
                         "z": 0.0
                     },
                     "description": "",
@@ -5230,6 +5297,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Mines Intersection Terminal": {
                             "type": "and",
@@ -5268,6 +5336,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Mines Entrance": {
                             "type": "and",
@@ -5282,6 +5351,7 @@
         },
         "Mines Teleporter": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1900.0,
@@ -5383,6 +5453,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Teleporter": {
                             "type": "or",
@@ -5523,6 +5594,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Teleporter": {
                             "type": "resource",
@@ -5767,6 +5839,7 @@
         },
         "Green Crystal Dugout": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2500.0,
@@ -5818,11 +5891,12 @@
                         "area": "Gawron Groove",
                         "node": "Door to Green Crystal Dugout"
                     },
-                    "default_dock_weakness": "Access Open",
+                    "default_dock_weakness": "Power Beam Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Mines Intersection Terminal": {
                             "type": "and",
@@ -5865,6 +5939,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gawron Groove": {
                             "type": "and",
@@ -5890,7 +5965,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_002"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Gawron Groove": {
                             "type": "and",
@@ -5905,6 +5980,7 @@
         },
         "Gemstone Gorge": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5100.0,
@@ -5960,6 +6036,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 93,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Mines Intersection Terminal": {
                             "type": "and",
@@ -6012,6 +6089,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "and",
@@ -6260,6 +6338,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Pink Crystal Preserve": {
                             "type": "and",
@@ -6295,6 +6374,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Mines Intersection Terminal": {
                             "type": "resource",
@@ -6318,6 +6398,7 @@
         },
         "Space Jump Chamber": {
             "default_node": "Bottom Floor",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5000.0,
@@ -6393,6 +6474,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 99,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -6431,6 +6513,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Mines Intersection Terminal": {
                             "type": "resource",
@@ -6471,6 +6554,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom of Shaft": {
                             "type": "and",
@@ -6506,6 +6590,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Grapple Block": {
                             "type": "resource",
@@ -6543,6 +6628,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom Floor": {
                             "type": "and",
@@ -6618,6 +6704,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom of Shaft": {
                             "type": "resource",
@@ -6655,6 +6742,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Mines Intersection Terminal": {
                             "type": "resource",
@@ -6885,7 +6973,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_CheckPoint_004"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Pickup (Space Jump)": {
                             "type": "and",
@@ -6968,6 +7056,7 @@
         },
         "Diggernaut Excavation Tunnels": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4000.0,
@@ -7043,6 +7132,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 89,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Top Level": {
                             "type": "or",
@@ -7107,6 +7197,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 90,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -7184,6 +7275,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 91,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Middle item": {
                             "type": "or",
@@ -7218,6 +7310,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 95,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Bottom Level": {
                             "type": "template",
@@ -7350,6 +7443,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -7387,6 +7481,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "resource",
@@ -7424,6 +7519,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom Level": {
                             "type": "and",
@@ -7468,6 +7564,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Level": {
                             "type": "resource",
@@ -7832,12 +7929,29 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "UnmorphExtend",
-                                                                    "amount": 2,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "Morph",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "UnmorphExtend",
+                                                                                "amount": 2,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]

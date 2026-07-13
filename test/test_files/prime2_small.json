@@ -1,5 +1,5 @@
 {
-    "schema_version": 24,
+    "schema_version": 28,
     "game": "prime2",
     "resource_database": {
         "items": {
@@ -1732,31 +1732,6 @@
         "area": "Transport to Temple Grounds",
         "node": "Elevator to Temple Grounds - Transport to Torvus Bog"
     },
-    "initial_states": {
-        "Default": [
-            {
-                "resource_type": "events",
-                "resource_name": "Event2",
-                "amount": 1
-            },
-            {
-                "resource_type": "events",
-                "resource_name": "Event4",
-                "amount": 1
-            },
-            {
-                "resource_type": "events",
-                "resource_name": "Event71",
-                "amount": 1
-            },
-            {
-                "resource_type": "events",
-                "resource_name": "Event78",
-                "amount": 1
-            }
-        ],
-        "Item Loss Disabled": []
-    },
     "minimal_logic": null,
     "victory_condition": {
         "type": "resource",
@@ -2884,6 +2859,32 @@
             "to_shuffle_proportion": 1.0
         }
     },
+    "hint_feature_database": {
+        "specific_hint_keybearer": {
+            "long_name": "_Keybearer Hint",
+            "hint_details": [
+                "",
+                ""
+            ],
+            "hidden": true
+        },
+        "specific_hint_guardian": {
+            "long_name": "_Guardian Hint",
+            "hint_details": [
+                "",
+                ""
+            ],
+            "hidden": true
+        },
+        "specific_hint_2mos": {
+            "long_name": "_Light Suit Location Hint",
+            "hint_details": [
+                "",
+                ""
+            ],
+            "hidden": true
+        }
+    },
     "used_trick_levels": {
         "Knowledge": [
             1,
@@ -2980,6 +2981,7 @@
             3
         ]
     },
+    "flatten_to_set_on_patch": false,
     "regions": [
         {
             "name": "Temple Grounds",
@@ -2990,6 +2992,7 @@
             "areas": {
                 "Hall of Eyes": {
                     "default_node": "Portal to Base Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1198237772,
                         "in_dark_aether": false
@@ -3018,6 +3021,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Base Access": {
                                     "type": "and",
@@ -3051,6 +3055,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Path of Eyes": {
                                     "type": "and",
@@ -3065,6 +3070,7 @@
                 },
                 "Base Access": {
                     "default_node": "Door to War Ritual Grounds",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1752128027,
                         "in_dark_aether": true
@@ -3093,6 +3099,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Hall of Eyes": {
                                     "type": "and",
@@ -3239,6 +3246,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Hall of Eyes": {
                                     "type": "resource",
@@ -3274,6 +3282,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to War Ritual Grounds": {
                                     "type": "resource",
@@ -3299,6 +3308,7 @@
                 },
                 "Path of Eyes": {
                     "default_node": "Portal from Abandoned Base",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3997643454,
                         "in_dark_aether": false
@@ -3327,6 +3337,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Front of Center Door": {
                                     "type": "resource",
@@ -3362,6 +3373,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Hall of Eyes": {
                                     "type": "and",
@@ -3395,6 +3407,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Front of Translator Gate": {
                                     "type": "and",
@@ -3605,6 +3618,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Translator Gate": {
                                     "type": "and",
@@ -4132,6 +4146,7 @@
                 },
                 "War Ritual Grounds": {
                     "default_node": "Door to Shrine Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2859985581,
                         "in_dark_aether": true
@@ -4160,6 +4175,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone": {
                                     "type": "and",
@@ -4249,6 +4265,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone": {
                                     "type": "and",
@@ -4327,6 +4344,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 3,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Central Safe Zone": {
                                     "type": "and",
@@ -4472,6 +4490,7 @@
                 },
                 "Abandoned Base": {
                     "default_node": "Door to Base Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3337937090,
                         "in_dark_aether": true
@@ -4500,6 +4519,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Base Access": {
                                     "type": "resource",
@@ -4535,6 +4555,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Path of Eyes": {
                                     "type": "or",
@@ -4788,6 +4809,7 @@
                 },
                 "Windchamber Gateway": {
                     "default_node": "Door to Path of Eyes",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1966181726,
                         "in_dark_aether": false
@@ -4816,6 +4838,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Grand Windchamber": {
                                     "type": "or",
@@ -5071,6 +5094,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 4,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Grand Windchamber": {
                                     "type": "or",
@@ -5218,6 +5242,7 @@
                 },
                 "Torvus Transport Access": {
                     "default_node": "Door to Path of Eyes",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2822315693,
                         "in_dark_aether": false
@@ -5246,6 +5271,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Transport to Torvus Bog": {
                                     "type": "and",
@@ -5279,6 +5305,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Path of Eyes": {
                                     "type": "and",
@@ -5293,6 +5320,7 @@
                 },
                 "Shrine Access": {
                     "default_node": "Door to Defiled Shrine",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 521996255,
                         "in_dark_aether": true
@@ -5321,6 +5349,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Safe Zone": {
                                     "type": "and",
@@ -5437,6 +5466,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Safe Zone": {
                                     "type": "and",
@@ -5484,6 +5514,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Safe Zone": {
                                     "type": "and",
@@ -5713,6 +5744,7 @@
                 },
                 "Transport to Torvus Bog": {
                     "default_node": "Elevator to Torvus Bog - Transport to Temple Grounds",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2889020216,
                         "in_dark_aether": false
@@ -5741,6 +5773,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Elevator to Torvus Bog - Transport to Temple Grounds": {
                                     "type": "resource",
@@ -5779,6 +5812,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Transport Access": {
                                     "type": "and",
@@ -5793,6 +5827,7 @@
                 },
                 "Defiled Shrine": {
                     "default_node": "Door to Shrine Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 383850164,
                         "in_dark_aether": true
@@ -5821,6 +5856,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Safe Zone (Ship Location)": {
                                     "type": "and",
@@ -5857,6 +5893,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 11,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Safe Zone (Ship Location)": {
                                     "type": "and",
@@ -6074,6 +6111,7 @@
                 },
                 "Gateway Access": {
                     "default_node": "Door to Shrine Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2217888920,
                         "in_dark_aether": true
@@ -6102,6 +6140,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Center Safe Zone": {
                                     "type": "and",
@@ -6149,6 +6188,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Center Safe Zone": {
                                     "type": "and",
@@ -6277,6 +6317,7 @@
                 },
                 "Sky Temple Gateway": {
                     "default_node": "Spawn Point/Front of Teleporter",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2278776548,
                         "in_dark_aether": true
@@ -6305,6 +6346,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Spawn Point/Front of Teleporter": {
                                     "type": "or",
@@ -6771,6 +6813,7 @@
                 },
                 "Fake Quad Arena": {
                     "default_node": "Before Quadraxis",
+                    "hint_features": [],
                     "extra": {},
                     "nodes": {
                         "Before Quadraxis": {
@@ -7159,6 +7202,7 @@
             "areas": {
                 "Transport to Temple Grounds": {
                     "default_node": "Elevator to Temple Grounds - Transport to Torvus Bog",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1868895730,
                         "in_dark_aether": false
@@ -7187,6 +7231,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Elevator to Temple Grounds - Transport to Torvus Bog": {
                                     "type": "resource",
@@ -7225,6 +7270,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Transport Access": {
                                     "type": "and",
@@ -7239,6 +7285,7 @@
                 },
                 "Temple Transport Access": {
                     "default_node": "Door to Transport to Temple Grounds",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 668125336,
                         "in_dark_aether": false
@@ -7267,6 +7314,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Lagoon": {
                                     "type": "and",
@@ -7300,6 +7348,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Transport to Temple Grounds": {
                                     "type": "and",
@@ -7314,6 +7363,7 @@
                 },
                 "Torvus Lagoon": {
                     "default_node": "Door to Temple Transport Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2114709145,
                         "in_dark_aether": false
@@ -7342,6 +7392,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Save Station A": {
                                     "type": "or",
@@ -7514,6 +7565,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Transport Access": {
                                     "type": "and",
@@ -7547,6 +7599,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Transport Access": {
                                     "type": "or",
@@ -7629,6 +7682,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Transport Access": {
                                     "type": "and",
@@ -7662,6 +7716,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Portal Chamber": {
                                     "type": "resource",
@@ -7686,6 +7741,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 60,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Temple Transport Access": {
                                     "type": "and",
@@ -7762,6 +7818,7 @@
                 },
                 "Ruined Alcove": {
                     "default_node": "Door to Torvus Lagoon",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3548128276,
                         "in_dark_aether": false
@@ -7790,6 +7847,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Forgotten Bridge": {
                                     "type": "and",
@@ -7823,6 +7881,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Lagoon": {
                                     "type": "and",
@@ -7837,6 +7896,7 @@
                 },
                 "Portal Chamber (Light)": {
                     "default_node": "Door to Great Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 4092483679,
                         "in_dark_aether": false
@@ -7865,6 +7925,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Missile)": {
                                     "type": "and",
@@ -7898,6 +7959,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Portal Chamber": {
                                     "type": "and",
@@ -8014,6 +8076,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Lagoon": {
                                     "type": "and",
@@ -8089,6 +8152,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 61,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Portal to Portal Chamber": {
                                     "type": "and",
@@ -8103,6 +8167,7 @@
                 },
                 "Path of Roots": {
                     "default_node": "Door to Torvus Lagoon",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1950913308,
                         "in_dark_aether": false
@@ -8131,6 +8196,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Next to Pickup": {
                                     "type": "and",
@@ -8201,6 +8267,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Lagoon": {
                                     "type": "resource",
@@ -8304,6 +8371,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 62,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Next to Pickup": {
                                     "type": "and",
@@ -8687,6 +8755,7 @@
                 },
                 "Save Station A": {
                     "default_node": "Save Station",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3681435765,
                         "in_dark_aether": false
@@ -8735,6 +8804,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Save Station": {
                                     "type": "and",
@@ -8749,6 +8819,7 @@
                 },
                 "Forgotten Bridge": {
                     "default_node": "Door to Ruined Alcove",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 165596961,
                         "in_dark_aether": false
@@ -8777,6 +8848,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Grove Access": {
                                     "type": "and",
@@ -8810,6 +8882,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Ruined Alcove": {
                                     "type": "and",
@@ -8967,6 +9040,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Bridge Center": {
                                     "type": "or",
@@ -9117,6 +9191,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Plaza Access": {
                                     "type": "and",
@@ -9272,6 +9347,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Ruined Alcove": {
                                     "type": "and",
@@ -9310,6 +9386,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 63,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Abandoned Worksite": {
                                     "type": "and",
@@ -9690,6 +9767,7 @@
                 },
                 "Portal Chamber (Dark)": {
                     "default_node": "Door to Poisoned Bog",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2921206585,
                         "in_dark_aether": true
@@ -9718,6 +9796,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Poisoned Bog": {
                                     "type": "and",
@@ -9830,6 +9909,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Poisoned Bog": {
                                     "type": "and",
@@ -9882,6 +9962,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Venomous Pond": {
                                     "type": "and",
@@ -10096,6 +10177,7 @@
                 },
                 "Great Bridge": {
                     "default_node": "Door to Path of Roots",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3822429534,
                         "in_dark_aether": false
@@ -10124,6 +10206,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Front of Translator Gate": {
                                     "type": "and",
@@ -10192,6 +10275,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Map Station": {
                                     "type": "and",
@@ -10336,6 +10420,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Access (Top)": {
                                     "type": "or",
@@ -10459,6 +10544,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Access (Bottom)": {
                                     "type": "or",
@@ -10609,6 +10695,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Access (Bottom)": {
                                     "type": "and",
@@ -10642,6 +10729,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Map Station": {
                                     "type": "and",
@@ -10881,6 +10969,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 64,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Temple Access (Top)": {
                                     "type": "and",
@@ -11193,6 +11282,7 @@
                 },
                 "Cache A": {
                     "default_node": "Door to Poisoned Bog",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 212528838,
                         "in_dark_aether": true
@@ -11221,6 +11311,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Dark Ammo)": {
                                     "type": "resource",
@@ -11245,6 +11336,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 65,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Poisoned Bog": {
                                     "type": "resource",
@@ -11261,6 +11353,7 @@
                 },
                 "Plaza Access": {
                     "default_node": "Door to Forgotten Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3250751238,
                         "in_dark_aether": false
@@ -11289,6 +11382,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Forgotten Bridge": {
                                     "type": "and",
@@ -11371,6 +11465,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Plaza": {
                                     "type": "and",
@@ -11556,6 +11651,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 66,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Torvus Plaza": {
                                     "type": "resource",
@@ -11761,6 +11857,7 @@
                 },
                 "Abandoned Worksite": {
                     "default_node": "Door to Forgotten Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1423634263,
                         "in_dark_aether": false
@@ -11789,6 +11886,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Missile)": {
                                     "type": "or",
@@ -12168,6 +12266,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Tunnel": {
                                     "type": "and",
@@ -12281,6 +12380,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 67,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Great Bridge": {
                                     "type": "and",
@@ -12608,6 +12708,7 @@
                 },
                 "Dark Forgotten Bridge": {
                     "default_node": "Door to Putrid Alcove",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 39024685,
                         "in_dark_aether": true
@@ -12636,6 +12737,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Putrid Alcove": {
                                     "type": "and",
@@ -12797,6 +12899,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Arena Tunnel": {
                                     "type": "and",
@@ -12965,6 +13068,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Forgotten Bridge": {
                                     "type": "and",
@@ -13381,6 +13485,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Falls": {
                                     "type": "and",
@@ -13532,6 +13637,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Falls": {
                                     "type": "and",
@@ -14645,6 +14751,7 @@
                 },
                 "Grove Access": {
                     "default_node": "Door to Torvus Grove",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1180978245,
                         "in_dark_aether": false
@@ -14673,6 +14780,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Forgotten Bridge": {
                                     "type": "and",
@@ -14706,6 +14814,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Grove": {
                                     "type": "and",
@@ -14720,6 +14829,7 @@
                 },
                 "Poisoned Bog": {
                     "default_node": "Door to Cache A",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 350405542,
                         "in_dark_aether": true
@@ -14748,6 +14858,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Beacon)": {
                                     "type": "and",
@@ -14795,6 +14906,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Beacon)": {
                                     "type": "and",
@@ -14842,6 +14954,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Beacon)": {
                                     "type": "and",
@@ -15016,6 +15129,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 68,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Central Safe Zone (Beacon)": {
                                     "type": "and",
@@ -15513,6 +15627,7 @@
                 },
                 "Venomous Pond": {
                     "default_node": "Door to Brooding Ground",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2240736467,
                         "in_dark_aether": true
@@ -15541,6 +15656,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Brooding Ground": {
                                     "type": "or",
@@ -15802,6 +15918,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Save Station 1": {
                                     "type": "or",
@@ -16149,6 +16266,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Save Station 1": {
                                     "type": "and",
@@ -16578,6 +16696,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Brooding Ground": {
                                     "type": "and",
@@ -16709,6 +16828,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 69,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Save Station 1": {
                                     "type": "and",
@@ -16841,6 +16961,7 @@
                 },
                 "Temple Access": {
                     "default_node": "Door to Great Bridge (Top)",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 121681107,
                         "in_dark_aether": false
@@ -16869,6 +16990,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Above Pickup": {
                                     "type": "and",
@@ -16902,6 +17024,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Below Pickup": {
                                     "type": "resource",
@@ -16937,6 +17060,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Below Pickup": {
                                     "type": "resource",
@@ -16972,6 +17096,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Above Pickup": {
                                     "type": "and",
@@ -16994,6 +17119,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 70,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Below Pickup": {
                                     "type": "and",
@@ -17245,6 +17371,7 @@
                 },
                 "Torvus Map Station": {
                     "default_node": "Door to Great Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 673929343,
                         "in_dark_aether": false
@@ -17273,6 +17400,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Map Station": {
                                     "type": "and",
@@ -17307,6 +17435,7 @@
                 },
                 "Torvus Plaza": {
                     "default_node": "Door to Plaza Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1978751231,
                         "in_dark_aether": false
@@ -17335,6 +17464,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Energy Tank)": {
                                     "type": "or",
@@ -17508,6 +17638,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 71,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Plaza Access": {
                                     "type": "and",
@@ -17609,6 +17740,7 @@
                 },
                 "Dark Arena Tunnel": {
                     "default_node": "Door to Dark Forgotten Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 957217977,
                         "in_dark_aether": true
@@ -17637,6 +17769,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Torvus Arena": {
                                     "type": "and",
@@ -17816,6 +17949,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Forgotten Bridge": {
                                     "type": "and",
@@ -17985,6 +18119,7 @@
                 },
                 "Putrid Alcove": {
                     "default_node": "Door to Poisoned Bog",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3418828153,
                         "in_dark_aether": true
@@ -18013,6 +18148,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Forgotten Bridge": {
                                     "type": "or",
@@ -18282,6 +18418,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Poisoned Bog": {
                                     "type": "or",
@@ -18540,6 +18677,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 72,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Poisoned Bog": {
                                     "type": "and",
@@ -18859,6 +18997,7 @@
                 },
                 "Brooding Ground": {
                     "default_node": "Door to Dark Forgotten Bridge",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3706669497,
                         "in_dark_aether": true
@@ -18887,6 +19026,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Venomous Pond": {
                                     "type": "and",
@@ -19096,6 +19236,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Forgotten Bridge": {
                                     "type": "and",
@@ -19295,6 +19436,7 @@
                 },
                 "Dark Falls": {
                     "default_node": "Save Station",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 774215801,
                         "in_dark_aether": true
@@ -19420,6 +19562,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Save Station": {
                                     "type": "and",
@@ -19467,6 +19610,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Save Station": {
                                     "type": "and",
@@ -19495,6 +19639,7 @@
                 },
                 "Torvus Grove": {
                     "default_node": "Door to Underground Tunnel",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3896048152,
                         "in_dark_aether": false
@@ -19523,6 +19668,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Underground Tunnel": {
                                     "type": "and",
@@ -19556,6 +19702,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Grove Access": {
                                     "type": "and",
@@ -19624,6 +19771,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Grove Access": {
                                     "type": "and",
@@ -19711,6 +19859,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 73,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Meditation Vista": {
                                     "type": "and",
@@ -19725,6 +19874,7 @@
                 },
                 "Dark Torvus Temple Access": {
                     "default_node": "Door to Venomous Pond",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3851937017,
                         "in_dark_aether": true
@@ -19753,6 +19903,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Torvus Temple": {
                                     "type": "and",
@@ -19865,6 +20016,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Venomous Pond": {
                                     "type": "and",
@@ -19958,6 +20110,7 @@
                 },
                 "Save Station 1": {
                     "default_node": "Save Station",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2591519810,
                         "in_dark_aether": true
@@ -20008,6 +20161,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Save Station": {
                                     "type": "resource",
@@ -20024,6 +20178,7 @@
                 },
                 "Torvus Temple": {
                     "default_node": "Door to Temple Access (Top)",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3863006870,
                         "in_dark_aether": false
@@ -20052,6 +20207,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Temple Access (Top)": {
                                     "type": "resource",
@@ -20094,6 +20250,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Lower Level": {
                                     "type": "and",
@@ -20153,6 +20310,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Super Missile)": {
                                     "type": "resource",
@@ -20230,6 +20388,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Lower Level": {
                                     "type": "resource",
@@ -20265,6 +20424,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Lower Level": {
                                     "type": "and",
@@ -20298,6 +20458,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Lower Level": {
                                     "type": "and",
@@ -20339,6 +20500,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 74,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Controller Access": {
                                     "type": "and",
@@ -20573,6 +20735,7 @@
                 },
                 "Dark Torvus Arena": {
                     "default_node": "Door to Dark Arena Tunnel",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2761578287,
                         "in_dark_aether": true
@@ -20601,6 +20764,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup 2 (Dark Torvus Key 1)": {
                                     "type": "and",
@@ -20731,6 +20895,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 75,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Central Safe Zone": {
                                     "type": "and",
@@ -20772,6 +20937,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 76,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Dark Arena Tunnel": {
                                     "type": "and",
@@ -21276,6 +21442,7 @@
                 },
                 "Polluted Mire": {
                     "default_node": "Door to Gloom Vista",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2208154870,
                         "in_dark_aether": true
@@ -21304,6 +21471,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Gloom Vista": {
                                     "type": "and",
@@ -21351,6 +21519,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Falls": {
                                     "type": "and",
@@ -21457,6 +21626,7 @@
                 },
                 "Underground Tunnel": {
                     "default_node": "Door to Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2162589584,
                         "in_dark_aether": false
@@ -21485,6 +21655,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Grove": {
                                     "type": "resource",
@@ -21529,6 +21700,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Temple": {
                                     "type": "and",
@@ -21641,6 +21813,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 77,
                             "location_category": "minor",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Torvus Temple": {
                                     "type": "resource",
@@ -21707,6 +21880,7 @@
                 },
                 "Meditation Vista": {
                     "default_node": "Door to Torvus Grove",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1576678107,
                         "in_dark_aether": false
@@ -21735,6 +21909,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Grove": {
                                     "type": "and",
@@ -21768,6 +21943,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Gloom Vista": {
                                     "type": "and",
@@ -21930,6 +22106,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 78,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Torvus Grove": {
                                     "type": "or",
@@ -21958,6 +22135,7 @@
                 },
                 "Dark Torvus Temple": {
                     "default_node": "Safe Zone (Temple Access Side)",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 912503189,
                         "in_dark_aether": true
@@ -21986,6 +22164,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Bottom)": {
                                     "type": "and",
@@ -22042,6 +22221,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Safe Zone (Temple Access Side)": {
                                     "type": "resource",
@@ -22077,6 +22257,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Bottom)": {
                                     "type": "and",
@@ -22129,6 +22310,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Central Safe Zone (Bottom)": {
                                     "type": "and",
@@ -22174,6 +22356,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 79,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Central Safe Zone (Top)": {
                                     "type": "and",
@@ -22947,6 +23130,7 @@
                 },
                 "Transport to Agon Wastes": {
                     "default_node": "Door to Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 3479543630,
                         "in_dark_aether": false
@@ -22975,12 +23159,14 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {}
                         }
                     }
                 },
                 "Underground Transport": {
                     "default_node": "Door to Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2455297154,
                         "in_dark_aether": false
@@ -23009,12 +23195,14 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {}
                         }
                     }
                 },
                 "Controller Access": {
                     "default_node": "Door to Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 720788297,
                         "in_dark_aether": false
@@ -23043,6 +23231,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Energy Controller": {
                                     "type": "or",
@@ -23124,6 +23313,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Torvus Temple": {
                                     "type": "or",
@@ -23186,6 +23376,7 @@
                 },
                 "Gloom Vista": {
                     "default_node": "Door to Polluted Mire",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2504558791,
                         "in_dark_aether": true
@@ -23214,6 +23405,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Polluted Mire": {
                                     "type": "resource",
@@ -23249,6 +23441,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Portal to Meditation Vista": {
                                     "type": "or",
@@ -23307,6 +23500,7 @@
                 },
                 "Ammo Station": {
                     "default_node": "Door to Dark Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 2258105898,
                         "in_dark_aether": true
@@ -23335,6 +23529,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Ammo Station": {
                                     "type": "resource",
@@ -23373,6 +23568,7 @@
                 },
                 "Cache B": {
                     "default_node": "Door to Dark Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 7688697,
                         "in_dark_aether": true
@@ -23401,6 +23597,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Pickup (Energy Tank)": {
                                     "type": "resource",
@@ -23425,6 +23622,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 80,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Dark Torvus Temple": {
                                     "type": "or",
@@ -23483,6 +23681,7 @@
                 },
                 "Dark Controller Access": {
                     "default_node": "Door to Dark Torvus Temple",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 298078827,
                         "in_dark_aether": true
@@ -23511,6 +23710,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Torvus Temple": {
                                     "type": "and",
@@ -23609,6 +23809,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Door to Dark Torvus Energy Controller": {
                                     "type": "and",
@@ -23688,6 +23889,7 @@
                 },
                 "Torvus Energy Controller": {
                     "default_node": "Door to Controller Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 322696632,
                         "in_dark_aether": false
@@ -23716,6 +23918,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Event - Torvus Energy Returned": {
                                     "type": "resource",
@@ -23754,6 +23957,7 @@
                             "valid_starting_location": false,
                             "pickup_index": 82,
                             "location_category": "major",
+                            "hint_features": [],
                             "connections": {
                                 "Door to Controller Access": {
                                     "type": "and",
@@ -23860,6 +24064,7 @@
                 },
                 "Dark Torvus Energy Controller": {
                     "default_node": "Door to Dark Controller Access",
+                    "hint_features": [],
                     "extra": {
                         "asset_id": 1591201049,
                         "in_dark_aether": true
@@ -23888,6 +24093,7 @@
                             "incompatible_dock_weaknesses": [],
                             "override_default_open_requirement": null,
                             "override_default_lock_requirement": null,
+                            "ui_custom_name": null,
                             "connections": {
                                 "Event - Dark Torvus Energy Taken": {
                                     "type": "or",

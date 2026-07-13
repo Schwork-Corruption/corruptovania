@@ -11,6 +11,7 @@
     "areas": {
         "Transport to Area 7": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -17950.0,
@@ -94,6 +95,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 138,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Above Pickup": {
                             "type": "and",
@@ -152,6 +154,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Diggernaut Elevator",
                     "connections": {
                         "Left of Plant Tunnels": {
                             "type": "and",
@@ -297,6 +300,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -335,6 +339,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Grapple Block Pull": {
                             "type": "resource",
@@ -379,59 +384,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Left of Plant Tunnels": {
-                            "type": "and",
-                            "data": {
-                                "comment": null,
-                                "items": [
-                                    {
-                                        "type": "template",
-                                        "data": "Lay Any Bomb"
-                                    },
-                                    {
-                                        "type": "or",
-                                        "data": {
-                                            "comment": "Deal with the Electric Gulluggs",
-                                            "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "Combat",
-                                                        "amount": 2,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "template",
-                                                    "data": "Defeat Gold Autrack"
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "Dodge",
-                                                        "amount": 2,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Armor",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        "Start Point": {
+                        "Next to Diggernaut Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -545,7 +500,7 @@
                                 ]
                             }
                         },
-                        "Door to Diggernaut Arena": {
+                        "Next to Diggernaut Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -562,15 +517,20 @@
                                                 {
                                                     "type": "resource",
                                                     "data": {
+                                                        "type": "items",
+                                                        "name": "Armor",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
                                                         "type": "tricks",
                                                         "name": "Combat",
                                                         "amount": 2,
                                                         "negate": false
                                                     }
-                                                },
-                                                {
-                                                    "type": "template",
-                                                    "data": "Defeat Gold Autrack"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -582,13 +542,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Armor",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Defeat Gold Autrack"
                                                 }
                                             ]
                                         }
@@ -1087,7 +1042,7 @@
                         }
                     }
                 },
-                "Start Point": {
+                "Next to Diggernaut Arena": {
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
@@ -1102,13 +1057,95 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_ManicMiner"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Diggernaut Arena": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "FinalBossDiggernaut",
+                                            "amount": 1,
+                                            "negate": true
+                                        }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "template",
+                                                    "data": "All DNA"
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "misc",
+                                                        "name": "FinalBossDiggernaut",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "Left of Plant Tunnels": {
                             "type": "and",
                             "data": {
                                 "comment": null,
-                                "items": []
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Lay Any Bomb"
+                                    },
+                                    {
+                                        "type": "or",
+                                        "data": {
+                                            "comment": "Deal with the Electric Gulluggs",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Armor",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Combat",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Dodge",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "Defeat Gold Autrack"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -1409,6 +1446,7 @@
         },
         "Teleporter South": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6100.0,
@@ -1510,6 +1548,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Crumbling Stairwell": {
                             "type": "and",
@@ -1548,6 +1587,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter": {
                             "type": "and",
@@ -1601,6 +1641,7 @@
         },
         "Omega Arena": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2050.0,
@@ -1657,6 +1698,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -1740,6 +1782,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -1795,12 +1838,12 @@
                         }
                     }
                 },
-                "Dock to Omega Arena Access": {
+                "Dock from Omega Arena Access": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -1481.109062808409,
-                        "y": 8605.415898553154,
+                        "x": -1481.11,
+                        "y": 8605.42,
                         "z": 0.0
                     },
                     "description": "",
@@ -1815,11 +1858,12 @@
                         "area": "Omega Arena Access",
                         "node": "Dock to Omega Arena"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Blocked Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -2001,6 +2045,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 207,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -2015,6 +2060,7 @@
         },
         "Hideout Sprawl": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11800.0,
@@ -2086,6 +2132,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 133,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Omega Arena Access (Bottom)": {
                             "type": "and",
@@ -2138,6 +2185,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 136,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Middle Level": {
                             "type": "and",
@@ -2190,6 +2238,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "and",
@@ -2311,6 +2360,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "resource",
@@ -2351,6 +2401,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Middle Level": {
                             "type": "or",
@@ -2787,6 +2838,7 @@
         },
         "Teleporter North Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6000.0,
@@ -2843,6 +2895,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleporter North": {
                             "type": "and",
@@ -2881,6 +2934,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Poisonous Tunnel": {
                             "type": "or",
@@ -3013,6 +3067,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleporter North": {
                             "type": "resource",
@@ -3029,6 +3084,7 @@
         },
         "Crumbling Bridge": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6550.0,
@@ -3076,6 +3132,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 134,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Under Bridge": {
                             "type": "template",
@@ -3115,6 +3172,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Bridge": {
                             "type": "resource",
@@ -3325,6 +3383,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left of Bridge": {
                             "type": "resource",
@@ -3459,6 +3518,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 140,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Under Bridge": {
                             "type": "and",
@@ -3828,6 +3888,7 @@
         },
         "Hideout Entrance": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11600.0,
@@ -3896,6 +3957,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hideout Sprawl": {
                             "type": "or",
@@ -4128,13 +4190,8 @@
                                                     "data": "Lay Any Bomb"
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 }
                                             ]
                                         }
@@ -4248,6 +4305,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleporter North": {
                             "type": "or",
@@ -4344,9 +4402,9 @@
                         "default"
                     ],
                     "extra": {
-                        "start_point_actor_name": "ST_DEBUG_ManicMinerAbsorption"
+                        "start_point_actor_name": "ST_DEBUG_ManicMinerAbsorbption"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Hideout Sprawl": {
                             "type": "and",
@@ -4361,6 +4419,7 @@
         },
         "Crumbling Stairwell": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8500.0,
@@ -4417,6 +4476,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Seal West Intersection Terminal": {
                             "type": "and",
@@ -4609,8 +4669,13 @@
                                                                                         "data": "Lay Power Bomb"
                                                                                     },
                                                                                     {
-                                                                                        "type": "template",
-                                                                                        "data": "Shoot Wave Beam"
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "items",
+                                                                                            "name": "Wave",
+                                                                                            "amount": 1,
+                                                                                            "negate": false
+                                                                                        }
                                                                                     }
                                                                                 ]
                                                                             }
@@ -4645,13 +4710,8 @@
                                                                             "data": "Lay Bomb"
                                                                         },
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Spider",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
+                                                                            "type": "template",
+                                                                            "data": "Use Spider Ball"
                                                                         },
                                                                         {
                                                                             "type": "resource",
@@ -4724,13 +4784,8 @@
                                                     "data": "Lay Bomb"
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -4933,8 +4988,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6070.4038257173215,
-                        "y": -9372.614830558508,
+                        "x": -6070.4,
+                        "y": -9372.61,
                         "z": 0.0
                     },
                     "description": "",
@@ -4953,10 +5008,11 @@
                         "node": "Door from Crumbling Stairwell"
                     },
                     "default_dock_weakness": "Power Beam Door",
-                    "exclude_from_dock_rando": false,
+                    "exclude_from_dock_rando": true,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Door to Transport to Area 7": {
@@ -4987,6 +5043,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Teleporter South": {
                             "type": "and",
@@ -5016,6 +5073,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 141,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door from Teleporter South": {
                             "type": "or",
@@ -5156,6 +5214,7 @@
         },
         "Diggernaut Arena": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -21150.0,
@@ -5188,13 +5247,13 @@
                     "node_type": "pickup",
                     "heal": false,
                     "coordinates": {
-                        "x": -19945.508100147275,
-                        "y": -7597.821551300933,
+                        "x": -19945.51,
+                        "y": -7597.82,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
-                        "default"
+                        "final-boss-not-diggernaut"
                     ],
                     "extra": {
                         "actor_name": "LE_PowerUp_Powerbomb",
@@ -5203,6 +5262,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 139,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5241,6 +5301,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5279,6 +5340,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5293,8 +5355,8 @@
                     "node_type": "event",
                     "heal": false,
                     "coordinates": {
-                        "x": -19401.950891355533,
-                        "y": -7216.548940464178,
+                        "x": -19401.95,
+                        "y": -7216.55,
                         "z": 0.0
                     },
                     "description": "",
@@ -5305,7 +5367,7 @@
                     "valid_starting_location": false,
                     "event_name": "Diggernaut",
                     "connections": {
-                        "Pickup (Power Bomb)": {
+                        "Room Center": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5331,6 +5393,32 @@
                     },
                     "valid_starting_location": false,
                     "connections": {
+                        "Pickup (Power Bomb)": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Diggernaut",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "FinalBossDiggernaut",
+                                            "amount": 1,
+                                            "negate": true
+                                        }
+                                    }
+                                ]
+                            }
+                        },
                         "Door to Electric Escalade": {
                             "type": "and",
                             "data": {
@@ -5479,13 +5567,8 @@
                                             "comment": "Dealing Damage to faceplate",
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Plasma",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Have All Beams"
                                                 },
                                                 {
                                                     "type": "template",
@@ -5557,13 +5640,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Spider",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
                                                             },
                                                             {
                                                                 "type": "or",
@@ -5672,13 +5750,8 @@
                                             "comment": "Entering Arms",
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "and",
@@ -5715,13 +5788,8 @@
                                             "comment": "Final Phase (Spinning Faceplate)",
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "or",
@@ -5754,6 +5822,40 @@
                                     }
                                 ]
                             }
+                        },
+                        "Event - Credits (Diggernaut Final Boss)": {
+                            "type": "resource",
+                            "data": {
+                                "type": "events",
+                                "name": "Diggernaut",
+                                "amount": 1,
+                                "negate": false
+                            }
+                        }
+                    }
+                },
+                "Event - Credits (Diggernaut Final Boss)": {
+                    "node_type": "event",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -19847.04,
+                        "y": -7321.39,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "final-boss-diggernaut"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "event_name": "Credits",
+                    "connections": {
+                        "Room Center": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
                         }
                     }
                 }
@@ -5761,6 +5863,7 @@
         },
         "Swarm Square": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -21150.0,
@@ -5817,6 +5920,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Electric Escalade": {
                             "type": "and",
@@ -5916,6 +6020,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Area 7": {
                             "type": "and",
@@ -5991,6 +6096,7 @@
         },
         "Electric Escalade": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -22350.0,
@@ -6023,8 +6129,8 @@
                     "node_type": "pickup",
                     "heal": false,
                     "coordinates": {
-                        "x": -21609.08017475499,
-                        "y": -3797.8391781792425,
+                        "x": -21609.08,
+                        "y": -3797.84,
                         "z": 0.0
                     },
                     "description": "",
@@ -6038,6 +6144,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 131,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Top Platform": {
                             "type": "and",
@@ -6067,65 +6174,82 @@
                     "valid_starting_location": false,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
-                            "type": "or",
+                            "type": "and",
                             "data": {
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "and",
+                                        "type": "resource",
                                         "data": {
-                                            "comment": null,
-                                            "items": [
-                                                {
-                                                    "type": "template",
-                                                    "data": "Can Spider Boost"
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "Spider Boost",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
+                                            "type": "misc",
+                                            "name": "FinalBossDiggernaut",
+                                            "amount": 1,
+                                            "negate": true
                                         }
                                     },
                                     {
-                                        "type": "and",
+                                        "type": "or",
                                         "data": {
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "template",
-                                                    "data": "Lay Bomb"
-                                                },
-                                                {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 3,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "or",
-                                                    "data": {
-                                                        "comment": "Defeat the Gulluggs",
+                                                        "comment": null,
                                                         "items": [
                                                             {
                                                                 "type": "template",
-                                                                "data": "Defeat Gold Autrack"
+                                                                "data": "Can Spider Boost"
                                                             },
                                                             {
                                                                 "type": "resource",
                                                                 "data": {
                                                                     "type": "tricks",
-                                                                    "name": "Combat",
-                                                                    "amount": 3,
+                                                                    "name": "Spider Boost",
+                                                                    "amount": 1,
                                                                     "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Lay Bomb"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "IBJ",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "or",
+                                                                "data": {
+                                                                    "comment": "Defeat the Gulluggs",
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "Combat",
+                                                                                "amount": 3,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Defeat Gold Autrack"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -6138,10 +6262,41 @@
                             }
                         },
                         "Door to Diggernaut Arena": {
-                            "type": "and",
+                            "type": "or",
                             "data": {
                                 "comment": null,
-                                "items": []
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "FinalBossDiggernaut",
+                                            "amount": 1,
+                                            "negate": true
+                                        }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "misc",
+                                                        "name": "FinalBossDiggernaut",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "All DNA"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }
                         },
                         "Top Platform": {
@@ -6339,6 +6494,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Platform": {
                             "type": "and",
@@ -6377,6 +6533,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -6422,6 +6579,7 @@
         },
         "Poisonous Tunnel": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4500.0,
@@ -6469,6 +6627,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 129,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Omega Arena": {
                             "type": "or",
@@ -6494,13 +6653,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "and",
@@ -6599,6 +6753,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Omega Arena": {
                             "type": "and",
@@ -6637,6 +6792,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -6662,13 +6818,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "and",
@@ -6708,6 +6859,13 @@
                                 "comment": null,
                                 "items": []
                             }
+                        },
+                        "Start Point": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
                         }
                     }
                 },
@@ -6736,6 +6894,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -6772,11 +6931,38 @@
                             }
                         }
                     }
+                },
+                "Start Point": {
+                    "node_type": "generic",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -2250.0,
+                        "y": 7500.0,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {
+                        "start_point_actor_name": "ST_SG_Omega_001B"
+                    },
+                    "valid_starting_location": true,
+                    "connections": {
+                        "Door to Omega Arena": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },
         "Zeta Arena Access": {
-            "default_node": "Start Point (Left)",
+            "default_node": "Start Point (Omega)",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1950.0,
@@ -6833,12 +7019,13 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zeta Arena": {
                             "type": "template",
                             "data": "Lay Any Bomb"
                         },
-                        "Start Point (Left)": {
+                        "Start Point (Omega)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -6875,12 +7062,13 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Omega Arena": {
                             "type": "template",
                             "data": "Lay Any Bomb"
                         },
-                        "Start Point (Right)": {
+                        "Start Point (Zeta)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -6914,6 +7102,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Zeta Arena": {
                             "type": "resource",
@@ -6926,7 +7115,7 @@
                         }
                     }
                 },
-                "Start Point (Left)": {
+                "Start Point (Omega)": {
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
@@ -6941,7 +7130,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Omega_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Omega Arena": {
                             "type": "and",
@@ -6952,7 +7141,7 @@
                         }
                     }
                 },
-                "Start Point (Right)": {
+                "Start Point (Zeta)": {
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
@@ -6967,7 +7156,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Zeta_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Zeta Arena": {
                             "type": "and",
@@ -6982,6 +7171,7 @@
         },
         "Zeta Arena": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3900.0,
@@ -7038,6 +7228,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7076,6 +7267,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7111,6 +7303,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7244,6 +7437,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 206,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7258,6 +7452,7 @@
         },
         "Transport to Area 5": {
             "default_node": "Elevator to Area 5 Tower Lobby",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1200.0,
@@ -7375,6 +7570,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Area 6 Entrance Elevator",
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -7988,6 +8184,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Seal West Intersection Terminal (Bottom)": {
                             "type": "and",
@@ -8054,6 +8251,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -8119,6 +8317,7 @@
         },
         "Chozo Seal East": {
             "default_node": "Chozo Seal",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1900.0,
@@ -8190,6 +8389,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 135,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Pickup Puzzle": {
                             "type": "or",
@@ -8242,6 +8442,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Pickup Puzzle": {
                             "type": "and",
@@ -8269,7 +8470,7 @@
                         "actor_type": "weightactivatedplatform",
                         "start_point_actor_name": "ST_ChozoUnlockAreaDNA_Checkpoint_002"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "kind": "generic",
                     "requirement_to_collect": {
                         "type": "and",
@@ -8558,6 +8759,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal": {
                             "type": "and",
@@ -8606,8 +8808,13 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "template",
-                                                    "data": "Shoot Wave Beam"
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Wave",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
                                                 },
                                                 {
                                                     "type": "template",
@@ -8789,6 +8996,15 @@
                                                         "type": "items",
                                                         "name": "Charge",
                                                         "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "OoB",
+                                                        "amount": 2,
                                                         "negate": false
                                                     }
                                                 }
@@ -9059,13 +9275,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "and",
@@ -9182,6 +9393,7 @@
         },
         "Omega Arena Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2000.0,
@@ -9238,6 +9450,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hideout Sprawl (Top)": {
                             "type": "or",
@@ -9378,6 +9591,13 @@
                                 "comment": null,
                                 "items": []
                             }
+                        },
+                        "Start Point": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
                         }
                     }
                 },
@@ -9409,6 +9629,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hideout Sprawl (Bottom)": {
                             "type": "and",
@@ -9437,19 +9658,47 @@
                     "default_connection": {
                         "region": "Area 6",
                         "area": "Omega Arena",
-                        "node": "Dock to Omega Arena Access"
+                        "node": "Dock from Omega Arena Access"
                     },
                     "default_dock_weakness": "Open Passage",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
+                },
+                "Start Point": {
+                    "node_type": "generic",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -1025.0,
+                        "y": 9700.0,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {
+                        "start_point_actor_name": "ST_SG_Omega_001C"
+                    },
+                    "valid_starting_location": true,
+                    "connections": {
+                        "Door to Hideout Sprawl (Bottom)": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },
         "Chozo Seal West Intersection Terminal": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7700.0,
@@ -9561,6 +9810,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 130,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Bottom Puzzle": {
                             "type": "template",
@@ -9587,6 +9837,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 132,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Save Station": {
                             "type": "or",
@@ -9617,13 +9868,8 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Spider",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
                                                             },
                                                             {
                                                                 "type": "resource",
@@ -9669,13 +9915,8 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Spider",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
                                                             },
                                                             {
                                                                 "type": "template",
@@ -9746,6 +9987,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 137,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Bottom Puzzle": {
                             "type": "and",
@@ -10297,13 +10539,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -10361,6 +10598,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -10392,8 +10630,8 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6070.787578226473,
-                        "y": -9378.678120203092,
+                        "x": -6070.79,
+                        "y": -9378.68,
                         "z": 0.0
                     },
                     "description": "",
@@ -10412,10 +10650,11 @@
                         "node": "Door to Chozo Seal West Intersection Terminal"
                     },
                     "default_dock_weakness": "Access Closed",
-                    "exclude_from_dock_rando": false,
+                    "exclude_from_dock_rando": true,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -10454,6 +10693,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal": {
                             "type": "and",
@@ -10492,6 +10732,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal": {
                             "type": "or",
@@ -10690,6 +10931,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -10725,6 +10967,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Chozo Seal": {
                             "type": "resource",
@@ -10874,13 +11117,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -11050,6 +11288,7 @@
         },
         "Teleporter North": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -9200.0,
@@ -11369,6 +11608,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hideout Entrance": {
                             "type": "or",
@@ -11416,6 +11656,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -11470,6 +11711,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "or",

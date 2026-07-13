@@ -4,15 +4,15 @@ from unittest.mock import MagicMock
 
 import pytest
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description.data_reader import RegionReader
 from randovania.game_description.resources.resource_database import ResourceDatabase
 from randovania.game_description.resources.search import MissingResource
-from randovania.games.game import RandovaniaGame
 
 
 def test_invalid_node_type():
     # Setup
-    reader = RegionReader(MagicMock(), MagicMock())
+    reader = RegionReader(MagicMock(), MagicMock(), MagicMock())
     reader.current_region_name = "World"
     reader.current_area_name = "Area"
 
@@ -45,7 +45,7 @@ def test_area_with_invalid_connections():
         damage_reductions={},
         energy_tank_item=MagicMock(),
     )
-    reader = RegionReader(db, MagicMock())
+    reader = RegionReader(db, MagicMock(), MagicMock())
     reader.current_region_name = "World"
 
     with pytest.raises(MissingResource) as e:

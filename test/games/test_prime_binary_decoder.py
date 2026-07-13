@@ -7,6 +7,7 @@ import pytest
 
 import randovania.lib.construct_lib
 from randovania import get_data_path
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description import data_reader, game_migration
 from randovania.games import binary_data
 from randovania.layout.generator_parameters import raw_database_hash
@@ -32,7 +33,6 @@ sample_data = {
     },
     "layers": ["default"],
     "starting_location": {"region": "Temple Grounds", "area": "Landing Site", "node": "Save Station"},
-    "initial_states": {"Default": []},
     "minimal_logic": None,
     "victory_condition": {
         "type": "and",
@@ -46,7 +46,19 @@ sample_data = {
         },
         "dock_rando": {"force_change_two_way": False, "resolver_attempts": 200, "to_shuffle_proportion": 1.0},
     },
+    "hint_feature_database": {
+        "key": {
+            "long_name": "Room",
+            "hint_details": ["in ", "a room"],
+        },
+        "key2": {
+            "long_name": "Room",
+            "hint_details": ["in ", "a room"],
+            "hidden": True,
+        },
+    },
     "used_trick_levels": {},
+    "flatten_to_set_on_patch": False,
     "regions": [],
 }
 
@@ -63,7 +75,7 @@ def test_simple_round_trip():
 
 def test_complex_encode(test_files_dir):
     data = test_files_dir.read_json("prime_data_as_json.json")
-    data = game_migration.migrate_to_current(data)
+    data = game_migration.migrate_to_current(data, RandovaniaGame.METROID_PRIME_ECHOES)
 
     b = io.BytesIO()
 
@@ -82,7 +94,7 @@ def test_complex_decode(test_files_dir):
 
     # Assert
     saved_data = test_files_dir.read_json("prime_data_as_json.json")
-    saved_data = game_migration.migrate_to_current(saved_data)
+    saved_data = game_migration.migrate_to_current(saved_data, RandovaniaGame.METROID_PRIME_ECHOES)
 
     assert decoded_data == saved_data
 
@@ -153,4 +165,4 @@ def test_encode_resource_database():
     encoded = binary_data.ConstructResourceDatabase.build(resource_database)
 
     # Assert
-    assert encoded == b"\x00\x00\x00\x00\x00\x00\x01Foo\x00Foo\x00\x02\x00\x00\x00\x00"
+    assert encoded == b"\x00\x00\x00\x00\x00\x00\x01\x03Foo\x03Foo\x02\x00\x00\x00\x00"

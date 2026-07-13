@@ -25,6 +25,7 @@ def is_dirty() -> bool:
 
 
 def is_dev_version():
+    return False
     return (".dev" in VERSION or is_dirty()) and version_hash.git_branch != "stable"
 
 
@@ -172,7 +173,9 @@ _final_version = _version.version
 if is_dirty():
     _final_version += "-dirty"
 
+UNKNOWN_VERSION = "0.0.0"
+UNKNOWN_GIT_HASH = b"UNKN"
 
 __version__ = _final_version
 VERSION = _final_version
-GIT_HASH = version_hash.git_hash
+GIT_HASH = version_hash.git_hash or UNKNOWN_GIT_HASH

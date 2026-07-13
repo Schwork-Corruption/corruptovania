@@ -4,33 +4,33 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_connection.connector.am2r_remote_connector import AM2RRemoteConnector
 from randovania.game_connection.connector.remote_connector import PlayerLocationEvent
-from randovania.game_connection.executor.am2r_executor import AM2RExecutor, AM2RExecutorToConnectorSignals
+from randovania.game_connection.executor.am2r_executor import AM2RExecutor
+from randovania.game_connection.executor.executor_to_connector_signals import ExecutorToConnectorSignals
 from randovania.game_description.db.region import Region
 from randovania.game_description.resources.inventory import Inventory
 from randovania.game_description.resources.pickup_index import PickupIndex
-from randovania.games.game import RandovaniaGame
+from randovania.network_common.remote_pickup import RemotePickup
 
 
 @pytest.fixture(name="connector")
 def am2r_remote_connector():
     executor_mock = MagicMock(AM2RExecutor)
     executor_mock.layout_uuid_str = "00000000-0000-1111-0000-000000000000"
-    executor_mock.signals = MagicMock(AM2RExecutorToConnectorSignals)
+    executor_mock.signals = MagicMock(ExecutorToConnectorSignals)
     connector = AM2RRemoteConnector(executor_mock)
     return connector
 
 
 async def test_general_class_content(connector: AM2RRemoteConnector):
+    assert isinstance(connector.executor, MagicMock)
+
     assert connector.game_enum == RandovaniaGame.AM2R
     assert connector.description() == f"{RandovaniaGame.AM2R.long_name}"
 
-    emit_listener = MagicMock()
-    connector.Finished.connect(emit_listener)
-
     connector.connection_lost()
-    emit_listener.assert_called_once_with()
 
     await connector.force_finish()
     connector.executor.disconnect.assert_called_once()
@@ -65,6 +65,7 @@ async def test_new_player_location(connector: AM2RRemoteConnector):
 
 async def test_new_inventory_received(connector: AM2RRemoteConnector):
     inventory_updated = MagicMock()
+    connector.logger = MagicMock()
     connector.InventoryUpdated.connect(inventory_updated)
 
     connector.current_region = None
@@ -84,6 +85,8 @@ async def test_new_inventory_received(connector: AM2RRemoteConnector):
         "Speed Booster|1,Missile Launcher|1,Missiles|5,Progressive Suit|5,"
     )
     inventory_updated.assert_called_once()
+
+    connector.logger.warning.assert_not_called()
 
     # Check Missiles
     missiles = connector.game.resource_database.get_item_by_name("Missiles")
@@ -116,16 +119,24 @@ async def test_new_received_pickups_received(connector: AM2RRemoteConnector):
 
 async def test_set_remote_pickups(connector: AM2RRemoteConnector, am2r_varia_pickup):
     connector.receive_remote_pickups = AsyncMock()
-    pickup_entry_with_owner = (("Dummy 1", am2r_varia_pickup), ("Dummy 2", am2r_varia_pickup))
-    await connector.set_remote_pickups(pickup_entry_with_owner)
-    assert connector.remote_pickups == pickup_entry_with_owner
+    remote_pickups = (
+        RemotePickup("Dummy 1", am2r_varia_pickup, None),
+        RemotePickup("Dummy 2", am2r_varia_pickup, None),
+    )
+    await connector.set_remote_pickups(remote_pickups)
+    assert connector.remote_pickups == remote_pickups
 
 
 async def test_receive_remote_pickups(connector: AM2RRemoteConnector, am2r_varia_pickup):
+    assert isinstance(connector.executor, MagicMock)
+
     connector.in_cooldown = False
     connector.current_region = Region(name="Golden Temple", areas=[], extra={})
-    pickup_entry_with_owner = (("Dummy 1", am2r_varia_pickup), ("Dummy 2", am2r_varia_pickup))
-    connector.remote_pickups = pickup_entry_with_owner
+    remote_pickups = (
+        RemotePickup("Dummy 1", am2r_varia_pickup, None),
+        RemotePickup("Dummy 2", am2r_varia_pickup, None),
+    )
+    connector.remote_pickups = remote_pickups
 
     connector.received_pickups = None
     await connector.receive_remote_pickups()
@@ -149,7 +160,7 @@ async def test_receive_remote_pickups(connector: AM2RRemoteConnector, am2r_varia
 
 async def test_new_collected_locations_received_wrong_answer(connector: AM2RRemoteConnector):
     connector.logger = MagicMock()
-    connector.current_region = "Golden Temple"
+    connector.current_region = Region("Golden Temple", [], {})
     new_indices = "Foo"
     connector.new_collected_locations_received(new_indices)
 
@@ -161,19 +172,21 @@ async def test_new_collected_locations_received(connector: AM2RRemoteConnector):
 
     connector.logger = MagicMock()
     connector.PickupIndexCollected.connect(collected_mock)
-    new_indices = "locations:1"
+    new_indices = "locations:1,"
 
     connector.current_region = None
     connector.new_collected_locations_received(new_indices)
     collected_mock.assert_not_called()
 
-    connector.current_region = "Golden Temple"
+    connector.current_region = Region("Golden Temple", [], {})
     connector.new_collected_locations_received(new_indices)
     connector.logger.warning.assert_not_called()
     collected_mock.assert_called_once_with(PickupIndex(1))
 
 
 async def test_display_arbitrary_message(connector: AM2RRemoteConnector):
+    assert isinstance(connector.executor, MagicMock)
+
     connector.logger = MagicMock()
     message = "This is some funny string that contains a #"
     await connector.display_arbitrary_message(message)

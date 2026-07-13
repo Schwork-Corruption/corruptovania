@@ -4,19 +4,21 @@ from unittest.mock import AsyncMock, MagicMock, call
 
 import pytest
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_connection.connector.dread_remote_connector import DreadRemoteConnector
 from randovania.game_connection.connector.remote_connector import PlayerLocationEvent
-from randovania.game_connection.executor.dread_executor import DreadExecutor, DreadExecutorToConnectorSignals
+from randovania.game_connection.executor.dread_executor import DreadExecutor
+from randovania.game_connection.executor.executor_to_connector_signals import ExecutorToConnectorSignals
 from randovania.game_description.resources.inventory import Inventory, InventoryItem
 from randovania.game_description.resources.pickup_index import PickupIndex
-from randovania.games.game import RandovaniaGame
+from randovania.network_common.remote_pickup import RemotePickup
 
 
 @pytest.fixture(name="connector")
 def dread_remote_connector():
     executor_mock = MagicMock(DreadExecutor)
     executor_mock.layout_uuid_str = "00000000-0000-1111-0000-000000000000"
-    executor_mock.signals = MagicMock(DreadExecutorToConnectorSignals)
+    executor_mock.signals = MagicMock(ExecutorToConnectorSignals)
     executor_mock.version = "2.1.0"
     connector = DreadRemoteConnector(executor_mock)
     return connector
@@ -26,11 +28,7 @@ async def test_general_class_content(connector: DreadRemoteConnector):
     assert connector.game_enum == RandovaniaGame.METROID_DREAD
     assert connector.description() == f"{RandovaniaGame.METROID_DREAD.long_name}: 2.1.0"
 
-    emit_listener = MagicMock()
-    connector.Finished.connect(emit_listener)
-
     connector.connection_lost()
-    emit_listener.assert_called_once_with()
 
     await connector.force_finish()
     connector.executor.disconnect.assert_called_once()
@@ -53,6 +51,7 @@ async def test_new_player_location(connector: DreadRemoteConnector):
 
     assert connector.current_region is None
     connector.new_player_location_received("s010_cave")
+    assert connector.current_region is not None
     assert connector.current_region.name == "Artaria"
     location_changed.assert_called_once_with(PlayerLocationEvent(connector.current_region, None))
     assert await connector.current_game_status() == (True, connector.current_region)
@@ -102,15 +101,21 @@ async def test_new_received_pickups_received(connector: DreadRemoteConnector):
 
 async def test_set_remote_pickups(connector: DreadRemoteConnector, dread_spider_pickup):
     connector.receive_remote_pickups = AsyncMock()
-    pickup_entry_with_owner = (("Dummy 1", dread_spider_pickup), ("Dummy 2", dread_spider_pickup))
-    await connector.set_remote_pickups(pickup_entry_with_owner)
-    assert connector.remote_pickups == pickup_entry_with_owner
+    remote_pickup = (
+        RemotePickup("Dummy 1", dread_spider_pickup, None),
+        RemotePickup("Dummy 2", dread_spider_pickup, None),
+    )
+    await connector.set_remote_pickups(remote_pickup)
+    assert connector.remote_pickups == remote_pickup
 
 
 async def test_receive_remote_pickups(connector: DreadRemoteConnector, dread_spider_pickup):
     connector.in_cooldown = False
-    pickup_entry_with_owner = (("Dummy 1", dread_spider_pickup), ("Dummy 2", dread_spider_pickup))
-    connector.remote_pickups = pickup_entry_with_owner
+    remote_pickup = (
+        RemotePickup("Dummy 1", dread_spider_pickup, None),
+        RemotePickup("Dummy 2", dread_spider_pickup, None),
+    )
+    connector.remote_pickups = remote_pickup
     connector.executor.run_lua_code = AsyncMock()
 
     connector.received_pickups = None

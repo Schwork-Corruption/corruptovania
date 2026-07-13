@@ -1,5 +1,5 @@
 {
-    "schema_version": 24,
+    "schema_version": 28,
     "game": "super_metroid",
     "resource_database": {
         "items": {
@@ -698,9 +698,6 @@
         "area": "Landing Site",
         "node": "Ship"
     },
-    "initial_states": {
-        "Item Loss Disabled": []
-    },
     "minimal_logic": null,
     "victory_condition": {
         "type": "or",
@@ -1104,6 +1101,7 @@
             "to_shuffle_proportion": 1.0
         }
     },
+    "hint_feature_database": {},
     "used_trick_levels": {
         "Shinespark": [
             1,
@@ -1196,6 +1194,7 @@
             4
         ]
     },
+    "flatten_to_set_on_patch": false,
     "regions": [
         "Crateria.json",
         "Wrecked Ship.json",

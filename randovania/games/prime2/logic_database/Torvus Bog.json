@@ -7,6 +7,7 @@
     "areas": {
         "Transport to Temple Grounds": {
             "default_node": "Elevator to Temple Grounds",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1868895730,
                 "in_dark_aether": false
@@ -35,6 +36,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Temple Grounds": {
                             "type": "resource",
@@ -72,6 +74,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Torvus Entrance",
                     "connections": {
                         "Door to Temple Transport Access": {
                             "type": "and",
@@ -86,6 +89,7 @@
         },
         "Temple Transport Access": {
             "default_node": "Door to Transport to Temple Grounds",
+            "hint_features": [],
             "extra": {
                 "asset_id": 668125336,
                 "in_dark_aether": false
@@ -114,6 +118,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Lagoon": {
                             "type": "and",
@@ -147,6 +152,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Temple Grounds": {
                             "type": "and",
@@ -161,6 +167,11 @@
         },
         "Torvus Lagoon": {
             "default_node": "Door to Temple Transport Access",
+            "hint_features": [
+                "keybearer",
+                "luminoth_corpse",
+                "water"
+            ],
             "extra": {
                 "asset_id": 2114709145,
                 "in_dark_aether": false
@@ -189,6 +200,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station A": {
                             "type": "or",
@@ -369,6 +381,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Transport Access": {
                             "type": "and",
@@ -402,6 +415,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Transport Access": {
                             "type": "or",
@@ -486,6 +500,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Transport Access": {
                             "type": "and",
@@ -519,6 +534,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Portal Chamber (Light)": {
                             "type": "resource",
@@ -534,15 +550,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 213.44,
+                        "y": -92.27,
+                        "z": 26.38
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                131166
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 131147,
+                                "hud_memo": 131164,
+                                "streamed_audio": 131167,
+                                "sound": 131150,
+                                "audio_fade": 131169
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 60,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Temple Transport Access": {
                             "type": "and",
@@ -619,6 +662,7 @@
         },
         "Ruined Alcove": {
             "default_node": "Door to Torvus Lagoon",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3548128276,
                 "in_dark_aether": false
@@ -647,6 +691,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Forgotten Bridge": {
                             "type": "and",
@@ -680,6 +725,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Lagoon": {
                             "type": "and",
@@ -694,6 +740,9 @@
         },
         "Portal Chamber (Light)": {
             "default_node": "Door to Great Bridge",
+            "hint_features": [
+                "portal"
+            ],
             "extra": {
                 "asset_id": 4092483679,
                 "in_dark_aether": false
@@ -722,6 +771,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile)": {
                             "type": "and",
@@ -755,6 +805,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Portal Chamber (Dark)": {
                             "type": "and",
@@ -871,6 +922,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Lagoon": {
                             "type": "and",
@@ -937,15 +989,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 85.42,
+                        "y": -87.36,
+                        "z": 32.77
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                262413
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 262368,
+                                "hud_memo": 262407,
+                                "streamed_audio": 262411,
+                                "sound": 262416,
+                                "audio_fade": 262412
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 61,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Portal to Portal Chamber (Dark)": {
                             "type": "and",
@@ -960,6 +1039,10 @@
         },
         "Path of Roots": {
             "default_node": "Door to Torvus Lagoon",
+            "hint_features": [
+                "grapple",
+                "lore"
+            ],
             "extra": {
                 "asset_id": 1950913308,
                 "in_dark_aether": false
@@ -990,6 +1073,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Pickup": {
                             "type": "and",
@@ -1060,6 +1144,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Lagoon": {
                             "type": "resource",
@@ -1131,6 +1216,32 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "https://www.youtube.com/watch?v=EB_tvB6dOd8",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "SpaceJump",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "EDash",
+                                                        "amount": 4,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 ]
                             }
@@ -1154,15 +1265,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 119.52,
+                        "y": -135.57,
+                        "z": 34.74
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                327724
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 327730,
+                                "hud_memo": 327719,
+                                "streamed_audio": 327723,
+                                "sound": 327718,
+                                "audio_fade": 327721
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 62,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Pickup": {
                             "type": "and",
@@ -1546,6 +1684,7 @@
         },
         "Save Station A": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3681435765,
                 "unlocked_save_station": true,
@@ -1595,6 +1734,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -1609,6 +1749,11 @@
         },
         "Forgotten Bridge": {
             "default_node": "Door to Ruined Alcove",
+            "hint_features": [
+                "bomb_slot",
+                "boost_spinner",
+                "portal"
+            ],
             "extra": {
                 "asset_id": 165596961,
                 "in_dark_aether": false
@@ -1637,6 +1782,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Grove Access": {
                             "type": "and",
@@ -1670,6 +1816,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ruined Alcove": {
                             "type": "and",
@@ -1827,6 +1974,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bridge Center": {
                             "type": "or",
@@ -2011,6 +2159,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plaza Access": {
                             "type": "and",
@@ -2166,6 +2315,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ruined Alcove": {
                             "type": "and",
@@ -2195,15 +2345,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 31.78,
+                        "y": -22.38,
+                        "z": 53.93
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                459109
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 459107,
+                                "hud_memo": 459113,
+                                "streamed_audio": 459110,
+                                "sound": 459106,
+                                "audio_fade": 459114
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 63,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Abandoned Worksite": {
                             "type": "and",
@@ -2576,6 +2753,7 @@
         },
         "Portal Chamber (Dark)": {
             "default_node": "Door to Poisoned Bog",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2921206585,
                 "in_dark_aether": true
@@ -2604,6 +2782,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Poisoned Bog": {
                             "type": "and",
@@ -2716,6 +2895,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Poisoned Bog": {
                             "type": "and",
@@ -2768,6 +2948,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Venomous Pond": {
                             "type": "and",
@@ -2990,6 +3171,10 @@
         },
         "Great Bridge": {
             "default_node": "Door to Path of Roots",
+            "hint_features": [
+                "orb_cannon",
+                "translator_gate"
+            ],
             "extra": {
                 "asset_id": 3822429534,
                 "in_dark_aether": false
@@ -3018,6 +3203,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Front of Translator Gate": {
                             "type": "and",
@@ -3086,6 +3272,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Map Station": {
                             "type": "or",
@@ -3426,6 +3613,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Access (Top)": {
                             "type": "or",
@@ -3541,6 +3729,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Access (Bottom)": {
                             "type": "or",
@@ -3691,6 +3880,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Access (Bottom)": {
                             "type": "and",
@@ -3724,6 +3914,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Map Station": {
                             "type": "and",
@@ -3988,15 +4179,42 @@
                 "Pickup (Power Bomb)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 64.93,
+                        "y": -96.05,
+                        "z": 46.49
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "PowerBombExpansion",
+                            "connections": [],
+                            "removals": [
+                                590220
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 590099,
+                                "hud_memo": 590106,
+                                "streamed_audio": 590218,
+                                "sound": 590095,
+                                "audio_fade": 590216
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 64,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Temple Access (Top)": {
                             "type": "and",
@@ -4188,6 +4406,41 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "https://www.youtube.com/watch?v=nSHgMLE9k8o",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "SpaceJump",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "EDash",
+                                                        "amount": 3,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "SlopeJump",
+                                                        "amount": 3,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 ]
                             }
@@ -4316,6 +4569,7 @@
         },
         "Cache A": {
             "default_node": "Door to Poisoned Bog",
+            "hint_features": [],
             "extra": {
                 "asset_id": 212528838,
                 "in_dark_aether": true
@@ -4344,6 +4598,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Dark Ammo)": {
                             "type": "resource",
@@ -4359,15 +4614,43 @@
                 "Pickup (Dark Ammo)": {
                     "node_type": "pickup",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 160.65,
+                        "y": -129.09,
+                        "z": 40.52
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "BeamAmmoExpansion",
+                            "connections": [],
+                            "removals": [
+                                655379,
+                                655407
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 655419,
+                                "hud_memo": 655413,
+                                "streamed_audio": 655418,
+                                "sound": 655420,
+                                "audio_fade": 655410
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 65,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Poisoned Bog": {
                             "type": "resource",
@@ -4384,6 +4667,11 @@
         },
         "Plaza Access": {
             "default_node": "Door to Forgotten Bridge",
+            "hint_features": [
+                "bomb_slot",
+                "boost",
+                "morph"
+            ],
             "extra": {
                 "asset_id": 3250751238,
                 "in_dark_aether": false
@@ -4412,6 +4700,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Forgotten Bridge": {
                             "type": "and",
@@ -4494,6 +4783,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Plaza": {
                             "type": "and",
@@ -4670,15 +4960,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 48.27,
+                        "y": 165.54,
+                        "z": 95.13
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                721105
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 721110,
+                                "hud_memo": 721107,
+                                "streamed_audio": 721101,
+                                "sound": 721109,
+                                "audio_fade": 721108
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 66,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Torvus Plaza": {
                             "type": "resource",
@@ -4884,6 +5201,9 @@
         },
         "Abandoned Worksite": {
             "default_node": "Door to Forgotten Bridge",
+            "hint_features": [
+                "grapple"
+            ],
             "extra": {
                 "asset_id": 1423634263,
                 "in_dark_aether": false
@@ -4912,6 +5232,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile)": {
                             "type": "or",
@@ -5213,6 +5534,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel Ledge (Great Bridge Side)": {
                             "type": "and",
@@ -5309,15 +5631,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 34.96,
+                        "y": -55.03,
+                        "z": 56.33
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                786505
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 786513,
+                                "hud_memo": 786511,
+                                "streamed_audio": 786503,
+                                "sound": 786501,
+                                "audio_fade": 786510
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 67,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Great Bridge": {
                             "type": "and",
@@ -5608,6 +5957,7 @@
         },
         "Dark Forgotten Bridge": {
             "default_node": "Door to Putrid Alcove",
+            "hint_features": [],
             "extra": {
                 "asset_id": 39024685,
                 "in_dark_aether": true
@@ -5636,6 +5986,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Putrid Alcove": {
                             "type": "or",
@@ -5789,6 +6140,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Arena Tunnel": {
                             "type": "and",
@@ -6133,6 +6485,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Forgotten Bridge": {
                             "type": "and",
@@ -6571,6 +6924,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Falls": {
                             "type": "and",
@@ -6744,6 +7098,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Falls": {
                             "type": "and",
@@ -7679,6 +8034,7 @@
         },
         "Grove Access": {
             "default_node": "Door to Torvus Grove",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1180978245,
                 "in_dark_aether": false
@@ -7707,6 +8063,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Forgotten Bridge": {
                             "type": "and",
@@ -7740,6 +8097,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Grove": {
                             "type": "and",
@@ -7754,6 +8112,9 @@
         },
         "Poisoned Bog": {
             "default_node": "Door to Cache A",
+            "hint_features": [
+                "water"
+            ],
             "extra": {
                 "asset_id": 350405542,
                 "in_dark_aether": true
@@ -7782,6 +8143,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Beacon)": {
                             "type": "resource",
@@ -7807,7 +8169,7 @@
                     "node_type": "dock",
                     "heal": true,
                     "coordinates": null,
-                    "description": "https://youtu.be/Myr8MRM5ZDc?list=PLPFZVy8SRe3tAkQMzVw8vWt_w_AF2_l91&t=182",
+                    "description": "https://youtu.be/Myr8MRM5ZDc&t=182",
                     "layers": [
                         "default"
                     ],
@@ -7867,6 +8229,7 @@
                             ]
                         }
                     },
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Beacon)": {
                             "type": "or",
@@ -7940,6 +8303,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Beacon)": {
                             "type": "and",
@@ -8148,15 +8512,43 @@
                 "Pickup (Sky Temple Key 3)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 196.21,
+                        "y": -92.88,
+                        "z": 23.9
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "SkyTempleKey",
+                            "connections": [],
+                            "removals": [
+                                983067,
+                                983234
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.6,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 983239,
+                                "hud_memo": 983242,
+                                "streamed_audio": 983248,
+                                "sound": 983237,
+                                "audio_fade": 983241
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 68,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Central Safe Zone (Beacon)": {
                             "type": "and",
@@ -8676,6 +9068,9 @@
         },
         "Venomous Pond": {
             "default_node": "Door to Brooding Ground",
+            "hint_features": [
+                "grapple"
+            ],
             "extra": {
                 "asset_id": 2240736467,
                 "in_dark_aether": true
@@ -8717,6 +9112,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Brooding Ground": {
                             "type": "and",
@@ -8982,6 +9378,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station 1": {
                             "type": "and",
@@ -9266,6 +9663,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station 1": {
                             "type": "and",
@@ -9664,6 +10062,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Liftvine": {
                             "type": "or",
@@ -9708,15 +10107,43 @@
                 "Pickup (Dark Torvus Key 3)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 7.71,
+                        "y": -123.77,
+                        "z": 50.17
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "DarkTempleKey",
+                            "connections": [],
+                            "removals": [
+                                1048626,
+                                1048621
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.6,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 1049014,
+                                "hud_memo": 1049018,
+                                "streamed_audio": 1049022,
+                                "sound": 1049012,
+                                "audio_fade": 1049021
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 69,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Save Station 1": {
                             "type": "resource",
@@ -10734,6 +11161,9 @@
         },
         "Temple Access": {
             "default_node": "Door to Great Bridge (Top)",
+            "hint_features": [
+                "morph"
+            ],
             "extra": {
                 "asset_id": 121681107,
                 "in_dark_aether": false
@@ -10762,6 +11192,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Pickup": {
                             "type": "and",
@@ -10795,6 +11226,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Pickup": {
                             "type": "resource",
@@ -10830,6 +11262,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Pickup": {
                             "type": "resource",
@@ -10865,6 +11298,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Pickup": {
                             "type": "and",
@@ -10878,15 +11312,42 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -50.77,
+                        "y": -123.72,
+                        "z": 37.05
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EnergyTank",
+                            "connections": [],
+                            "removals": [
+                                1114220
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 1114230,
+                                "hud_memo": 1114224,
+                                "streamed_audio": 1114223,
+                                "sound": 1114229,
+                                "audio_fade": 1114221
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 70,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Below Pickup": {
                             "type": "and",
@@ -11138,6 +11599,7 @@
         },
         "Torvus Map Station": {
             "default_node": "Door to Great Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 673929343,
                 "in_dark_aether": false
@@ -11166,6 +11628,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Map Station": {
                             "type": "and",
@@ -11200,6 +11663,11 @@
         },
         "Torvus Plaza": {
             "default_node": "Door to Plaza Access",
+            "hint_features": [
+                "boost",
+                "orb_cannon",
+                "spider"
+            ],
             "extra": {
                 "asset_id": 1978751231,
                 "in_dark_aether": false
@@ -11228,6 +11696,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "or",
@@ -11383,6 +11852,77 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "https://www.youtube.com/watch?v=pUYX81KhsGg",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "MorphBall",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Boost",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Bombs",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Movement",
+                                                        "amount": 4,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "BSJ",
+                                                        "amount": 4,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "SpaceJump",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "StandableTerrain",
+                                                        "amount": 3,
+                                                        "negate": false
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 ]
                             }
@@ -11392,15 +11932,42 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 14.98,
+                        "y": 282.93,
+                        "z": 106.58
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EnergyTank",
+                            "connections": [],
+                            "removals": [
+                                1245320
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 1245318,
+                                "hud_memo": 1245323,
+                                "streamed_audio": 1245322,
+                                "sound": 1245317,
+                                "audio_fade": 1245321
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 71,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Plaza Access": {
                             "type": "and",
@@ -11502,6 +12069,7 @@
         },
         "Dark Arena Tunnel": {
             "default_node": "Door to Dark Forgotten Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 957217977,
                 "in_dark_aether": true
@@ -11530,6 +12098,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Torvus Arena": {
                             "type": "and",
@@ -11709,6 +12278,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Forgotten Bridge": {
                             "type": "and",
@@ -11886,6 +12456,7 @@
         },
         "Putrid Alcove": {
             "default_node": "Door to Poisoned Bog",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3418828153,
                 "in_dark_aether": true
@@ -11914,6 +12485,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Forgotten Bridge": {
                             "type": "or",
@@ -12183,6 +12755,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Poisoned Bog": {
                             "type": "or",
@@ -12432,15 +13005,42 @@
                 "Pickup (Power Bomb)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 120.22,
+                        "y": -49.37,
+                        "z": 39.99
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "PowerBombExpansion",
+                            "connections": [],
+                            "removals": [
+                                1376429
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 1376439,
+                                "hud_memo": 1376437,
+                                "streamed_audio": 1376435,
+                                "sound": 1376438,
+                                "audio_fade": 1376436
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 72,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Poisoned Bog": {
                             "type": "and",
@@ -12760,6 +13360,7 @@
         },
         "Brooding Ground": {
             "default_node": "Door to Dark Forgotten Bridge",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3706669497,
                 "in_dark_aether": true
@@ -12788,6 +13389,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Venomous Pond": {
                             "type": "and",
@@ -12989,6 +13591,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Forgotten Bridge": {
                             "type": "and",
@@ -13188,6 +13791,7 @@
         },
         "Dark Falls": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 774215801,
                 "in_dark_aether": true
@@ -13403,6 +14007,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "or",
@@ -13493,6 +14098,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "or",
@@ -13564,6 +14170,9 @@
         },
         "Torvus Grove": {
             "default_node": "Door to Underground Tunnel",
+            "hint_features": [
+                "boost"
+            ],
             "extra": {
                 "asset_id": 3896048152,
                 "in_dark_aether": false
@@ -13592,6 +14201,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Underground Tunnel": {
                             "type": "and",
@@ -13625,6 +14235,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Grove Access": {
                             "type": "and",
@@ -13641,28 +14252,10 @@
                                         }
                                     },
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
-                                            "name": "SpaceJump",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
                                         "type": "or",
                                         "data": {
                                             "comment": null,
                                             "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Boost",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
                                                 {
                                                     "type": "and",
                                                     "data": {
@@ -13672,10 +14265,137 @@
                                                                 "type": "resource",
                                                                 "data": {
                                                                     "type": "items",
-                                                                    "name": "ScrewAttack",
+                                                                    "name": "Boost",
                                                                     "amount": 1,
                                                                     "negate": false
                                                                 }
+                                                            },
+                                                            {
+                                                                "type": "or",
+                                                                "data": {
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "SpaceJump",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "items",
+                                                                                            "name": "Bombs",
+                                                                                            "amount": 1,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "or",
+                                                                                        "data": {
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "and",
+                                                                                                    "data": {
+                                                                                                        "comment": "https://www.youtube.com/watch?v=JTfbOmmyfZ8",
+                                                                                                        "items": [
+                                                                                                            {
+                                                                                                                "type": "resource",
+                                                                                                                "data": {
+                                                                                                                    "type": "tricks",
+                                                                                                                    "name": "BSJ",
+                                                                                                                    "amount": 4,
+                                                                                                                    "negate": false
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "or",
+                                                                                                                "data": {
+                                                                                                                    "comment": null,
+                                                                                                                    "items": [
+                                                                                                                        {
+                                                                                                                            "type": "resource",
+                                                                                                                            "data": {
+                                                                                                                                "type": "tricks",
+                                                                                                                                "name": "Dash",
+                                                                                                                                "amount": 2,
+                                                                                                                                "negate": false
+                                                                                                                            }
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "resource",
+                                                                                                                            "data": {
+                                                                                                                                "type": "tricks",
+                                                                                                                                "name": "SlopeJump",
+                                                                                                                                "amount": 3,
+                                                                                                                                "negate": false
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "and",
+                                                                                                    "data": {
+                                                                                                        "comment": "https://www.youtube.com/watch?v=pXscSB2QLcQ",
+                                                                                                        "items": [
+                                                                                                            {
+                                                                                                                "type": "template",
+                                                                                                                "data": "Use Screw Attack (No Space Jump)"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "resource",
+                                                                                                                "data": {
+                                                                                                                    "type": "tricks",
+                                                                                                                    "name": "BombJump",
+                                                                                                                    "amount": 4,
+                                                                                                                    "negate": false
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "resource",
+                                                                                                                "data": {
+                                                                                                                    "type": "tricks",
+                                                                                                                    "name": "Movement",
+                                                                                                                    "amount": 4,
+                                                                                                                    "negate": false
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Use Screw Attack (Space Jump)"
                                                             },
                                                             {
                                                                 "type": "resource",
@@ -13771,6 +14491,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Grove Access": {
                             "type": "and",
@@ -13823,15 +14544,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -201.35,
+                        "y": 82.1,
+                        "z": 34.71
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                1572906
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 1572914,
+                                "hud_memo": 1572912,
+                                "streamed_audio": 1572911,
+                                "sound": 1572915,
+                                "audio_fade": 1572907
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 73,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Underground Tunnel": {
                             "type": "and",
@@ -13867,6 +14615,7 @@
         },
         "Dark Torvus Temple Access": {
             "default_node": "Door to Venomous Pond",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3851937017,
                 "in_dark_aether": true
@@ -13895,6 +14644,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Torvus Temple": {
                             "type": "and",
@@ -14007,6 +14757,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Venomous Pond": {
                             "type": "and",
@@ -14100,6 +14851,7 @@
         },
         "Save Station 1": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2591519810,
                 "unlocked_save_station": true,
@@ -14151,6 +14903,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -14167,6 +14920,11 @@
         },
         "Torvus Temple": {
             "default_node": "Door to Temple Access (Top)",
+            "hint_features": [
+                "elevator",
+                "temple",
+                "translator_gate"
+            ],
             "extra": {
                 "asset_id": 3863006870,
                 "in_dark_aether": false,
@@ -14196,6 +14954,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Temple Access (Top)": {
                             "type": "resource",
@@ -14238,6 +14997,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -14297,6 +15057,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile)": {
                             "type": "resource",
@@ -14355,7 +15116,7 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": null,
-                    "description": "https://www.youtube.com/watch?v=WNMbKEZjDz0&list=PLZkUEWCHwYRyXIU-to88js2M6mEOBoHUy&index=33",
+                    "description": "<https://youtu.be/WNMbKEZjDz0>",
                     "layers": [
                         "default"
                     ],
@@ -14415,6 +15176,7 @@
                             ]
                         }
                     },
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Level": {
                             "type": "resource",
@@ -14450,6 +15212,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -14483,6 +15246,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Level": {
                             "type": "and",
@@ -14515,15 +15279,57 @@
                 "Pickup (Super Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -219.48,
+                        "y": -123.76,
+                        "z": 50.25
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "SuperMissile",
+                            "connections": [
+                                {
+                                    "target": 1770461,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 1770207,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 1770207,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                1769667,
+                                538641266,
+                                1769484
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 1770204,
+                                "hud_memo": 1770209,
+                                "streamed_audio": 1770210,
+                                "sound": 1770214,
+                                "audio_fade": 1770206
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 74,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Controller Access": {
                             "type": "and",
@@ -14762,6 +15568,10 @@
         },
         "Dark Torvus Arena": {
             "default_node": "Door to Dark Arena Tunnel",
+            "hint_features": [
+                "boost",
+                "luminoth_corpse"
+            ],
             "extra": {
                 "asset_id": 2761578287,
                 "in_dark_aether": true
@@ -14790,6 +15600,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup 2 (Dark Torvus Key 1)": {
                             "type": "and",
@@ -14989,17 +15800,55 @@
                 "Pickup (Boost Ball)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 14.79,
+                        "y": 322.98,
+                        "z": 56.93
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {
-                        "boss": "sub-guardian"
+                        "boss": "sub-guardian",
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "BoostBall",
+                            "connections": [
+                                {
+                                    "target": 471597669,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 471597669,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                1835113,
+                                471597648
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 1835116,
+                                "hud_memo": 1835121,
+                                "streamed_audio": 1835117,
+                                "sound": 1835170,
+                                "audio_fade": 1835120
+                            }
+                        }
                     },
                     "valid_starting_location": false,
                     "pickup_index": 75,
                     "location_category": "major",
+                    "hint_features": [
+                        "boss"
+                    ],
                     "connections": {
                         "Central Safe Zone": {
                             "type": "and",
@@ -15032,15 +15881,43 @@
                 "Pickup 2 (Dark Torvus Key 1)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 25.93,
+                        "y": 242.98,
+                        "z": 76.12
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "DarkTempleKey",
+                            "connections": [],
+                            "removals": [
+                                1835118,
+                                1835341
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.6,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 1835351,
+                                "hud_memo": 1835348,
+                                "streamed_audio": 1835342,
+                                "sound": 1835353,
+                                "audio_fade": 1835345
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 76,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Dark Arena Tunnel": {
                             "type": "and",
@@ -15666,6 +16543,7 @@
         },
         "Polluted Mire": {
             "default_node": "Door to Gloom Vista",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2208154870,
                 "in_dark_aether": true
@@ -15694,6 +16572,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gloom Vista": {
                             "type": "or",
@@ -15758,6 +16637,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Falls": {
                             "type": "or",
@@ -15954,6 +16834,10 @@
         },
         "Underground Tunnel": {
             "default_node": "Door to Torvus Temple",
+            "hint_features": [
+                "lore",
+                "morph"
+            ],
             "extra": {
                 "asset_id": 2162589584,
                 "in_dark_aether": false
@@ -15982,6 +16866,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Grove": {
                             "type": "resource",
@@ -16026,6 +16911,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Temple": {
                             "type": "and",
@@ -16129,15 +17015,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -192.22,
+                        "y": -62.23,
+                        "z": 30.41
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                1966214
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 1966211,
+                                "hud_memo": 1966217,
+                                "streamed_audio": 1966221,
+                                "sound": 1966213,
+                                "audio_fade": 1966218
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 77,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Torvus Temple": {
                             "type": "resource",
@@ -16204,6 +17117,10 @@
         },
         "Meditation Vista": {
             "default_node": "Door to Torvus Grove",
+            "hint_features": [
+                "abyss",
+                "portal"
+            ],
             "extra": {
                 "asset_id": 1576678107,
                 "in_dark_aether": false
@@ -16232,6 +17149,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Grove": {
                             "type": "and",
@@ -16265,6 +17183,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Gloom Vista": {
                             "type": "and",
@@ -16418,15 +17337,42 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -116.2,
+                        "y": 187.98,
+                        "z": 31.29
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EnergyTank",
+                            "connections": [],
+                            "removals": [
+                                2031771
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 2031654,
+                                "hud_memo": 2031657,
+                                "streamed_audio": 2031655,
+                                "sound": 2031651,
+                                "audio_fade": 2031662
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 78,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Torvus Grove": {
                             "type": "or",
@@ -16455,6 +17401,12 @@
         },
         "Dark Torvus Temple": {
             "default_node": "Central Safe Zone (Top)",
+            "hint_features": [
+                "boss",
+                "elevator",
+                "grapple",
+                "temple"
+            ],
             "extra": {
                 "asset_id": 912503189,
                 "in_dark_aether": true
@@ -16483,6 +17435,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Bottom)": {
                             "type": "and",
@@ -16564,6 +17517,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Bottom)": {
                             "type": "resource",
@@ -16599,6 +17553,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Bottom)": {
                             "type": "and",
@@ -16651,6 +17606,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone (Bottom)": {
                             "type": "and",
@@ -16712,17 +17668,53 @@
                 "Pickup (Dark Visor)": {
                     "node_type": "pickup",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -166.49,
+                        "y": -123.68,
+                        "z": 49.57
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {
-                        "boss": "guardian"
+                        "boss": "guardian",
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": true,
+                            "original_model": "EchoVisor",
+                            "connections": [
+                                {
+                                    "target": 941622762,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 941622762,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                941621420,
+                                941622750
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 941621427,
+                                "hud_memo": 941621425,
+                                "streamed_audio": 941621426,
+                                "sound": 941621428,
+                                "audio_fade": 941621423
+                            }
+                        }
                     },
                     "valid_starting_location": false,
                     "pickup_index": 79,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Central Safe Zone (Top)": {
                             "type": "and",
@@ -17558,6 +18550,7 @@
         },
         "Transport to Agon Wastes": {
             "default_node": "Elevator to Agon Wastes",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3479543630,
                 "in_dark_aether": false
@@ -17567,7 +18560,7 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": null,
-                    "description": "https://www.youtube.com/watch?v=Fup9-vStwKI&list=PLevfta9o_QKWuQNXAnmBXtzW4nmU5VLyN&index=65",
+                    "description": "<https://youtu.be/Myr8MRM5ZDc&t=153>",
                     "layers": [
                         "default"
                     ],
@@ -17627,6 +18620,7 @@
                             ]
                         }
                     },
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Agon Wastes": {
                             "type": "resource",
@@ -17664,6 +18658,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Torvus Temple Access",
                     "connections": {
                         "Door to Torvus Temple": {
                             "type": "and",
@@ -17678,6 +18673,7 @@
         },
         "Underground Transport": {
             "default_node": "Door to Torvus Temple",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2455297154,
                 "in_dark_aether": false
@@ -17706,6 +18702,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrodynamo Station": {
                             "type": "resource",
@@ -17741,6 +18738,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Temple": {
                             "type": "and",
@@ -17774,6 +18772,7 @@
         },
         "Controller Access": {
             "default_node": "Door to Torvus Temple",
+            "hint_features": [],
             "extra": {
                 "asset_id": 720788297,
                 "in_dark_aether": false
@@ -17802,6 +18801,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Energy Controller": {
                             "type": "or",
@@ -17883,6 +18883,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Torvus Temple": {
                             "type": "or",
@@ -17945,6 +18946,7 @@
         },
         "Gloom Vista": {
             "default_node": "Door to Polluted Mire",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2504558791,
                 "in_dark_aether": true
@@ -17973,6 +18975,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Polluted Mire": {
                             "type": "resource",
@@ -18008,6 +19011,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Meditation Vista": {
                             "type": "or",
@@ -18066,6 +19070,7 @@
         },
         "Ammo Station": {
             "default_node": "Door to Dark Torvus Temple",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2258105898,
                 "in_dark_aether": true
@@ -18094,6 +19099,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Station": {
                             "type": "resource",
@@ -18132,6 +19138,7 @@
         },
         "Cache B": {
             "default_node": "Door to Dark Torvus Temple",
+            "hint_features": [],
             "extra": {
                 "asset_id": 7688697,
                 "in_dark_aether": true
@@ -18160,6 +19167,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "resource",
@@ -18175,15 +19183,42 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -248.52,
+                        "y": -123.25,
+                        "z": 32.74
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EnergyTank",
+                            "connections": [],
+                            "removals": [
+                                2490373
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 2490385,
+                                "hud_memo": 2490416,
+                                "streamed_audio": 2490417,
+                                "sound": 2490403,
+                                "audio_fade": 2490408
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 80,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Dark Torvus Temple": {
                             "type": "or",
@@ -18242,6 +19277,7 @@
         },
         "Dark Controller Access": {
             "default_node": "Door to Dark Torvus Temple",
+            "hint_features": [],
             "extra": {
                 "asset_id": 298078827,
                 "in_dark_aether": true
@@ -18270,6 +19306,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Torvus Temple": {
                             "type": "and",
@@ -18368,6 +19405,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dark Torvus Energy Controller": {
                             "type": "and",
@@ -18447,6 +19485,9 @@
         },
         "Hydrodynamo Station": {
             "default_node": "Door to Underground Transport",
+            "hint_features": [
+                "water"
+            ],
             "extra": {
                 "asset_id": 3585454182,
                 "in_dark_aether": false
@@ -18475,6 +19516,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gathering Access": {
                             "type": "and",
@@ -18749,6 +19791,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Underground Transport": {
                             "type": "and",
@@ -18784,6 +19827,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Underground Transport": {
                             "type": "and",
@@ -18897,6 +19941,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Underground Transport": {
                             "type": "and",
@@ -19026,6 +20071,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Underground Transport": {
                             "type": "and",
@@ -19118,7 +20164,7 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": null,
-                    "description": "<https://youtu.be/Myr8MRM5ZDc?list=PLPFZVy8SRe3tAkQMzVw8vWt_w_AF2_l91&t=134>",
+                    "description": "<https://youtu.be/Myr8MRM5ZDc&t=134>",
                     "layers": [
                         "default"
                     ],
@@ -19284,6 +20330,7 @@
                             ]
                         }
                     },
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile)": {
                             "type": "and",
@@ -19330,15 +20377,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -166.2,
+                        "y": -100.57,
+                        "z": -33.79
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                2621681
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 2621639,
+                                "hud_memo": 2621677,
+                                "streamed_audio": 2621676,
+                                "sound": 2621682,
+                                "audio_fade": 2621674
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 81,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Training Access": {
                             "type": "and",
@@ -20034,6 +21108,12 @@
         },
         "Torvus Energy Controller": {
             "default_node": "Door to Controller Access",
+            "hint_features": [
+                "energy_controller",
+                "light_beam_transport",
+                "lore",
+                "luminoth_corpse"
+            ],
             "extra": {
                 "asset_id": 322696632,
                 "in_dark_aether": false
@@ -20062,6 +21142,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Great Temple": {
                             "type": "resource",
@@ -20118,15 +21199,51 @@
                 "Pickup (Emerald Translator)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -372.43,
+                        "y": -112.88,
+                        "z": 102.36
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "custom",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EmeraldTranslator",
+                            "connections": [
+                                {
+                                    "target": 2687289,
+                                    "message": "ZERO"
+                                },
+                                {
+                                    "target": 2686988,
+                                    "message": "STRT"
+                                }
+                            ],
+                            "removals": [
+                                2687032,
+                                472449329
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "collision_size": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 2.0
+                            },
+                            "layer": "Default"
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 82,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Controller Access": {
                             "type": "and",
@@ -20162,6 +21279,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Controller Access": {
                             "type": "and",
@@ -20197,6 +21315,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Controller Access": {
                             "type": "and",
@@ -20232,6 +21351,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Controller Access": {
                             "type": "and",
@@ -20338,6 +21458,7 @@
         },
         "Undertemple Shaft": {
             "default_node": "Spawn Point",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3000230508,
                 "in_dark_aether": true
@@ -20366,6 +21487,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertemple Access": {
                             "type": "resource",
@@ -20577,6 +21699,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Crypt Tunnel": {
                             "type": "and",
@@ -20795,6 +21918,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Spawn Point": {
                             "type": "and",
@@ -20842,6 +21966,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Crypt Tunnel": {
                             "type": "or",
@@ -21617,6 +22742,7 @@
         },
         "Dark Torvus Energy Controller": {
             "default_node": "Door to Dark Controller Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1591201049,
                 "in_dark_aether": true
@@ -21645,6 +22771,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Dark Torvus Energy Taken": {
                             "type": "or",
@@ -21768,6 +22895,7 @@
         },
         "Gathering Access": {
             "default_node": "Door to Hydrodynamo Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1393426305,
                 "in_dark_aether": false
@@ -21798,6 +22926,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gathering Hall": {
                             "type": "and",
@@ -21831,6 +22960,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrodynamo Station": {
                             "type": "and",
@@ -21845,6 +22975,7 @@
         },
         "Training Access": {
             "default_node": "Door to Hydrodynamo Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2007998417,
                 "in_dark_aether": false
@@ -21873,6 +23004,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrodynamo Station": {
                             "type": "and",
@@ -21908,6 +23040,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Training Chamber": {
                             "type": "and",
@@ -21922,6 +23055,7 @@
         },
         "Catacombs Access": {
             "default_node": "Door to Catacombs",
+            "hint_features": [],
             "extra": {
                 "asset_id": 2999623881,
                 "in_dark_aether": false
@@ -21952,6 +23086,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Catacombs": {
                             "type": "and",
@@ -21985,6 +23120,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrodynamo Station": {
                             "type": "or",
@@ -22070,6 +23206,7 @@
         },
         "Save Station B": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3407240152,
                 "unlocked_save_station": true,
@@ -22119,6 +23256,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -22133,6 +23271,7 @@
         },
         "Hydrodynamo Shaft": {
             "default_node": "Door to Hydrodynamo Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 813912549,
                 "in_dark_aether": false
@@ -22161,6 +23300,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Main Hydrochamber": {
                             "type": "and",
@@ -22196,6 +23336,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Undertemple Access": {
                             "type": "or",
@@ -22305,6 +23446,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Undertemple Access": {
                             "type": "resource",
@@ -22382,6 +23524,7 @@
         },
         "Crypt Tunnel": {
             "default_node": "Door to Undertemple Shaft",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1304699309,
                 "in_dark_aether": true
@@ -22410,6 +23553,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Crypt": {
                             "type": "or",
@@ -22487,6 +23631,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertemple Shaft": {
                             "type": "or",
@@ -22545,6 +23690,7 @@
         },
         "Sacrificial Chamber Tunnel": {
             "default_node": "Door to Undertemple Shaft",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1709535693,
                 "in_dark_aether": true
@@ -22573,6 +23719,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertemple Shaft": {
                             "type": "or",
@@ -22676,6 +23823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sacrificial Chamber": {
                             "type": "or",
@@ -22760,6 +23908,7 @@
         },
         "Save Station 2": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "asset_id": 321212102,
                 "unlocked_save_station": true,
@@ -22811,6 +23960,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -22827,6 +23977,9 @@
         },
         "Undertemple Access": {
             "default_node": "Door to Undertemple Shaft",
+            "hint_features": [
+                "portal"
+            ],
             "extra": {
                 "asset_id": 700027128,
                 "in_dark_aether": true
@@ -22855,6 +24008,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertemple": {
                             "type": "resource",
@@ -22977,6 +24131,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Hydrodynamo Shaft": {
                             "type": "or",
@@ -23198,6 +24353,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Hydrodynamo Shaft": {
                             "type": "or",
@@ -23330,15 +24486,43 @@
                 "Pickup (Dark Torvus Key 2)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -158.68,
+                        "y": -155.7,
+                        "z": -90.95
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "DarkTempleKey",
+                            "connections": [],
+                            "removals": [
+                                3473468,
+                                3473438
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.6,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 3473648,
+                                "hud_memo": 3473644,
+                                "streamed_audio": 3473640,
+                                "sound": 3473649,
+                                "audio_fade": 3473641
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 83,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Portal to Hydrodynamo Shaft": {
                             "type": "resource",
@@ -23355,6 +24539,15 @@
         },
         "Gathering Hall": {
             "default_node": "Door to Transit Tunnel West",
+            "hint_features": [
+                "bomb_slot",
+                "boost",
+                "grapple",
+                "lore",
+                "orb_cannon",
+                "portal",
+                "spider"
+            ],
             "extra": {
                 "asset_id": 889276218,
                 "in_dark_aether": false
@@ -23383,6 +24576,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel South": {
                             "type": "and",
@@ -23550,6 +24744,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "resource",
@@ -23585,6 +24780,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Gathering Hall Portal Gate": {
                             "type": "or",
@@ -23754,6 +24950,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel West": {
                             "type": "and",
@@ -24013,15 +25210,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -323.41,
+                        "y": -214.7,
+                        "z": -28.22
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                3539111
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 3539117,
+                                "hud_memo": 3539109,
+                                "streamed_audio": 3539110,
+                                "sound": 3539115,
+                                "audio_fade": 3539114
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 84,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Transit Tunnel South": {
                             "type": "and",
@@ -25526,6 +26750,13 @@
         },
         "Training Chamber": {
             "default_node": "Door to Training Access",
+            "hint_features": [
+                "bomb_slot",
+                "boost_spinner",
+                "lore",
+                "spider",
+                "water"
+            ],
             "extra": {
                 "asset_id": 1270197856,
                 "in_dark_aether": false
@@ -25556,6 +26787,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -25645,6 +26877,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transit Tunnel East": {
                             "type": "and",
@@ -25986,6 +27219,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -26140,6 +27374,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -26202,15 +27437,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -166.38,
+                        "y": 65.14,
+                        "z": -40.67
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                3604852
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 3604859,
+                                "hud_memo": 3604849,
+                                "streamed_audio": 3604853,
+                                "sound": 3604860,
+                                "audio_fade": 3604855
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 85,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -27313,6 +28575,7 @@
         },
         "Catacombs": {
             "default_node": "Door to Transit Tunnel East",
+            "hint_features": [],
             "extra": {
                 "asset_id": 4217540043,
                 "in_dark_aether": false
@@ -27341,6 +28604,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -27374,6 +28638,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "or",
@@ -27434,6 +28699,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -27467,6 +28733,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -28192,6 +29459,7 @@
         },
         "Main Hydrochamber": {
             "default_node": "Door to Hydrochamber Storage",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3468345533,
                 "in_dark_aether": false
@@ -28222,6 +29490,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Undertemple": {
                             "type": "and",
@@ -29091,6 +30360,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrochamber Storage": {
                             "type": "or",
@@ -29145,6 +30415,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hydrochamber Storage": {
                             "type": "or",
@@ -29199,6 +30470,7 @@
         },
         "Crypt": {
             "default_node": "Portal to Gathering Hall",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3366472600,
                 "in_dark_aether": true
@@ -29227,6 +30499,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Portal to Gathering Hall": {
                             "type": "and",
@@ -29392,6 +30665,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertransit One": {
                             "type": "and",
@@ -29498,6 +30772,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Undertransit One": {
                             "type": "and",
@@ -30252,6 +31527,10 @@
         },
         "Sacrificial Chamber": {
             "default_node": "Door to Sacrificial Chamber Tunnel",
+            "hint_features": [
+                "boss",
+                "grapple"
+            ],
             "extra": {
                 "asset_id": 1654100212,
                 "in_dark_aether": true
@@ -30280,6 +31559,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Front of Broken Statue": {
                             "type": "or",
@@ -30375,6 +31655,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Grapple Guardian": {
                             "type": "and",
@@ -30453,6 +31734,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Front of Broken Statue": {
                             "type": "or",
@@ -30528,17 +31810,53 @@
                 "Pickup (Grapple Beam)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -166.91,
+                        "y": 28.13,
+                        "z": -28.74
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {
-                        "boss": "sub-guardian"
+                        "boss": "sub-guardian",
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": true,
+                            "original_model": "GrappleBeam",
+                            "connections": [
+                                {
+                                    "target": 205193759,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 205193759,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                205193765,
+                                272302343
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 205193775,
+                                "hud_memo": 205193760,
+                                "streamed_audio": 205193771,
+                                "sound": 205193616,
+                                "audio_fade": 205193773
+                            }
+                        }
                     },
                     "valid_starting_location": false,
                     "pickup_index": 86,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Front of Broken Statue": {
                             "type": "resource",
@@ -31240,6 +32558,12 @@
         },
         "Undertemple": {
             "default_node": "Portal to Main Hydrochamber",
+            "hint_features": [
+                "bomb_slot",
+                "portal",
+                "screw_attack_wall",
+                "spider"
+            ],
             "extra": {
                 "asset_id": 2242084895,
                 "in_dark_aether": true
@@ -31310,6 +32634,7 @@
                             ]
                         }
                     },
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Power Bomb Guardian": {
                             "type": "resource",
@@ -31371,6 +32696,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile)": {
                             "type": "and",
@@ -31433,15 +32759,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -171.85,
+                        "y": -79.43,
+                        "z": -104.19
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                3932234
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 3932385,
+                                "hud_memo": 3932377,
+                                "streamed_audio": 3932383,
+                                "sound": 3932374,
+                                "audio_fade": 3932380
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 87,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Portal to Main Hydrochamber": {
                             "type": "resource",
@@ -31457,17 +32810,55 @@
                 "Pickup 2 (Power Bomb)": {
                     "node_type": "pickup",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -159.0,
+                        "y": -123.94,
+                        "z": -110.61
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
                     "extra": {
-                        "boss": "sub-guardian"
+                        "boss": "sub-guardian",
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "PowerBomb",
+                            "connections": [
+                                {
+                                    "target": 339477359,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 339477359,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                138149964,
+                                339477413
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 138150423,
+                                "hud_memo": 138150429,
+                                "streamed_audio": 138150432,
+                                "sound": 138150424,
+                                "audio_fade": 138150428
+                            }
+                        }
                     },
                     "valid_starting_location": false,
                     "pickup_index": 88,
                     "location_category": "major",
+                    "hint_features": [
+                        "boss"
+                    ],
                     "connections": {
                         "Door to Undertemple Access": {
                             "type": "or",
@@ -31934,6 +33325,11 @@
         },
         "Transit Tunnel South": {
             "default_node": "Door to Catacombs",
+            "hint_features": [
+                "bomb_slot",
+                "morph",
+                "water"
+            ],
             "extra": {
                 "asset_id": 3072694950,
                 "in_dark_aether": false
@@ -31962,6 +33358,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gathering Hall": {
                             "type": "and",
@@ -32092,6 +33489,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Catacombs": {
                             "type": "and",
@@ -32124,15 +33522,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -177.79,
+                        "y": -280.81,
+                        "z": -8.06
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                3997743
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 3997746,
+                                "hud_memo": 3997740,
+                                "streamed_audio": 3997745,
+                                "sound": 3997735,
+                                "audio_fade": 3997742
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 89,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Catacombs": {
                             "type": "and",
@@ -32166,6 +33591,7 @@
         },
         "Transit Tunnel West": {
             "default_node": "Door to Gathering Hall",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3780180813,
                 "in_dark_aether": false
@@ -32196,6 +33622,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gathering Hall": {
                             "type": "and",
@@ -32248,6 +33675,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Training Chamber": {
                             "type": "and",
@@ -32281,6 +33709,11 @@
         },
         "Transit Tunnel East": {
             "default_node": "Door to Training Chamber",
+            "hint_features": [
+                "bomb_slot",
+                "morph",
+                "water"
+            ],
             "extra": {
                 "asset_id": 1727410190,
                 "in_dark_aether": false
@@ -32311,9 +33744,10 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Catacombs": {
-                            "type": "or",
+                            "type": "and",
                             "data": {
                                 "comment": null,
                                 "items": [
@@ -32321,13 +33755,13 @@
                                         "type": "resource",
                                         "data": {
                                             "type": "items",
-                                            "name": "Gravity",
+                                            "name": "MorphBall",
                                             "amount": 1,
-                                            "negate": true
+                                            "negate": false
                                         }
                                     },
                                     {
-                                        "type": "and",
+                                        "type": "or",
                                         "data": {
                                             "comment": null,
                                             "items": [
@@ -32335,48 +33769,40 @@
                                                     "type": "resource",
                                                     "data": {
                                                         "type": "items",
-                                                        "name": "MorphBall",
+                                                        "name": "Bombs",
                                                         "amount": 1,
                                                         "negate": false
                                                     }
                                                 },
                                                 {
-                                                    "type": "or",
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Gravity",
+                                                        "amount": 1,
+                                                        "negate": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
                                                     "data": {
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "and",
+                                                                "type": "resource",
                                                                 "data": {
-                                                                    "comment": null,
-                                                                    "items": [
-                                                                        {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Boost",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
-                                                                        },
-                                                                        {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "WallBoost",
-                                                                                "amount": 4,
-                                                                                "negate": false
-                                                                            }
-                                                                        }
-                                                                    ]
+                                                                    "type": "items",
+                                                                    "name": "Boost",
+                                                                    "amount": 1,
+                                                                    "negate": false
                                                                 }
                                                             },
                                                             {
                                                                 "type": "resource",
                                                                 "data": {
-                                                                    "type": "items",
-                                                                    "name": "Bombs",
-                                                                    "amount": 1,
+                                                                    "type": "tricks",
+                                                                    "name": "WallBoost",
+                                                                    "amount": 4,
                                                                     "negate": false
                                                                 }
                                                             }
@@ -32449,6 +33875,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Training Chamber": {
                             "type": "and",
@@ -32533,15 +33960,42 @@
                 "Pickup (Energy Tank)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -35.97,
+                        "y": -33.67,
+                        "z": -14.37
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "EnergyTank",
+                            "connections": [],
+                            "removals": [
+                                4129027
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 4128859,
+                                "hud_memo": 4128868,
+                                "streamed_audio": 4128867,
+                                "sound": 4129005,
+                                "audio_fade": 4128863
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 90,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Training Chamber": {
                             "type": "and",
@@ -32556,6 +34010,7 @@
         },
         "Fortress Transport Access": {
             "default_node": "Door to Training Chamber",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1662585441,
                 "in_dark_aether": false
@@ -32584,6 +34039,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Sanctuary Fortress": {
                             "type": "or",
@@ -32706,6 +34162,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Training Chamber": {
                             "type": "and",
@@ -32720,6 +34177,10 @@
         },
         "Dungeon": {
             "default_node": "Spawn Point",
+            "hint_features": [
+                "portal",
+                "water"
+            ],
             "extra": {
                 "asset_id": 3152327598,
                 "in_dark_aether": true
@@ -32748,6 +34209,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Safe Zones": {
                             "type": "resource",
@@ -32783,6 +34245,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Safe Zones": {
                             "type": "resource",
@@ -32798,15 +34261,43 @@
                 "Pickup (Sky Temple Key 4)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -46.44,
+                        "y": -228.66,
+                        "z": -39.57
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "SkyTempleKey",
+                            "connections": [],
+                            "removals": [
+                                4260128,
+                                4260282
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.6,
+                                "z": 0.0
+                            },
+                            "instances": {
+                                "pickup": 4260134,
+                                "hud_memo": 4260127,
+                                "streamed_audio": 4260133,
+                                "sound": 4260124,
+                                "audio_fade": 4260130
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 91,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Safe Zones": {
                             "type": "and",
@@ -33183,6 +34674,10 @@
         },
         "Hydrochamber Storage": {
             "default_node": "Door to Main Hydrochamber",
+            "hint_features": [
+                "boss",
+                "water"
+            ],
             "extra": {
                 "asset_id": 2527519102,
                 "in_dark_aether": false
@@ -33213,6 +34708,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Hydrochamber Storage Item": {
                             "type": "or",
@@ -33245,15 +34741,52 @@
                 "Pickup (Gravity Boost)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -159.21,
+                        "y": -188.83,
+                        "z": -138.91
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "GravityBoost",
+                            "connections": [
+                                {
+                                    "target": 4325535,
+                                    "message": "ACTV"
+                                },
+                                {
+                                    "target": 4325535,
+                                    "message": "ZERO"
+                                }
+                            ],
+                            "removals": [
+                                4325460,
+                                4325515
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 4325440,
+                                "hud_memo": 4325432,
+                                "streamed_audio": 4325433,
+                                "sound": 4325429,
+                                "audio_fade": 4325437
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 92,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Main Hydrochamber": {
                             "type": "and",
@@ -33289,6 +34822,9 @@
         },
         "Undertransit One": {
             "default_node": "Door to Sacrificial Chamber",
+            "hint_features": [
+                "morph"
+            ],
             "extra": {
                 "asset_id": 1557447417,
                 "in_dark_aether": true
@@ -33317,6 +34853,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone": {
                             "type": "and",
@@ -33378,6 +34915,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Central Safe Zone": {
                             "type": "and",
@@ -33419,15 +34957,42 @@
                 "Pickup (Missile)": {
                     "node_type": "pickup",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -307.51,
+                        "y": -52.66,
+                        "z": -40.4
+                    },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "location_data": {
+                            "type": "standard",
+                            "exclude_memo_from_removal": false,
+                            "original_model": "MissileExpansion",
+                            "connections": [],
+                            "removals": [
+                                4390915
+                            ],
+                            "collision_offset": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 1.0
+                            },
+                            "instances": {
+                                "pickup": 4390935,
+                                "hud_memo": 4390914,
+                                "streamed_audio": 4390931,
+                                "sound": 4390934,
+                                "audio_fade": 4390916
+                            }
+                        }
+                    },
                     "valid_starting_location": false,
                     "pickup_index": 93,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Central Safe Zone": {
                             "type": "and",
@@ -33611,6 +35176,7 @@
         },
         "Undertransit Two": {
             "default_node": "Door to Sacrificial Chamber",
+            "hint_features": [],
             "extra": {
                 "asset_id": 1274848825,
                 "in_dark_aether": true
@@ -33639,6 +35205,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dungeon": {
                             "type": "and",
@@ -33768,6 +35335,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sacrificial Chamber": {
                             "type": "and",
@@ -33861,6 +35429,7 @@
         },
         "Transport to Sanctuary Fortress": {
             "default_node": "Elevator to Sanctuary Fortress",
+            "hint_features": [],
             "extra": {
                 "asset_id": 3205424168,
                 "in_dark_aether": false
@@ -33889,6 +35458,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Sanctuary Fortress": {
                             "type": "resource",
@@ -33926,6 +35496,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Lower Torvus Access",
                     "connections": {
                         "Door to Fortress Transport Access": {
                             "type": "and",

@@ -20,8 +20,9 @@ import socketio.exceptions
 
 import randovania
 from randovania.bitpacking import bitpacking, construct_pack
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description import default_database
-from randovania.games.game import RandovaniaGame
+from randovania.game_description.resources.pickup_index import PickupIndex
 from randovania.lib import container_lib
 from randovania.network_common import (
     admin_actions,
@@ -41,6 +42,7 @@ from randovania.network_common.multiplayer_session import (
     User,
     WorldUserInventory,
 )
+from randovania.network_common.remote_pickup import RemotePickup
 from randovania.network_common.world_sync import ServerSyncRequest, ServerSyncResponse
 
 if TYPE_CHECKING:
@@ -375,7 +377,11 @@ class NetworkClient:
                 world_id=uuid.UUID(data["world"]),
                 game=game,
                 pickups=tuple(
-                    (item["provider_name"], _decode_pickup(item["pickup"], resource_database))
+                    RemotePickup(
+                        item["provider_name"],
+                        _decode_pickup(item["pickup"], resource_database),
+                        PickupIndex(item["coop_location"]) if item["coop_location"] is not None else None,
+                    )
                     for item in data["pickups"]
                 ),
             )
@@ -517,9 +523,10 @@ class NetworkClient:
         self.connection_state = ConnectionState.ConnectedNotLogged
         await self.server_call("logout")
 
-    def _update_reported_username(self):
+    def _update_reported_username(self) -> None:
         if self.allow_reporting_username and self._current_user and self._current_user.discord_id:
-            sentry_sdk.set_user(
+            self.logger.info("Setting sentry user to %s (%d)", self._current_user.name, self._current_user.discord_id)
+            sentry_sdk.Scope.get_global_scope().set_user(
                 {
                     "id": self._current_user.discord_id,
                     "username": self._current_user.name,
@@ -527,17 +534,18 @@ class NetworkClient:
                 }
             )
         else:
-            sentry_sdk.set_user(None)
+            self.logger.info("Removing sentry user")
+            sentry_sdk.Scope.get_global_scope().set_user(None)
 
     @property
     def last_connection_error(self) -> str | None:
         return self._connect_error
 
     @property
-    def allow_reporting_username(self):
+    def allow_reporting_username(self) -> bool:
         return self._allow_reporting_username or randovania.is_dev_version()
 
     @allow_reporting_username.setter
-    def allow_reporting_username(self, value):
+    def allow_reporting_username(self, value: bool) -> None:
         self._allow_reporting_username = value
         self._update_reported_username()

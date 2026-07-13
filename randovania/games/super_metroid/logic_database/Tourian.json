@@ -6,6 +6,7 @@
     "areas": {
         "Tourian First Room": {
             "default_node": "Teleporter to Crateria",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DAAE",
                 "asset_id": 33
@@ -36,6 +37,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 1": {
                             "type": "and",
@@ -71,6 +73,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Upper Tourian Save Room": {
                             "type": "and",
@@ -116,6 +119,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 1": {
                             "type": "and",
@@ -130,6 +134,7 @@
         },
         "Upper Tourian Save Room": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DF1B",
                 "asset_id": 34,
@@ -161,6 +166,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -199,6 +205,7 @@
         },
         "Metroid Room 1": {
             "default_node": "Door to Tourian First Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DAE1",
                 "asset_id": 35
@@ -229,6 +236,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 2": {
                             "type": "and",
@@ -341,6 +349,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian First Room": {
                             "type": "and",
@@ -380,6 +389,7 @@
         },
         "Metroid Room 2": {
             "default_node": "Door to Metroid Room 1",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DB31",
                 "asset_id": 36
@@ -410,6 +420,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 3": {
                             "type": "and",
@@ -522,6 +533,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 1": {
                             "type": "and",
@@ -561,6 +573,7 @@
         },
         "Metroid Room 3": {
             "default_node": "Door to Metroid Room 2",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DB7D",
                 "asset_id": 37
@@ -591,6 +604,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 4": {
                             "type": "and",
@@ -703,6 +717,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 2": {
                             "type": "and",
@@ -742,6 +757,7 @@
         },
         "Metroid Room 4": {
             "default_node": "Door to Metroid Room 3",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DBCD",
                 "asset_id": 38
@@ -772,6 +788,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Blue Hopper Room": {
                             "type": "and",
@@ -884,6 +901,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 3": {
                             "type": "and",
@@ -923,6 +941,7 @@
         },
         "Blue Hopper Room": {
             "default_node": "Door to Dust Torizo Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DC19",
                 "asset_id": 39
@@ -953,6 +972,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Room 4": {
                             "type": "and",
@@ -988,6 +1008,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dust Torizo Room": {
                             "type": "and",
@@ -1002,6 +1023,7 @@
         },
         "Dust Torizo Room": {
             "default_node": "Door to Blue Hopper Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DC65",
                 "asset_id": 40
@@ -1032,6 +1054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Big Boy Room": {
                             "type": "and",
@@ -1067,6 +1090,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Blue Hopper Room": {
                             "type": "and",
@@ -1081,6 +1105,7 @@
         },
         "Big Boy Room": {
             "default_node": "Door to Dust Torizo Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DCB1",
                 "asset_id": 41
@@ -1111,6 +1136,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dust Torizo Room": {
                             "type": "and",
@@ -1146,6 +1172,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Seaweed Room": {
                             "type": "and",
@@ -1160,6 +1187,7 @@
         },
         "Seaweed Room": {
             "default_node": "Door to Big Boy Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DCFF",
                 "asset_id": 42
@@ -1190,6 +1218,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian Eye Door Room": {
                             "type": "and",
@@ -1225,6 +1254,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Big Boy Room": {
                             "type": "and",
@@ -1267,6 +1297,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian Eye Door Room": {
                             "type": "and",
@@ -1281,6 +1312,7 @@
         },
         "Tourian Recharge Room": {
             "default_node": "Door to Seaweed Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DD2E",
                 "asset_id": 43
@@ -1311,12 +1343,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Tourian Eye Door Room": {
             "default_node": "Door to Seaweed Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DDC4",
                 "asset_id": 44
@@ -1347,6 +1381,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Rinka Shaft": {
                             "type": "and",
@@ -1382,6 +1417,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Seaweed Room": {
                             "type": "and",
@@ -1396,6 +1432,7 @@
         },
         "Rinka Shaft": {
             "default_node": "Door to Lower Tourian Save Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DDF3",
                 "asset_id": 45
@@ -1426,6 +1463,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Mother Brain Room": {
                             "type": "and",
@@ -1468,6 +1506,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lower Tourian Save Room": {
                             "type": "and",
@@ -1503,6 +1542,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lower Tourian Save Room": {
                             "type": "and",
@@ -1517,6 +1557,7 @@
         },
         "Lower Tourian Save Room": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DE23",
                 "asset_id": 46,
@@ -1548,6 +1589,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -1586,6 +1628,7 @@
         },
         "Mother Brain Room": {
             "default_node": "Door to Rinka Shaft",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DD58",
                 "asset_id": 47
@@ -1616,6 +1659,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Defeat Mother Brain": {
                             "type": "and",
@@ -1730,6 +1774,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Event - Defeat Mother Brain": {
@@ -1761,6 +1806,7 @@
         },
         "Tourian Escape Room 1": {
             "default_node": "Door from Mother Brain Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DE4D",
                 "asset_id": 42069
@@ -1791,6 +1837,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian Escape Room 2": {
                             "type": "and",
@@ -1826,12 +1873,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Tourian Escape Room 2": {
             "default_node": "Door to Tourian Escape Room 3",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DE7A",
                 "asset_id": 48
@@ -1862,6 +1911,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Door from Tourian Escape Room 1": {
@@ -1889,6 +1939,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian Escape Room 3": {
                             "type": "and",
@@ -1903,6 +1954,7 @@
         },
         "Tourian Escape Room 3": {
             "default_node": "Door from Tourian Escape Room 2",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DEA7",
                 "asset_id": 49
@@ -1933,6 +1985,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tourian Escape Room 4": {
                             "type": "or",
@@ -1987,12 +2040,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Tourian Escape Room 4": {
             "default_node": "Door from Tourian Escape Room 3",
+            "hint_features": [],
             "extra": {
                 "map_name": "7DEDE",
                 "asset_id": 50
@@ -2023,6 +2078,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Climb": {
                             "type": "or",
@@ -2077,6 +2133,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }

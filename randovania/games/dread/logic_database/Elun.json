@@ -11,6 +11,7 @@
     "areas": {
         "Bridge Gate": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2600.0,
@@ -64,6 +65,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Purple Drapes": {
                             "type": "and",
@@ -99,6 +101,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Exterior Bridge": {
                             "type": "and",
@@ -113,6 +116,7 @@
         },
         "Transport to Ghavoran": {
             "default_node": "Shuttle to Ghavoran",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -17300.0,
@@ -173,6 +177,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point 1": {
                             "type": "and",
@@ -257,6 +262,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station": {
                             "type": "and",
@@ -298,6 +304,7 @@
         },
         "Purple Drapes": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -700.0,
@@ -358,6 +365,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Bridge Gate": {
                             "type": "resource",
@@ -420,6 +428,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ammo Recharge Station": {
                             "type": "and",
@@ -455,6 +464,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Start Point": {
@@ -510,6 +520,7 @@
         },
         "Ammo Recharge Station": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1300.0,
@@ -570,6 +581,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Soldier Arena": {
                             "type": "and",
@@ -612,6 +624,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Purple Drapes": {
                             "type": "and",
@@ -662,6 +675,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plasma Beam Room (Upper)": {
                             "type": "and",
@@ -691,6 +705,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 114,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Chozo Soldier Arena": {
                             "type": "and",
@@ -733,6 +748,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gyroscope Room": {
                             "type": "and",
@@ -795,6 +811,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Bottom Morph Launcher": {
                             "type": "and",
@@ -914,6 +931,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Release X": {
                             "type": "and",
@@ -949,6 +967,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plasma Beam Room (Lower)": {
                             "type": "and",
@@ -984,6 +1003,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Soldier Arena": {
                             "type": "template",
@@ -1071,6 +1091,7 @@
         },
         "Chozo Soldier Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3300.0,
@@ -1131,6 +1152,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spider Magnet Room": {
                             "type": "and",
@@ -1187,6 +1209,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ammo Recharge Station": {
                             "type": "and",
@@ -1267,6 +1290,7 @@
         },
         "Gyroscope Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3300.0,
@@ -1327,6 +1351,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spider Magnet Room": {
                             "type": "and",
@@ -1369,6 +1394,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ammo Recharge Station": {
                             "type": "and",
@@ -1415,6 +1441,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spider Magnet Room": {
                             "type": "template",
@@ -1450,6 +1477,7 @@
         },
         "Plasma Beam Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3400.0,
@@ -1498,6 +1526,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 115,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Ammo Recharge Station": {
                             "type": "and",
@@ -1540,6 +1569,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Plasma Beam)": {
                             "type": "and",
@@ -1596,6 +1626,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ammo Recharge Station": {
                             "type": "and",
@@ -1637,6 +1668,7 @@
         },
         "Spider Magnet Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5600.0,
@@ -1697,6 +1729,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gyroscope Room": {
                             "type": "and",
@@ -1749,6 +1782,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Chozo Soldier Arena": {
                             "type": "and",
@@ -1837,6 +1871,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gyroscope Room": {
                             "type": "and",
@@ -1865,6 +1900,7 @@
         },
         "Fan Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5600.0,
@@ -1925,6 +1961,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -2006,6 +2043,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 117,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -2108,6 +2146,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gyroscope Room": {
                             "type": "and",
@@ -2153,6 +2192,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -2201,6 +2241,7 @@
         },
         "Vertical Bomb Maze": {
             "default_node": "Life Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 7600.0,
@@ -2248,6 +2289,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 116,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Grapple Block Alcove": {
                             "type": "resource",
@@ -2369,6 +2411,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Beam Blocks": {
                             "type": "template",
@@ -2401,6 +2444,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Beam Blocks": {
                             "type": "template",
@@ -2433,6 +2477,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Grapple Block Alcove": {
                             "type": "and",
@@ -2487,6 +2532,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Life Recharge": {
                             "type": "and",
@@ -2710,6 +2756,7 @@
         },
         "Horizontal Bomb Maze": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3300.0,
@@ -2757,6 +2804,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 118,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Vertical Bomb Maze (Lower)": {
                             "type": "template",
@@ -2796,6 +2844,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Vertical Bomb Maze (Lower)": {
                             "type": "or",
@@ -2857,6 +2906,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Ammo Recharge Station": {
                             "type": "template",
@@ -2889,6 +2939,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -2939,6 +2990,7 @@
         },
         "Exterior Bridge": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -9700.0,
@@ -2999,6 +3051,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Bridge Gate": {
                             "type": "and",
@@ -3034,6 +3087,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station": {
                             "type": "and",
@@ -3048,6 +3102,7 @@
         },
         "Save Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -11700.0,
@@ -3108,6 +3163,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Ghavoran": {
                             "type": "and",
@@ -3150,6 +3206,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Exterior Bridge": {
                             "type": "and",
@@ -3200,6 +3257,7 @@
         },
         "Bottom Morph Launcher": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1300.0,
@@ -3269,6 +3327,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Ammo Recharge Station": {
                             "type": "and",
@@ -3304,6 +3363,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Fan Room": {
                             "type": "and",

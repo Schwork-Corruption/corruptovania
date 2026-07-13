@@ -5,7 +5,7 @@ Extra - polygon: [[-9200.0, 1800.0], [-9200.0, 100.0], [-7200.0, 100.0], [-5600.
 Extra - asset_id: collision_camera_002
 > Elevator to Area 5 Tower Lobby; Heals? False; Spawn Point; Default Node
   * Layers: default
-  * Elevator to Transport to Tower Interior East/Elevator to Area 5 Tower Interior
+  * Elevator to Transport to Tower Interior East/Elevator to Area 5 Tower Interior; Custom name: Tower Interior Elevator Southeast
   * Extra - actor_name: LE_Platform_Elevator_FromArea06A_01
   * Extra - actor_type: weightactivatedplatform
   * Extra - start_point_actor_name: ST_FromArea06A_01
@@ -196,7 +196,7 @@ Extra - asset_id: collision_camera_003
                   # SWJ: https://youtu.be/FD9VDKqt-MY?t=32
                   Single-wall Wall Jump (Beginner)
                   # Super Jump+UE
-                  Super Jump (Intermediate) and Unmorph Extend (Beginner)
+                  Morph Ball and Super Jump (Intermediate) and Unmorph Extend (Beginner)
           All of the following:
               # Jump out with HJ
               High Jump Boots
@@ -266,7 +266,7 @@ Extra - polygon: [[-3500.0, 5000.0], [-3500.0, 1100.0], [-1700.0, 1100.0], [-170
 Extra - asset_id: collision_camera_005
 > Elevator to Area 5 Tower Exterior; Heals? False; Spawn Point; Default Node
   * Layers: default
-  * Elevator to Tower Exterior/Elevator to Area 5 Tower Interior
+  * Elevator to Tower Exterior/Elevator to Area 5 Tower Interior; Custom name: Tower Interior Elevator Northeast
   * Extra - actor_name: LE_Platform_Elevator_FromArea06B_01
   * Extra - actor_type: weightactivatedplatform
   * Extra - start_point_actor_name: ST_FromArea06B_01
@@ -349,7 +349,7 @@ Extra - asset_id: collision_camera_006
   > Next to Pickup
       Trivial
 
-> Next to Pickup; Heals? False; Default Node
+> Next to Pickup; Heals? False; Spawn Point; Default Node
   * Layers: default
   * Extra - start_point_actor_name: ST_CheckPoint_006
   > Pickup (Plasma Beam)
@@ -469,7 +469,7 @@ Extra - asset_id: collision_camera_007
                   Any of the following:
                       Phase Drift
                       # Break the Screw Attack block then use spider
-                      Spider Ball and Mid-Air Morph (Beginner)
+                      Mid-Air Morph (Beginner) and Use Spider Ball
                       # Morph to lay bomb and immediately unmorph to grab ledge: https://youtu.be/Kh03Ra2Qn7Q
                       Movement (Advanced)
   > Event - Grapple Block
@@ -508,7 +508,7 @@ Extra - asset_id: collision_camera_008
           Morph Ball
           Any of the following:
               # Climb to the crumble blocks
-              Space Jump or Spider Ball
+              Space Jump or Use Spider Ball
               All of the following:
                   # IBJ up
                   Simple IBJ
@@ -520,7 +520,7 @@ Extra - asset_id: collision_camera_008
               Unmorph Extend (Advanced) and Defeat Weak Enemies
           Any of the following:
               # Traverse the crumble blocks
-              Phase Drift or Spider Ball
+              Phase Drift or Use Spider Ball
               # Phase Drift Skip: https://youtu.be/1faBrCKYtaY
               Phase Drift Skip (Advanced)
 
@@ -549,7 +549,7 @@ Extra - asset_id: collision_camera_008
           Morph Ball
           Any of the following:
               # Get up
-              Space Jump or Spider Ball
+              Space Jump or Use Spider Ball
               All of the following:
                   Gravity Suit
                   Any of the following:
@@ -603,7 +603,7 @@ Extra - asset_id: collision_camera_009
           All of the following:
               # IBJ
               Lay Bomb
-              Spring Ball or Mid-Air Morph (Intermediate) or Infinite Bomb Jump (Intermediate)
+              Mid-Air Morph (Intermediate) or Infinite Bomb Jump (Intermediate) or Use Spring Ball
           # Spider Ball above spike
           Mid-Air Morph (Beginner) and Use Spider Ball
 
@@ -615,7 +615,7 @@ Extra - asset_id: collision_camera_009
   > Next to Pickup
       Trivial
 
-> Next to Pickup; Heals? False; Default Node
+> Next to Pickup; Heals? False; Spawn Point; Default Node
   * Layers: default
   * Extra - start_point_actor_name: ST_CheckPoint_007
   > Pickup (Gravity Suit)
@@ -712,7 +712,7 @@ Extra - asset_id: collision_camera_011
               # Bomb way
               Lay Bomb
               Any of the following:
-                  Spider Ball
+                  Use Spider Ball
                   All of the following:
                       # Lay bomb in mid air then get back up to the ledge
                       Mid-Air Morph (Intermediate)
@@ -764,7 +764,7 @@ Extra - polygon: [[-12800.0, 900.0], [-12800.0, 141.14599609375], [-11500.0, 141
 Extra - asset_id: collision_camera_015
 > Elevator to Area 5 Tower Lobby; Heals? False; Spawn Point; Default Node
   * Layers: default
-  * Elevator to Transport to Tower Interior West/Elevator to Area 5 Tower Interior
+  * Elevator to Transport to Tower Interior West/Elevator to Area 5 Tower Interior; Custom name: Tower Interior Elevator Southwest
   * Extra - actor_name: LE_Platform_Elevator_FromArea06A_02
   * Extra - actor_type: weightactivatedplatform
   * Extra - start_point_actor_name: ST_FromArea06A_02
@@ -882,7 +882,7 @@ Extra - asset_id: collision_camera_017
           Any of the following:
               # Traverse the Screw Attack blocks
               Screw Attack
-              Morph Ball and Melee Clip (Intermediate)
+              Morph Ball and Melee Clip (Intermediate) and Out of Bounds Movement (Beginner)
           Any of the following:
               # Get across the pit
               Space Jump
@@ -900,7 +900,7 @@ Extra - asset_id: collision_camera_017
           Any of the following:
               # Traverse the Screw Attack blocks
               Screw Attack
-              Morph Ball and Melee Clip (Intermediate)
+              Morph Ball and Melee Clip (Intermediate) and Out of Bounds Movement (Intermediate)
   > Start Point
       Trivial
 
@@ -937,7 +937,7 @@ Extra - asset_id: collision_camera_017
               # Traverse the Screw Attack blocks
               Screw Attack
               All of the following:
-                  Morph Ball
+                  Morph Ball and Out of Bounds Movement (Beginner)
                   Any of the following:
                       Melee Clip (Advanced)
                       # Spider Ball to avoid the spikes near the clip location
@@ -981,7 +981,7 @@ Extra - asset_id: collision_camera_017
           Any of the following:
               # Traverse the Screw Attack blocks
               Screw Attack
-              Morph Ball and Melee Clip (Intermediate)
+              Morph Ball and Melee Clip (Intermediate) and Out of Bounds Movement (Beginner)
           Any of the following:
               # Reach the platform
               Space Jump
@@ -1009,8 +1009,10 @@ Extra - asset_id: collision_camera_017
   > Above Center Platform
       All of the following:
           Use Spider Ball
-          # Traverse the Screw Attack blocks
-          Screw Attack or Melee Clip (Intermediate)
+          Any of the following:
+              # Traverse the Screw Attack blocks
+              Screw Attack
+              Melee Clip (Intermediate) and Out of Bounds Movement (Intermediate)
           Any of the following:
               Lightning Armor
               Hazard Runs (Intermediate) and Hazard Damage ≥ 265
@@ -1044,13 +1046,15 @@ Extra - asset_id: collision_camera_017
   > Left Platform
       All of the following:
           Use Spider Ball
-          # Traverse the Screw Attack blocks
-          Screw Attack or Melee Clip (Intermediate)
+          Any of the following:
+              # Traverse the Screw Attack blocks
+              Screw Attack
+              Melee Clip (Intermediate) and Out of Bounds Movement (Beginner)
           Any of the following:
               Lightning Armor
               Hazard Runs (Intermediate) and Hazard Damage ≥ 265
 
-> Start Point; Heals? False; Default Node
+> Start Point; Heals? False; Spawn Point; Default Node
   * Layers: default
   * Extra - start_point_actor_name: ST_SG_Zeta_002
   > Door to Zeta+ Arena
@@ -1063,7 +1067,7 @@ Extra - polygon: [[-9050.0, 9400.0], [-9050.0, 8700.0], [-7600.0, 8700.0], [-760
 Extra - asset_id: collision_camera_018
 > Elevator to Area 5 Tower Exterior; Heals? False; Spawn Point; Default Node
   * Layers: default
-  * Elevator to Transport to Tower Interior West/Elevator to Area 5 Tower Interior
+  * Elevator to Transport to Tower Interior West/Elevator to Area 5 Tower Interior; Custom name: Tower Interior Elevator Northwest
   * Extra - actor_name: LE_Platform_Elevator_FromArea06B_02
   * Extra - actor_type: weightactivatedplatform
   * Extra - start_point_actor_name: ST_FromArea06B_02
@@ -1156,7 +1160,7 @@ Extra - asset_id: collision_camera_020
                           Mid-Air Morph (Intermediate) or Use Spring Ball
           Any of the following:
               # Avoid the crumble blocks
-              Phase Drift or Spider Ball
+              Phase Drift or Use Spider Ball
               Space Jump and Movement (Intermediate)
 
 > Door to Gravity Suit Chamber (Middle); Heals? False
@@ -1244,7 +1248,7 @@ Extra - asset_id: collision_camera_022
               # IBJ (Shoot blocks first)
               Infinite Bomb Jump (Intermediate) and Lay Bomb
 
-> Outside Arena; Heals? False; Default Node
+> Outside Arena; Heals? False; Spawn Point; Default Node
   * Layers: default
   * Extra - start_point_actor_name: ST_SG_Gamma_001
   > Door to Gamma+ Arena Access
@@ -1317,7 +1321,7 @@ Extra - asset_id: collision_camera_023
   * Extra - actor_type: doorpowerpower
   > Pickup (Missile Tank)
       # Clip off the teleporter platform
-      Spider Ball Clip (Intermediate) and Use Spider Ball
+      Out of Bounds Movement (Advanced) and Spider Ball Clip (Intermediate) and Use Spider Ball
   > Teleporter
       Trivial
   > Door to Grapple Shuffler (Bottom)

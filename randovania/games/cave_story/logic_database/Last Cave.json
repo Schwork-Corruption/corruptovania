@@ -6,6 +6,7 @@
     "areas": {
         "Final Cave": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Priso1",
                 "in_dark_aether": false
@@ -36,6 +37,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Balcony (Pre-Bosses)": {
                             "type": "template",
@@ -68,6 +70,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Plantation": {
                             "type": "template",
@@ -79,6 +82,9 @@
         },
         "Last Cave (Hidden)": {
             "default_node": null,
+            "hint_features": [
+                "boss"
+            ],
             "extra": {
                 "map_name": "Priso2",
                 "in_dark_aether": false
@@ -109,6 +115,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Red Demon": {
                             "type": "and",
@@ -196,6 +203,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 29,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Plantation": {
                             "type": "resource",
@@ -242,6 +250,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Red Demon": {
                             "type": "and",
@@ -387,6 +396,7 @@
         },
         "Balcony (Pre-Bosses)": {
             "default_node": "Door to Prefab Building",
+            "hint_features": [],
             "extra": {
                 "map_name": "Blcny1",
                 "in_dark_aether": false,
@@ -418,6 +428,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Door to Final Cave": {
@@ -445,6 +456,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Prefab Building": {
                             "type": "and",
@@ -480,6 +492,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Prefab Building": {
                             "type": "and",
@@ -515,6 +528,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Exit to Throne Room": {
                             "type": "resource",
@@ -834,6 +848,7 @@
         },
         "Prefab Building": {
             "default_node": "Save Point/Bed",
+            "hint_features": [],
             "extra": {
                 "map_name": "Prefa1",
                 "in_dark_aether": false,
@@ -865,6 +880,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Point/Bed": {
                             "type": "and",
@@ -903,6 +919,7 @@
         },
         "Throne Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Ring1",
                 "in_dark_aether": false
@@ -958,6 +975,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Misery": {
                             "type": "or",
@@ -1068,6 +1086,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "H/V Trigger to The King's Table": {
@@ -1095,6 +1114,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Exit to Balcony (Post-Bosses)": {
                             "type": "resource",
@@ -1111,6 +1131,7 @@
         },
         "The King's Table": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Ring2",
                 "in_dark_aether": false
@@ -1166,6 +1187,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Doctor": {
                             "type": "or",
@@ -1276,6 +1298,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "H/V Trigger to Throne Room": {
                             "type": "resource",
@@ -1292,6 +1315,7 @@
         },
         "Black Space": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Ring3",
                 "in_dark_aether": false
@@ -1347,6 +1371,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Undead Core": {
                             "type": "or",
@@ -1436,6 +1461,7 @@
         },
         "Balcony (Post-Bosses)": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Blcny2",
                 "in_dark_aether": false
@@ -1485,6 +1511,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Normal Ending": {
                             "type": "and",
@@ -1600,6 +1627,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Entrance from Prefab House": {
@@ -1627,6 +1655,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Entrance from Throne Room": {
                             "type": "and",
@@ -1641,6 +1670,7 @@
         },
         "Prefab House": {
             "default_node": "Save Point",
+            "hint_features": [],
             "extra": {
                 "map_name": "Prefa2",
                 "in_dark_aether": false
@@ -1671,6 +1701,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Exit to Balcony (Post-Bosses)": {
                             "type": "and",
@@ -1720,6 +1751,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Exit to Sacred Grounds - B1": {
@@ -1747,6 +1779,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Save Point": {
@@ -1777,6 +1810,7 @@
         },
         "Sacred Grounds - B1": {
             "default_node": "Event - Curly",
+            "hint_features": [],
             "extra": {
                 "map_name": "Hell1",
                 "in_dark_aether": false
@@ -1807,6 +1841,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Hell B1 Spot)": {
                             "type": "resource",
@@ -1844,6 +1879,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Hell B1 Spot)": {
                             "type": "resource",
@@ -1883,6 +1919,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 30,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Sacred Grounds - B2": {
                             "type": "resource",
@@ -1924,6 +1961,7 @@
         },
         "Sacred Grounds - B2": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Hell2",
                 "in_dark_aether": false
@@ -1954,6 +1992,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "H/V Trigger to Sacred Grounds - B3": {
                             "type": "template",
@@ -1986,6 +2025,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sacred Grounds - B1": {
                             "type": "template",
@@ -1997,6 +2037,7 @@
         },
         "Sacred Grounds - B3": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Hell3",
                 "in_dark_aether": false
@@ -2027,6 +2068,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "After Spike Pit": {
                             "type": "and",
@@ -2098,6 +2140,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 31,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "After Spike Pit": {
                             "type": "and",
@@ -2133,6 +2176,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Event - Heavy Press": {
@@ -2449,6 +2493,7 @@
         },
         "Corridor": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Ostep",
                 "in_dark_aether": false
@@ -2479,6 +2524,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Exit to Seal Chamber": {
                             "type": "and",
@@ -2514,6 +2560,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Passage?": {
                             "type": "and",
@@ -2528,6 +2575,7 @@
         },
         "Seal Chamber": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "Ballo1",
                 "in_dark_aether": false
@@ -2558,6 +2606,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Best Ending": {
                             "type": "and",

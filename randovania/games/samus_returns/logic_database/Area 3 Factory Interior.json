@@ -11,6 +11,7 @@
     "areas": {
         "Security Site": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4600.0,
@@ -58,6 +59,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 76,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Gamma Arena South": {
                             "type": "or",
@@ -170,6 +172,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "or",
@@ -249,6 +252,7 @@
         },
         "Gamma Arena South Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2200.0,
@@ -305,6 +309,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gamma Arena South": {
                             "type": "and",
@@ -434,6 +439,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gamma Arena & Transport to Metroid Caverns East": {
                             "type": "resource",
@@ -461,7 +467,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_Gamma_007B_Checkpoint"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Gamma Arena & Transport to Metroid Caverns East": {
                             "type": "and",
@@ -476,6 +482,7 @@
         },
         "Paraby Periphery": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10600.0,
@@ -523,6 +530,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 75,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Alpha Arena Access": {
                             "type": "template",
@@ -558,6 +566,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "template",
@@ -674,6 +683,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Alpha Arena Access": {
                             "type": "and",
@@ -688,6 +698,7 @@
         },
         "Fan Control": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6300.0,
@@ -735,6 +746,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 74,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Wallfire Watch": {
                             "type": "or",
@@ -769,8 +781,13 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "template",
-                                                                "data": "Shoot Wave Beam"
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Wave",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
                                                             }
                                                         ]
                                                     }
@@ -811,6 +828,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile Tank)": {
                             "type": "and",
@@ -832,13 +850,8 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "PBAmmo",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Power Bomb"
                                                 },
                                                 {
                                                     "type": "template",
@@ -856,6 +869,7 @@
         },
         "Grapple Circuit": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6700.0,
@@ -921,6 +935,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",
@@ -958,6 +973,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -1012,6 +1028,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Grapple Block Right": {
                             "type": "and",
@@ -1329,6 +1346,7 @@
         },
         "Factory Intersection": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3500.0,
@@ -1388,6 +1406,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 73,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Grapple Circuit (Bottom)": {
                             "type": "template",
@@ -1471,6 +1490,15 @@
                                                         "amount": 2,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Morph",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
                                                 }
                                             ]
                                         }
@@ -1524,6 +1552,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -1588,6 +1617,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -1626,6 +1656,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "resource",
@@ -1663,6 +1694,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Aeion Tank)": {
                             "type": "resource",
@@ -1700,6 +1732,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Factory Exterior East": {
                             "type": "resource",
@@ -1716,6 +1749,7 @@
         },
         "Factory Interior Teleporter": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1300.0,
@@ -1816,6 +1850,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter": {
                             "type": "and",
@@ -1862,6 +1897,7 @@
         },
         "Transport to Factory Exterior East": {
             "default_node": "Elevator to Area 3 Factory Exterior",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6700.0,
@@ -1919,6 +1955,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Factory Interior Elevator North",
                     "connections": {
                         "Door to Factory Intersection": {
                             "type": "and",
@@ -1966,6 +2003,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Area 3 Factory Exterior": {
                             "type": "and",
@@ -2001,6 +2039,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Area 3 Factory Exterior": {
                             "type": "resource",
@@ -2017,6 +2056,7 @@
         },
         "Alpha Arena Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 15600.0,
@@ -2081,6 +2121,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Lava Pits": {
                             "type": "and",
@@ -2214,6 +2255,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "resource",
@@ -2523,7 +2565,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Alpha_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Alpha Arena": {
                             "type": "resource",
@@ -2721,6 +2763,7 @@
         },
         "Gamma Arena & Transport to Metroid Caverns East": {
             "default_node": "Elevator to Area 3 Metroid Caverns",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6500.0,
@@ -2820,6 +2863,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Factory Interior Elevator South",
                     "connections": {
                         "Door to Gamma Arena South Access": {
                             "type": "and",
@@ -2993,6 +3037,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "or",
@@ -3169,6 +3214,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -3204,6 +3250,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -3266,6 +3313,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Inside Arena": {
                             "type": "resource",
@@ -3650,7 +3698,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_007"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Gamma Arena South Access": {
                             "type": "and",
@@ -3680,6 +3728,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 195,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Inside Arena": {
                             "type": "and",
@@ -3694,6 +3743,7 @@
         },
         "Ramulken Residence": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5900.0,
@@ -3750,6 +3800,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wallfire Watch": {
                             "type": "and",
@@ -3788,6 +3839,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Factory Intersection": {
                             "type": "or",
@@ -3825,6 +3877,7 @@
         },
         "Wallfire Watch": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6500.0,
@@ -3889,6 +3942,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ramulken Residence": {
                             "type": "resource",
@@ -3929,6 +3983,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Fan Control": {
                             "type": "and",
@@ -4211,6 +4266,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ramulken Residence": {
                             "type": "and",
@@ -4225,6 +4281,7 @@
         },
         "Alpha Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10800.0,
@@ -4289,6 +4346,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "resource",
@@ -4320,6 +4378,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 77,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -4537,6 +4596,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 184,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -4551,6 +4611,7 @@
         },
         "Gamma Arena South": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2000.0,
@@ -4607,6 +4668,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -4642,6 +4704,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",
@@ -4880,6 +4943,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 196,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -4894,6 +4958,7 @@
         },
         "Dedicated Callisto Roost": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2300.0,
@@ -4950,6 +5015,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Factory Teleporter Access": {
                             "type": "and",
@@ -4988,6 +5054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Factory Intersection": {
                             "type": "or",
@@ -5025,6 +5092,7 @@
         },
         "Factory Teleporter Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3500.0,
@@ -5081,6 +5149,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dedicated Callisto Roost": {
                             "type": "or",
@@ -5159,6 +5228,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Factory Interior Teleporter": {
                             "type": "and",
@@ -5173,6 +5243,7 @@
         },
         "Gamma Arena Center Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5000.0,
@@ -5229,6 +5300,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gamma Arena & Transport to Metroid Caverns East (Top)": {
                             "type": "resource",
@@ -5294,6 +5366,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Gamma Awakened (From Tunnel)": {
                             "type": "and",
@@ -5415,6 +5488,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wallfire Watch": {
                             "type": "resource",
@@ -5545,7 +5619,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_006"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Wallfire Watch": {
                             "type": "and",

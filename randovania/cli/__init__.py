@@ -1,15 +1,15 @@
 from __future__ import annotations
 
-import argparse
 import logging
 import sys
 import typing
+from argparse import ArgumentParser
 from pathlib import Path
 
 import randovania
 
 if typing.TYPE_CHECKING:
-    from argparse import _SubParsersAction
+    from argparse import Namespace, _SubParsersAction
 
 
 def create_subparsers(root_parser: _SubParsersAction) -> None:
@@ -25,12 +25,12 @@ def create_subparsers(root_parser: _SubParsersAction) -> None:
         server.create_subparsers(root_parser)
 
 
-def _print_version(args: argparse.Namespace) -> None:
+def _print_version(args: Namespace) -> None:
     print(f"Randovania {randovania.VERSION} from {Path(randovania.__file__).parent}")
 
 
-def create_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="randovania")
+def create_parser() -> ArgumentParser:
+    parser = ArgumentParser(prog="randovania")
 
     create_subparsers(parser.add_subparsers(dest="game"))
     parser.add_argument("--version", action="store_const", const=_print_version, dest="func")
@@ -41,7 +41,7 @@ def create_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _run_args(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
+def _run_args(parser: ArgumentParser, args: Namespace) -> int:
     if args.configuration is not None:
         randovania.CONFIGURATION_FILE_PATH = args.configuration.absolute()
 
@@ -56,15 +56,21 @@ def _run_args(parser: argparse.ArgumentParser, args: argparse.Namespace) -> int:
 def run_pytest(argv: list[str]) -> None:
     import pytest
     import pytest_asyncio.plugin
-    import pytest_localftpserver.plugin  # type: ignore[import-untyped]
+    import pytest_localftpserver.plugin
     import pytest_mock.plugin
 
     sys.exit(pytest.main(argv[2:], plugins=[pytest_asyncio.plugin, pytest_mock.plugin, pytest_localftpserver.plugin]))
 
 
+def run_game_connection_window_import_smoke_test() -> None:
+    from randovania.gui.widgets import game_connection_window  # noqa: F401
+
+
 def run_cli(argv: list[str]) -> None:
     if len(argv) > 1 and argv[1] == "--pytest":
         run_pytest(argv)
+    elif len(argv) > 1 and argv[1] == "--smoke-test-game-connection-window":
+        run_game_connection_window_import_smoke_test()
     else:
         args = argv[1:]
         from randovania.cli import gui

@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import dataclasses
 import functools
+import json
 import logging
 import os
 import platform
 import re
 import typing
+import uuid
 from functools import partial
 from pathlib import Path
 
@@ -17,16 +20,18 @@ from qasync import asyncSlot
 
 import randovania
 from randovania import VERSION, get_readme_section, monitoring
-from randovania.games.game import RandovaniaGame
+from randovania.game.game_enum import RandovaniaGame
 from randovania.gui.generated.main_window_ui import Ui_MainWindow
 from randovania.gui.lib import async_dialog, common_qt_lib, theme
+from randovania.gui.lib.async_dialog import StandardButton
 from randovania.gui.lib.background_task_mixin import BackgroundTaskMixin
 from randovania.gui.lib.window_manager import WindowManager
 from randovania.interface_common import update_checker
 from randovania.interface_common.installation_check import find_bad_installation
 from randovania.layout.base.trick_level import LayoutTrickLevel
 from randovania.layout.layout_description import LayoutDescription
-from randovania.lib import enum_lib, json_lib
+from randovania.layout.versioned_preset import InvalidPreset, VersionedPreset
+from randovania.lib import enum_lib, json_lib, version_lib
 from randovania.resolver import debug
 
 if typing.TYPE_CHECKING:
@@ -131,9 +136,20 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         multiworld_client: MultiworldClient,
         preview: bool,
     ):
+        monitoring.metrics.incr("gui_rdv_started")
+
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle(f"Randovania {VERSION}")
+        self.progress_bar.setVisible(False)
+        self.stop_background_process_button.setVisible(False)
+
+        self.status_bar.addWidget(self.progress_label)
+        self.status_bar.addPermanentWidget(self.progress_bar)
+        self.status_bar.addPermanentWidget(self.stop_background_process_button)
+
+        self.main_tab_widget.setTabVisible(self.main_tab_widget.count() - 1, False)
+        self.intro_play_multiworld_button.setVisible(False)
+        self.setWindowTitle(f"Corruptovania {VERSION}")
         self._is_preview_mode = preview
         self.setAcceptDrops(True)
         common_qt_lib.set_default_window_icon(self)
@@ -160,7 +176,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.InitPostShowSignal.connect(self.initialize_post_show)
         self.main_tab_widget.currentChanged.connect(self._on_main_tab_changed)
 
-        self.intro_play_solo_button.clicked.connect(partial(self._set_main_tab, self.tab_game_list))
+        self.intro_play_solo_button.clicked.connect(partial(self._select_game, RandovaniaGame.METROID_PRIME_CORRUPTION))
         self.intro_play_existing_button.clicked.connect(partial(self._set_main_tab, self.tab_play_existing))
         self.intro_play_multiworld_button.clicked.connect(partial(self._set_main_tab, self.tab_multiworld))
 
@@ -191,13 +207,14 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         multiworld_img_path = randovania.get_data_path().joinpath("gui_assets", "common", "multiworld.png")
         bannerSize = 40
 
-        for game in RandovaniaGame.sorted_all_games():
+        for game in [RandovaniaGame.METROID_PRIME_CORRUPTION]:
             # Play game buttons
             pack_tile = QtWidgets.QStackedWidget(self.game_list_contents)
             pack_tile.setFixedSize(150, 200)
 
             image_path = game.data_path.joinpath("assets", "cover.png")
             logo = ClickableLabel(pack_tile)
+            logo.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
             logo.setPixmap(QtGui.QPixmap(os.fspath(image_path)))
             logo.setFrameStyle(QtWidgets.QFrame.Panel | QtWidgets.QFrame.Plain)
             logo.setScaledContents(True)
@@ -283,8 +300,11 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.menu_action_timeout_generation_after_a_time_limit.triggered.connect(self._on_generate_time_limit_change)
         self.menu_action_generate_in_another_process.triggered.connect(self._on_generate_in_another_process_change)
         self.menu_action_dark_mode.triggered.connect(self._on_menu_action_dark_mode)
+        self.menu_action_open_layout_editor.triggered.connect(self._on_menu_action_open_layout_editor)
         self.menu_action_show_multiworld_banner.triggered.connect(self._on_menu_action_show_multiworld_banner)
         self.menu_action_experimental_settings.triggered.connect(self._on_menu_action_experimental_settings)
+        self.menu_action_audible_generation_alert.triggered.connect(self._on_menu_action_audible_generation_alert)
+        self.menu_action_visual_generation_alert.triggered.connect(self._on_menu_action_visual_generation_alert)
         self.menu_action_open_auto_tracker.triggered.connect(self._open_auto_tracker)
         self.menu_action_previously_generated_games.triggered.connect(self._on_menu_action_previously_generated_games)
         self.menu_action_log_files_directory.triggered.connect(self._on_menu_action_log_files_directory)
@@ -300,18 +320,34 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         # Setting this event only now, so all options changed trigger only once
         options.on_options_changed = self.options_changed_signal.emit
         self._options = options
+        if self._options.dark_mode:
+            monitoring.metrics.incr("gui_starts_with_dark_mode")
+        if self._options.experimental_settings:
+            monitoring.metrics.incr("gui_starts_with_experimental_settings")
         self.tab_game_details.set_main_window(self)
         self.refresh_game_list()
 
         self.main_tab_widget.setCurrentIndex(0)
 
     def closeEvent(self, event):
+        if self.has_background_process:
+            event.ignore()
+            dialog = QtWidgets.QMessageBox(
+                QtWidgets.QMessageBox.Icon.Warning,
+                "Confirm close window",
+                "Are you sure you want to close this window?\nClosing this window will abort current tasks.",
+                (StandardButton.Yes | StandardButton.No),
+            )
+            dialog.setDefaultButton(StandardButton.No)
+            dialog.setWindowIcon(QtGui.QIcon(os.fspath(randovania.get_icon_path())))
+            result = dialog.exec()
+            if result != StandardButton.Yes:
+                return
+            event.accept()
         self.stop_background_process()
         super().closeEvent(event)
 
     def dragEnterEvent(self, event: QtGui.QDragEnterEvent):
-        from randovania.layout.versioned_preset import VersionedPreset
-
         valid_extensions = [
             LayoutDescription.file_extension(),
             VersionedPreset.file_extension(),
@@ -331,11 +367,12 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
                 self.RequestOpenLayoutSignal.emit(path)
                 return
 
-            # FIXME: re-implement importing presets
-            # elif path.suffix == f".{VersionedPreset.file_extension()}":
-            #     self._set_main_tab(self.tab_create_seed)
-            #     self.tab_create_seed.import_preset_file(path)
-            #     return
+            elif path.suffix == f".{VersionedPreset.file_extension()}":
+                preset = self.import_preset_file(path)
+                if preset is not None:
+                    self._select_game(preset.game)
+                    self.tab_game_details.select_preset_tab()
+                return
 
     def showEvent(self, event: QtGui.QShowEvent):
         self.InitPostShowSignal.emit()
@@ -449,13 +486,17 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
     @asyncSlot()
     async def _import_permalink(self):
+        monitoring.metrics.incr(key="gui_import_permalink_click_opened")
         from randovania.gui.dialog.permalink_dialog import PermalinkDialog
 
         dialog = PermalinkDialog()
         result = await async_dialog.execute_dialog(dialog)
         if result == QtWidgets.QDialog.DialogCode.Accepted:
+            monitoring.metrics.incr(key="gui_import_permalink_click_accepted")
             permalink = dialog.get_permalink_from_field()
             await self.generate_seed_from_permalink(permalink)
+        else:
+            monitoring.metrics.incr(key="gui_import_permalink_click_cancelled")
 
     @asyncSlot()
     async def _import_spoiler_log(self):
@@ -467,6 +508,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
 
     @asyncSlot()
     async def _browse_racetime(self):
+        monitoring.metrics.incr(key="gui_browse_racetime_opened")
         from randovania.gui.dialog.racetime_browser_dialog import RacetimeBrowserDialog
 
         dialog = RacetimeBrowserDialog()
@@ -474,7 +516,10 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
             return
         result = await async_dialog.execute_dialog(dialog)
         if result == QtWidgets.QDialog.DialogCode.Accepted:
+            monitoring.metrics.incr(key="gui_browse_racetime_accepted")
             await self.generate_seed_from_permalink(dialog.permalink)
+        else:
+            monitoring.metrics.incr(key="gui_browse_racetime_cancelled")
 
     def open_game_details(self, layout: LayoutDescription, players: list[str] | None = None):
         self.GameDetailsSignal.emit(LayoutWithPlayers(layout, players))
@@ -502,7 +547,7 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         await self._on_releases_data(await github_releases_data.get_releases())
 
     async def _on_releases_data(self, releases: list[dict] | None):
-        current_version = update_checker.strict_current_version()
+        current_version = version_lib.current_version()
         last_changelog = self._options.last_changelog_displayed
 
         (all_change_logs, new_change_logs, version_to_display) = update_checker.versions_to_display_for_releases(
@@ -569,6 +614,8 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         self.menu_action_dark_mode.setChecked(self._options.dark_mode)
         self.menu_action_show_multiworld_banner.setChecked(self._options.show_multiworld_banner)
         self.menu_action_experimental_settings.setChecked(self._options.experimental_settings)
+        self.menu_action_audible_generation_alert.setChecked(self._options.audible_generation_alert)
+        self.menu_action_visual_generation_alert.setChecked(self._options.visual_generation_alert)
 
         self.tab_game_details.on_options_changed(self._options)
         self.refresh_game_list()
@@ -628,7 +675,8 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
             QtWidgets.QMessageBox.critical(self, "Unsupported configuration for Tracker", str(e))
             return
 
-        self._map_tracker.show()
+        if self._map_tracker.confirm_open:
+            self._map_tracker.show()
 
     # Difficulties stuff
 
@@ -676,11 +724,13 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
                     )
 
     # Background Update
-
     def enable_buttons_with_background_tasks(self, value: bool):
+        self.stop_background_process_button.setVisible(True)
         self.stop_background_process_button.setEnabled(not value)
 
     def update_progress(self, message: str, percentage: int):
+        self.progress_bar.setVisible(True)
+
         self.progress_label.setText(message)
         if "Aborted" in message:
             percentage = 0
@@ -737,13 +787,29 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         with self._options as options:
             options.dark_mode = self.menu_action_dark_mode.isChecked()
 
+    def _on_menu_action_open_layout_editor(self) -> None:
+        from randovania.games.prime3.gui.corruption_layout_editor import CorruptionLayoutEditor
+
+        self.layout_editor_window = CorruptionLayoutEditor()
+        self.layout_editor_window.show()
+
     def _on_menu_action_show_multiworld_banner(self) -> None:
+        banner_val = self.menu_action_show_multiworld_banner.isChecked()
+        monitoring.metrics.incr("gui_multiworld_banner_option_" + ("checked" if banner_val else "unchecked"))
         with self._options as options:
-            options.show_multiworld_banner = self.menu_action_show_multiworld_banner.isChecked()
+            options.show_multiworld_banner = banner_val
 
     def _on_menu_action_experimental_settings(self):
         with self._options as options:
             options.experimental_settings = self.menu_action_experimental_settings.isChecked()
+
+    def _on_menu_action_audible_generation_alert(self):
+        with self._options as options:
+            options.audible_generation_alert = self.menu_action_audible_generation_alert.isChecked()
+
+    def _on_menu_action_visual_generation_alert(self):
+        with self._options as options:
+            options.visual_generation_alert = self.menu_action_visual_generation_alert.isChecked()
 
     def _open_auto_tracker(self):
         from randovania.gui.auto_tracker_window import AutoTrackerWindow
@@ -922,3 +988,51 @@ class MainWindow(WindowManager, BackgroundTaskMixin, Ui_MainWindow):
         if session_window is not None:
             self.opened_session_windows[session_id] = session_window
             session_window.show()
+
+    def import_preset_file(self, path: Path) -> VersionedPreset | None:
+        """
+        Imports a preset file.
+        :param path:
+        :return: The imported preset, or None if none were imported.
+        """
+
+        try:
+            preset = VersionedPreset.from_file_sync(path)
+            preset.get_preset()
+        except (InvalidPreset, json.JSONDecodeError):
+            QtWidgets.QMessageBox.critical(
+                self, "Error loading preset", f"The file at '{path}' contains an invalid preset."
+            )
+            return None
+
+        if not preset.game.data.development_state.can_view():
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Error loading preset",
+                f"The new preset '{preset.name}' is for game '{preset.game.long_name}', "
+                f"which is incompatible with this version of Randovania.",
+            )
+            return None
+
+        existing_preset = self.preset_manager.preset_for_uuid(preset.uuid)
+        if existing_preset is not None:
+            user_response = QtWidgets.QMessageBox.warning(
+                self,
+                "Preset ID conflict",
+                f"The new preset '{preset.name}' for '{preset.game.long_name}' has "
+                f"the same ID as existing '{existing_preset.name}'. "
+                f"Do you want to overwrite it?",
+                async_dialog.StandardButton.Yes | async_dialog.StandardButton.No | async_dialog.StandardButton.Cancel,
+                async_dialog.StandardButton.Cancel,
+            )
+            if user_response == async_dialog.StandardButton.Cancel:
+                return None
+            elif user_response == async_dialog.StandardButton.No:
+                preset = VersionedPreset.with_preset(dataclasses.replace(preset.get_preset(), uuid=uuid.uuid4()))
+
+        with self._options as options:
+            options.set_selected_preset_uuid_for(preset.game, preset.uuid)
+
+        self.preset_manager.add_new_preset(preset)
+        self.tab_game_details.on_new_preset(preset)
+        return preset

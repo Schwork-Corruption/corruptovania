@@ -8,7 +8,7 @@ Extra - asset_id: 1594033074927626820
   > Pickup (Grapple Lasso)
       Trivial
   > Samus Ship
-      After Docking Hub Alpha Gate Unlocked
+      After Docking Hub Alpha Gate Unlocked or Enabled MP3Update
   > Event - Gate Opened
       Hyper Ball and Morph Ball and Open Barriers from Behind (Beginner) and Enter Hypermode
 
@@ -69,11 +69,11 @@ Extra - asset_id: 6925347865352032548
   > Door to Generator A
       All of the following:
           After Generator A Access Lasso Lock Removed
-          Space Jump Boots or Bomb Jump/Spring Space Jump (Beginner)
+          Space Jump Boots or Simple Bomb Jump/Spring Space Jump
   > Event - Lasso Lock Removed
       All of the following:
           Grapple Lasso
-          Space Jump Boots or Bomb Jump/Spring Space Jump (Beginner)
+          Space Jump Boots or Simple Bomb Jump/Spring Space Jump
 
 > Door to Generator A; Heals? False
   * Layers: default
@@ -82,7 +82,7 @@ Extra - asset_id: 6925347865352032548
   > Door to Cargo Dock A
       All of the following:
           After Generator A Access Lasso Lock Removed
-          Space Jump Boots or Bomb Jump/Spring Space Jump (Beginner)
+          Space Jump Boots or Simple Bomb Jump/Spring Space Jump
 
 > Event - Lasso Lock Removed; Heals? False
   * Layers: default
@@ -147,14 +147,14 @@ Extra - asset_id: 1937326665165249525
   * Grapple Lasso Blast Shield to Generator C/Door to Generator C Access
   * Extra - dock_index: 1
   > Save Station
-      Space Jump Boots or Bomb Jump/Spring Space Jump (Beginner)
+      Space Jump Boots or Simple Bomb Jump/Spring Space Jump
 
 > Save Station; Heals? True; Default Node
   * Layers: default
   > Door to Cargo Dock C
       Trivial
   > Door to Generator C
-      Space Jump Boots or Bomb Jump/Spring Space Jump (Beginner)
+      Space Jump Boots or Simple Bomb Jump/Spring Space Jump
 
 ----------------
 Substation East
@@ -390,7 +390,7 @@ Extra - asset_id: 12327360187860907075
   * Seeker Missiles Blast Shield to Generator B Access/Door to Cargo Dock B
   * Extra - dock_index: 1
   > Room Center
-      After Cargo Dock B Unlocked
+      After Cargo Dock B Unlocked or Enabled MP3Update
 
 > Samus Ship; Heals? True; Default Node
   * Layers: default
@@ -460,7 +460,9 @@ Extra - asset_id: 3044064450317642212
   * Normal Door to Maintenance Station/Door to Cargo Hub
   * Extra - dock_index: 3
   > Door to Hub Access
-      After Cargo Hub Lasso Lock Removed
+      Any of the following:
+          After Cargo Hub Lasso Lock Removed
+          Grapple Lasso and Enabled MP3Update
 
 > Door from Tower Elevator; Heals? False
   * Layers: default
@@ -494,12 +496,12 @@ Extra - asset_id: 8948533108801763587
   * Layers: default
   * Normal Door to Generator C Access/Door to Generator C
   * Extra - dock_index: 0
-  > Door to Generator Shaft
+  > Dock to Generator Shaft
       Morph Ball Bomb and Morph Ball
 
-> Door to Generator Shaft; Heals? False
+> Dock to Generator Shaft; Heals? False
   * Layers: default
-  * Normal Door to Generator Shaft/Door to Generator C
+  * Open Passage to Generator Shaft/Dock to Generator C
   * Extra - dock_index: 1
   > Door to Generator C Access
       Trivial
@@ -547,9 +549,9 @@ Extra - asset_id: 17529742819100867999
 ----------------
 Generator Shaft
 Extra - asset_id: 2389417385720268120
-> Door to Generator C; Heals? False; Default Node
+> Dock to Generator C; Heals? False; Default Node
   * Layers: default
-  * Normal Door to Generator C/Door to Generator Shaft
+  * Open Passage to Generator C/Dock to Generator Shaft
   * Extra - dock_index: 0
   > Event - Meta Ridley
       Trivial
@@ -557,7 +559,7 @@ Extra - asset_id: 2389417385720268120
 > Event - Meta Ridley; Heals? False
   * Layers: default
   * Event Meta Ridley
-  > Door to Generator C
+  > Dock to Generator C
       Trivial
 
 ----------------
@@ -574,7 +576,11 @@ Extra - asset_id: 130975251460127249
   * Layers: default
   * Normal Door to Control Tower/Door to Tower Elevator
   * Extra - dock_index: 1
-  > Door to Cargo Hub
+
+> Dock to Docking Bay 5; Heals? False
+  * Layers: default
+  * Open Passage to Docking Bay 5/Dock to Tower Elevator
+  > Door to Control Tower
       Trivial
 
 ----------------
@@ -591,6 +597,10 @@ Extra - asset_id: 1413887626178850213
   * Layers: default
   * Event Norion Defense Cannon
   * Extra - different_strongly_connected_component: True
-  > Door to Tower Elevator
+  > Dock to MedLab Delta
       Trivial
+
+> Dock to MedLab Delta; Heals? False
+  * Layers: default
+  * Open Passage to MedLab Delta/Dock to Control Tower
 

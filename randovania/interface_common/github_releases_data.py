@@ -13,7 +13,7 @@ from randovania.interface_common import persistence
 if TYPE_CHECKING:
     from pathlib import Path
 
-_RELEASES_URL = "https://api.github.com/repos/randovania/randovania/releases"
+_RELEASES_URL = "https://api.github.com/repos/schwork-corruption/corruptovania/releases"
 
 
 def _last_check_file() -> Path:

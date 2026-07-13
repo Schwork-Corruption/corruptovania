@@ -7,13 +7,13 @@ from unittest.mock import ANY, AsyncMock, MagicMock
 import pytest
 from PySide6 import QtWidgets
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_connection.builder.connector_builder import ConnectorBuilder
 from randovania.game_connection.builder.debug_connector_builder import DebugConnectorBuilder
 from randovania.game_connection.builder.dolphin_connector_builder import DolphinConnectorBuilder
 from randovania.game_connection.builder.dread_connector_builder import DreadConnectorBuilder
 from randovania.game_connection.builder.nintendont_connector_builder import NintendontConnectorBuilder
 from randovania.game_connection.connector_builder_choice import ConnectorBuilderChoice
-from randovania.games.game import RandovaniaGame
 from randovania.gui.lib.qt_network_client import QtNetworkClient
 from randovania.gui.lib.window_manager import WindowManager
 from randovania.gui.widgets.game_connection_window import GameConnectionWindow
@@ -27,7 +27,7 @@ if TYPE_CHECKING:
     from randovania.gui.dialog.text_prompt_dialog import TextPromptDialog
 
 
-@pytest.fixture()
+@pytest.fixture
 def window(skip_qtbot, mocker):
     game_connection = MagicMock()
     game_connection.connection_builders = []
@@ -142,10 +142,10 @@ async def test_add_connector_builder_dread(window: GameConnectionWindow, abort, 
         assert window.game_connection.add_connection_builder.call_args[0][0].ip == "my_ip"
 
 
-@pytest.mark.parametrize("system", ["Darwin", "Windows"])
+@pytest.mark.parametrize("system", ["darwin", "win32"])
 def test_setup_builder_ui_all_builders(skip_qtbot, system, mocker: MockerFixture, is_dev_version, is_frozen):
     # Setup
-    mocker.patch("platform.system", return_value=system)
+    mocker.patch("sys.platform", system)
 
     game_connection = MagicMock()
     game_connection.connection_builders = [
@@ -163,7 +163,7 @@ def test_setup_builder_ui_all_builders(skip_qtbot, system, mocker: MockerFixture
 
     # Assert
     has_debug = ConnectorBuilderChoice.DEBUG.is_usable()
-    if system == "Darwin":
+    if system == "darwin":
         print(list(window.ui_for_builder.keys()))
         assert len(window.ui_for_builder) == 1 + has_debug
     else:

@@ -6,6 +6,7 @@
     "areas": {
         "Landing Site C": {
             "default_node": "Samus Ship",
+            "hint_features": [],
             "extra": {
                 "asset_id": 15514523555396225844
             },
@@ -14,9 +15,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1.4750239849090576,
-                        "y": -47.19825744628906,
-                        "z": 25.594200134277344
+                        "x": 1.48,
+                        "y": -47.2,
+                        "z": 25.59
                     },
                     "description": "",
                     "layers": [
@@ -37,6 +38,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Samus Ship": {
                             "type": "resource",
@@ -52,7 +54,11 @@
                 "Samus Ship": {
                     "node_type": "teleporter_network",
                     "heal": true,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": 1.81,
+                        "y": -47.44,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -102,6 +108,7 @@
         },
         "Core Access": {
             "default_node": "Door to Landing Site C",
+            "hint_features": [],
             "extra": {
                 "asset_id": 9032724980754539885
             },
@@ -110,9 +117,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -6.086796879768372,
+                        "x": -6.09,
                         "y": -59.0,
-                        "z": 29.999999046325684
+                        "z": 30.0
                     },
                     "description": "",
                     "layers": [
@@ -133,6 +140,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Landing Site C": {
                             "type": "and",
@@ -149,7 +157,7 @@
                     "coordinates": {
                         "x": 21.0,
                         "y": 58.0,
-                        "z": 22.500001907348633
+                        "z": 22.5
                     },
                     "description": "",
                     "layers": [
@@ -170,6 +178,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Elysian Leviathan Core": {
                             "type": "and",
@@ -212,6 +221,7 @@
         },
         "Elysian Leviathan Core": {
             "default_node": "Door to Core Access",
+            "hint_features": [],
             "extra": {
                 "asset_id": 17766988414710659705
             },
@@ -220,9 +230,9 @@
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.062248945236206055,
-                        "y": 73.01398468017578,
-                        "z": 14.500015258789062
+                        "x": -0.06,
+                        "y": 73.01,
+                        "z": 14.5
                     },
                     "description": "",
                     "layers": [
@@ -243,6 +253,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Helios": {
                             "type": "template",
@@ -275,12 +286,17 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Pickup (Hyper Missile)": {
                     "node_type": "pickup",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -1.36,
+                        "y": -36.6,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"
@@ -289,6 +305,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 97,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Dock to SkyTown, Elysia - Main": {
                             "type": "and",
@@ -321,7 +338,11 @@
                 "Event - Helios": {
                     "node_type": "event",
                     "heal": false,
-                    "coordinates": null,
+                    "coordinates": {
+                        "x": -1.36,
+                        "y": 26.01,
+                        "z": 0.0
+                    },
                     "description": "",
                     "layers": [
                         "default"

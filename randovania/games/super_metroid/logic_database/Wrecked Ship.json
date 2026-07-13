@@ -6,6 +6,7 @@
     "areas": {
         "Bowling Alley": {
             "default_node": "Door to West Ocean Passageway",
+            "hint_features": [],
             "extra": {
                 "map_name": "7C98E",
                 "asset_id": 51
@@ -36,6 +37,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Gravity Suit Room": {
                             "type": "and",
@@ -267,6 +269,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Expansion)": {
                             "type": "and",
@@ -307,6 +310,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 130,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Gravity Suit Room": {
                             "type": "and",
@@ -386,6 +390,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 129,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Pickup (Missile Expansion)": {
                             "type": "and",
@@ -421,12 +426,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Gravity Suit Room": {
             "default_node": "Door to West Ocean",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CE40",
                 "asset_id": 52
@@ -457,6 +464,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Bowling Alley": {
                             "type": "and",
@@ -501,6 +509,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Ocean": {
                             "type": "and",
@@ -527,6 +536,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 135,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to West Ocean": {
                             "type": "and",
@@ -541,6 +551,7 @@
         },
         "Wrecked Ship Entrance": {
             "default_node": "Door to West Ocean",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CA08",
                 "asset_id": 53
@@ -571,6 +582,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -606,6 +618,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Ocean": {
                             "type": "and",
@@ -620,6 +633,7 @@
         },
         "Wrecked Ship Main Shaft": {
             "default_node": "Door to Wrecked Ship Entrance",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CAF6",
                 "asset_id": 54
@@ -650,6 +664,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Attic": {
                             "type": "and",
@@ -699,6 +714,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Entrance": {
                             "type": "and",
@@ -734,6 +750,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Entrance": {
                             "type": "and",
@@ -769,6 +786,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Entrance": {
                             "type": "and",
@@ -823,6 +841,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship West Super Room": {
                             "type": "and",
@@ -923,6 +942,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sponge Bath": {
                             "type": "or",
@@ -1037,6 +1057,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship West Super Room": {
                             "type": "and",
@@ -1085,6 +1106,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 128,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Wrecked Ship West Super Room": {
                             "type": "resource",
@@ -1101,6 +1123,7 @@
         },
         "Wrecked Ship Save Room": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CE8A",
                 "asset_id": 55,
@@ -1132,6 +1155,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -1180,6 +1204,7 @@
         },
         "Basement": {
             "default_node": "Door to Wrecked Ship Main Shaft",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CC6F",
                 "asset_id": 56
@@ -1210,6 +1235,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Map Room": {
                             "type": "and",
@@ -1283,6 +1309,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -1318,6 +1345,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -1337,6 +1365,7 @@
         },
         "Phantoon's Room": {
             "default_node": "Door to Basement",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CD13",
                 "asset_id": 57
@@ -1367,6 +1396,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Phantoon Defeated": {
                             "type": "or",
@@ -1459,6 +1489,7 @@
         },
         "Wrecked Ship Map Room": {
             "default_node": "Door to Basement",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CCCB",
                 "asset_id": 58
@@ -1489,12 +1520,14 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 }
             }
         },
         "Wrecked Ship East Super Room": {
             "default_node": "Door to Wrecked Ship Main Shaft",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CDF1",
                 "asset_id": 59
@@ -1525,6 +1558,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile Expansion)": {
                             "type": "and",
@@ -1565,6 +1599,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 134,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -1584,6 +1619,7 @@
         },
         "Wrecked Ship West Super Room": {
             "default_node": "Door to Wrecked Ship Main Shaft",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CDA8",
                 "asset_id": 60
@@ -1614,6 +1650,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile Expansion)": {
                             "type": "and",
@@ -1640,6 +1677,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 133,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -1654,6 +1692,7 @@
         },
         "Sponge Bath": {
             "default_node": "Door to Wrecked Ship Main Shaft",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CD5C",
                 "asset_id": 61
@@ -1684,6 +1723,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spiky Death Room": {
                             "type": "or",
@@ -1738,6 +1778,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -1752,6 +1793,7 @@
         },
         "Spiky Death Room": {
             "default_node": "Door to Electric Death Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CB8B",
                 "asset_id": 62
@@ -1782,6 +1824,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Sponge Bath": {
                             "type": "and",
@@ -1817,6 +1860,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Electric Death Room": {
                             "type": "and",
@@ -1831,6 +1875,7 @@
         },
         "Electric Death Room": {
             "default_node": "Door to Spiky Death Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CBD5",
                 "asset_id": 63
@@ -1861,6 +1906,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to East Ocean": {
                             "type": "and",
@@ -1896,6 +1942,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to East Ocean": {
                             "type": "and",
@@ -1931,6 +1978,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Spiky Death Room": {
                             "type": "or",
@@ -2035,6 +2083,7 @@
         },
         "Wrecked Ship Energy Tank Room": {
             "default_node": "Door to Electric Death Room",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CC27",
                 "asset_id": 64
@@ -2065,6 +2114,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "or",
@@ -2101,6 +2151,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 132,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Electric Death Room": {
                             "type": "and",
@@ -2115,6 +2166,7 @@
         },
         "Attic": {
             "default_node": "Door to West Ocean",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CA52",
                 "asset_id": 65
@@ -2145,6 +2197,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -2180,6 +2233,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Ocean": {
                             "type": "and",
@@ -2222,6 +2276,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wrecked Ship Main Shaft": {
                             "type": "and",
@@ -2236,6 +2291,7 @@
         },
         "Assembly Line": {
             "default_node": "Door to Attic",
+            "hint_features": [],
             "extra": {
                 "map_name": "7CAAE",
                 "asset_id": 66
@@ -2266,6 +2322,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Expansion)": {
                             "type": "resource",
@@ -2294,6 +2351,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 131,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Attic": {
                             "type": "and",

@@ -6,6 +6,7 @@
     "areas": {
         "Waterfall Passage Far Bottom": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a01",
                 "minimap_data": [
@@ -33,10 +34,16 @@
                         "x": 11,
                         "y": 37
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 184,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
-                "Horizontal Dock to The Depths": {
+                "Door to The Depths": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -52,20 +59,22 @@
                         "instance_id": 144867,
                         "facing": "left",
                         "x": 1920,
-                        "y": 144
+                        "y": 144,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "The Depths",
                         "area": "Waterfalls Entryway",
-                        "node": "Horizontal Dock to Genetics Laboratory"
+                        "node": "Door to Genetics Laboratory"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine South West": {
                             "type": "or",
@@ -115,8 +124,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to The Depths": {
+                        "Door to The Depths": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -143,6 +153,7 @@
         },
         "Waterfall Ravine South West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a02",
                 "minimap_data": [
@@ -154,7 +165,13 @@
                         "x": 5,
                         "y": 37
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 424,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Horizontal Dock to Waterfall Passage Far Bottom": {
@@ -169,7 +186,10 @@
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "instance_id": 145025,
+                        "facing": "left"
+                    },
                     "valid_starting_location": false,
                     "dock_type": "horizontal_dock",
                     "default_connection": {
@@ -182,6 +202,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Passage Bottom": {
                             "type": "or",
@@ -222,6 +243,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Passage Far Bottom": {
                             "type": "and",
@@ -236,6 +258,7 @@
         },
         "Waterfall Passage Bottom": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a03",
                 "minimap_data": [
@@ -259,7 +282,13 @@
                         "x": 10,
                         "y": 36
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 184,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Horizontal Dock to Waterfall Ravine South West": {
@@ -287,6 +316,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine South East": {
                             "type": "and",
@@ -322,6 +352,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine South West": {
                             "type": "and",
@@ -336,6 +367,7 @@
         },
         "Waterfall Ravine South East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a04",
                 "minimap_data": [
@@ -347,7 +379,13 @@
                         "x": 11,
                         "y": 36
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 424,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Horizontal Dock to Waterfall Passage Bottom": {
@@ -375,6 +413,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Passage Middle": {
                             "type": "and",
@@ -419,6 +458,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Passage Bottom": {
                             "type": "or",
@@ -443,6 +483,7 @@
         },
         "Waterfall Passage Middle": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a05",
                 "minimap_data": [
@@ -462,7 +503,13 @@
                         "x": 10,
                         "y": 35
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 184,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Horizontal Dock to Waterfall Ravine South East": {
@@ -490,6 +537,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine North West": {
                             "type": "or",
@@ -539,6 +587,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine South East": {
                             "type": "or",
@@ -558,6 +607,7 @@
         },
         "Waterfall Ravine North West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a06",
                 "minimap_data": [
@@ -569,7 +619,13 @@
                         "x": 6,
                         "y": 35
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 428,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Horizontal Dock to Waterfall Passage Middle": {
@@ -597,8 +653,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Waterfall Passage Top": {
+                        "Door to Waterfall Passage Top": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -612,7 +669,7 @@
                         }
                     }
                 },
-                "Horizontal Dock to Waterfall Passage Top": {
+                "Door to Waterfall Passage Top": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -631,17 +688,18 @@
                         "y": 144
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Waterfall Passage Top",
-                        "node": "Horizontal Dock to Waterfall Ravine North West"
+                        "node": "Door to Waterfall Ravine North West"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Passage Middle": {
                             "type": "and",
@@ -656,6 +714,7 @@
         },
         "Waterfall Passage Top": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a07",
                 "minimap_data": [
@@ -675,10 +734,16 @@
                         "x": 10,
                         "y": 34
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 184,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
-                "Horizontal Dock to Waterfall Ravine North West": {
+                "Door to Waterfall Ravine North West": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -697,19 +762,20 @@
                         "y": 144
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Waterfall Ravine North West",
-                        "node": "Horizontal Dock to Waterfall Passage Top"
+                        "node": "Door to Waterfall Passage Top"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Waterfall Ravine North East": {
+                        "Door to Waterfall Ravine North East": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -718,7 +784,7 @@
                         }
                     }
                 },
-                "Horizontal Dock to Waterfall Ravine North East": {
+                "Door to Waterfall Ravine North East": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -737,19 +803,20 @@
                         "y": 160
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Waterfall Ravine North East",
-                        "node": "Horizontal Dock to Waterfall Passage Top"
+                        "node": "Door to Waterfall Passage Top"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Waterfall Ravine North West": {
+                        "Door to Waterfall Ravine North West": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -800,8 +867,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Waterfall Ravine North East": {
+                        "Door to Waterfall Ravine North East": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -839,8 +907,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Genetics Laboratory - Waterfall Pipe",
                     "connections": {
-                        "Horizontal Dock to Waterfall Ravine North East": {
+                        "Door to Waterfall Ravine North East": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -863,6 +932,7 @@
         },
         "Waterfall Ravine North East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a07a",
                 "minimap_data": [
@@ -882,10 +952,15 @@
                         "x": 11,
                         "y": 34
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
-                "Horizontal Dock to Waterfall Passage Top": {
+                "Door to Waterfall Passage Top": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -904,17 +979,18 @@
                         "y": 880
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Waterfall Passage Top",
-                        "node": "Horizontal Dock to Waterfall Ravine North East"
+                        "node": "Door to Waterfall Ravine North East"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfalls Exterior": {
                             "type": "or",
@@ -955,8 +1031,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Waterfall Passage Top": {
+                        "Door to Waterfall Passage Top": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -969,6 +1046,7 @@
         },
         "Waterfalls Exterior": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7a08",
                 "minimap_data": [
@@ -1148,7 +1226,13 @@
                         "x": 10,
                         "y": 31
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 1904,
+                    "should_move_horizontally": true
+                }
             },
             "nodes": {
                 "Dock to Waterfall Passage Top": {
@@ -1176,6 +1260,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Vertical Dock to Laboratory Save Station Access": {
@@ -1203,6 +1288,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Waterfall Ravine North East": {
                             "type": "and",
@@ -1238,6 +1324,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Waterfall Passage Top": {
                             "type": "and",
@@ -1274,12 +1361,24 @@
                                                     "data": "Can Use Bombs"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 4,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can IBJ"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "IBJ",
+                                                                    "amount": 4,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -1323,15 +1422,6 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "Walljump",
-                                                                    "amount": 3,
-                                                                    "negate": false
-                                                                }
-                                                            },
-                                                            {
                                                                 "type": "and",
                                                                 "data": {
                                                                     "comment": null,
@@ -1346,11 +1436,115 @@
                                                                             }
                                                                         },
                                                                         {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "Walljump",
+                                                                                            "amount": 1,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "and",
+                                                                "data": {
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can Walljump"
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "Walljump",
+                                                                                            "amount": 3,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "WJ + Glide: https://www.youtube.com/watch?v=pek-zZsYFec",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "MorphGlide",
+                                                        "amount": 5,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "items",
+                                                        "name": "Morph Ball",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can Walljump"
+                                                            },
+                                                            {
+                                                                "type": "and",
+                                                                "data": {
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can Walljump"
+                                                                        },
+                                                                        {
                                                                             "type": "resource",
                                                                             "data": {
                                                                                 "type": "tricks",
                                                                                 "name": "Walljump",
-                                                                                "amount": 1,
+                                                                                "amount": 5,
                                                                                 "negate": false
                                                                             }
                                                                         }
@@ -1372,6 +1566,7 @@
         },
         "Laboratory Save Station Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b01A",
                 "minimap_data": [
@@ -1379,7 +1574,12 @@
                         "x": 7,
                         "y": 23
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Vertical Dock to Waterfalls Exterior": {
@@ -1407,6 +1607,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Save Station": {
                             "type": "and",
@@ -1430,7 +1631,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146501
+                        "door_instance_id": 146501
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1444,6 +1645,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Vertical Dock to Waterfalls Exterior": {
                             "type": "and",
@@ -1458,6 +1660,7 @@
         },
         "Laboratory Save Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b02A",
                 "minimap_data": [
@@ -1466,7 +1669,12 @@
                         "y": 23
                     }
                 ],
-                "unlocked_save_station": true
+                "unlocked_save_station": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Save Station": {
@@ -1515,7 +1723,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146514
+                        "door_instance_id": 146514
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1529,6 +1737,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -1552,7 +1761,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146513
+                        "door_instance_id": 146513
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1566,6 +1775,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -1580,6 +1790,7 @@
         },
         "Laboratory Entrance": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b03A",
                 "minimap_data": [
@@ -1591,7 +1802,12 @@
                         "x": 9,
                         "y": 23
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Destroyed Chozo Memorial": {
@@ -1607,7 +1823,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146532
+                        "door_instance_id": 146532
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1621,6 +1837,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Pipe": {
                             "type": "and",
@@ -1644,7 +1861,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146531
+                        "door_instance_id": 146531
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1658,6 +1875,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Pipe": {
                             "type": "and",
@@ -1681,7 +1899,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146535
+                        "door_instance_id": 146535
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1695,6 +1913,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Destroyed Chozo Memorial": {
                             "type": "or",
@@ -1733,12 +1952,24 @@
                                                     "data": "Can Use Bombs"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 3,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can IBJ"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "IBJ",
+                                                                    "amount": 3,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -1753,17 +1984,50 @@
                                                     "type": "resource",
                                                     "data": {
                                                         "type": "tricks",
-                                                        "name": "Walljump",
-                                                        "amount": 2,
+                                                        "name": "MorphGlide",
+                                                        "amount": 3,
                                                         "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can Walljump"
+                                                            },
+                                                            {
+                                                                "type": "and",
+                                                                "data": {
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can Walljump"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "Walljump",
+                                                                                "amount": 2,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
                                                     "type": "resource",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "MorphGlide",
-                                                        "amount": 3,
+                                                        "type": "items",
+                                                        "name": "Morph Ball",
+                                                        "amount": 1,
                                                         "negate": false
                                                     }
                                                 }
@@ -1786,6 +2050,7 @@
         },
         "Laboratory Pipe": {
             "default_node": "Door to Laboratory Entrance",
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b03B",
                 "minimap_data": [
@@ -1797,7 +2062,12 @@
                         "x": 11,
                         "y": 23
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Entrance": {
@@ -1813,7 +2083,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146563
+                        "door_instance_id": 146563
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1827,6 +2097,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pipe to Hydro Station": {
                             "type": "and",
@@ -1901,6 +2172,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Entrance": {
                             "type": "and",
@@ -1925,6 +2197,7 @@
         },
         "Destroyed Chozo Memorial": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b04A",
                 "minimap_data": [
@@ -1936,7 +2209,12 @@
                         "x": 8,
                         "y": 22
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Entrance": {
@@ -1952,7 +2230,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146602
+                        "door_instance_id": 146602
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -1966,6 +2244,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "and",
@@ -1989,7 +2268,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146601
+                        "door_instance_id": 146601
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2003,6 +2282,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "and",
@@ -2071,6 +2351,7 @@
         },
         "Hatchling Room Underside": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b04",
                 "minimap_data": [
@@ -2086,7 +2367,12 @@
                         "x": 6,
                         "y": 22
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Destroyed Chozo Memorial": {
@@ -2102,7 +2388,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146836
+                        "door_instance_id": 146836,
+                        "instance_id": 146831,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2116,6 +2404,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Laboratory Foyer": {
                             "type": "and",
@@ -2163,12 +2452,24 @@
                                                                 "data": "Can Use Bombs"
                                                             },
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "IBJ",
-                                                                    "amount": 2,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can IBJ"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "IBJ",
+                                                                                "amount": 2,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -2204,6 +2505,15 @@
                                                                     "name": "Shinesparking",
                                                                     "amount": 2,
                                                                     "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "misc",
+                                                                    "name": "DoorLockRando",
+                                                                    "amount": 1,
+                                                                    "negate": true
                                                                 }
                                                             }
                                                         ]
@@ -2242,6 +2552,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Destroyed Chozo Memorial": {
                             "type": "or",
@@ -2266,6 +2577,7 @@
         },
         "Laboratory Foyer": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b05",
                 "minimap_data": [
@@ -2282,7 +2594,12 @@
                         "y": 21
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Tunnel to Hatchling Room Underside": {
@@ -2310,6 +2627,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "or",
@@ -2343,7 +2661,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146900
+                        "door_instance_id": 146900
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2360,6 +2678,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "and",
@@ -2457,6 +2776,7 @@
         },
         "Laboratory Small Shaft East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b06",
                 "minimap_data": [
@@ -2469,7 +2789,12 @@
                         "y": 21
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Foyer": {
@@ -2485,7 +2810,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146934
+                        "door_instance_id": 146934
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2502,6 +2827,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top": {
                             "type": "and",
@@ -2530,7 +2856,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146935
+                        "door_instance_id": 146935
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2547,6 +2873,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top": {
                             "type": "and",
@@ -2649,6 +2976,7 @@
         },
         "Laboratory Corridor": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b06A",
                 "minimap_data": [
@@ -2661,7 +2989,12 @@
                         "y": 20
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Small Shaft East": {
@@ -2677,7 +3010,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146959
+                        "door_instance_id": 146959
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2694,6 +3027,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Long Shaft": {
                             "type": "and",
@@ -2717,7 +3051,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 146956
+                        "door_instance_id": 146956
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2734,6 +3068,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Small Shaft East": {
                             "type": "and",
@@ -2748,6 +3083,7 @@
         },
         "Laboratory Long Shaft": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b07",
                 "minimap_data": [
@@ -2768,7 +3104,12 @@
                         "y": 20
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Corridor": {
@@ -2784,7 +3125,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147000
+                        "door_instance_id": 147000
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2801,6 +3142,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "and",
@@ -2824,7 +3166,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147001
+                        "door_instance_id": 147001
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -2841,6 +3183,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top": {
                             "type": "and",
@@ -3070,12 +3413,24 @@
                                                     "data": "Can Use Bombs"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 2,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can IBJ"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "IBJ",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -3086,15 +3441,6 @@
                                         "data": {
                                             "comment": null,
                                             "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "Walljump",
-                                                        "amount": 3,
-                                                        "negate": false
-                                                    }
-                                                },
                                                 {
                                                     "type": "and",
                                                     "data": {
@@ -3126,6 +3472,43 @@
                                                                     "amount": 1,
                                                                     "negate": false
                                                                 }
+                                                            },
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can Walljump"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can Walljump"
+                                                            },
+                                                            {
+                                                                "type": "and",
+                                                                "data": {
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can Walljump"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "Walljump",
+                                                                                "amount": 3,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
                                                             }
                                                         ]
                                                     }
@@ -3142,6 +3525,7 @@
         },
         "Laboratory Spiked Hall": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b08",
                 "minimap_data": [
@@ -3166,7 +3550,12 @@
                         "y": 17
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Arena": {
@@ -3182,7 +3571,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147042
+                        "door_instance_id": 147042
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3199,6 +3588,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left Side": {
                             "type": "and",
@@ -3222,7 +3612,9 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147043
+                        "door_instance_id": 147043,
+                        "instance_id": 147038,
+                        "facing": "left"
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -3239,6 +3631,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Side": {
                             "type": "and",
@@ -3376,12 +3769,24 @@
                                                                             "data": "Can Use Bombs"
                                                                         },
                                                                         {
-                                                                            "type": "resource",
+                                                                            "type": "and",
                                                                             "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "IBJ",
-                                                                                "amount": 2,
-                                                                                "negate": false
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can IBJ"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "IBJ",
+                                                                                            "amount": 2,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
                                                                             }
                                                                         }
                                                                     ]
@@ -3446,12 +3851,29 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "MorphGlide",
-                                                        "amount": 3,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "MorphGlide",
+                                                                    "amount": 4,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph Ball",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -3483,15 +3905,36 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "type": "resource",
+                                                                            "type": "and",
                                                                             "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "Walljump",
-                                                                                "amount": 2,
-                                                                                "negate": false
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "Walljump",
+                                                                                            "amount": 2,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
                                                                             }
                                                                         }
                                                                     ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph Ball",
+                                                                    "amount": 1,
+                                                                    "negate": false
                                                                 }
                                                             }
                                                         ]
@@ -3541,12 +3984,24 @@
                                                                             "data": "Can Use Bombs"
                                                                         },
                                                                         {
-                                                                            "type": "resource",
+                                                                            "type": "and",
                                                                             "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "IBJ",
-                                                                                "amount": 2,
-                                                                                "negate": false
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can IBJ"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "IBJ",
+                                                                                            "amount": 2,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
                                                                             }
                                                                         }
                                                                     ]
@@ -3611,12 +4066,29 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "MorphGlide",
-                                                        "amount": 4,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "MorphGlide",
+                                                                    "amount": 4,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph Ball",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -3648,15 +4120,36 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "type": "resource",
+                                                                            "type": "and",
                                                                             "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "Walljump",
-                                                                                "amount": 3,
-                                                                                "negate": false
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "Walljump",
+                                                                                            "amount": 3,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    }
+                                                                                ]
                                                                             }
                                                                         }
                                                                     ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph Ball",
+                                                                    "amount": 1,
+                                                                    "negate": false
                                                                 }
                                                             }
                                                         ]
@@ -3749,12 +4242,29 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "MorphGlide",
-                                                                    "amount": 4,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "MorphGlide",
+                                                                                "amount": 4,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "Morph Ball",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             },
                                                             {
@@ -3786,15 +4296,36 @@
                                                                                         }
                                                                                     },
                                                                                     {
-                                                                                        "type": "resource",
+                                                                                        "type": "and",
                                                                                         "data": {
-                                                                                            "type": "tricks",
-                                                                                            "name": "Walljump",
-                                                                                            "amount": 3,
-                                                                                            "negate": false
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "template",
+                                                                                                    "data": "Can Walljump"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "resource",
+                                                                                                    "data": {
+                                                                                                        "type": "tricks",
+                                                                                                        "name": "Walljump",
+                                                                                                        "amount": 3,
+                                                                                                        "negate": false
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
                                                                                         }
                                                                                     }
                                                                                 ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "Morph Ball",
+                                                                                "amount": 1,
+                                                                                "negate": false
                                                                             }
                                                                         }
                                                                     ]
@@ -3890,12 +4421,29 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "MorphGlide",
-                                                                    "amount": 4,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "MidAirMorph",
+                                                                                "amount": 3,
+                                                                                "negate": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "Morph Ball",
+                                                                                "amount": 1,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             },
                                                             {
@@ -3927,15 +4475,36 @@
                                                                                         }
                                                                                     },
                                                                                     {
-                                                                                        "type": "resource",
+                                                                                        "type": "and",
                                                                                         "data": {
-                                                                                            "type": "tricks",
-                                                                                            "name": "Walljump",
-                                                                                            "amount": 3,
-                                                                                            "negate": false
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "template",
+                                                                                                    "data": "Can Walljump"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "resource",
+                                                                                                    "data": {
+                                                                                                        "type": "tricks",
+                                                                                                        "name": "Walljump",
+                                                                                                        "amount": 3,
+                                                                                                        "negate": false
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
                                                                                         }
                                                                                     }
                                                                                 ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "items",
+                                                                                "name": "Morph Ball",
+                                                                                "amount": 1,
+                                                                                "negate": false
                                                                             }
                                                                         }
                                                                     ]
@@ -3956,6 +4525,7 @@
         },
         "Laboratory Arena": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b08A",
                 "minimap_data": [
@@ -3976,7 +4546,12 @@
                         "y": 18
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Spiked Hall": {
@@ -3992,7 +4567,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147081
+                        "door_instance_id": 147081
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4009,6 +4584,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top": {
                             "type": "and",
@@ -4032,7 +4608,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147287
+                        "door_instance_id": 147287
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4049,6 +4625,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom": {
                             "type": "and",
@@ -4258,15 +4835,6 @@
                                                                     "comment": null,
                                                                     "items": [
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "IBJ",
-                                                                                "amount": 2,
-                                                                                "negate": false
-                                                                            }
-                                                                        },
-                                                                        {
                                                                             "type": "and",
                                                                             "data": {
                                                                                 "comment": null,
@@ -4316,10 +4884,55 @@
                                                                                                     }
                                                                                                 },
                                                                                                 {
+                                                                                                    "type": "and",
+                                                                                                    "data": {
+                                                                                                        "comment": null,
+                                                                                                        "items": [
+                                                                                                            {
+                                                                                                                "type": "template",
+                                                                                                                "data": "Can Walljump"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "resource",
+                                                                                                                "data": {
+                                                                                                                    "type": "tricks",
+                                                                                                                    "name": "Walljump",
+                                                                                                                    "amount": 2,
+                                                                                                                    "negate": false
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can IBJ"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "and",
+                                                                                        "data": {
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "template",
+                                                                                                    "data": "Can IBJ"
+                                                                                                },
+                                                                                                {
                                                                                                     "type": "resource",
                                                                                                     "data": {
                                                                                                         "type": "tricks",
-                                                                                                        "name": "Walljump",
+                                                                                                        "name": "IBJ",
                                                                                                         "amount": 2,
                                                                                                         "negate": false
                                                                                                     }
@@ -4352,6 +4965,7 @@
         },
         "Laboratory Small Shaft West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b09",
                 "minimap_data": [
@@ -4364,7 +4978,12 @@
                         "y": 19
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Arena": {
@@ -4380,7 +4999,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147404
+                        "door_instance_id": 147404
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4397,6 +5016,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Queen Arena Access": {
                             "type": "and",
@@ -4420,7 +5040,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147405
+                        "door_instance_id": 147405
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4434,6 +5054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Arena": {
                             "type": "or",
@@ -4453,6 +5074,7 @@
         },
         "Queen Arena Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b10",
                 "minimap_data": [
@@ -4473,7 +5095,12 @@
                         "y": 19
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Door to Laboratory Small Shaft West": {
@@ -4489,7 +5116,7 @@
                         "default"
                     ],
                     "extra": {
-                        "instance_id": 147656
+                        "door_instance_id": 147656
                     },
                     "valid_starting_location": false,
                     "dock_type": "door",
@@ -4503,6 +5130,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Queen Arena": {
                             "type": "or",
@@ -4561,6 +5189,10 @@
                                                         "amount": 4,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "Can IBJ"
                                                 }
                                             ]
                                         }
@@ -4595,6 +5227,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Laboratory Small Shaft West": {
                             "type": "or",
@@ -4653,6 +5286,10 @@
                                                         "amount": 4,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "Can IBJ"
                                                 }
                                             ]
                                         }
@@ -4666,6 +5303,7 @@
         },
         "Queen Arena": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7b11",
                 "minimap_data": [
@@ -4682,10 +5320,15 @@
                         "y": 20
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
-                "Horizontal Dock to Hatchling Room": {
+                "Door to Hatchling Room": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -4704,17 +5347,18 @@
                         "y": 176
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Hatchling Room",
-                        "node": "Horizontal Dock to Queen Arena"
+                        "node": "Door to Queen Arena"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Queen": {
                             "type": "or",
@@ -4760,6 +5404,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Queen": {
                             "type": "and",
@@ -5208,12 +5853,24 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "Walljump",
-                                                                    "amount": 3,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can Walljump"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "Walljump",
+                                                                                "amount": 3,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -5248,12 +5905,24 @@
                                                                                         }
                                                                                     },
                                                                                     {
-                                                                                        "type": "resource",
+                                                                                        "type": "and",
                                                                                         "data": {
-                                                                                            "type": "tricks",
-                                                                                            "name": "Walljump",
-                                                                                            "amount": 3,
-                                                                                            "negate": false
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "template",
+                                                                                                    "data": "Can Walljump"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "resource",
+                                                                                                    "data": {
+                                                                                                        "type": "tricks",
+                                                                                                        "name": "Walljump",
+                                                                                                        "amount": 3,
+                                                                                                        "negate": false
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
                                                                                         }
                                                                                     }
                                                                                 ]
@@ -5406,7 +6075,7 @@
                     "valid_starting_location": false,
                     "event_name": "BossQueen",
                     "connections": {
-                        "Horizontal Dock to Hatchling Room": {
+                        "Door to Hatchling Room": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5419,6 +6088,7 @@
         },
         "Hatchling Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7c01",
                 "minimap_data": [
@@ -5435,10 +6105,15 @@
                         "y": 20
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
-                "Horizontal Dock to Queen Arena": {
+                "Door to Queen Arena": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -5457,19 +6132,20 @@
                         "y": 176
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Queen Arena",
-                        "node": "Horizontal Dock to Hatchling Room"
+                        "node": "Door to Hatchling Room"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Crystal Climb West": {
+                        "Door to Crystal Climb West": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5490,7 +6166,7 @@
                         }
                     }
                 },
-                "Horizontal Dock to Crystal Climb West": {
+                "Door to Crystal Climb West": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -5506,22 +6182,24 @@
                         "instance_id": 147905,
                         "facing": "right",
                         "x": 0,
-                        "y": 192
+                        "y": 192,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Crystal Climb West",
-                        "node": "Horizontal Dock to Hatchling Room"
+                        "node": "Door to Hatchling Room"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Queen Arena": {
+                        "Door to Queen Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5546,7 +6224,7 @@
                     "valid_starting_location": false,
                     "event_name": "BabyCollected",
                     "connections": {
-                        "Horizontal Dock to Queen Arena": {
+                        "Door to Queen Arena": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5559,6 +6237,7 @@
         },
         "Crystal Climb West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7c02",
                 "minimap_data": [
@@ -5591,10 +6270,15 @@
                         "y": 20
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
-                "Horizontal Dock to Hatchling Room": {
+                "Door to Hatchling Room": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -5610,22 +6294,24 @@
                         "instance_id": 148221,
                         "facing": "left",
                         "x": 320,
-                        "y": 1632
+                        "y": 1632,
+                        "is_area_transition": true
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Hatchling Room",
-                        "node": "Horizontal Dock to Crystal Climb West"
+                        "node": "Door to Crystal Climb West"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Crystal Corridor West": {
+                        "Door to Crystal Corridor West": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5673,15 +6359,6 @@
                                                                     "comment": null,
                                                                     "items": [
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "tricks",
-                                                                                "name": "Walljump",
-                                                                                "amount": 3,
-                                                                                "negate": false
-                                                                            }
-                                                                        },
-                                                                        {
                                                                             "type": "and",
                                                                             "data": {
                                                                                 "comment": null,
@@ -5720,6 +6397,43 @@
                                                                                                 }
                                                                                             ]
                                                                                         }
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Can Walljump"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "and",
+                                                                                        "data": {
+                                                                                            "comment": null,
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "template",
+                                                                                                    "data": "Can Walljump"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "resource",
+                                                                                                    "data": {
+                                                                                                        "type": "tricks",
+                                                                                                        "name": "Walljump",
+                                                                                                        "amount": 3,
+                                                                                                        "negate": false
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
                                                                                     }
                                                                                 ]
                                                                             }
@@ -5740,12 +6454,24 @@
                                                                 "data": "Can Use Bombs"
                                                             },
                                                             {
-                                                                "type": "resource",
+                                                                "type": "and",
                                                                 "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "IBJ",
-                                                                    "amount": 4,
-                                                                    "negate": false
+                                                                    "comment": null,
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "template",
+                                                                            "data": "Can IBJ"
+                                                                        },
+                                                                        {
+                                                                            "type": "resource",
+                                                                            "data": {
+                                                                                "type": "tricks",
+                                                                                "name": "IBJ",
+                                                                                "amount": 4,
+                                                                                "negate": false
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             }
                                                         ]
@@ -5763,7 +6489,7 @@
                         }
                     }
                 },
-                "Horizontal Dock to Crystal Corridor West": {
+                "Door to Crystal Corridor West": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -5782,19 +6508,20 @@
                         "y": 160
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Crystal Corridor West",
-                        "node": "Horizontal Dock to Crystal Climb West"
+                        "node": "Door to Crystal Climb West"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Hatchling Room": {
+                        "Door to Hatchling Room": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -5817,6 +6544,7 @@
         },
         "Crystal Corridor West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7c03",
                 "minimap_data": [
@@ -5845,10 +6573,15 @@
                         "y": 13
                     }
                 ],
-                "force_blue_labs": true
+                "force_blue_labs": true,
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
-                "Horizontal Dock to Crystal Climb West": {
+                "Door to Crystal Climb West": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
@@ -5867,17 +6600,18 @@
                         "y": 640
                     },
                     "valid_starting_location": false,
-                    "dock_type": "horizontal_dock",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Genetics Laboratory",
                         "area": "Crystal Climb West",
-                        "node": "Horizontal Dock to Crystal Corridor West"
+                        "node": "Door to Crystal Corridor West"
                     },
-                    "default_dock_weakness": "4-Tiles High Dock",
+                    "default_dock_weakness": "Open Transition",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Crystal Corridor East": {
                             "type": "and",
@@ -5927,8 +6661,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Horizontal Dock to Crystal Climb West": {
+                        "Door to Crystal Climb West": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -5951,6 +6686,7 @@
         },
         "Crystal Corridor East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7c04",
                 "minimap_data": [
@@ -5990,7 +6726,12 @@
                         "x": 15,
                         "y": 11
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Horizontal Dock to Crystal Corridor West": {
@@ -6018,6 +6759,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Crystal Climb East": {
                             "type": "and",
@@ -6067,6 +6809,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Crystal Corridor West": {
                             "type": "or",
@@ -6091,6 +6834,7 @@
         },
         "Crystal Climb East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "map_name": "rm_a7c05",
                 "minimap_data": [
@@ -6114,7 +6858,12 @@
                         "x": 17,
                         "y": 9
                     }
-                ]
+                ],
+                "light_level": "0",
+                "liquid_info": {
+                    "liquid_type": 0,
+                    "liquid_level": 0
+                }
             },
             "nodes": {
                 "Horizontal Dock to Crystal Corridor East": {
@@ -6142,6 +6891,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Vertical Dock to Main Caves": {
                             "type": "and",
@@ -6191,6 +6941,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Horizontal Dock to Crystal Corridor East": {
                             "type": "and",

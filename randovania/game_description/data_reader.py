@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import copy
+import typing
 from typing import TYPE_CHECKING, TypeVar
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description import game_migration
 from randovania.game_description.db import event_pickup
 from randovania.game_description.db.area import Area
@@ -27,6 +29,8 @@ from randovania.game_description.db.region import Region
 from randovania.game_description.db.region_list import RegionList
 from randovania.game_description.db.teleporter_network_node import TeleporterNetworkNode
 from randovania.game_description.game_description import GameDescription, IndexWithReason, MinimalLogicData
+from randovania.game_description.hint_features import HintFeature
+from randovania.game_description.requirements.node_requirement import NodeRequirement
 from randovania.game_description.requirements.requirement_and import RequirementAnd
 from randovania.game_description.requirements.requirement_or import RequirementOr
 from randovania.game_description.requirements.requirement_template import RequirementTemplate
@@ -41,7 +45,6 @@ from randovania.game_description.resources.resource_type import ResourceType
 from randovania.game_description.resources.search import MissingResource, find_resource_info_with_id
 from randovania.game_description.resources.simple_resource_info import SimpleResourceInfo
 from randovania.game_description.resources.trick_resource_info import TrickResourceInfo
-from randovania.games.game import RandovaniaGame
 from randovania.lib import frozen_lib, json_lib
 
 if TYPE_CHECKING:
@@ -150,6 +153,10 @@ def read_requirement_template(data: dict, resource_database: ResourceDatabase) -
     return RequirementTemplate(data["data"])
 
 
+def read_node_requirement(data: dict, resource_database: ResourceDatabase) -> NodeRequirement:
+    return NodeRequirement(NodeIdentifier.from_json(data["data"]))
+
+
 def read_requirement(data: dict, resource_database: ResourceDatabase) -> Requirement:
     req_type = data["type"]
     if req_type == "resource":
@@ -163,6 +170,9 @@ def read_requirement(data: dict, resource_database: ResourceDatabase) -> Require
 
     elif req_type == "template":
         return read_requirement_template(data, resource_database)
+
+    elif req_type == "node":
+        return read_node_requirement(data, resource_database)
 
     else:
         raise ValueError(f"Unknown requirement type: {req_type}")
@@ -273,9 +283,15 @@ def location_from_json(location: dict[str, float]) -> NodeLocation:
     return NodeLocation(float(location["x"]), float(location["y"]), float(location["z"]))
 
 
+# Hint Features
+def read_hint_feature_database(data: dict[str, dict]) -> dict[str, HintFeature]:
+    return {name: HintFeature.from_json(feature, name=name) for name, feature in data.items()}
+
+
 class RegionReader:
     resource_database: ResourceDatabase
     dock_weakness_database: DockWeaknessDatabase
+    hint_feature_database: dict[str, HintFeature]
     current_region_name: str
     current_area_name: str
     next_node_index: int
@@ -284,9 +300,11 @@ class RegionReader:
         self,
         resource_database: ResourceDatabase,
         dock_weakness_database: DockWeaknessDatabase,
+        hint_feature_database: dict[str, HintFeature],
     ):
         self.resource_database = resource_database
         self.dock_weakness_database = dock_weakness_database
+        self.hint_feature_database = hint_feature_database
         self.next_node_index = 0
 
     def _get_item(self, item_name: str | None) -> ItemResourceInfo | None:
@@ -338,6 +356,7 @@ class RegionReader:
                             for name in data["incompatible_dock_weaknesses"]
                         ]
                     ),
+                    ui_custom_name=data["ui_custom_name"],
                 )
 
             elif node_type == "pickup":
@@ -345,6 +364,7 @@ class RegionReader:
                     **generic_args,
                     pickup_index=PickupIndex(data["pickup_index"]),
                     location_category=LocationCategory(data["location_category"]),
+                    hint_features=frozenset(self.hint_feature_database[feature] for feature in data["hint_features"]),
                 )
 
             elif node_type == "event":
@@ -356,12 +376,12 @@ class RegionReader:
                 )
 
             elif node_type == "hint":
-                requirement_to_collect = read_requirement(data["requirement_to_collect"], self.resource_database)
+                lock_requirement = read_requirement(data["requirement_to_collect"], self.resource_database)
 
                 return HintNode(
                     **generic_args,
                     kind=HintNodeKind(data["kind"]),
-                    requirement_to_collect=requirement_to_collect,
+                    lock_requirement=lock_requirement,
                 )
 
             elif node_type == "teleporter_network":
@@ -416,7 +436,14 @@ class RegionReader:
             self.next_node_index += 1
 
         try:
-            return Area(area_name, nodes, connections, data["extra"], data["default_node"])
+            return Area(
+                name=area_name,
+                nodes=nodes,
+                connections=connections,
+                extra=data["extra"],
+                default_node=data["default_node"],
+                hint_features=frozenset(self.hint_feature_database[feature] for feature in data["hint_features"]),
+            )
         except KeyError as e:
             raise KeyError(f"Missing key `{e}` for area `{area_name}`")
 
@@ -431,8 +458,8 @@ class RegionReader:
             frozen_lib.wrap(data["extra"]),
         )
 
-    def read_region_list(self, data: list[dict]) -> RegionList:
-        return RegionList(read_array(data, self.read_region))
+    def read_region_list(self, data: list[dict], flatten_to_set_on_patch: bool) -> RegionList:
+        return RegionList(read_array(data, self.read_region), flatten_to_set_on_patch)
 
 
 def read_requirement_templates(data: dict, database: ResourceDatabase) -> dict[str, NamedRequirementTemplate]:
@@ -467,10 +494,6 @@ def read_resource_database(game: RandovaniaGame, data: dict) -> ResourceDatabase
     return db
 
 
-def read_initial_states(data: dict[str, list], resource_database: ResourceDatabase) -> dict[str, ResourceGainTuple]:
-    return {name: read_resource_gain_tuple(item, resource_database) for name, item in data.items()}
-
-
 def read_minimal_logic_db(data: dict | None) -> MinimalLogicData | None:
     if data is None:
         return None
@@ -492,20 +515,19 @@ def read_used_trick_levels(
 
 
 def decode_data_with_region_reader(data: dict) -> tuple[RegionReader, GameDescription]:
-    data = game_migration.migrate_to_current(data)
-
     game = RandovaniaGame(data["game"])
+    data = game_migration.migrate_to_current(data, game)
 
     resource_database = read_resource_database(game, data["resource_database"])
     dock_weakness_database = read_dock_weakness_database(data["dock_weakness_database"], resource_database)
+    hint_feature_database = read_hint_feature_database(data["hint_feature_database"])
 
     layers = frozen_lib.wrap(data["layers"])
-    region_reader = RegionReader(resource_database, dock_weakness_database)
-    region_list = region_reader.read_region_list(data["regions"])
+    region_reader = RegionReader(resource_database, dock_weakness_database, hint_feature_database)
+    region_list = region_reader.read_region_list(data["regions"], data["flatten_to_set_on_patch"])
 
     victory_condition = read_requirement(data["victory_condition"], resource_database)
     starting_location = NodeIdentifier.from_json(data["starting_location"])
-    initial_states = read_initial_states(data["initial_states"], resource_database)
     minimal_logic = read_minimal_logic_db(data["minimal_logic"])
     used_trick_levels = read_used_trick_levels(data["used_trick_levels"], resource_database)
 
@@ -514,10 +536,10 @@ def decode_data_with_region_reader(data: dict) -> tuple[RegionReader, GameDescri
         resource_database=resource_database,
         layers=layers,
         dock_weakness_database=dock_weakness_database,
+        hint_feature_database=hint_feature_database,
         region_list=region_list,
         victory_condition=victory_condition,
         starting_location=starting_location,
-        initial_states=initial_states,
         minimal_logic=minimal_logic,
         used_trick_levels=used_trick_levels,
     )
@@ -536,7 +558,7 @@ def read_split_file(dir_path: Path) -> dict:
         # This code runs before we can run old data migration, so we need to handle this difference here
         key_name = "worlds"
 
-    regions = data.pop(key_name)
+    regions = typing.cast(list[str], data.pop(key_name))
 
     data[key_name] = [
         json_lib.read_path(dir_path.joinpath(region_file_name), raise_on_duplicate_keys=True)

@@ -20,7 +20,7 @@ from randovania.lib.construct_lib import is_path_not_equals_to
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
 
-    from randovania.games.game import RandovaniaGame
+    from randovania.game.game_enum import RandovaniaGame
 
 _CURRENT_SCHEMA_VERSION = 13
 _PERMALINK_MAX_VERSION = 256
@@ -132,7 +132,7 @@ class Permalink:
 
     @classmethod
     def current_randovania_version(cls):
-        return randovania.GIT_HASH
+        return randovania.GIT_HASH or randovania.UNKNOWN_GIT_HASH
 
     @classmethod
     def from_parameters(cls, parameters: GeneratorParameters, seed_hash: bytes | None = None) -> Permalink:

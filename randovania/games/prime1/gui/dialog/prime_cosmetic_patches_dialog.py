@@ -2,15 +2,19 @@ from __future__ import annotations
 
 import dataclasses
 from functools import partial
+from typing import TYPE_CHECKING
 
 from PySide6 import QtCore, QtGui, QtWidgets
 
+from randovania.games.prime1.gui.generated.prime_cosmetic_patches_dialog_ui import Ui_PrimeCosmeticPatchesDialog
 from randovania.games.prime1.layout.prime_cosmetic_patches import PrimeCosmeticPatches
 from randovania.games.prime1.layout.prime_user_preferences import PrimeUserPreferences, SoundMode
 from randovania.gui.dialog.base_cosmetic_patches_dialog import BaseCosmeticPatchesDialog
-from randovania.gui.generated.prime_cosmetic_patches_dialog_ui import Ui_PrimeCosmeticPatchesDialog
 from randovania.gui.lib import slider_updater
 from randovania.gui.lib.signal_handling import set_combo_with_value
+
+if TYPE_CHECKING:
+    from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
 
 SUIT_DEFAULT_COLORS = [
     [(255, 173, 50), (220, 25, 45), (132, 240, 60)],  # Power
@@ -37,9 +41,11 @@ def hue_rotate_color(original_color: tuple[int, int, int], rotation: int) -> tup
 class PrimeCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_PrimeCosmeticPatchesDialog):
     _cosmetic_patches: PrimeCosmeticPatches
 
-    def __init__(self, parent: QtWidgets.QWidget | None, current: PrimeCosmeticPatches):
-        super().__init__(parent)
+    def __init__(self, parent: QtWidgets.QWidget | None, current: BaseCosmeticPatches):
+        super().__init__(parent, current)
         self.setupUi(self)
+
+        assert isinstance(current, PrimeCosmeticPatches)
         self._cosmetic_patches = current
 
         self.field_to_slider_mapping = {

@@ -1,0 +1,1757 @@
+{
+    "schema_version": 13,
+    "pickup_categories": {
+        "construction": {
+            "long_name": "Construction",
+            "hint_details": [
+                "a ",
+                "construction tech"
+            ]
+        },
+        "enhancement": {
+            "long_name": "Enhancement",
+            "hint_details": [
+                "an ",
+                "enhancement tech"
+            ]
+        },
+        "gear": {
+            "long_name": "Gear",
+            "hint_details": [
+                "a ",
+                "gear tech"
+            ]
+        },
+        "material": {
+            "long_name": "Material",
+            "hint_details": [
+                "a ",
+                "material tech"
+            ]
+        },
+        "power": {
+            "long_name": "Power",
+            "hint_details": [
+                "a ",
+                "power tech"
+            ]
+        },
+        "production": {
+            "long_name": "Production",
+            "hint_details": [
+                "a ",
+                "production tech"
+            ]
+        },
+        "science": {
+            "long_name": "Science",
+            "hint_details": [
+                "a ",
+                "science tech"
+            ]
+        },
+        "transport": {
+            "long_name": "Transport",
+            "hint_details": [
+                "a ",
+                "transport tech"
+            ]
+        },
+        "vehicle": {
+            "long_name": "Vehicle",
+            "hint_details": [
+                "a ",
+                "vehicle tech"
+            ]
+        },
+        "weapon": {
+            "long_name": "Weapon",
+            "hint_details": [
+                "a ",
+                "weapon tech"
+            ]
+        }
+    },
+    "generated_pickups": {},
+    "standard_pickups": {
+        "Circuit Network": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/circuit-network.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "circuit-network"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                17
+            ]
+        },
+        "Cliff Explosives": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/cliff-explosives.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "cliff-explosives"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                60
+            ]
+        },
+        "Concrete": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/concrete.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "concrete"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                30
+            ]
+        },
+        "Construction Robotics": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/construction-robotics.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "construction-robotics"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                143
+            ]
+        },
+        "Barrel Handling": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/icons/fluid/barreling/empty-barrel.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "fluid-handling"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                31
+            ]
+        },
+        "Fluid Storage": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/fluid-handling.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "fluid-storage"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Gate": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/gate.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "gate"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                35
+            ]
+        },
+        "Landfill": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/landfill.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "landfill"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                15
+            ]
+        },
+        "Logistic Robotics": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/logistic-robotics.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "logistic-robotics"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                144
+            ]
+        },
+        "Logistic System": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/logistic-system.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "logistic-system"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                161
+            ]
+        },
+        "Lamp": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/lamp.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "lamp"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                12
+            ]
+        },
+        "Wall": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/stone-wall.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "stone-wall"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                14
+            ]
+        },
+        "Braking Force": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/braking-force.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "braking-force-7"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                180
+            ]
+        },
+        "Laser Weapons Damage": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/laser-weapons-damage.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "laser-weapons-damage-7"
+            ],
+            "expected_case_for_describer": "missing"
+        },
+        "Follower Robot Count": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/follower-robots.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "follower-robot-count-5"
+            ],
+            "expected_case_for_describer": "missing"
+        },
+        "Laser Shooting Speed": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/laser-shooting-speed.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "laser-shooting-speed-7"
+            ],
+            "expected_case_for_describer": "missing",
+            "original_locations": [
+                183
+            ]
+        },
+        "Mining Productivity": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/mining-productivity.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "mining-productivity-4"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 4
+        },
+        "Physical Projectile Damage": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/physical-projectile-damage-2.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "physical-projectile-damage-7"
+            ],
+            "expected_case_for_describer": "missing"
+        },
+        "Refined Flammables": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/refined-flammables.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "refined-flammables-7"
+            ],
+            "expected_case_for_describer": "missing"
+        },
+        "Regular Inserter Capacity Bonus": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/inserter-capacity.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "regular-inserter-capacity-bonus"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 3
+        },
+        "Research Speed": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/research-speed.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "research-speed-6"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 5,
+            "original_locations": [
+                157
+            ]
+        },
+        "Bulk Inserter Capacity Bonus": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/inserter-capacity.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "bulk-inserter-capacity-bonus"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 4
+        },
+        "Steel Axe": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/steel-axe.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "steel-axe"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                19
+            ]
+        },
+        "Stronger Explosives": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/stronger-explosives-3.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "stronger-explosives-7"
+            ],
+            "expected_case_for_describer": "missing"
+        },
+        "Research Productivity": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/research-speed.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "research-productivity"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 5
+        },
+        "Toolbelt": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/toolbelt.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "toolbelt"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 3,
+            "original_locations": [
+                16
+            ]
+        },
+        "Weapon Shooting Speed": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/weapon-shooting-speed-3.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "weapon-shooting-speed-6"
+            ],
+            "expected_case_for_describer": "missing",
+            "original_locations": [
+                153
+            ]
+        },
+        "Worker Robots Speed": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/worker-robots-speed.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "worker-robots-speed-6"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 5
+        },
+        "Worker Robots Storage": {
+            "gui_category": "enhancement",
+            "hint_features": [
+                "enhancement"
+            ],
+            "model_name": "__base__/graphics/technology/worker-robots-storage.png",
+            "offworld_models": {},
+            "preferred_location_category": "minor",
+            "progression": [
+                "worker-robots-storage-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "custom_count_for_shuffled_case": 5,
+            "original_locations": [
+                179
+            ]
+        },
+        "Armor": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/heavy-armor.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Light armor \u2192 Heavy armor",
+            "progression": [
+                "light-armor",
+                "heavy-armor"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Battery Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/battery-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Personal battery \u2192 Personal battery MK2",
+            "progression": [
+                "battery-equipment",
+                "battery-mk2-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                107,
+                139
+            ]
+        },
+        "Belt Immunity Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/belt-immunity-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "belt-immunity-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                106
+            ]
+        },
+        "Discharge Defense Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/discharge-defense-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "discharge-defense-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                141
+            ]
+        },
+        "Energy Shield Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/energy-shield-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Energy shield \u2192 Energy shield MK2",
+            "progression": [
+                "energy-shield-equipment",
+                "energy-shield-mk2-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                104,
+                138
+            ]
+        },
+        "Exoskeleton Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/exoskeleton-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "exoskeleton-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                132
+            ]
+        },
+        "Fission Reactor Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/fission-reactor-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "fission-reactor-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                158
+            ]
+        },
+        "Modular Armor": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/armor-making.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Modular armor \u2192 Power armor \u2192 Power armor MK2",
+            "progression": [
+                "modular-armor",
+                "power-armor",
+                "power-armor-mk2"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                66,
+                130,
+                172
+            ]
+        },
+        "Night Vision Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/night-vision-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "night-vision-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                105
+            ]
+        },
+        "Personal Laser Defense Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/personal-laser-defense-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "personal-laser-defense-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                140
+            ]
+        },
+        "Personal Roboport Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/personal-roboport-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Personal roboport \u2192 Personal roboport MK2",
+            "progression": [
+                "personal-roboport-equipment",
+                "personal-roboport-mk2-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                160,
+                177
+            ]
+        },
+        "Solar Panel Equipment": {
+            "gui_category": "gear",
+            "hint_features": [
+                "gear"
+            ],
+            "model_name": "__base__/graphics/technology/solar-panel-equipment.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "solar-panel-equipment"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                86
+            ]
+        },
+        "Battery": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/battery.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "battery"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                57
+            ]
+        },
+        "Coal Liquefaction": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/coal-liquefaction.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "coal-liquefaction"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                121
+            ]
+        },
+        "Electronics": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/electronics.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Electronics \u2192 Advanced circuit \u2192 Processing unit",
+            "progression": [
+                "electronics",
+                "advanced-circuit",
+                "processing-unit"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                1,
+                58,
+                76
+            ]
+        },
+        "Engine Unit": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/engine.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Engine \u2192 Electric engine",
+            "progression": [
+                "engine",
+                "electric-engine"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                23,
+                115
+            ]
+        },
+        "Explosives": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/explosives.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "explosives"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                56
+            ]
+        },
+        "Flying Robot Frame": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/robotics.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "robotics"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                131
+            ]
+        },
+        "Low Density Structure": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/low-density-structure.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "low-density-structure"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                79
+            ]
+        },
+        "Lubricant": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/lubricant.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "lubricant"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                102
+            ]
+        },
+        "Plastics": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/plastics.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "plastics"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                53
+            ]
+        },
+        "Rocket Fuel": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/rocket-fuel.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "rocket-fuel"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                101
+            ]
+        },
+        "Solid Fuel": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/oil-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "solid-fuel"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Steel Processing": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/steel-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "steel-processing"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                8
+            ]
+        },
+        "Sulfur": {
+            "gui_category": "material",
+            "hint_features": [
+                "material"
+            ],
+            "model_name": "__base__/graphics/technology/sulfur-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "sulfur-processing"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                52
+            ]
+        },
+        "Accumulator": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/electric-energy-acumulators.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "electric-energy-accumulators"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                63
+            ]
+        },
+        "Big Electric Pole": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/electric-energy-distribution-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "big-electric-pole"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Medium Electric Pole": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/electric-energy-distribution-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "electric-energy-distribution-1"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                21
+            ]
+        },
+        "Nuclear Power": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/nuclear-power.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "nuclear-power"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                116
+            ]
+        },
+        "Solar Panel": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/solar-energy.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "solar-energy"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                20
+            ]
+        },
+        "Steam Power": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/steam-power.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "steam-power"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                0
+            ]
+        },
+        "Substation": {
+            "gui_category": "power",
+            "hint_features": [
+                "power"
+            ],
+            "model_name": "__base__/graphics/technology/electric-energy-distribution-2.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "electric-energy-distribution-2"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                81
+            ]
+        },
+        "Assembly Machine": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/automation-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Automation \u2192 Automation 2 \u2192 Automation 3",
+            "progression": [
+                "automation",
+                "automation-2",
+                "automation-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                6,
+                18,
+                129
+            ]
+        },
+        "Beacon": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/effect-transmission.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "effect-transmission"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                120
+            ]
+        },
+        "Efficiency Module": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/efficiency-module-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Efficiency module \u2192 Efficiency module 2 \u2192 Efficiency module 3",
+            "progression": [
+                "efficiency-module",
+                "efficiency-module-2",
+                "efficiency-module-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                89,
+                111,
+                125
+            ]
+        },
+        "Electric Furnace": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/advanced-material-processing-2.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "advanced-material-processing-2"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                82
+            ]
+        },
+        "Oil Cracking": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/oil-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "oil-cracking"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Oil Gathering": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/oil-gathering.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "oil-gathering"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                40
+            ]
+        },
+        "Oil Processing": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/oil-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Oil processing \u2192 Advanced oil processing",
+            "progression": [
+                "oil-processing",
+                "advanced-oil-processing"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                47,
+                83
+            ]
+        },
+        "Productivity Module": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/productivity-module-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Productivity module \u2192 Productivity module 2 \u2192 Productivity module 3",
+            "progression": [
+                "productivity-module",
+                "productivity-module-2",
+                "productivity-module-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                88,
+                110,
+                124
+            ]
+        },
+        "Rocket Silo": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/rocket-silo.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "rocket-silo"
+            ],
+            "expected_case_for_describer": "vanilla",
+            "hide_from_gui": true,
+            "original_locations": [
+                156
+            ]
+        },
+        "Speed Module": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/speed-module-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Speed module \u2192 Speed module 2 \u2192 Speed module 3",
+            "progression": [
+                "speed-module",
+                "speed-module-2",
+                "speed-module-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                87,
+                108,
+                122
+            ]
+        },
+        "Steel Furnace": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/advanced-material-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "advanced-material-processing"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                22
+            ]
+        },
+        "Uranium Mining": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/uranium-mining.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "uranium-mining"
+            ],
+            "expected_case_for_describer": "starting_item",
+            "original_locations": [
+                84
+            ]
+        },
+        "Uranium Processing": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/uranium-processing.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Uranium processing \u2192 Kovarex enrichment process",
+            "progression": [
+                "uranium-processing",
+                "kovarex-enrichment-process"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                103,
+                123
+            ]
+        },
+        "Automation Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/automation-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "automation-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                2
+            ]
+        },
+        "Chemical Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/chemical-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "chemical-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                65
+            ]
+        },
+        "Logistic Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/logistic-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "logistic-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                7
+            ]
+        },
+        "Military Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/military-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "military-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                36
+            ]
+        },
+        "Production Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/production-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "production-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                109
+            ]
+        },
+        "Utility Science Pack": {
+            "gui_category": "science",
+            "hint_features": [
+                "science"
+            ],
+            "model_name": "__base__/graphics/technology/utility-science-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "utility-science-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                142
+            ]
+        },
+        "Fluid Wagon": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__base__/graphics/technology/fluid-wagon.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "fluid-wagon"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                46
+            ]
+        },
+        "Inserter": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__base__/graphics/technology/fast-inserter.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Inserter \u2192 Fast inserter \u2192 Bulk inserter",
+            "progression": [
+                "inserter",
+                "fast-inserter",
+                "bulk-inserter"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Logistics": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__base__/graphics/technology/logistics-1.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Logistics \u2192 Logistics 2 \u2192 Logistics 3",
+            "progression": [
+                "logistics",
+                "logistics-2",
+                "logistics-3"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                11,
+                28,
+                118
+            ]
+        },
+        "Long Handed inserter": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__randovania-assets__/graphics/technology/long-handed-inserter.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "long-handed-inserter"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Longer Handed inserter": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__randovania-assets__/graphics/technology/longer-handed-inserter.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "longer-handed-inserter"
+            ],
+            "expected_case_for_describer": "shuffled"
+        },
+        "Railway": {
+            "gui_category": "transport",
+            "hint_features": [
+                "transport"
+            ],
+            "model_name": "__base__/graphics/technology/railway.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "railway"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                37
+            ]
+        },
+        "Car": {
+            "gui_category": "vehicle",
+            "hint_features": [
+                "vehicle"
+            ],
+            "model_name": "__base__/graphics/technology/automobilism.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "automobilism"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                38
+            ]
+        },
+        "Spidertron": {
+            "gui_category": "vehicle",
+            "hint_features": [
+                "vehicle"
+            ],
+            "model_name": "__base__/graphics/technology/spidertron.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "spidertron"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                176
+            ]
+        },
+        "Tank": {
+            "gui_category": "vehicle",
+            "hint_features": [
+                "vehicle"
+            ],
+            "model_name": "__base__/graphics/technology/tank.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "tank"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                93
+            ]
+        },
+        "Artillery": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/artillery.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "artillery"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                174
+            ]
+        },
+        "Atomic Bomb": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/atomic-bomb.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "atomic-bomb"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                171
+            ]
+        },
+        "Flamethrower": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/flamethrower.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "flamethrower"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                55
+            ]
+        },
+        "Follower Capsule": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/defender.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Defender \u2192 Distractor \u2192 Destroyer",
+            "progression": [
+                "defender",
+                "distractor",
+                "destroyer"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                44,
+                99,
+                173
+            ]
+        },
+        "Gun Turret": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/gun-turret.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "gun-turret"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                13
+            ]
+        },
+        "Land Mine": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/land-mine.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "land-mine"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                61
+            ]
+        },
+        "Laser Turret": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/laser-turret.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "laser-turret"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                98
+            ]
+        },
+        "Military": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/military.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Military \u2192 Military 2 \u2192 Military 3 \u2192 Military 4",
+            "progression": [
+                "military",
+                "military-2",
+                "military-3",
+                "military-4"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                9,
+                26,
+                75,
+                155
+            ]
+        },
+        "Rocketry": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/rocketry.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "description": "Provides in order: Rocketry \u2192 Explosive rocketry",
+            "progression": [
+                "rocketry",
+                "explosive-rocketry"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                62,
+                94
+            ]
+        },
+        "Uranium Ammo": {
+            "gui_category": "weapon",
+            "hint_features": [
+                "weapon"
+            ],
+            "model_name": "__base__/graphics/technology/uranium-ammo.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "uranium-ammo"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                170
+            ]
+        },
+        "Electric Mining Drill": {
+            "gui_category": "production",
+            "hint_features": [
+                "production"
+            ],
+            "model_name": "__base__/graphics/technology/electric-mining-drill.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "electric-mining-drill"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                3
+            ]
+        },
+        "Repair Pack": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/repair-pack.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "repair-pack"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                4
+            ]
+        },
+        "Radar": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/radar.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "radar"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                5
+            ]
+        },
+        "Advanced Combinators": {
+            "gui_category": "construction",
+            "hint_features": [
+                "construction"
+            ],
+            "model_name": "__base__/graphics/technology/advanced-combinators.png",
+            "offworld_models": {},
+            "preferred_location_category": "major",
+            "progression": [
+                "advanced-combinators"
+            ],
+            "expected_case_for_describer": "shuffled",
+            "original_locations": [
+                85
+            ]
+        }
+    },
+    "ammo_pickups": {},
+    "default_pickups": {},
+    "default_offworld_model": "Powerful"
+}

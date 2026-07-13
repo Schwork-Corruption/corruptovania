@@ -3,7 +3,7 @@ from __future__ import annotations
 import dataclasses
 from enum import Enum
 
-from randovania.games.game import RandovaniaGame
+from randovania.game.game_enum import RandovaniaGame
 from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
 
 
@@ -13,6 +13,8 @@ class CorruptionSuit(Enum):
     PED = 2
     CORRUPTED_25 = 3
     CORRUPTED_50 = 4
+    # HAZARD_SHIELD = 5
+    # CORRUPTED_75 = 6
 
 
 @dataclasses.dataclass(frozen=True)

@@ -11,6 +11,7 @@
     "areas": {
         "Lobby Save Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7400.0,
@@ -141,13 +142,8 @@
                                                         "comment": "Bomb Phase Drift Skip: https://youtu.be/QN5_-f6IIEs?t=20",
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Bomb",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Lay Bomb"
                                                             },
                                                             {
                                                                 "type": "resource",
@@ -197,6 +193,15 @@
                                                                 "data": {
                                                                     "type": "tricks",
                                                                     "name": "MeleeClip",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
                                                                     "amount": 1,
                                                                     "negate": false
                                                                 }
@@ -262,6 +267,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -300,6 +306,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -501,6 +508,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -538,6 +546,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Meboid Millpond": {
                             "type": "or",
@@ -587,6 +596,7 @@
         },
         "Transport to Tower Interior East": {
             "default_node": "Elevator to Area 5 Tower Interior",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5200.0,
@@ -644,6 +654,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Phase Drift Chamber Elevator",
                     "connections": {
                         "Door to Lobby Save Station": {
                             "type": "or",
@@ -837,6 +848,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lobby Save Station": {
                             "type": "or",
@@ -980,6 +992,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top of Room": {
                             "type": "or",
@@ -1298,6 +1311,7 @@
         },
         "Transport to Areas 4 and 6": {
             "default_node": "Elevator to Area 4 Central Caves",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 11300.0,
@@ -1377,6 +1391,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 102,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "resource",
@@ -1876,6 +1891,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Area 5 Chozo Seal Elevator North",
                     "connections": {
                         "Chozo Seal": {
                             "type": "and",
@@ -1903,7 +1919,7 @@
                         "actor_type": "weightactivatedplatform",
                         "start_point_actor_name": "ST_FromArea07"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "dock_type": "elevator",
                     "default_connection": {
                         "region": "Area 6",
@@ -1915,6 +1931,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Area 5 Chozo Seal Elevator South",
                     "connections": {
                         "Below Center Tunnel": {
                             "type": "and",
@@ -2007,6 +2024,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 109,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Chozo Seal": {
                             "type": "and",
@@ -2070,6 +2088,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -2105,6 +2124,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -2644,13 +2664,8 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spring",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spring Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -2712,6 +2727,7 @@
         },
         "Lobby Teleporter West": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -16800.0,
@@ -2803,6 +2819,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 105,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Grapple Block": {
                             "type": "and",
@@ -2832,6 +2849,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 106,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Transport to Tower Interior East": {
                             "type": "and",
@@ -2987,6 +3005,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "and",
@@ -3025,6 +3044,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Platform": {
                             "type": "and",
@@ -3063,6 +3083,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Left Pool": {
                             "type": "and",
@@ -3098,6 +3119,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Left Pool": {
                             "type": "resource",
@@ -3135,6 +3157,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Grapple Block": {
                             "type": "resource",
@@ -4401,6 +4424,7 @@
         },
         "J-Shape Tunnel": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -8600.0,
@@ -4454,6 +4478,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top of Tunnel": {
                             "type": "resource",
@@ -4491,6 +4516,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top of Tunnel": {
                             "type": "resource",
@@ -4528,6 +4554,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top of Tunnel": {
                             "type": "and",
@@ -4568,53 +4595,51 @@
                     "valid_starting_location": false,
                     "connections": {
                         "Tunnel to Lobby Save Station": {
-                            "type": "and",
+                            "type": "or",
                             "data": {
                                 "comment": null,
                                 "items": [
                                     {
                                         "type": "template",
-                                        "data": "Lay Any Bomb"
+                                        "data": "Simple IBJ"
                                     },
                                     {
-                                        "type": "or",
+                                        "type": "and",
                                         "data": {
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Any Bomb"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "or",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "Movement",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Space",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 1,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Movement",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Space",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -4624,53 +4649,51 @@
                             }
                         },
                         "Tunnel to Lobby Teleporter West (Top)": {
-                            "type": "and",
+                            "type": "or",
                             "data": {
                                 "comment": null,
                                 "items": [
                                     {
                                         "type": "template",
-                                        "data": "Lay Any Bomb"
+                                        "data": "Simple IBJ"
                                     },
                                     {
-                                        "type": "or",
+                                        "type": "and",
                                         "data": {
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Any Bomb"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "or",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "Movement",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Space",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "IBJ",
-                                                        "amount": 1,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Movement",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Space",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -4711,6 +4734,7 @@
         },
         "Transport to Tower Interior West": {
             "default_node": "Door to Lobby Teleporter West",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12800.0,
@@ -4768,6 +4792,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Tower Lobby Teleporter West Elevator",
                     "connections": {
                         "Door to Lobby Teleporter West": {
                             "type": "and",
@@ -4806,6 +4831,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Area 5 Tower Interior": {
                             "type": "and",
@@ -4820,6 +4846,7 @@
         },
         "Lobby Teleporter East": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5100.0,
@@ -4883,6 +4910,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 103,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Next to Pickup": {
                             "type": "and",
@@ -4966,6 +4994,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Teleporter": {
                             "type": "and",
@@ -5132,6 +5161,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Teleporter": {
                             "type": "and",
@@ -5174,6 +5204,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Pickup": {
                             "type": "resource",
@@ -5282,12 +5313,29 @@
                                                     "data": "Fleechswarm Protection"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "MeleeClip",
-                                                        "amount": 1,
-                                                        "negate": false
+                                                        "comment": "TODO: Add video",
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "MeleeClip",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -5785,6 +5833,7 @@
         },
         "Alpha+ Arena": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 3050.0,
@@ -5841,6 +5890,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5879,6 +5929,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5970,6 +6021,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 188,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5984,6 +6036,7 @@
         },
         "Gamma+ Arena Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -20800.0,
@@ -6040,6 +6093,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Gamma+ Arena": {
                             "type": "template",
@@ -6079,6 +6133,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lobby Teleporter West": {
                             "type": "resource",
@@ -6106,7 +6161,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_004"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Lobby Teleporter West": {
                             "type": "and",
@@ -6121,6 +6176,7 @@
         },
         "Phase Drift Chamber": {
             "default_node": "Left of Statue",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6100.0,
@@ -6176,6 +6232,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 107,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Left of Crumble Blocks": {
                             "type": "and",
@@ -6212,6 +6269,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 108,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Meboid Millpond (Bottom)": {
                             "type": "and",
@@ -6263,13 +6321,8 @@
                                                                 }
                                                             },
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Bomb",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Lay Bomb"
                                                             }
                                                         ]
                                                     }
@@ -6328,6 +6381,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left of Statue": {
                             "type": "and",
@@ -6363,6 +6417,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left of Crumble Blocks": {
                             "type": "resource",
@@ -6400,6 +6455,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Left of Crumble Blocks": {
@@ -6528,7 +6584,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_DEBUG_Bestowal"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Pickup (Phase Drift)": {
                             "type": "or",
@@ -6587,6 +6643,7 @@
         },
         "Meboid Millpond": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1900.0,
@@ -6634,6 +6691,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 104,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Bottom": {
                             "type": "resource",
@@ -6674,6 +6732,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Phase Drift Chamber (Top)": {
                             "type": "template",
@@ -6716,8 +6775,16 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        },
+                        "Start Point": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -6751,6 +6818,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lobby Save Station": {
                             "type": "template",
@@ -6783,6 +6851,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "resource",
@@ -7159,11 +7228,36 @@
                             "data": "Lay Any Bomb"
                         }
                     }
+                },
+                "Start Point": {
+                    "node_type": "generic",
+                    "heal": false,
+                    "coordinates": {
+                        "x": 2850.0,
+                        "y": -6100.0,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": true,
+                    "connections": {
+                        "Door to Alpha+ Arena": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },
         "Gamma+ Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -24700.0,
@@ -7217,6 +7311,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "resource",
@@ -7354,6 +7449,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 202,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -7368,6 +7464,7 @@
         },
         "Lobby Passageway": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8700.0,
@@ -7424,6 +7521,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7597,6 +7695,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",
@@ -7634,6 +7733,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -7669,6 +7769,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",

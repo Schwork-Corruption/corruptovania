@@ -11,6 +11,7 @@
     "areas": {
         "Wave Beam & Transport to Dam Exterior West": {
             "default_node": "Elevator to Area 2 Dam Exterior",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10700.0,
@@ -86,6 +87,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 46,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Interior Intersection Terminal (Middle)": {
                             "type": "and",
@@ -125,6 +127,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Dam Interior Elevator",
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -435,13 +438,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Spider",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
                                                             },
                                                             {
                                                                 "type": "or",
@@ -711,6 +709,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -751,6 +750,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -798,6 +798,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Generator Access": {
                             "type": "resource",
@@ -838,6 +839,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -913,6 +915,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Wave Beam)": {
                             "type": "and",
@@ -958,6 +961,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",
@@ -985,7 +989,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_CheckPoint_003"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Interior Intersection Terminal (Middle)": {
                             "type": "and",
@@ -1000,6 +1004,7 @@
         },
         "Varia Suit Chamber": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4200.0,
@@ -1047,6 +1052,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 45,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Wallfire Corridor": {
                             "type": "and",
@@ -1085,6 +1091,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wallfire Corridor": {
                             "type": "and",
@@ -1123,6 +1130,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Varia Suit)": {
                             "type": "and",
@@ -1175,6 +1183,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 48,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Dock to Interior Intersection Terminal": {
                             "type": "resource",
@@ -1202,7 +1211,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_CheckPoint_004"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Wallfire Corridor": {
                             "type": "and",
@@ -1238,6 +1247,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wallfire Corridor": {
                             "type": "or",
@@ -1275,6 +1285,7 @@
         },
         "Interior Intersection Terminal": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3400.0,
@@ -1375,13 +1386,8 @@
                                             "comment": "Breaking the block",
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "PBAmmo",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Power Bomb"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -1422,22 +1428,8 @@
                                                     "data": "Shoot Any Missile"
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Bomb",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "PBAmmo",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Any Bomb"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -1686,6 +1678,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -1724,6 +1717,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -1757,11 +1751,12 @@
                         "area": "Whimsical Waterwheels",
                         "node": "Door to Interior Intersection Terminal"
                     },
-                    "default_dock_weakness": "Access Open",
+                    "default_dock_weakness": "Power Beam Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Shaft": {
                             "type": "or",
@@ -1835,11 +1830,12 @@
                         "area": "Gamma Arena",
                         "node": "Door to Interior Intersection Terminal"
                     },
-                    "default_dock_weakness": "Access Open",
+                    "default_dock_weakness": "Power Beam Door",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Bottom of Morph Ball Shaft": {
                             "type": "and",
@@ -1861,13 +1857,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Spider",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Use Spider Ball"
                                                             },
                                                             {
                                                                 "type": "template",
@@ -1914,13 +1905,8 @@
                                                                                             "comment": null,
                                                                                             "items": [
                                                                                                 {
-                                                                                                    "type": "resource",
-                                                                                                    "data": {
-                                                                                                        "type": "items",
-                                                                                                        "name": "Spring",
-                                                                                                        "amount": 1,
-                                                                                                        "negate": false
-                                                                                                    }
+                                                                                                    "type": "template",
+                                                                                                    "data": "Use Spring Ball"
                                                                                                 },
                                                                                                 {
                                                                                                     "type": "resource",
@@ -2095,6 +2081,13 @@
                                     }
                                 ]
                             }
+                        },
+                        "Start Point": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
                         }
                     }
                 },
@@ -2126,6 +2119,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Shaft": {
                             "type": "and",
@@ -2294,6 +2288,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Shaft": {
                             "type": "resource",
@@ -2371,11 +2366,38 @@
                             }
                         }
                     }
+                },
+                "Start Point": {
+                    "node_type": "generic",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -1550.0,
+                        "y": -4500.0,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {
+                        "start_point_actor_name": "ST_SG_Gamma_001B"
+                    },
+                    "valid_starting_location": true,
+                    "connections": {
+                        "Door to Gamma Arena": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },
         "Lava Generator": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -13000.0,
@@ -2468,6 +2490,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Pickup": {
                             "type": "resource",
@@ -2508,6 +2531,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Pickup": {
                             "type": "resource",
@@ -2565,6 +2589,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Pickup": {
                             "type": "resource",
@@ -2605,6 +2630,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Pickup": {
                             "type": "resource",
@@ -2636,6 +2662,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 47,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Under Pickup": {
                             "type": "and",
@@ -2720,15 +2747,6 @@
                                         "type": "resource",
                                         "data": {
                                             "type": "items",
-                                            "name": "Morph",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
                                             "name": "Varia",
                                             "amount": 1,
                                             "negate": false
@@ -2740,13 +2758,8 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "PBAmmo",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Lay Power Bomb"
                                                 },
                                                 {
                                                     "type": "and",
@@ -2754,13 +2767,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Bomb",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Lay Bomb"
                                                             },
                                                             {
                                                                 "type": "or",
@@ -2768,13 +2776,8 @@
                                                                     "comment": null,
                                                                     "items": [
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Spider",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
+                                                                            "type": "template",
+                                                                            "data": "Use Spider Ball"
                                                                         },
                                                                         {
                                                                             "type": "and",
@@ -2787,13 +2790,8 @@
                                                                                             "comment": "Breaking the Bomb block",
                                                                                             "items": [
                                                                                                 {
-                                                                                                    "type": "resource",
-                                                                                                    "data": {
-                                                                                                        "type": "items",
-                                                                                                        "name": "Spring",
-                                                                                                        "amount": 1,
-                                                                                                        "negate": false
-                                                                                                    }
+                                                                                                    "type": "template",
+                                                                                                    "data": "Use Spring Ball"
                                                                                                 },
                                                                                                 {
                                                                                                     "type": "resource",
@@ -2869,7 +2867,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_SG_Gamma_001"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Door to Gamma Arena": {
                             "type": "resource",
@@ -2886,6 +2884,7 @@
         },
         "Crumble Cavern": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5850.0,
@@ -2933,6 +2932,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 43,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Lava Generator": {
                             "type": "and",
@@ -2990,6 +2990,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "and",
@@ -3107,22 +3108,8 @@
                                                                                             "comment": null,
                                                                                             "items": [
                                                                                                 {
-                                                                                                    "type": "resource",
-                                                                                                    "data": {
-                                                                                                        "type": "items",
-                                                                                                        "name": "Bomb",
-                                                                                                        "amount": 1,
-                                                                                                        "negate": false
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "type": "resource",
-                                                                                                    "data": {
-                                                                                                        "type": "items",
-                                                                                                        "name": "PBAmmo",
-                                                                                                        "amount": 3,
-                                                                                                        "negate": false
-                                                                                                    }
+                                                                                                    "type": "template",
+                                                                                                    "data": "Lay Bomb"
                                                                                                 },
                                                                                                 {
                                                                                                     "type": "resource",
@@ -3131,6 +3118,27 @@
                                                                                                         "name": "Space",
                                                                                                         "amount": 1,
                                                                                                         "negate": false
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "and",
+                                                                                                    "data": {
+                                                                                                        "comment": null,
+                                                                                                        "items": [
+                                                                                                            {
+                                                                                                                "type": "template",
+                                                                                                                "data": "Lay Power Bomb"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "resource",
+                                                                                                                "data": {
+                                                                                                                    "type": "items",
+                                                                                                                    "name": "PBAmmo",
+                                                                                                                    "amount": 3,
+                                                                                                                    "negate": false
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
                                                                                                     }
                                                                                                 }
                                                                                             ]
@@ -3227,6 +3235,7 @@
         },
         "Whimsical Waterwheels": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1700.0,
@@ -3291,6 +3300,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Interior Teleporter": {
                             "type": "resource",
@@ -3332,6 +3342,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Interior Intersection Terminal": {
                             "type": "resource",
@@ -3372,6 +3383,7 @@
         },
         "Interior Teleporter": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2200.0,
@@ -3481,6 +3493,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleporter Storage": {
                             "type": "and",
@@ -3526,6 +3539,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Fleech Fire Containment": {
                             "type": "and",
@@ -3561,6 +3575,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Teleporter": {
                             "type": "resource",
@@ -3598,6 +3613,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Under Teleporter": {
                             "type": "resource",
@@ -3862,6 +3878,7 @@
         },
         "Fleech Fire Containment": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4000.0,
@@ -3930,6 +3947,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Interior Teleporter": {
                             "type": "and",
@@ -4020,13 +4038,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -4161,6 +4174,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dam Basement": {
                             "type": "and",
@@ -4223,6 +4237,7 @@
         },
         "Dam Basement": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1800.0,
@@ -4270,8 +4285,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 40,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
-                        "Door to Fleech Fire Containment": {
+                        "Door to Dam Basement (Open Hatch Right)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -4299,6 +4315,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 41,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Gullugg Hideout": {
                             "type": "resource",
@@ -4339,8 +4356,9 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Pickup (Energy Tank)": {
+                        "Door to Dam Basement (Open Hatch Left)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -4374,6 +4392,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -4385,11 +4404,93 @@
                             }
                         }
                     }
+                },
+                "Door to Dam Basement (Open Hatch Left)": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -880.0,
+                        "y": -7990.0,
+                        "z": -10.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 4,
+                        "location_x_override": -280.0
+                    },
+                    "valid_starting_location": false,
+                    "dock_type": "door",
+                    "default_connection": {
+                        "region": "Area 2 Dam Interior",
+                        "area": "Dam Basement",
+                        "node": "Door to Dam Basement (Open Hatch Right)"
+                    },
+                    "default_dock_weakness": "Access Open",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Door to Fleech Fire Containment": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
+                },
+                "Door to Dam Basement (Open Hatch Right)": {
+                    "node_type": "dock",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -280.0,
+                        "y": -7990.0,
+                        "z": -10.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 5
+                    },
+                    "valid_starting_location": false,
+                    "dock_type": "door",
+                    "default_connection": {
+                        "region": "Area 2 Dam Interior",
+                        "area": "Dam Basement",
+                        "node": "Door to Dam Basement (Open Hatch Left)"
+                    },
+                    "default_dock_weakness": "Access Open",
+                    "exclude_from_dock_rando": false,
+                    "incompatible_dock_weaknesses": [],
+                    "override_default_open_requirement": null,
+                    "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Pickup (Energy Tank)": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
                 }
             }
         },
         "Gullugg Hideout": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 200.0,
@@ -4443,6 +4544,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to High Jump Boots Chamber": {
                             "type": "template",
@@ -4475,6 +4577,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Dam Basement": {
                             "type": "or",
@@ -4640,6 +4743,7 @@
         },
         "High Jump Boots Chamber": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2200.0,
@@ -4687,6 +4791,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 44,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -4725,6 +4830,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -4760,6 +4866,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "template",
@@ -4782,7 +4889,7 @@
                     "extra": {
                         "start_point_actor_name": "ST_CheckPoint_002"
                     },
-                    "valid_starting_location": false,
+                    "valid_starting_location": true,
                     "connections": {
                         "Pickup (High Jump Boots)": {
                             "type": "and",
@@ -4808,6 +4915,7 @@
         },
         "High Jump Boots Chamber Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4600.0,
@@ -4864,6 +4972,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Interior Teleporter": {
                             "type": "and",
@@ -5131,6 +5240,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to High Jump Boots Chamber": {
                             "type": "resource",
@@ -5147,6 +5257,7 @@
         },
         "Wallfire Corridor": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5800.0,
@@ -5203,6 +5314,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Varia Suit Chamber": {
                             "type": "and",
@@ -5241,6 +5353,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wave Beam & Transport to Dam Exterior West": {
                             "type": "and",
@@ -5255,6 +5368,7 @@
         },
         "Teleporter Storage": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -100.0,
@@ -5302,6 +5416,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 42,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Interior Teleporter": {
                             "type": "template",
@@ -5337,6 +5452,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Aeion Tank)": {
                             "type": "or",
@@ -5372,6 +5488,7 @@
         },
         "Gamma Arena": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5850.0,
@@ -5428,6 +5545,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5466,6 +5584,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5557,6 +5676,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 189,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -5571,6 +5691,7 @@
         },
         "Generator Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5800.0,
@@ -5629,6 +5750,7 @@
                     ],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Varia Suit Chamber": {
                             "type": "and",
@@ -5712,6 +5834,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wave Beam & Transport to Dam Exterior West": {
                             "type": "and",
@@ -5769,6 +5892,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Wave Beam & Transport to Dam Exterior West": {
                             "type": "and",

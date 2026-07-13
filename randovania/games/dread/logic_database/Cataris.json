@@ -11,6 +11,7 @@
     "areas": {
         "Transport to Artaria": {
             "default_node": "Elevator to Artaria",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8400.0,
@@ -83,6 +84,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Artaria": {
                             "type": "and",
@@ -125,6 +127,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Elevator to Artaria": {
                             "type": "and",
@@ -222,6 +225,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 36,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Total Recharge Station South": {
                             "type": "and",
@@ -293,6 +297,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Artaria Transport Access": {
                             "type": "and",
@@ -335,6 +340,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station Southeast": {
                             "type": "and",
@@ -416,6 +422,7 @@
         },
         "Dropdown Pit": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1700.0,
@@ -469,6 +476,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Underlava Puzzle Room 2": {
                             "type": "and",
@@ -504,6 +512,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Above Z-57 Fight": {
                             "type": "or",
@@ -600,6 +609,7 @@
         },
         "Navigation Station Southeast": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6400.0,
@@ -660,6 +670,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Thermal Device Room South": {
                             "type": "and",
@@ -709,6 +720,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Artaria": {
                             "type": "and",
@@ -762,6 +774,7 @@
         },
         "Thermal Device Room South": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -822,6 +835,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -864,6 +878,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - First Thermal Device": {
                             "type": "and",
@@ -920,6 +935,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Front of Thermal Door": {
                             "type": "and",
@@ -962,6 +978,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -1112,6 +1129,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "resource",
@@ -1149,6 +1167,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "and",
@@ -1213,6 +1232,7 @@
         },
         "Artaria Transport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 13400.0,
@@ -1273,6 +1293,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East": {
                             "type": "and",
@@ -1315,6 +1336,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East": {
                             "type": "and",
@@ -1357,6 +1379,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Artaria": {
                             "type": "and",
@@ -1378,6 +1401,7 @@
         },
         "Total Recharge Station South": {
             "default_node": "Total Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6400.0,
@@ -1438,6 +1462,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Thermal Door": {
                             "type": "and",
@@ -1480,6 +1505,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Next to Thermal Door": {
                             "type": "and",
@@ -1522,6 +1548,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Blob": {
                             "type": "template",
@@ -1620,6 +1647,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Thermal Device Room South (Top)": {
                             "type": "resource",
@@ -1686,6 +1714,7 @@
         },
         "Above Z-57 Fight": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 300.0,
@@ -1778,6 +1807,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Z-57 Heat Room West (Right)": {
                             "type": "and",
@@ -1827,6 +1857,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Z-57 Heat Room East": {
                             "type": "and",
@@ -1893,6 +1924,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 37,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Pickup Corner": {
                             "type": "and",
@@ -2129,6 +2161,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Z-57 Heat Room West (Right)": {
                             "type": "and",
@@ -2183,6 +2216,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Z-57 Room": {
                             "type": "resource",
@@ -2220,6 +2254,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Z-57)": {
                             "type": "and",
@@ -2272,7 +2307,7 @@
                                                             },
                                                             {
                                                                 "type": "template",
-                                                                "data": "Shoot Plasma Beam"
+                                                                "data": "Beam Damage 120"
                                                             }
                                                         ]
                                                     }
@@ -2322,7 +2357,7 @@
                                                             },
                                                             {
                                                                 "type": "template",
-                                                                "data": "Shoot Plasma Beam"
+                                                                "data": "Beam Damage 120"
                                                             }
                                                         ]
                                                     }
@@ -2368,10 +2403,6 @@
                                                                     "comment": null,
                                                                     "items": [
                                                                         {
-                                                                            "type": "template",
-                                                                            "data": "Shoot Charge Beam"
-                                                                        },
-                                                                        {
                                                                             "type": "and",
                                                                             "data": {
                                                                                 "comment": null,
@@ -2391,9 +2422,46 @@
                                                                                     }
                                                                                 ]
                                                                             }
+                                                                        },
+                                                                        {
+                                                                            "type": "and",
+                                                                            "data": {
+                                                                                "comment": null,
+                                                                                "items": [
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Shoot Charge Beam"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "template",
+                                                                                        "data": "Beam Damage 75"
+                                                                                    }
+                                                                                ]
+                                                                            }
                                                                         }
                                                                     ]
                                                                 }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Combat",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Shoot Charge Beam"
                                                             }
                                                         ]
                                                     }
@@ -2519,12 +2587,67 @@
                                                     "data": "Use Spin Boost"
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "Combat",
-                                                        "amount": 2,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Combat",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "damage",
+                                                                    "name": "Damage",
+                                                                    "amount": 250,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": "or",
+                                        "data": {
+                                            "comment": "Fan phase",
+                                            "items": [
+                                                {
+                                                    "type": "template",
+                                                    "data": "Use Spin Boost"
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "Combat",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "damage",
+                                                                    "name": "Damage",
+                                                                    "amount": 300,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -2783,6 +2906,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 141,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Z-57 Room": {
                             "type": "and",
@@ -2797,6 +2921,7 @@
         },
         "EMMI Zone Exit East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -2857,6 +2982,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Upper)": {
                             "type": "and",
@@ -2964,6 +3090,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Upper)": {
                             "type": "resource",
@@ -3008,6 +3135,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Lower)": {
                             "type": "or",
@@ -3088,6 +3216,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Lower)": {
                             "type": "and",
@@ -3102,6 +3231,7 @@
         },
         "Lava Button East": {
             "default_node": "Start Point 2",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10400.0,
@@ -3162,6 +3292,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Thermal Door": {
                             "type": "or",
@@ -3249,6 +3380,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Thermal Door": {
                             "type": "or",
@@ -3336,6 +3468,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Thermal Door": {
                             "type": "and",
@@ -3484,6 +3617,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Activate Magnet Walls Button": {
                             "type": "template",
@@ -3943,6 +4077,7 @@
         },
         "Tall Magnet Walls Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8400.0,
@@ -3999,6 +4134,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East": {
                             "type": "and",
@@ -4041,6 +4177,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East": {
                             "type": "and",
@@ -4083,6 +4220,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit East": {
                             "type": "and",
@@ -4104,6 +4242,7 @@
         },
         "Moving Magnet Walls (Tall)": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10400.0,
@@ -4164,6 +4303,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East Access": {
                             "type": "and",
@@ -4416,6 +4556,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tall Magnet Walls Access": {
                             "type": "and",
@@ -4487,7 +4628,7 @@
                                                                 "type": "resource",
                                                                 "data": {
                                                                     "type": "events",
-                                                                    "name": "CatarisThermalLowerLava",
+                                                                    "name": "CatarisMoveMagnetWallsButton",
                                                                     "amount": 1,
                                                                     "negate": false
                                                                 }
@@ -4613,6 +4754,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Tall Magnet Walls Access": {
                             "type": "and",
@@ -4662,6 +4804,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Energy Recharge Station": {
                             "type": "and",
@@ -4704,6 +4847,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East Access": {
                             "type": "and",
@@ -4773,6 +4917,7 @@
         },
         "Teleport to Artaria (Blue)": {
             "default_node": "Teleporter to Artaria",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 13400.0,
@@ -4849,6 +4994,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lava Room": {
                             "type": "and",
@@ -4965,6 +5111,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 45,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Top Platform": {
                             "type": "and",
@@ -5071,7 +5218,7 @@
                                 ]
                             }
                         },
-                        "Right Room": {
+                        "Center Room": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5176,6 +5323,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 48,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Moving Magnet Walls (Tall)": {
                             "type": "and",
@@ -5280,6 +5428,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Power Bomb Tank)": {
                             "type": "and",
@@ -5425,7 +5574,7 @@
                     "heal": false,
                     "coordinates": {
                         "x": 18300.0,
-                        "y": 700.0,
+                        "y": -500.0,
                         "z": 0.0
                     },
                     "description": "",
@@ -5439,7 +5588,7 @@
                     "valid_starting_location": false,
                     "event_name": "s020_magma:default:breakablemag012",
                     "connections": {
-                        "Teleporter to Artaria": {
+                        "Lava Room": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5508,23 +5657,8 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
-                        "Event - East Blob, below": {
-                            "type": "or",
-                            "data": {
-                                "comment": null,
-                                "items": [
-                                    {
-                                        "type": "template",
-                                        "data": "Shoot Beam"
-                                    },
-                                    {
-                                        "type": "template",
-                                        "data": "Lay Bomb"
-                                    }
-                                ]
-                            }
-                        },
                         "Lava Room": {
                             "type": "resource",
                             "data": {
@@ -5539,10 +5673,6 @@
                             "data": {
                                 "comment": null,
                                 "items": [
-                                    {
-                                        "type": "template",
-                                        "data": "Lay Power Bomb"
-                                    },
                                     {
                                         "type": "resource",
                                         "data": {
@@ -5594,6 +5724,22 @@
                                                 }
                                             ]
                                         }
+                                    }
+                                ]
+                            }
+                        },
+                        "Event - East Blob, above": {
+                            "type": "or",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Shoot Beam"
+                                    },
+                                    {
+                                        "type": "template",
+                                        "data": "Lay Bomb"
                                     }
                                 ]
                             }
@@ -5765,6 +5911,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper-Left Room": {
                             "type": "or",
@@ -5836,6 +5983,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Room": {
                             "type": "and",
@@ -6312,6 +6460,27 @@
                                 ]
                             }
                         },
+                        "Event - East Blob, below": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "template",
+                                        "data": "Shoot Beam"
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "tricks",
+                                            "name": "Knowledge",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    }
+                                ]
+                            }
+                        },
                         "Teleporter to Artaria": {
                             "type": "and",
                             "data": {
@@ -6360,8 +6529,8 @@
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
-                        "x": 19040.70351758794,
-                        "y": 2061.6415410385252,
+                        "x": 19040.7,
+                        "y": 1400.0,
                         "z": 0.0
                     },
                     "description": "",
@@ -6437,81 +6606,17 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "or",
-                                        "data": {
-                                            "comment": null,
-                                            "items": [
-                                                {
-                                                    "type": "template",
-                                                    "data": "Can Slide"
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Screw",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "type": "or",
-                                        "data": {
-                                            "comment": null,
-                                            "items": [
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Varia",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                },
-                                                {
-                                                    "type": "and",
-                                                    "data": {
-                                                        "comment": null,
-                                                        "items": [
-                                                            {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "tricks",
-                                                                    "name": "Suitless",
-                                                                    "amount": 2,
-                                                                    "negate": false
-                                                                }
-                                                            },
-                                                            {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "damage",
-                                                                    "name": "Heat",
-                                                                    "amount": 60,
-                                                                    "negate": false
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ]
-                                        }
+                                        "type": "template",
+                                        "data": "Lay Power Bomb"
                                     }
                                 ]
                             }
                         },
                         "Event - East Blob, above": {
-                            "type": "and",
+                            "type": "or",
                             "data": {
                                 "comment": null,
                                 "items": [
-                                    {
-                                        "type": "template",
-                                        "data": "Lay Power Bomb"
-                                    },
                                     {
                                         "type": "resource",
                                         "data": {
@@ -6519,6 +6624,27 @@
                                             "name": "Wave",
                                             "amount": 1,
                                             "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "and",
+                                        "data": {
+                                            "comment": "https://youtu.be/IbM7yzxysSk",
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "Pseudo",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "Shoot Diffusion Beam"
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -6939,25 +7065,8 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "or",
-                                        "data": {
-                                            "comment": null,
-                                            "items": [
-                                                {
-                                                    "type": "template",
-                                                    "data": "Can Slide"
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Screw",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
-                                                }
-                                            ]
-                                        }
+                                        "type": "template",
+                                        "data": "Lay Power Bomb"
                                     },
                                     {
                                         "type": "or",
@@ -7048,7 +7157,7 @@
                     "valid_starting_location": false,
                     "event_name": "s020_magma:default:breakablemag012",
                     "connections": {
-                        "Right Room": {
+                        "Teleporter to Artaria": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -7122,6 +7231,7 @@
         },
         "Total Recharge Station North": {
             "default_node": "Total Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8400.0,
@@ -7182,6 +7292,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Double Obsydomithon Room": {
                             "type": "resource",
@@ -7233,6 +7344,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Thermal Device Room North": {
                             "type": "resource",
@@ -7278,6 +7390,7 @@
         },
         "Energy Recharge Station": {
             "default_node": "Life Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 8400.0,
@@ -7338,6 +7451,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Moving Magnet Walls (Tall) (Charge)": {
                             "type": "and",
@@ -7387,6 +7501,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Moving Magnet Walls (Tall) (Charge)": {
                             "type": "and",
@@ -7429,6 +7544,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station East": {
                             "type": "and",
@@ -7600,6 +7716,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Thermal Device Room North": {
                             "type": "and",
@@ -7664,6 +7781,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Moving Magnet Walls (Tall) (Cloak)": {
                             "type": "and",
@@ -7678,6 +7796,7 @@
         },
         "Z-57 Heat Room West (Left)": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4700.0,
@@ -7738,6 +7857,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top Ledge": {
                             "type": "resource",
@@ -7859,6 +7979,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Platform": {
                             "type": "and",
@@ -8119,6 +8240,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tiny Alcove": {
                             "type": "and",
@@ -8765,6 +8887,7 @@
         },
         "Green EMMI Introduction": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4700.0,
@@ -8821,6 +8944,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone East Tower Access (Lower)": {
                             "type": "and",
@@ -8960,6 +9084,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction Access": {
                             "type": "and",
@@ -9002,6 +9127,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone East Tower Access (Upper)": {
                             "type": "template",
@@ -9163,6 +9289,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone West Exit Path": {
                             "type": "template",
@@ -9223,6 +9350,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone West Exit Path": {
                             "type": "resource",
@@ -9260,6 +9388,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction Access": {
                             "type": "and",
@@ -9295,6 +9424,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone West Exit Path": {
                             "type": "and",
@@ -9495,6 +9625,7 @@
         },
         "Z-57 Heat Room West (Right)": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1700.0,
@@ -9555,6 +9686,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Z-57 Heat Room West (Left)": {
                             "type": "and",
@@ -9653,6 +9785,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 38,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Z-57 Heat Room West (Left)": {
                             "type": "resource",
@@ -9690,6 +9823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Above Z-57 Fight": {
                             "type": "and",
@@ -9803,6 +9937,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -9819,6 +9954,7 @@
         },
         "EMMI Zone Exit to Map Station": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4700.0,
@@ -9879,6 +10015,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Map Station": {
                             "type": "and",
@@ -9917,6 +10054,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Item Tunnel": {
                             "type": "and",
@@ -10012,6 +10150,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Map Station": {
                             "type": "and",
@@ -10026,6 +10165,7 @@
         },
         "Long Mouth Statue Room": {
             "default_node": "Ammo Recharge",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -14500.0,
@@ -10090,6 +10230,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West (Lower)": {
                             "type": "resource",
@@ -10130,6 +10271,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Path to Kraid Entryway": {
                             "type": "resource",
@@ -10181,6 +10323,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West (Lower)": {
                             "type": "and",
@@ -10285,6 +10428,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West (Lower)": {
                             "type": "and",
@@ -10377,6 +10521,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Path to Kraid Entryway": {
                             "type": "and",
@@ -10391,6 +10536,7 @@
         },
         "Above Kraid": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -18500.0,
@@ -10459,6 +10605,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Blob above Kraid, below": {
                             "type": "or",
@@ -10482,16 +10629,94 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "template",
-                                        "data": "Can Slide"
-                                    },
-                                    {
-                                        "type": "resource",
+                                        "type": "or",
                                         "data": {
-                                            "type": "events",
-                                            "name": "Kraid",
-                                            "amount": 1,
-                                            "negate": true
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "Can Slide"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "Kraid",
+                                                                    "amount": 1,
+                                                                    "negate": true
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "Kraid",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "s020_magma:default:db_reg_mg_021",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "s020_magma:default:db_dif_mg_001",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "items",
+                                                                    "name": "Morph",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "s020_magma:default:db_reg_mg_020",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "events",
+                                                                    "name": "s020_magma:default:db_reg_mg_019",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
                                         }
                                     },
                                     {
@@ -10692,6 +10917,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Kraid Eyedoor Room": {
                             "type": "and",
@@ -10727,6 +10953,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left Room": {
                             "type": "and",
@@ -10815,6 +11042,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Path to Kraid Entryway": {
                             "type": "and",
@@ -11043,6 +11271,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center Room": {
                             "type": "and",
@@ -11140,6 +11369,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Heated U-Turn (top)": {
                             "type": "and",
@@ -11496,6 +11726,7 @@
         },
         "Teleport to Artaria (Red)": {
             "default_node": "Teleporter to Artaria",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -18500.0,
@@ -11568,6 +11799,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station West": {
                             "type": "and",
@@ -11628,6 +11860,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station Northwest": {
                             "type": "or",
@@ -11837,6 +12070,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Teleport Access": {
                             "type": "and",
@@ -11879,6 +12113,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Path to Kraid Entryway": {
                             "type": "and",
@@ -11908,6 +12143,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 50,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Path to Kraid Entryway": {
                             "type": "resource",
@@ -11989,6 +12225,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Teleport Access": {
                             "type": "template",
@@ -12032,6 +12269,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to West Teleport Access": {
                             "type": "resource",
@@ -12048,6 +12286,7 @@
         },
         "Teleport to Ghavoran": {
             "default_node": "Teleporter to Ghavoran",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -16500.0,
@@ -12099,6 +12338,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 41,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Top room": {
                             "type": "and",
@@ -12181,6 +12421,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 53,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Lower Center": {
                             "type": "and",
@@ -12307,6 +12548,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Grapple Block": {
                             "type": "and",
@@ -13284,6 +13526,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Lower Center": {
                             "type": "and",
@@ -13372,6 +13615,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Top room": {
                             "type": "and",
@@ -13439,6 +13683,7 @@
         },
         "Ghavoran Teleport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12500.0,
@@ -13499,6 +13744,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West": {
                             "type": "and",
@@ -13562,6 +13808,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station Northwest": {
                             "type": "and",
@@ -13625,6 +13872,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Navigation Station Northwest": {
                             "type": "resource",
@@ -13641,6 +13889,7 @@
         },
         "EMMI Zone Exits West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10500.0,
@@ -13701,6 +13950,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Ghavoran Teleport Access": {
                             "type": "template",
@@ -13771,6 +14021,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Item Tunnel": {
                             "type": "template",
@@ -13806,6 +14057,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Item Tunnel": {
                             "type": "template",
@@ -13848,6 +14100,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Ledge": {
                             "type": "and",
@@ -13890,6 +14143,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Ledge": {
                             "type": "and",
@@ -13919,6 +14173,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 40,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Dock to Long Mouth Statue Room (Upper)": {
                             "type": "and",
@@ -13954,6 +14209,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Ledge": {
                             "type": "or",
@@ -14003,6 +14259,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Upper Ledge": {
                             "type": "and",
@@ -14038,6 +14295,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Item Tunnel": {
                             "type": "and",
@@ -14116,6 +14374,7 @@
         },
         "EMMI Zone Item Tunnel": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7650.0,
@@ -14163,6 +14422,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 33,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Center of Tunnel": {
                             "type": "template",
@@ -14202,6 +14462,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit to Map Station": {
                             "type": "template",
@@ -14241,6 +14502,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exits West": {
                             "type": "template",
@@ -14299,6 +14561,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center of Tunnel": {
                             "type": "resource",
@@ -14336,6 +14599,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Center of Tunnel": {
                             "type": "resource",
@@ -14498,6 +14762,7 @@
         },
         "Map Station": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2700.0,
@@ -14558,6 +14823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exit to Map Station": {
                             "type": "and",
@@ -14596,6 +14862,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Moving Magnet Walls (Small)": {
                             "type": "and",
@@ -14646,6 +14913,7 @@
         },
         "Moving Magnet Walls (Small)": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -700.0,
@@ -14706,6 +14974,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Tower East": {
                             "type": "or",
@@ -14939,6 +15208,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Map Station": {
                             "type": "or",
@@ -15103,6 +15373,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Map Station": {
                             "type": "and",
@@ -15117,6 +15388,7 @@
         },
         "EMMI Zone Tower East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 2400.0,
@@ -15177,6 +15449,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to EMMI Zone Exit East": {
                             "type": "and",
@@ -15219,6 +15492,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone East Tower Access (Bottom)": {
                             "type": "and",
@@ -15299,6 +15573,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Hall Thermal Device Room": {
                             "type": "or",
@@ -15435,6 +15710,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Moving Magnet Walls (Small)": {
                             "type": "or",
@@ -15520,6 +15796,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Moving Magnet Walls (Small)": {
                             "type": "and",
@@ -15562,6 +15839,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit East (Power)": {
                             "type": "and",
@@ -15604,6 +15882,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to EMMI Zone Hidden Missile Room": {
                             "type": "and",
@@ -15646,6 +15925,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Hall Thermal Device Room": {
                             "type": "and",
@@ -15688,6 +15968,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone East Tower Access (Middle)": {
                             "type": "and",
@@ -15734,6 +16015,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to EMMI Zone Exit East": {
                             "type": "and",
@@ -15769,6 +16051,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Exit East (Charge)": {
                             "type": "and",
@@ -15783,6 +16066,7 @@
         },
         "Save Station East": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 6400.0,
@@ -15843,6 +16127,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Energy Recharge Station": {
                             "type": "and",
@@ -15892,6 +16177,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Hall Thermal Device Room": {
                             "type": "and",
@@ -15935,6 +16221,7 @@
         },
         "Hall Thermal Device Room": {
             "default_node": "Event - Thermal Device",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -15995,6 +16282,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Tower East": {
                             "type": "and",
@@ -16033,6 +16321,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Save Station East": {
                             "type": "and",
@@ -16084,6 +16373,7 @@
         },
         "EMMI Zone Tower West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2700.0,
@@ -16140,6 +16430,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access": {
                             "type": "and",
@@ -16185,6 +16476,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Central Unit Access": {
                             "type": "and",
@@ -16227,6 +16519,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Moving Magnet Walls (Small)": {
                             "type": "and",
@@ -16269,6 +16562,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Moving Magnet Walls (Small)": {
                             "type": "and",
@@ -16283,6 +16577,7 @@
         },
         "Central Unit Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7650.0,
@@ -16343,6 +16638,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -16487,6 +16783,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -16588,6 +16885,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Top Blob": {
                             "type": "template",
@@ -16786,6 +17084,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 144,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door to Central Unit": {
                             "type": "and",
@@ -16897,6 +17196,7 @@
         },
         "Central Unit": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -9700.0,
@@ -16977,6 +17277,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Cataris Central Unit": {
                             "type": "template",
@@ -17013,6 +17314,7 @@
         },
         "Lava Button West": {
             "default_node": "Start Point 2",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -700.0,
@@ -17098,6 +17400,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Thermal Device Room North (Bottom)": {
                             "type": "or",
@@ -17318,6 +17621,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Thermal Device Room North": {
                             "type": "or",
@@ -17465,6 +17769,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Lower Lava Button": {
                             "type": "template",
@@ -17523,6 +17828,7 @@
         },
         "Dairon Transport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1500.0,
@@ -17591,6 +17897,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Thermal Device Room North": {
                             "type": "and",
@@ -17629,6 +17936,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Thermal Device Room North": {
                             "type": "resource",
@@ -17736,6 +18044,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Transport to Dairon": {
                             "type": "and",
@@ -17833,6 +18142,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 54,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Thermal Device Room North": {
                             "type": "and",
@@ -17868,6 +18178,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Tower West": {
                             "type": "template",
@@ -17904,6 +18215,7 @@
         },
         "Transport to Dairon": {
             "default_node": "Shuttle to Dairon",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10400.0,
@@ -17964,6 +18276,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Shuttle to Dairon": {
                             "type": "and",
@@ -18007,6 +18320,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dairon Transport Access": {
                             "type": "and",
@@ -18021,6 +18335,7 @@
         },
         "Thermal Device Room North": {
             "default_node": "Event - Thermal Device 2",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -18081,6 +18396,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Dairon Transport Access": {
                             "type": "and",
@@ -18215,6 +18531,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Spider Magnet Wall": {
                             "type": "or",
@@ -18357,6 +18674,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Total Recharge Station North": {
                             "type": "and",
@@ -18450,6 +18768,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 42,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Tunnel to Lava Button West": {
                             "type": "or",
@@ -18515,6 +18834,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 49,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Past Magnet Floor": {
                             "type": "and",
@@ -18610,6 +18930,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Part)": {
                             "type": "or",
@@ -18681,6 +19002,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Spider Magnet Wall": {
                             "type": "or",
@@ -18812,6 +19134,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Dairon Transport Access": {
                             "type": "and",
@@ -18847,6 +19170,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Lava Button West (Mid)": {
                             "type": "and",
@@ -18907,6 +19231,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Tank)": {
                             "type": "resource",
@@ -19390,6 +19715,7 @@
         },
         "Path to Kraid Entryway": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -16500.0,
@@ -19450,6 +19776,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Long Mouth Statue Room": {
                             "type": "template",
@@ -19489,6 +19816,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Above Kraid": {
                             "type": "or",
@@ -19560,6 +19888,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Long Mouth Statue Room": {
                             "type": "or",
@@ -19631,6 +19960,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Artaria (Red)": {
                             "type": "template",
@@ -19642,6 +19972,7 @@
         },
         "Diffusion Beam Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12500.0,
@@ -19702,6 +20033,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Diffusion Beam)": {
                             "type": "or",
@@ -19841,6 +20173,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 35,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Door from Teleport to Dairon": {
                             "type": "or",
@@ -19936,6 +20269,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 51,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Alcove": {
                             "type": "and",
@@ -20073,6 +20407,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Teleport to Dairon": {
                             "type": "and",
@@ -20170,6 +20505,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Alcove": {
                             "type": "or",
@@ -20231,6 +20567,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door from Teleport to Dairon": {
                             "type": "and",
@@ -20422,6 +20759,7 @@
         },
         "Lava Button East Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 13400.0,
@@ -20482,6 +20820,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East (Cloak)": {
                             "type": "and",
@@ -20524,6 +20863,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup Corner": {
                             "type": "and",
@@ -20566,6 +20906,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Moving Magnet Walls (Tall)": {
                             "type": "and",
@@ -20620,6 +20961,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 46,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Pickup Corner": {
                             "type": "and",
@@ -20683,6 +21025,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Lava Button East (Cloak)": {
                             "type": "resource",
@@ -20759,6 +21102,7 @@
         },
         "EMMI Zone East Tower Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -700.0,
@@ -20819,6 +21163,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Green EMMI Introduction": {
                             "type": "and",
@@ -20933,6 +21278,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Middle)": {
                             "type": "and",
@@ -20975,6 +21321,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction": {
                             "type": "template",
@@ -21014,6 +21361,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Middle)": {
                             "type": "and",
@@ -21056,6 +21404,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Top)": {
                             "type": "template",
@@ -21121,6 +21470,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Middle)": {
                             "type": "and",
@@ -21156,6 +21506,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Middle)": {
                             "type": "and",
@@ -21191,6 +21542,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction": {
                             "type": "and",
@@ -21226,6 +21578,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to EMMI Zone Tower East (Middle)": {
                             "type": "and",
@@ -21285,6 +21638,7 @@
         },
         "Double Obsydomithon Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 10400.0,
@@ -21345,6 +21699,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left Floor": {
                             "type": "resource",
@@ -21376,6 +21731,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 43,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Left Floor": {
                             "type": "and",
@@ -21488,6 +21844,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left Floor": {
                             "type": "and",
@@ -21816,6 +22173,7 @@
         },
         "Z-57 Heat Room East": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -21876,6 +22234,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "or",
@@ -21941,6 +22300,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 52,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Above Z-57 Fight": {
                             "type": "or",
@@ -21991,6 +22351,7 @@
         },
         "Teleport to Dairon": {
             "default_node": "Teleporter to Dairon",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -10500.0,
@@ -22051,6 +22412,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Diffusion Beam Room": {
                             "type": "or",
@@ -22116,6 +22478,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 39,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Event - Lava Blob": {
                             "type": "template",
@@ -22301,6 +22664,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Teleporter to Dairon": {
                             "type": "or",
@@ -22540,6 +22904,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Green EMMI Introduction Access": {
                             "type": "or",
@@ -22654,6 +23019,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Diffusion Beam Room": {
                             "type": "or",
@@ -22798,6 +23164,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Tutorial Blob": {
                             "type": "and",
@@ -22895,6 +23262,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Green EMMI Introduction Access": {
                             "type": "and",
@@ -23512,6 +23880,7 @@
         },
         "Green EMMI Introduction Access": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7100.0,
@@ -23580,6 +23949,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction": {
                             "type": "resource",
@@ -23620,6 +23990,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Z-57 Heat Room West (Left)": {
                             "type": "resource",
@@ -23687,6 +24058,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Dairon": {
                             "type": "and",
@@ -23729,6 +24101,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction": {
                             "type": "and",
@@ -23833,6 +24206,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Dairon": {
                             "type": "and",
@@ -23847,6 +24221,7 @@
         },
         "Underlava Puzzle Room 2": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -4700.0,
@@ -23907,6 +24282,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Lava": {
                             "type": "and",
@@ -23989,6 +24365,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 44,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Dock to Underlava Puzzle Room 1": {
                             "type": "and",
@@ -24482,6 +24859,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Green EMMI Introduction Access": {
                             "type": "and",
@@ -24517,6 +24895,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Green EMMI Introduction Access": {
                             "type": "and",
@@ -24578,6 +24957,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Energy Part)": {
                             "type": "and",
@@ -24704,6 +25084,7 @@
         },
         "Underlava Puzzle Room 1": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -6700.0,
@@ -24757,6 +25138,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Teleport to Dairon": {
                             "type": "and",
@@ -24792,6 +25174,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Underlava Puzzle Room 2": {
                             "type": "or",
@@ -24849,6 +25232,7 @@
         },
         "EMMI Zone Hidden Missile Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4400.0,
@@ -24896,6 +25280,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 47,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Main Room": {
                             "type": "resource",
@@ -25040,6 +25425,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Main Room": {
                             "type": "resource",
@@ -25056,6 +25442,7 @@
         },
         "Navigation Station Northwest": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -14500.0,
@@ -25116,6 +25503,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Ghavoran Teleport Access": {
                             "type": "and",
@@ -25165,6 +25553,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Artaria (Red)": {
                             "type": "and",
@@ -25218,6 +25607,7 @@
         },
         "EMMI Zone West Exit Path": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7650.0,
@@ -25278,6 +25668,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West": {
                             "type": "and",
@@ -25320,6 +25711,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to Green EMMI Introduction": {
                             "type": "and",
@@ -25362,6 +25754,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Dock to EMMI Zone Exits West": {
                             "type": "and",
@@ -25376,6 +25769,7 @@
         },
         "Heated U-Turn": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -14500.0,
@@ -25429,6 +25823,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Above Kraid (top)": {
                             "type": "and",
@@ -25517,6 +25912,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Above Kraid (bottom)": {
                             "type": "and",
@@ -25584,6 +25980,7 @@
         },
         "Kraid Eyedoor Room": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12500.0,
@@ -25631,6 +26028,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 34,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Safe Ledge": {
                             "type": "and",
@@ -25726,6 +26124,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Safe Ledge": {
                             "type": "and",
@@ -25949,6 +26348,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ledge below blob": {
                             "type": "or",
@@ -26375,6 +26775,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Safe Ledge": {
                             "type": "and",
@@ -26575,6 +26976,7 @@
         },
         "Save Station West": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -20500.0,
@@ -26635,6 +27037,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -26678,6 +27081,7 @@
         },
         "Kraid Arena": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -17900.0,
@@ -27023,6 +27427,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Event - Kraid": {
                             "type": "and",
@@ -27220,6 +27625,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Ledge": {
                             "type": "and",
@@ -27285,6 +27691,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Right Ledge": {
                             "type": "and",
@@ -27393,6 +27800,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 148,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Right Ledge": {
                             "type": "and",
@@ -27407,6 +27815,7 @@
         },
         "West Teleport Access": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -16500.0,
@@ -27467,6 +27876,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Long Mouth Statue Room": {
                             "type": "and",
@@ -27509,6 +27919,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Teleport to Artaria (Red)": {
                             "type": "and",
@@ -27523,6 +27934,7 @@
         },
         "Experiment Z-57 Fight?": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1250.0,

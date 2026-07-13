@@ -4,11 +4,11 @@ import dataclasses
 
 import pytest
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.games.fusion.layout.fusion_configuration import (
     FusionArtifactConfig,
     FusionConfiguration,
 )
-from randovania.games.game import RandovaniaGame
 from randovania.interface_common.preset_manager import PresetManager
 
 
@@ -50,6 +50,6 @@ def test_fusion_format_params(artifacts):
             else [metroids_where]
         ),
         "Hints": ["Metroid Hint: Area and room", "Charge Beam Hint: Area only"],
-        "Item Pool": [f"Size: {115+artifacts.placed_artifacts} of 120", "Vanilla starting items"],
+        "Item Pool": [f"Size: {115 + artifacts.placed_artifacts} of 120", "Vanilla starting items"],
         "Logic Settings": ["All tricks disabled"],
     }

@@ -8,6 +8,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
+from randovania.game.game_enum import RandovaniaGame
 from randovania.game_description import default_database, derived_nodes
 from randovania.game_description.db.area import Area
 from randovania.game_description.db.configurable_node import ConfigurableNode
@@ -22,7 +23,6 @@ from randovania.game_description.requirements.resource_requirement import Resour
 from randovania.game_description.resources.resource_collection import ResourceCollection
 from randovania.game_description.resources.resource_type import ResourceType
 from randovania.game_description.resources.search import find_resource_info_with_long_name
-from randovania.games.game import RandovaniaGame
 from randovania.generator import reach_lib
 from randovania.generator.old_generator_reach import OldGeneratorReach
 from randovania.generator.pickup_pool import pool_creator
@@ -32,7 +32,8 @@ from randovania.layout.base.base_configuration import StartingLocationList
 from randovania.layout.base.trick_level import LayoutTrickLevel
 from randovania.layout.base.trick_level_configuration import TrickLevelConfiguration
 from randovania.layout.generator_parameters import GeneratorParameters
-from randovania.resolver.state import State, StateGameData, add_pickup_to_state
+from randovania.resolver.energy_tank_damage_state import EnergyTankDamageState
+from randovania.resolver.state import State
 
 if TYPE_CHECKING:
     from randovania.game_description.db.resource_node import ResourceNode
@@ -104,7 +105,7 @@ def _compare_actions(
 _ignore_events_for_game = {
     RandovaniaGame.METROID_PRIME: {"Event33"},
     RandovaniaGame.METROID_PRIME_ECHOES: {"Event91", "Event92", "Event97"},
-    RandovaniaGame.METROID_PRIME_CORRUPTION: {"Event1", "Event146", "Event147", "Event148", "Event154"},
+    RandovaniaGame.METROID_PRIME_CORRUPTION: {"Event154"},
     RandovaniaGame.SUPER_METROID: {"Event6"},
     RandovaniaGame.METROID_DREAD: {},
     RandovaniaGame.CAVE_STORY: {
@@ -121,8 +122,8 @@ _ignore_events_for_game = {
 }
 
 _ignore_pickups_for_game = {
-    # These 3 indices are in Olympus and are unreachable given the default preset
-    RandovaniaGame.METROID_PRIME_CORRUPTION: {0, 1, 2},
+    # This index is PED Suit in MedLab Delta, which cannot be altered by gollop's patcher.
+    RandovaniaGame.METROID_PRIME_CORRUPTION: {0},
     # Unknown reason why
     RandovaniaGame.CAVE_STORY: {30, 31, 41, 45},
 }
@@ -140,7 +141,7 @@ _include_tricks_for_game = {
 }
 
 
-@pytest.mark.skip_resolver_tests()
+@pytest.mark.skip_resolver_tests
 @pytest.mark.parametrize(
     ("game_enum", "ignore_events", "ignore_pickups", "include_tricks"),
     [
@@ -166,7 +167,7 @@ def test_database_collectable(
         "randovania.generator.base_patches_factory.BasePatchesFactory.check_item_pool",
         autospec=True,
     )
-    game, initial_state, permalink = run_bootstrap(
+    game, state, permalink = run_bootstrap(
         preset_manager.default_preset_for_game(game_enum).get_preset(), include_tricks
     )
 
@@ -174,11 +175,11 @@ def test_database_collectable(
     pool_results = pool_creator.calculate_pool_results(permalink.get_preset(0).configuration, game)
 
     for pickup in pool_results.starting + pool_results.to_place:
-        add_pickup_to_state(initial_state, pickup)
+        state = state.assign_pickup_to_starting_items(pickup)
     for pickup in pool_results.assignment.values():
-        add_pickup_to_state(initial_state, pickup)
+        state = state.assign_pickup_to_starting_items(pickup)
     for trick in game.resource_database.trick:
-        initial_state.resources.set_resource(trick, LayoutTrickLevel.maximum().as_number)
+        state.resources.set_resource(trick, LayoutTrickLevel.maximum().as_number)
 
     expected_events = sorted(
         (event for event in game.resource_database.event if event.short_name not in ignore_events),
@@ -186,7 +187,7 @@ def test_database_collectable(
     )
     expected_pickups = sorted(it.pickup_index for it in all_pickups if it.pickup_index.index not in ignore_pickups)
 
-    reach = _create_reach_with_unsafe(game, initial_state.heal())
+    reach = _create_reach_with_unsafe(game, state)
     while list(reach_lib.collectable_resource_nodes(reach.nodes, reach)):
         reach.act_on(next(iter(reach_lib.collectable_resource_nodes(reach.nodes, reach))))
         reach = advance_reach_with_possible_unsafe_resources(reach)
@@ -261,10 +262,10 @@ def test_basic_search_with_translator_gate(has_translator: bool, echoes_resource
         RandovaniaGame.METROID_PRIME_ECHOES,
         DockWeaknessDatabase([], {}, {}, (MagicMock(), MagicMock()), MagicMock()),
         echoes_resource_database,
+        {},
         ("default",),
         Requirement.impossible(),
         MagicMock(),
-        {},
         None,
         region_list,
     )
@@ -274,11 +275,15 @@ def test_basic_search_with_translator_gate(has_translator: bool, echoes_resource
     initial_state = State(
         ResourceCollection.from_dict(echoes_resource_database, {scan_visor: 1 if has_translator else 0}),
         (),
-        99,
+        EnergyTankDamageState(
+            99,
+            100,
+            game.resource_database,
+            game.region_list,
+        ),
         node_a,
         echoes_game_patches,
         None,
-        StateGameData(echoes_resource_database, game.region_list, 100, 99),
     )
 
     # Run

@@ -2,8 +2,13 @@ from __future__ import annotations
 
 import typing
 
-from randovania.games import game
+import randovania.game.data
+import randovania.game.development_state
+import randovania.game.generator
+import randovania.game.gui
+import randovania.game.layout
 from randovania.games.fusion import layout
+from randovania.games.fusion.db_integrity import find_fusion_db_errors
 from randovania.games.fusion.layout.preset_describer import FusionPresetDescriber
 
 if typing.TYPE_CHECKING:
@@ -18,28 +23,31 @@ def _options() -> type[PerGameOptions]:
     return FusionPerGameOptions
 
 
-def _gui() -> game.GameGui:
+def _gui() -> randovania.game.gui.GameGui:
     from randovania.games.fusion import gui
+    from randovania.gui.game_details.hint_details_tab import HintDetailsTab
 
-    return game.GameGui(
+    return randovania.game.gui.GameGui(
         game_tab=gui.FusionGameTabWidget,
         tab_provider=gui.preset_tabs,
         cosmetic_dialog=gui.FusionCosmeticPatchesDialog,
         export_dialog=gui.FusionGameExportDialog,
         progressive_item_gui_tuples=(),
-        spoiler_visualizer=(gui.FusionHintDetailsTab,),
+        spoiler_visualizer=(HintDetailsTab,),
     )
 
 
-def _generator() -> game.GameGenerator:
+def _generator() -> randovania.game.generator.GameGenerator:
     from randovania.games.fusion import generator
     from randovania.games.fusion.generator.hint_distributor import FusionHintDistributor
+    from randovania.generator.filler.weights import ActionWeights
 
-    return game.GameGenerator(
+    return randovania.game.generator.GameGenerator(
         pickup_pool_creator=generator.pool_creator,
         bootstrap=generator.FusionBootstrap(),
         base_patches_factory=generator.FusionBasePatchesFactory(),
         hint_distributor=FusionHintDistributor(),
+        action_weights=ActionWeights(events_weight=0.75, hints_weight=0.5),
     )
 
 
@@ -61,10 +69,10 @@ def _hash_words() -> list[str]:
     return HASH_WORDS
 
 
-game_data: game.GameData = game.GameData(
+game_data: randovania.game.data.GameData = randovania.game.data.GameData(
     short_name="Fusion",
     long_name="Metroid Fusion",
-    development_state=game.DevelopmentState.EXPERIMENTAL,
+    development_state=randovania.game.development_state.DevelopmentState.DEVELOPMENT,
     presets=[
         {"path": "starter_preset.rdvpreset"},
     ],
@@ -87,7 +95,7 @@ game_data: game.GameData = game.GameData(
         ),
     ],
     hash_words=_hash_words(),
-    layout=game.GameLayout(
+    layout=randovania.game.layout.GameLayout(
         configuration=layout.FusionConfiguration,
         cosmetic_patches=layout.FusionCosmeticPatches,
         preset_describer=FusionPresetDescriber(),
@@ -98,4 +106,5 @@ game_data: game.GameData = game.GameData(
     patch_data_factory=_patch_data_factory,
     exporter=_exporter,
     multiple_start_nodes_per_area=True,
+    logic_db_integrity=find_fusion_db_errors,
 )

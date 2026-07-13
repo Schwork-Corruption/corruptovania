@@ -4,12 +4,14 @@ import dataclasses
 import functools
 from typing import TYPE_CHECKING
 
+from randovania.games.super_metroid.gui.generated.super_cosmetic_patches_dialog_ui import Ui_SuperCosmeticPatchesDialog
 from randovania.games.super_metroid.layout.super_metroid_cosmetic_patches import MusicMode, SuperMetroidCosmeticPatches
 from randovania.gui.dialog.base_cosmetic_patches_dialog import BaseCosmeticPatchesDialog
-from randovania.gui.generated.super_cosmetic_patches_dialog_ui import Ui_SuperCosmeticPatchesDialog
 
 if TYPE_CHECKING:
     from PySide6 import QtWidgets
+
+    from randovania.layout.base.cosmetic_patches import BaseCosmeticPatches
 
 
 class SuperCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_SuperCosmeticPatchesDialog):
@@ -17,8 +19,8 @@ class SuperCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_SuperCosmeticPatc
     checkboxes: dict[str, QtWidgets.QCheckBox]
     radio_buttons: dict[MusicMode, QtWidgets.QRadioButton]
 
-    def __init__(self, parent: QtWidgets.QWidget | None, current: SuperMetroidCosmeticPatches):
-        super().__init__(parent)
+    def __init__(self, parent: QtWidgets.QWidget | None, current: BaseCosmeticPatches):
+        super().__init__(parent, current)
         self.setupUi(self)
         self.checkboxes = {
             "colorblind_mode": self.colorblind_checkbox,
@@ -32,6 +34,7 @@ class SuperCosmeticPatchesDialog(BaseCosmeticPatchesDialog, Ui_SuperCosmeticPatc
             MusicMode.RANDOMIZED: self.random_music_option,
             MusicMode.OFF: self.no_music_option,
         }
+        assert isinstance(current, SuperMetroidCosmeticPatches)
         self._cosmetic_patches = current
 
         self.on_new_cosmetic_patches(current)

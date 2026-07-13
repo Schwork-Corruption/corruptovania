@@ -11,6 +11,7 @@
     "areas": {
         "Metroid Nest Foyer": {
             "default_node": "Start Point",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2800.0,
@@ -67,6 +68,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Metroid Nest Teleporter": {
                             "type": "and",
@@ -151,6 +153,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Metroid Nest Hallway South": {
                             "type": "resource",
@@ -188,6 +191,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Start Point": {
                             "type": "or",
@@ -249,6 +253,7 @@
         },
         "Transport to Surface": {
             "default_node": "Elevator to Surface West",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -12400.0,
@@ -316,6 +321,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 165,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Above Left Pickup": {
                             "type": "and",
@@ -398,6 +404,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 166,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -583,6 +590,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Metroid Queen Elevator",
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "resource",
@@ -812,6 +820,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -942,6 +951,15 @@
                                                                     "amount": 2,
                                                                     "negate": false
                                                                 }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
                                                             }
                                                         ]
                                                     }
@@ -967,6 +985,7 @@
         },
         "Metroid Nest Hallway South": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -370.0,
@@ -1023,6 +1042,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -1061,6 +1081,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -1096,6 +1117,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "resource",
@@ -1178,6 +1200,7 @@
         },
         "Amphitheater": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -3900.0,
@@ -1257,6 +1280,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 156,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Above Tunnels": {
                             "type": "and",
@@ -1317,6 +1341,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 157,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "template",
@@ -1350,6 +1375,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 158,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Above Tunnels": {
                             "type": "and",
@@ -1442,6 +1468,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 164,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -1453,13 +1480,8 @@
                                         "data": "Lay Power Bomb"
                                     },
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "items",
-                                            "name": "Spider",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
+                                        "type": "template",
+                                        "data": "Use Spider Ball"
                                     }
                                 ]
                             }
@@ -1546,13 +1568,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 }
                                             ]
                                         }
@@ -1643,13 +1660,8 @@
                                                                                         }
                                                                                     },
                                                                                     {
-                                                                                        "type": "resource",
-                                                                                        "data": {
-                                                                                            "type": "items",
-                                                                                            "name": "Spider",
-                                                                                            "amount": 1,
-                                                                                            "negate": false
-                                                                                        }
+                                                                                        "type": "template",
+                                                                                        "data": "Use Spider Ball"
                                                                                     }
                                                                                 ]
                                                                             }
@@ -2079,6 +2091,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -2117,6 +2130,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Left of Grapple Pickup": {
                             "type": "or",
@@ -2169,6 +2183,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 167,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -2273,13 +2288,8 @@
                                             "comment": null,
                                             "items": [
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -2455,13 +2465,8 @@
                                                     "data": "Lay Any Bomb"
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 }
                                             ]
                                         }
@@ -3131,12 +3136,29 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
+                                                    "type": "and",
                                                     "data": {
-                                                        "type": "tricks",
-                                                        "name": "MeleeClip",
-                                                        "amount": 2,
-                                                        "negate": false
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "MeleeClip",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
+                                                                    "amount": 2,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -3335,6 +3357,7 @@
         },
         "Nest Network": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5300.0,
@@ -3394,6 +3417,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 160,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Entrance Teleporter": {
                             "type": "or",
@@ -3530,6 +3554,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 163,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Amphitheater": {
                             "type": "resource",
@@ -3570,6 +3595,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Nest Nodule (Bottom)": {
                             "type": "or",
@@ -3631,6 +3657,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Entrance Teleporter": {
                             "type": "or",
@@ -3692,6 +3719,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Nest Nodule (Bottom)": {
                             "type": "and",
@@ -3700,7 +3728,7 @@
                                 "items": []
                             }
                         },
-                        "Dock to Nest Nodule": {
+                        "Door to Nest Nodule (Middle)": {
                             "type": "resource",
                             "data": {
                                 "type": "items",
@@ -3769,6 +3797,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank Baby Locked)": {
                             "type": "and",
@@ -3811,6 +3840,15 @@
                                                                     "amount": 1,
                                                                     "negate": false
                                                                 }
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "tricks",
+                                                                    "name": "OoB",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
                                                             }
                                                         ]
                                                     }
@@ -3834,31 +3872,36 @@
                         }
                     }
                 },
-                "Dock to Nest Nodule": {
+                "Door to Nest Nodule (Middle)": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1055.2721690872595,
-                        "y": -5733.7111819577285,
+                        "x": 1050.0,
+                        "y": -5900.0,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 83
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 8",
                         "area": "Nest Nodule",
-                        "node": "Dock to Nest Network"
+                        "node": "Door to Nest Network (Middle)"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Nest Nodule (Bottom)": {
                             "type": "resource",
@@ -3896,6 +3939,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Above Grapple Block": {
                             "type": "resource",
@@ -4394,13 +4438,8 @@
                                                                                         }
                                                                                     },
                                                                                     {
-                                                                                        "type": "resource",
-                                                                                        "data": {
-                                                                                            "type": "items",
-                                                                                            "name": "Spring",
-                                                                                            "amount": 1,
-                                                                                            "negate": false
-                                                                                        }
+                                                                                        "type": "template",
+                                                                                        "data": "Use Spring Ball"
                                                                                     }
                                                                                 ]
                                                                             }
@@ -4471,6 +4510,15 @@
                                                         "amount": 1,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "OoB",
+                                                        "amount": 2,
+                                                        "negate": false
+                                                    }
                                                 }
                                             ]
                                         }
@@ -4484,6 +4532,7 @@
         },
         "Entrance Teleporter": {
             "default_node": "Teleporter",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7100.0,
@@ -4531,6 +4580,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 161,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Nest Vestibule": {
                             "type": "and",
@@ -4820,6 +4870,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "and",
@@ -4952,6 +5003,15 @@
                                                         "amount": 3,
                                                         "negate": false
                                                     }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "OoB",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
                                                 }
                                             ]
                                         }
@@ -4989,6 +5049,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Tunnel to Nest Network": {
                             "type": "and",
@@ -5101,6 +5162,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Nest Network": {
                             "type": "and",
@@ -5242,6 +5304,15 @@
                                                     "data": {
                                                         "type": "items",
                                                         "name": "Morph",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "tricks",
+                                                        "name": "OoB",
                                                         "amount": 1,
                                                         "negate": false
                                                     }
@@ -5439,13 +5510,8 @@
                                                                                                     }
                                                                                                 },
                                                                                                 {
-                                                                                                    "type": "resource",
-                                                                                                    "data": {
-                                                                                                        "type": "items",
-                                                                                                        "name": "Spring",
-                                                                                                        "amount": 1,
-                                                                                                        "negate": false
-                                                                                                    }
+                                                                                                    "type": "template",
+                                                                                                    "data": "Use Spring Ball"
                                                                                                 },
                                                                                                 {
                                                                                                     "type": "resource",
@@ -5587,6 +5653,7 @@
         },
         "Nest Nodule": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 1000.0,
@@ -5634,6 +5701,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 155,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Door to Nest Network (Top)": {
                             "type": "and",
@@ -5673,8 +5741,9 @@
                     "valid_starting_location": false,
                     "pickup_index": 162,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
-                        "Dock to Nest Network": {
+                        "Door to Nest Network (Middle)": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -5721,6 +5790,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Door to Nest Network (Top)": {
                             "type": "and",
@@ -5846,6 +5916,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Super Missile Tank)": {
                             "type": "and",
@@ -5895,13 +5966,8 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "type": "resource",
-                                                                            "data": {
-                                                                                "type": "items",
-                                                                                "name": "Spider",
-                                                                                "amount": 1,
-                                                                                "negate": false
-                                                                            }
+                                                                            "type": "template",
+                                                                            "data": "Use Spider Ball"
                                                                         }
                                                                     ]
                                                                 }
@@ -5988,31 +6054,36 @@
                         }
                     }
                 },
-                "Dock to Nest Network": {
+                "Door to Nest Network (Middle)": {
                     "node_type": "dock",
                     "heal": false,
                     "coordinates": {
-                        "x": 1030.469949226591,
-                        "y": -5736.409257291298,
+                        "x": 1050.0,
+                        "y": -5900.0,
                         "z": 0.0
                     },
                     "description": "",
                     "layers": [
                         "default"
                     ],
-                    "extra": {},
+                    "extra": {
+                        "actor_name": "RandoDoor_001",
+                        "actor_type": "doorpowerpower",
+                        "tile_index": 84
+                    },
                     "valid_starting_location": false,
-                    "dock_type": "other",
+                    "dock_type": "door",
                     "default_connection": {
                         "region": "Area 8",
                         "area": "Nest Network",
-                        "node": "Dock to Nest Nodule"
+                        "node": "Door to Nest Nodule (Middle)"
                     },
-                    "default_dock_weakness": "Open Passage",
+                    "default_dock_weakness": "Access Open",
                     "exclude_from_dock_rando": false,
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Pickup (Missile Tank)": {
                             "type": "resource",
@@ -6033,6 +6104,7 @@
         },
         "Metroid Nest Small Shaft": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 4050.0,
@@ -6089,6 +6161,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6127,6 +6200,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6207,6 +6281,7 @@
         },
         "Metroid Nest Shaft East": {
             "default_node": "Room Top",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 5850.0,
@@ -6263,6 +6338,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -6301,6 +6377,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Top": {
                             "type": "and",
@@ -6479,6 +6556,7 @@
         },
         "Metroid Nest Hallway North East": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": 50.0,
@@ -6535,6 +6613,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6573,6 +6652,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6716,6 +6796,7 @@
         },
         "Metroid Nest Hallway North West": {
             "default_node": "Room Center",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5350.0,
@@ -6772,6 +6853,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6810,6 +6892,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -6890,6 +6973,7 @@
         },
         "Metroid Nest Recharge Stations": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -1150.0,
@@ -7014,6 +7098,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Energy Recharge Station": {
                             "type": "and",
@@ -7052,6 +7137,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Ammo Recharge Station": {
                             "type": "and",
@@ -7066,6 +7152,7 @@
         },
         "Metroid Nest Shaft West": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7100.0,
@@ -7122,6 +7209,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Top": {
                             "type": "and",
@@ -7160,6 +7248,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -7189,6 +7278,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 168,
                     "location_category": "minor",
+                    "hint_features": [],
                     "connections": {
                         "Room Bottom": {
                             "type": "and",
@@ -7499,6 +7589,7 @@
         },
         "Queen Arena Access": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5350.0,
@@ -7712,6 +7803,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "or",
@@ -7852,6 +7944,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Tunnel to Queen Arena": {
@@ -7879,6 +7972,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "template",
@@ -7890,6 +7984,7 @@
         },
         "Transport to Area 7": {
             "default_node": "Elevator to Area 7",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2100.0,
@@ -7983,6 +8078,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": "Metroid Nest Entrance Elevator",
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -8260,6 +8356,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -8274,6 +8371,7 @@
         },
         "Queen Arena": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -2600.0,
@@ -8327,6 +8425,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Before Queen": {
                             "type": "and",
@@ -8334,99 +8433,51 @@
                                 "comment": null,
                                 "items": [
                                     {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 1",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
+                                        "type": "template",
+                                        "data": "All Metroid Larva Defeated"
                                     },
                                     {
-                                        "type": "resource",
+                                        "type": "or",
                                         "data": {
-                                            "type": "events",
-                                            "name": "Larva 2",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 3",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 4",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 5",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 6",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 7",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 8",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 9",
-                                            "amount": 1,
-                                            "negate": false
-                                        }
-                                    },
-                                    {
-                                        "type": "resource",
-                                        "data": {
-                                            "type": "events",
-                                            "name": "Larva 10",
-                                            "amount": 1,
-                                            "negate": false
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "misc",
+                                                        "name": "FinalBossQueen",
+                                                        "amount": 1,
+                                                        "negate": true
+                                                    }
+                                                },
+                                                {
+                                                    "type": "and",
+                                                    "data": {
+                                                        "comment": null,
+                                                        "items": [
+                                                            {
+                                                                "type": "template",
+                                                                "data": "All DNA"
+                                                            },
+                                                            {
+                                                                "type": "resource",
+                                                                "data": {
+                                                                    "type": "misc",
+                                                                    "name": "FinalBossQueen",
+                                                                    "amount": 1,
+                                                                    "negate": false
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
                             }
                         },
-                        "Dock to Hatchling Room": {
+                        "Room Center": {
                             "type": "or",
                             "data": {
                                 "comment": null,
@@ -8434,19 +8485,36 @@
                                     {
                                         "type": "resource",
                                         "data": {
-                                            "type": "events",
-                                            "name": "Queen Metroid",
+                                            "type": "misc",
+                                            "name": "ReverseArea8",
                                             "amount": 1,
                                             "negate": false
                                         }
                                     },
                                     {
-                                        "type": "resource",
+                                        "type": "and",
                                         "data": {
-                                            "type": "misc",
-                                            "name": "ReverseArea8",
-                                            "amount": 1,
-                                            "negate": false
+                                            "comment": null,
+                                            "items": [
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "events",
+                                                        "name": "Queen Metroid",
+                                                        "amount": 1,
+                                                        "negate": false
+                                                    }
+                                                },
+                                                {
+                                                    "type": "resource",
+                                                    "data": {
+                                                        "type": "misc",
+                                                        "name": "FinalBossQueen",
+                                                        "amount": 1,
+                                                        "negate": true
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -8479,6 +8547,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {}
                 },
                 "Event - Queen Metroid": {
@@ -8497,7 +8566,7 @@
                     "valid_starting_location": false,
                     "event_name": "Queen Metroid",
                     "connections": {
-                        "Dock to Hatchling Room": {
+                        "Room Center": {
                             "type": "and",
                             "data": {
                                 "comment": null,
@@ -8673,13 +8742,8 @@
                                                         "comment": null,
                                                         "items": [
                                                             {
-                                                                "type": "resource",
-                                                                "data": {
-                                                                    "type": "items",
-                                                                    "name": "Plasma",
-                                                                    "amount": 1,
-                                                                    "negate": false
-                                                                }
+                                                                "type": "template",
+                                                                "data": "Have All Beams"
                                                             },
                                                             {
                                                                 "type": "template",
@@ -8874,6 +8938,31 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
+                    "connections": {
+                        "Room Center": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        }
+                    }
+                },
+                "Room Center": {
+                    "node_type": "generic",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -2077.8938207136644,
+                        "y": 11280.635335073977,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "default"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
                     "connections": {
                         "Tunnel to Queen Arena Access": {
                             "type": "and",
@@ -8941,6 +9030,47 @@
                                     }
                                 ]
                             }
+                        },
+                        "Dock to Hatchling Room": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
+                        },
+                        "Event - Credits (Queen Final Boss)": {
+                            "type": "resource",
+                            "data": {
+                                "type": "events",
+                                "name": "Queen Metroid",
+                                "amount": 1,
+                                "negate": false
+                            }
+                        }
+                    }
+                },
+                "Event - Credits (Queen Final Boss)": {
+                    "node_type": "event",
+                    "heal": false,
+                    "coordinates": {
+                        "x": -1264.58,
+                        "y": 11600.48,
+                        "z": 0.0
+                    },
+                    "description": "",
+                    "layers": [
+                        "final-boss-queen"
+                    ],
+                    "extra": {},
+                    "valid_starting_location": false,
+                    "event_name": "Credits",
+                    "connections": {
+                        "Room Center": {
+                            "type": "and",
+                            "data": {
+                                "comment": null,
+                                "items": []
+                            }
                         }
                     }
                 }
@@ -8948,6 +9078,7 @@
         },
         "Hatchling Room": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -7000.0,
@@ -9001,6 +9132,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -9036,6 +9168,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -9056,7 +9189,7 @@
                     },
                     "description": "",
                     "layers": [
-                        "default"
+                        "final-boss-not-queen"
                     ],
                     "extra": {
                         "actor_name": "LE_Baby_Hatchling",
@@ -9065,6 +9198,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 171,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Room Center": {
                             "type": "and",
@@ -9126,12 +9260,29 @@
                             }
                         },
                         "Pickup (Baby Metroid)": {
-                            "type": "resource",
+                            "type": "and",
                             "data": {
-                                "type": "events",
-                                "name": "Queen Metroid",
-                                "amount": 1,
-                                "negate": false
+                                "comment": null,
+                                "items": [
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "events",
+                                            "name": "Queen Metroid",
+                                            "amount": 1,
+                                            "negate": false
+                                        }
+                                    },
+                                    {
+                                        "type": "resource",
+                                        "data": {
+                                            "type": "misc",
+                                            "name": "FinalBossQueen",
+                                            "amount": 1,
+                                            "negate": true
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -9140,6 +9291,7 @@
         },
         "Nest Vestibule": {
             "default_node": null,
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5300.0,
@@ -9187,6 +9339,7 @@
                     "valid_starting_location": false,
                     "pickup_index": 159,
                     "location_category": "major",
+                    "hint_features": [],
                     "connections": {
                         "Below Pickup": {
                             "type": "and",
@@ -9235,6 +9388,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Pickup": {
                             "type": "or",
@@ -9305,6 +9459,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Below Pickup": {
                             "type": "or",
@@ -9408,13 +9563,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "items",
-                                                        "name": "Spider",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
+                                                    "type": "template",
+                                                    "data": "Use Spider Ball"
                                                 },
                                                 {
                                                     "type": "resource",
@@ -9558,6 +9708,7 @@
         },
         "Metroid Nest Teleporter": {
             "default_node": "Save Station",
+            "hint_features": [],
             "extra": {
                 "total_boundings": {
                     "x1": -5400.0,
@@ -9748,6 +9899,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "and",
@@ -9818,6 +9970,7 @@
                     "incompatible_dock_weaknesses": [],
                     "override_default_open_requirement": null,
                     "override_default_lock_requirement": null,
+                    "ui_custom_name": null,
                     "connections": {
                         "Save Station": {
                             "type": "resource",

@@ -12,6 +12,7 @@ from randovania.game_description.db.pickup_node import PickupNode
 from randovania.game_description.db.teleporter_network_node import TeleporterNetworkNode
 from randovania.game_description.requirements.array_base import RequirementArrayBase
 from randovania.game_description.requirements.base import Requirement
+from randovania.game_description.requirements.node_requirement import NodeRequirement
 from randovania.game_description.requirements.requirement_or import RequirementOr
 from randovania.game_description.requirements.requirement_template import RequirementTemplate
 from randovania.game_description.requirements.resource_requirement import ResourceRequirement
@@ -19,13 +20,14 @@ from randovania.game_description.resources.resource_type import ResourceType
 from randovania.layout.base.trick_level import LayoutTrickLevel
 
 if TYPE_CHECKING:
-    from collections.abc import Iterator
+    from collections.abc import Iterable, Iterator
     from pathlib import Path
 
     from randovania.game_description.db.area import Area
     from randovania.game_description.db.node import Node
     from randovania.game_description.db.region_list import RegionList
     from randovania.game_description.game_description import GameDescription
+    from randovania.game_description.hint_features import HintFeature
     from randovania.game_description.resources.resource_database import ResourceDatabase
 
 
@@ -51,11 +53,15 @@ def pretty_print_requirement_array(
         return
 
     resource_requirements = [item for item in requirement.items if isinstance(item, ResourceRequirement)]
+    node_requirements = [item for item in requirement.items if isinstance(item, NodeRequirement)]
     template_requirements = [item for item in requirement.items if isinstance(item, RequirementTemplate)]
     other_requirements = [item for item in requirement.items if isinstance(item, RequirementArrayBase)]
-    assert len(resource_requirements) + len(template_requirements) + len(other_requirements) == len(requirement.items)
+    assert (
+        len(resource_requirements) + len(node_requirements) + len(template_requirements) + len(other_requirements)
+    ) == len(requirement.items)
 
     pretty_resources = [pretty_print_resource_requirement(item) for item in sorted(resource_requirements)]
+    pretty_resources.extend(requirement.node_identifier.as_string for requirement in node_requirements)
     sorted_templates = sorted(get_template_name(db, item) for item in template_requirements)
 
     if isinstance(requirement, RequirementOr):
@@ -94,6 +100,9 @@ def pretty_format_requirement(
 
     elif isinstance(requirement, RequirementTemplate):
         yield level, get_template_name(db, requirement)
+
+    elif isinstance(requirement, NodeRequirement):
+        yield level, f"Collected {requirement.node_identifier.as_string}"
     else:
         raise RuntimeError(f"Unknown requirement type: {type(requirement)} - {requirement}")
 
@@ -124,6 +133,9 @@ def pretty_print_node_type(node: Node, region_list: RegionList, db: ResourceData
             message += "; Dock Lock Rando incompatible with: "
             message += ", ".join(weak.name for weak in node.incompatible_dock_weaknesses)
 
+        if node.ui_custom_name is not None:
+            message += f"; Custom name: {node.ui_custom_name}"
+
         return message
 
     elif isinstance(node, PickupNode):
@@ -149,10 +161,17 @@ def pretty_print_node_type(node: Node, region_list: RegionList, db: ResourceData
     return ""
 
 
+def pretty_print_hint_features(features: Iterable[HintFeature]) -> str:
+    return f"Hint Features - {', '.join([feature.long_name for feature in sorted(features)])}"
+
+
 def pretty_print_area(game: GameDescription, area: Area, print_function: typing.Callable[[str], None] = print) -> None:
     print_function(area.name)
     for extra_name, extra_field in area.extra.items():
         print_function(f"Extra - {extra_name}: {extra_field}")
+
+    if area.hint_features:
+        print_function(pretty_print_hint_features(area.hint_features))
 
     for i, node in enumerate(area.nodes):
         if node.is_derived_node:
@@ -169,10 +188,27 @@ def pretty_print_area(game: GameDescription, area: Area, print_function: typing.
         description_line = pretty_print_node_type(node, game.region_list, game.resource_database)
         if description_line:
             print_function(f"  * {description_line}")
+        if isinstance(node, PickupNode) and node.hint_features:
+            print_function(f"  * {pretty_print_hint_features(node.hint_features)}")
         if node.description:
             print_function(f"  * {node.description}")
         for extra_name, extra_field in node.extra.items():
             print_function(f"  * Extra - {extra_name}: {extra_field}")
+
+        if isinstance(node, DockNode):
+            for label, req in (
+                ("open", node.override_default_open_requirement),
+                ("lock", node.override_default_lock_requirement),
+            ):
+                if req is not None:
+                    print_function(f"  * Override default {label} requirement:")
+                    pretty_print_requirement(
+                        req.simplify(keep_comments=True),
+                        game.resource_database,
+                        prefix="    ",
+                        print_function=print_function,
+                    )
+                    print_function("")
 
         for target_node, requirement in game.region_list.area_connections_from(node):
             if target_node.is_derived_node:

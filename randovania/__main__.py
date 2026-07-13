@@ -8,7 +8,7 @@ import sys
 logging.basicConfig(level=logging.WARNING)
 
 
-def main():
+def main() -> None:
     multiprocessing.freeze_support()
 
     import randovania
@@ -17,10 +17,16 @@ def main():
 
     logging.debug("Starting Randovania...")
 
+    if randovania.VERSION == randovania.UNKNOWN_VERSION or randovania.GIT_HASH == randovania.UNKNOWN_GIT_HASH:
+        logging.warning(
+            "Couldn't determine the current version. If you're running from source, "
+            "do you have a git repository and tags present?"
+        )
+
     # Add our local dotnet to path if it exists, which it only does for portable ones.
     dotnet_path = randovania.get_data_path().joinpath("dotnet_runtime")
     if randovania.is_frozen() and dotnet_path.exists():
-        os.environ["PATH"] = f'{dotnet_path}{os.pathsep}{os.environ["PATH"]}'
+        os.environ["PATH"] = f"{dotnet_path}{os.pathsep}{os.environ['PATH']}"
         os.environ["DOTNET_ROOT"] = f"{dotnet_path}"
         # This one is seemingly needed while we're still on dotnet6 to avoid some edge cases
         os.environ["DOTNET_MULTILEVEL_LOOKUP"] = "0"

@@ -1,5 +1,5 @@
 {
-    "schema_version": 66,
+    "schema_version": 93,
     "base_preset_uuid": null,
     "name": "Starter Preset",
     "uuid": "b400da54-584e-496b-a6c9-140b847d40d9",
@@ -23,12 +23,16 @@
         },
         "standard_pickup_configuration": {
             "pickups_state": {
-                "Wave Beam": {},
-                "Spazer Beam": {},
-                "Plasma Beam": {},
-                "Progressive Beam": {
-                    "num_shuffled_pickups": 3
+                "Wave Beam": {
+                    "num_shuffled_pickups": 1
                 },
+                "Spazer Beam": {
+                    "num_shuffled_pickups": 1
+                },
+                "Plasma Beam": {
+                    "num_shuffled_pickups": 1
+                },
+                "Progressive Beam": {},
                 "Charge Beam": {
                     "num_shuffled_pickups": 1
                 },
@@ -74,11 +78,13 @@
                         150
                     ]
                 },
-                "Varia Suit": {},
-                "Gravity Suit": {},
-                "Progressive Suit": {
-                    "num_shuffled_pickups": 2
+                "Varia Suit": {
+                    "num_shuffled_pickups": 1
                 },
+                "Gravity Suit": {
+                    "num_shuffled_pickups": 1
+                },
+                "Progressive Suit": {},
                 "Morph Ball": {
                     "num_shuffled_pickups": 1
                 },
@@ -162,6 +168,7 @@
         "pickup_model_data_source": "etm",
         "logical_resource_action": "randomly",
         "first_progression_must_be_local": false,
+        "two_sided_door_lock_search": false,
         "minimum_available_locations_for_hint_placement": 5,
         "minimum_location_weight_for_hint_placement": 0.2,
         "dock_rando": {
@@ -191,9 +198,14 @@
                 }
             }
         },
-        "single_set_for_pickups_that_solve": false,
-        "staggered_multi_pickup_placement": false,
+        "single_set_for_pickups_that_solve": true,
+        "staggered_multi_pickup_placement": true,
         "check_if_beatable_after_base_patches": false,
+        "teleporters": {
+            "mode": "vanilla",
+            "excluded_teleporters": [],
+            "excluded_targets": []
+        },
         "energy_per_tank": 100,
         "starting_energy": 99,
         "starting_aeion": 1000,
@@ -201,25 +213,30 @@
         "aeion_tank_size": 500,
         "missile_tank_size": 30,
         "super_missile_tank_size": 10,
+        "elevator_grapple_blocks": false,
+        "area3_interior_shortcut_no_grapple": true,
         "charge_door_buff": true,
         "beam_door_buff": true,
         "beam_burst_buff": true,
         "nerf_super_missiles": false,
-        "elevator_grapple_blocks": false,
-        "area3_interior_shortcut_no_grapple": true,
-        "allow_highly_dangerous_logic": false,
         "surface_crumbles": true,
         "area1_crumbles": true,
         "reverse_area8": false,
+        "allow_highly_dangerous_logic": false,
         "artifacts": {
             "prefer_metroids": true,
             "prefer_stronger_metroids": true,
             "prefer_bosses": false,
             "prefer_anywhere": false,
-            "required_artifacts": 10
+            "required_artifacts": 10,
+            "placed_artifacts": 10
         },
         "hints": {
-            "artifacts": "precise"
-        }
+            "artifacts": "precise",
+            "baby_metroid": "hide-area"
+        },
+        "constant_heat_damage": 20,
+        "constant_lava_damage": 20,
+        "final_boss": "Ridley"
     }
 }

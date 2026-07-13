@@ -4,8 +4,8 @@ import typing
 
 from PySide6 import QtWidgets
 
+from randovania.games.dread.gui.generated.preset_dread_patches_ui import Ui_PresetDreadPatches
 from randovania.games.dread.layout.dread_configuration import DreadConfiguration, DreadRavenBeakDamageMode
-from randovania.gui.generated.preset_dread_patches_ui import Ui_PresetDreadPatches
 from randovania.gui.lib import signal_handling
 from randovania.gui.preset_settings.preset_tab import PresetTab
 
@@ -43,17 +43,17 @@ class PresetDreadPatches(PresetTab, Ui_PresetDreadPatches):
         return "Other"
 
     @classmethod
-    def uses_patches_tab(cls) -> bool:
-        return True
+    def header_name(cls) -> str | None:
+        return None
 
-    def _add_persist_option(self, check: QtWidgets.QCheckBox, attribute_name: str):
-        def persist(value: bool):
+    def _add_persist_option(self, check: QtWidgets.QCheckBox, attribute_name: str) -> None:
+        def persist(value: bool) -> None:
             with self._editor as editor:
                 editor.set_configuration_field(attribute_name, value)
 
         signal_handling.on_checked(check, persist)
 
-    def _on_raven_beak_damage_table_handling_changed(self, value: bool):
+    def _on_raven_beak_damage_table_handling_changed(self, value: bool) -> None:
         checked_value = (
             DreadRavenBeakDamageMode.UNMODIFIED
             if self._orig_rb_damage_mode == DreadRavenBeakDamageMode.UNMODIFIED
@@ -65,7 +65,7 @@ class PresetDreadPatches(PresetTab, Ui_PresetDreadPatches):
                 "raven_beak_damage_table_handling", checked_value if value else DreadRavenBeakDamageMode.CONSISTENT_LOW
             )
 
-    def on_preset_changed(self, preset: Preset):
+    def on_preset_changed(self, preset: Preset) -> None:
         config = typing.cast(DreadConfiguration, preset.configuration)
 
         for f in _FIELDS:
