@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+- **Major** - Added: Native Universal2 macOS builds now support both Intel and Apple Silicon Macs.
+- **Major** - Added: Prime 3 game exporting is now supported on macOS using bundled .NET 8 runtimes and native helper tools, with no system-wide .NET installation required.
+- Changed: Prime 3 helper resolution, extraction, command construction, temporary-file cleanup, and failure diagnostics have been refactored for cross-platform use.
+
 ## [1.8.2] - 2026-03-07
 
 #### Logic Database
@@ -163,11 +169,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ##### Pirate Homeworld
 
 - Changed: Grandrayda's logic been overhauled in an attempt to make the fight more balanced.
-- Fixed: The single out-of-bounds method for circumventing the energy shield Command Courtyard now accounts for Standable Terrain (Intermediate)
 
 ##### G.F.S. Valhalla
 
-- Fixed: There is now logic for crossing the chasm in Hangar A Access both ways without Grapple Swing and Screw Attack.
+- Fixed: The single out-of-bounds method for circumventing the energy shield Command Courtyard now accounts for Standable Terrain (Intermediate)
 
 ## [1.0.3] - 2024-05-31
 
