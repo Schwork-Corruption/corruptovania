@@ -64,8 +64,14 @@ class CorruptionGameExporter(GameExporter):
         progress_update: status_update_lib.ProgressUpdateCallable,
     ) -> None:
         assert isinstance(export_params, CorruptionGameExportParams)
+
+        # Static patches and replacement assets remain in the normal Randovania data tree. Executable helpers are
+        # resolved separately because frozen macOS builds install their Universal2 tools under the app Resources tree.
         patcher_path = randovania.get_data_path().joinpath("gollop_mp3_patcher")
         toolchain = resolve_prime3_toolchain()
+
+        # Every export receives fresh extraction and staging directories. This prevents a failed export from leaving
+        # stale files that could affect the next attempt, and the finally block removes both directories on all paths.
         extract_path = Path(tempfile.mkdtemp())
         paks_path: Path | None = None
         try:
@@ -82,6 +88,7 @@ class CorruptionGameExporter(GameExporter):
 
             if patch_data["disable_deflicker"]:
                 progress_update("Disabling Deflicker...", 0.3)
+                # hpatchz supports using the same file as its input and output, so the DOL patch is applied in place.
                 _run_process(
                     _build_hpatchz_command(
                         toolchain,
@@ -114,6 +121,8 @@ class CorruptionGameExporter(GameExporter):
                         ),
                     )
 
+            # MP3Randomizer only needs a subset of the extracted files as inputs. Stage those files separately so the
+            # randomizer can write its results back into the complete extracted DATA tree without duplicating the disc.
             paks_path = Path(tempfile.mkdtemp())
             randomize_elements = [
                 "FrontEnd.pak",
@@ -146,20 +155,28 @@ class CorruptionGameExporter(GameExporter):
                 else "Exporting to WBFS...",
                 0.7,
             )
+            # WIT rebuilds the final image from the modified DATA directory and writes it directly to the requested path.
             _run_process(_build_wit_command(toolchain, extract_path.joinpath("DATA"), export_params))
         finally:
+            # Cleanup failures should not hide the helper or patching error that caused the export to abort.
             shutil.rmtree(extract_path, ignore_errors=True)
             if paks_path is not None:
                 shutil.rmtree(paks_path, ignore_errors=True)
 
 
 def _optional_flag(flag: str, enabled: bool) -> tuple[str, ...]:
+    """Return a one-element argument tuple when an optional command-line flag is enabled."""
     if enabled:
         return (flag,)
     return ()
 
 
 def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) -> None:
+    """Run a Prime 3 helper and preserve useful stdout/stderr when it fails.
+
+    ``env`` contains only tool-specific overrides. They are merged with the current process environment so helpers keep
+    ordinary system settings while the macOS randomizer is directed to its bundled .NET runtime.
+    """
     process_environment = None if env is None else {**os.environ, **env}
     try:
         subprocess.run(
@@ -170,12 +187,15 @@ def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) ->
             text=True,
         )
     except subprocess.CalledProcessError as exception:
+        # Both streams are useful because the bundled helpers are inconsistent about which one receives diagnostics.
         diagnostic_parts = [
             part.strip()
             for part in (exception.stdout, exception.stderr)
             if isinstance(part, str) and part.strip()
         ]
         diagnostics = "\n".join(diagnostic_parts)
+
+        # Keep enough output to diagnose the failure without producing an unbounded GUI error report.
         if len(diagnostics) > 12000:
             diagnostics = diagnostics[-12000:]
 
@@ -191,6 +211,7 @@ def _run_process(command: tuple[str, ...], env: dict[str, str] | None = None) ->
 
 
 def _build_hpatchz_command(toolchain: Prime3Toolchain, target_file: Path, patch_file: Path) -> tuple[str, ...]:
+    """Build an in-place hpatchz invocation for a DOL or PAK binary patch."""
     return (
         *toolchain.hpatchz_command,
         "-f",
@@ -206,9 +227,12 @@ def _build_randomizer_command(
     input_path: Path,
     output_path: Path,
 ) -> tuple[str, ...]:
+    """Translate seed patch data into the platform-specific MP3Randomizer command line."""
     starting_items = patch_data["starting_items"].split()
     starting_location = patch_data["starting_location"].split()
 
+    # Preserve the trailing directory separators used by the original exporter. MP3Randomizer accepts directory paths,
+    # and retaining the established form avoids platform-specific differences in its path concatenation behavior.
     return (
         *toolchain.randomizer_command,
         "--input-path",
@@ -236,9 +260,11 @@ def _build_wit_command(
     extracted_data_path: Path,
     export_params: CorruptionGameExportParams,
 ) -> tuple[str, ...]:
+    """Build the WIT command that converts the patched DATA tree into the requested disc-image format."""
     return (
         *toolchain.wit_command,
         "COPY",
+        # WIT uses -I for ISO output and -B for WBFS output; the remaining flags preserve the legacy exporter behavior.
         "-I" if export_params.output_format == CorruptionOutputFormats.ISO else "-B",
         "-z",
         "--trunc",
