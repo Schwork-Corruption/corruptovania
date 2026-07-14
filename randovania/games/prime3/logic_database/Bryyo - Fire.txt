@@ -220,7 +220,7 @@ Extra - asset_id: 691790544662692104
   > Door to Gel Purification Site
       Any of the following:
           After Gel Refinery Site Pipe or Use Screw Attack (Space Jump)
-          Space Jump Boots and Movement (Intermediate)
+          Space Jump Boots and Movement (Beginner)
   > Room Center
       Trivial
 
