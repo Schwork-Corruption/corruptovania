@@ -12,12 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Major** - Added: Prime 3 game exporting is now supported on macOS using bundled .NET 8 runtimes and native helper tools, with no system-wide .NET installation required.
 - Changed: Prime 3 helper resolution, extraction, command construction, temporary-file cleanup, and failure diagnostics have been refactored for cross-platform use.
 
-#### Logic Database
-
-##### Bryyo
-- Added: Gel Refinery Site: A way of scaling to the item without bombs using Space Jump and Screw Attack from the Refinery Access Door Ledge. 
-- Fixed: Gel Refinery Site: The Bomb Space Jump up to the item has had its trick level raised from Expert to Hypermode. Additionally, the easier Bomb Space Jump using Screw Attack now corectly requires Space Jump Boots.
-
 ## [1.8.2] - 2026-03-07
 
 #### Logic Database
