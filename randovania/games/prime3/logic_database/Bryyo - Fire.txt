@@ -246,7 +246,7 @@ Extra - asset_id: 691790544662692104
           Morph Ball Bomb and Space Jump Boots and Morph Ball
           Any of the following:
               # https://youtu.be/ihLjH0TGkIg
-              Bomb/Spring Space Jump (Hypermode)
+              Bomb/Spring Space Jump (Expert)
               # https://youtu.be/_sSWzSqM_0g
               Bomb/Spring Space Jump (Advanced) and Use Screw Attack (Space Jump)
   > Ledge by Refinery Access Door
