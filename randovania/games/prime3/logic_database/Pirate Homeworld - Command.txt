@@ -765,7 +765,7 @@ Extra - asset_id: 8444926274755356434
                       # Use Nova + X-Ray
                       Shoot Phazite
                       Any of the following:
-                          Combat (Intermediate)
+                          Combat (Intermediate) or Damage ≥ 99
                           Combat (Beginner) and Damage ≥ 49
           All of the following:
               # Without Hazard Shield
