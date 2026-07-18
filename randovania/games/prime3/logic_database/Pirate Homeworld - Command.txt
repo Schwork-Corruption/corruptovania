@@ -755,15 +755,28 @@ Extra - asset_id: 8444926274755356434
       After Command Station Disable Defense
   > Event - Open Tunnel
       Any of the following:
-          Enter Hypermode and Hazard Shield
           All of the following:
-              Hazards without Hazard Shield (Intermediate)
+              # Hazard Shield
               Any of the following:
+                  Combat (Expert) or Damage ≥ 299 or Enter Hypermode
+                  Combat (Advanced) and Damage ≥ 99
+                  Combat (Beginner) and Damage ≥ 199
                   All of the following:
-                      Combat (Intermediate) and Damage ≥ 500
-                      Enter Hypermode or Shoot Phazite
-                  Charge Beam and Combat (Advanced) and Damage ≥ 300
-                  Combat (Expert) and Damage ≥ 200
+                      # Use Nova + X-Ray
+                      Shoot Phazite
+                      Any of the following:
+                          Combat (Intermediate)
+                          Combat (Beginner) and Damage ≥ 49
+          All of the following:
+              # Without Hazard Shield
+              Hazards without Hazard Shield (Intermediate) and Damage ≥ 149
+              Any of the following:
+                  Combat (Hypermode) or Damage ≥ 299 or Enter Hypermode or Shoot Phazite
+                  All of the following:
+                      # Mixed Loadout
+                      Combat (Advanced)
+                      Charge Beam or Nova Beam or Plasma Beam
+                      Combat (Expert) or Damage ≥ 99
 
 > Morph Ball Door to Defense Access; Heals? False
   * Layers: default
