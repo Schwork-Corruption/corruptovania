@@ -12,7 +12,11 @@ Extra - asset_id: 9591507280945991101
   * Layers: default
   * Teleporter Network (Unlocked by After Control Leviathan Battleship)
   > Door to Entry Canyon
-      Trivial
+      Any of the following:
+          Damage ≥ 599
+          Combat (Beginner) and Movement (Beginner) and Damage ≥ 499
+          Combat (Advanced) and Movement (Advanced) and Damage ≥ 299
+          Combat (Expert) and Movement (Expert) and Damage ≥ 199
   > Door to Sanctum (Aurora Unit 313)
       Enabled Phaaze Skip
 

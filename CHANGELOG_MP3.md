@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Major** - Added: Prime 3 game exporting is now supported on macOS using bundled .NET 8 runtimes and native helper tools, with no system-wide .NET installation required.
 - Changed: Prime 3 helper resolution, extraction, command construction, temporary-file cleanup, and failure diagnostics have been refactored for cross-platform use.
 
+#### Logic Database
+
+##### Phaaze
+
+- Fixed: Entering Phaaze now logically requires a minimum amount of energy to account for its unique health mechanics.
+
 ## [1.8.2] - 2026-03-07
 
 #### Logic Database
