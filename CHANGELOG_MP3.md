@@ -15,8 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Logic Database
 
 ##### Bryyo
+
 - Added: Gel Refinery Site: A way of scaling to the item without bombs using Space Jump and Screw Attack from the Refinery Access Door Ledge. 
 - Changed: Gel Refinery Site: Getting from the item to Gel Purification Site with just Space Jump Boots has been lowered from Intermediate to Beginner movement.
+
+##### Pirate Homeworld
+
+- Fixed: Omega Ridley now correctly requires Grapple Lasso to beat and now has minimum energy and combat requirements.
 
 ## [1.8.2] - 2026-03-07
 
