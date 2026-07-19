@@ -46,7 +46,13 @@ Extra - asset_id: 9708827741160794862
   * Normal Door to Core Access/Door to Bryyo Leviathan Core
   * Extra - dock_index: 0
   > Event - Mogenar
-      Morph Ball Bomb and Morph Ball and Enter Hypermode
+      All of the following:
+          Morph Ball Bomb and Morph Ball and Enter Hypermode
+          Any of the following:
+              Combat (Expert) or Damage ≥ 299
+              Combat (Beginner) and Damage ≥ 249
+              Combat (Intermediate) and Damage ≥ 199
+              Combat (Advanced) and Damage ≥ 99
 
 > Dock to Bryyo - Reptilicus; Heals? False
   * Layers: default
