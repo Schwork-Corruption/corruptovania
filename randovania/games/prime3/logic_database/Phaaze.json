@@ -150,7 +150,7 @@
                                                     "data": {
                                                         "type": "tricks",
                                                         "name": "Combat",
-                                                        "amount": 3,
+                                                        "amount": 2,
                                                         "negate": false
                                                     }
                                                 },
@@ -159,7 +159,7 @@
                                                     "data": {
                                                         "type": "tricks",
                                                         "name": "Movement",
-                                                        "amount": 3,
+                                                        "amount": 1,
                                                         "negate": false
                                                     }
                                                 }
@@ -185,7 +185,7 @@
                                                     "data": {
                                                         "type": "tricks",
                                                         "name": "Movement",
-                                                        "amount": 4,
+                                                        "amount": 2,
                                                         "negate": false
                                                     }
                                                 },
@@ -194,7 +194,7 @@
                                                     "data": {
                                                         "type": "tricks",
                                                         "name": "Combat",
-                                                        "amount": 4,
+                                                        "amount": 3,
                                                         "negate": false
                                                     }
                                                 }
