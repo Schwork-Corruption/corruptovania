@@ -757,6 +757,7 @@ Extra - asset_id: 8444926274755356434
       Any of the following:
           All of the following:
               # Hazard Shield
+              Hazard Shield
               Any of the following:
                   Combat (Expert) or Damage ≥ 299 or Enter Hypermode
                   Combat (Advanced) and Damage ≥ 99

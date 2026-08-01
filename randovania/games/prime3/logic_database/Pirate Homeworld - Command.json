@@ -4991,6 +4991,10 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "type": "template",
+                                                    "data": "Hazard Shield"
                                                 }
                                             ]
                                         }
