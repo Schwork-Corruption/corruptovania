@@ -292,19 +292,7 @@ Extra - asset_id: 16389095850931092901
   > Basement
       X-Ray Visor and After Metroid Processing Pirate Fight
   > Event - Pirate Fight
-      Any of the following:
-          All of the following:
-              Knowledge (Beginner) and Enter Hypermode
-              Combat (Intermediate) or Damage ≥ 199
-          All of the following:
-              Grapple Lasso
-              Any of the following:
-                  Combat (Advanced) or Damage ≥ 199
-                  All of the following:
-                      # With Nova and X-Ray
-                      Shoot Phazite
-                      Combat (Beginner) or Damage ≥ 99
-                  Combat (Beginner) and Damage ≥ 149
+      Trivial
 
 > Door to Airshaft; Heals? False
   * Layers: default
@@ -341,19 +329,7 @@ Extra - asset_id: 16389095850931092901
   > Door to Creche Transit
       Trivial
   > Event - Pirate Fight
-      Any of the following:
-          All of the following:
-              Knowledge (Beginner) and Enter Hypermode
-              Combat (Intermediate) or Damage ≥ 199
-          All of the following:
-              Grapple Lasso
-              All of the following:
-                  # With Nova and X-Ray
-                  Shoot Phazite
-                  Combat (Beginner) or Damage ≥ 99
-              Any of the following:
-                  Combat (Advanced) or Damage ≥ 199
-                  Combat (Beginner) and Damage ≥ 149
+      Trivial
 
 > Basement; Heals? False
   * Layers: default
@@ -381,7 +357,33 @@ Extra - asset_id: 16389095850931092901
   * Event Metroid Processing Pirate Fight
   * Metroid Processing Pirate Fight
   > Door to Processing Access
-      Trivial
+      Any of the following:
+          All of the following:
+              # Use Hypermode to Break Shields
+              Knowledge (Beginner) and Enter Hypermode
+              Combat (Intermediate) or Damage ≥ 199
+          All of the following:
+              # Rip Shields Off
+              Grapple Lasso
+              Any of the following:
+                  Combat (Advanced) or Damage ≥ 199
+                  All of the following:
+                      # With Nova and X-Ray
+                      Shoot Phazite
+                      Combat (Beginner) or Damage ≥ 99
+                  Combat (Beginner) and Damage ≥ 149
+          All of the following:
+              # Trick the Pirates to Hide the Shields
+              All of the following:
+                  # https://youtu.be/YE9OrEz_NBk
+                  Combat (Intermediate) and Knowledge (Advanced)
+                  Any of the following:
+                      Combat (Expert)
+                      All of the following:
+                          # With Nova and X-Ray
+                          Shoot Phazite
+                          Combat (Advanced) or Damage ≥ 99
+                      Combat (Advanced) and Damage ≥ 199
 
 ----------------
 Airshaft
