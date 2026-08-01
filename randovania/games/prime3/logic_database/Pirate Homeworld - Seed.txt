@@ -44,7 +44,12 @@ Extra - asset_id: 4585599704880367469
   * Normal Door to Core Access/Door to Pirate Homeworld Leviathan Core
   * Extra - dock_index: 0
   > Event - Omega Ridley
-      Enter Hypermode and Shoot Phazite
+      All of the following:
+          Grapple Lasso and Enter Hypermode and Shoot Phazite
+          Any of the following:
+              Combat (Expert) or Damage ≥ 399
+              Combat (Intermediate) and Damage ≥ 299
+              Combat (Advanced) and Damage ≥ 199
 
 > Dock to Pirate Homeworld - Command; Heals? False
   * Layers: default
