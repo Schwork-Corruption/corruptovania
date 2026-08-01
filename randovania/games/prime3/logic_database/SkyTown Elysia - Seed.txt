@@ -39,7 +39,16 @@ Extra - asset_id: 17766988414710659705
   * Normal Door to Core Access/Door to Elysian Leviathan Core
   * Extra - dock_index: 0
   > Event - Helios
-      Enter Hypermode
+      All of the following:
+          Enter Hypermode
+          Any of the following:
+              Combat (Advanced)
+              All of the following:
+                  Missile ≥ 5 and Seeker Missile
+                  Any of the following:
+                      Combat (Intermediate) or Damage ≥ 299
+                      Combat (Beginner) and Damage ≥ 199
+              Combat (Intermediate) and Damage ≥ 199
 
 > Dock to SkyTown, Elysia - Main; Heals? False
   * Layers: default
