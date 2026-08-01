@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ##### Pirate Homeworld
 
-- Changed: Skyway Access's fight to open the tunnel has been reworked.
+- Changed: The logic for the fight to open the morph tunnel in Skyway Access has been reworked.
 
 ## [1.8.2] - 2026-03-07
 
