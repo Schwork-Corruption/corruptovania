@@ -60,6 +60,17 @@ Templates
 * Use Hyper Grapple:
       Hyper Grapple and Enter Hypermode and Use Grapple Voltage
 
+* Fight Metroid Hatcher:
+      Any of the following:
+          All of the following:
+              Nova Beam
+              X-Ray Visor or Invisible Objects (Intermediate)
+          All of the following:
+              Grapple Lasso
+              Any of the following:
+                  Combat (Intermediate) or Damage ≥ 199
+                  Combat (Beginner) and Damage ≥ 99
+
 ====================
 Dock Weaknesses
 

@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Logic Database
 
+- Added: Fight Metroid Hatcher template and basic Metroid Hatcher fight requirements.
+
 ##### Phaaze
 
 - Fixed: Entering Phaaze now logically requires a minimum amount of energy to account for its unique health mechanics.

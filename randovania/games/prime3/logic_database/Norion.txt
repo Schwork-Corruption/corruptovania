@@ -357,11 +357,7 @@ Extra - asset_id: 12849086301409571765
   * Normal Door to Generator B Access/Door to Generator B
   * Extra - dock_index: 0
   > Event - Metroid Hatcher
-      Any of the following:
-          Grapple Lasso
-          All of the following:
-              Nova Beam
-              X-Ray Visor or Invisible Objects (Intermediate)
+      Fight Metroid Hatcher
 
 > Pickup (Energy Cell); Heals? False
   * Layers: default

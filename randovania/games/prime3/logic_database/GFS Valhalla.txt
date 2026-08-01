@@ -173,12 +173,8 @@ Extra - asset_id: 6410596230384865511
                   Morph Ball Bomb or Boost Ball
   > Event - Metroid Hatcher
       All of the following:
+          Fight Metroid Hatcher
           Charge Beam or Missile
-          Any of the following:
-              Grapple Lasso
-              All of the following:
-                  Nova Beam
-                  X-Ray Visor or Invisible Objects (Intermediate)
           Any of the following:
               Energy Cells Total ≥ 9
               All of the following:
