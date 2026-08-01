@@ -284,13 +284,27 @@ Extra - asset_id: 16389095850931092901
       After Metroid Processing Disable Barrier
   > Top Floor
       All of the following:
-          Morph Ball
+          Morph Ball and After Metroid Processing Pirate Fight
           Any of the following:
               After Metroid Processing Ball Lift
               Boost Ball and Spider Ball
               Space Jump Boots and Bomb/Spring Space Jump (Beginner)
   > Basement
-      X-Ray Visor
+      X-Ray Visor and After Metroid Processing Pirate Fight
+  > Event - Pirate Fight
+      Any of the following:
+          All of the following:
+              Knowledge (Beginner) and Enter Hypermode
+              Combat (Intermediate) or Damage ≥ 199
+          All of the following:
+              Grapple Lasso
+              Any of the following:
+                  Combat (Advanced) or Damage ≥ 199
+                  All of the following:
+                      # With Nova and X-Ray
+                      Shoot Phazite
+                      Combat (Beginner) or Damage ≥ 99
+                  Combat (Beginner) and Damage ≥ 149
 
 > Door to Airshaft; Heals? False
   * Layers: default
@@ -321,11 +335,25 @@ Extra - asset_id: 16389095850931092901
 > Top Floor; Heals? False
   * Layers: default
   > Door to Processing Access
-      Trivial
+      After Metroid Processing Pirate Fight
   > Door to Airshaft
       Trivial
   > Door to Creche Transit
       Trivial
+  > Event - Pirate Fight
+      Any of the following:
+          All of the following:
+              Knowledge (Beginner) and Enter Hypermode
+              Combat (Intermediate) or Damage ≥ 199
+          All of the following:
+              Grapple Lasso
+              All of the following:
+                  # With Nova and X-Ray
+                  Shoot Phazite
+                  Combat (Beginner) or Damage ≥ 99
+              Any of the following:
+                  Combat (Advanced) or Damage ≥ 199
+                  Combat (Beginner) and Damage ≥ 149
 
 > Basement; Heals? False
   * Layers: default
@@ -346,6 +374,13 @@ Extra - asset_id: 16389095850931092901
   * Layers: default
   * Event Metroid Processing Ball Lift
   > Basement
+      Trivial
+
+> Event - Pirate Fight; Heals? False
+  * Layers: default
+  * Event Metroid Processing Pirate Fight
+  * Metroid Processing Pirate Fight
+  > Door to Processing Access
       Trivial
 
 ----------------
