@@ -539,13 +539,7 @@ Leads to Command Center
   > Pickup (Energy Tank)
       Boost Ball and Morph Ball and Spider Ball and After Metroid Hatcher (Pirate Homeworld)
   > Event - Metroid Hatcher
-      All of the following:
-          Morph Ball Bomb and Boost Ball and Morph Ball
-          Any of the following:
-              Grapple Lasso
-              All of the following:
-                  Nova Beam
-                  X-Ray Visor or Invisible Objects (Intermediate)
+      Morph Ball Bomb and Boost Ball and Morph Ball and Fight Metroid Hatcher
 
 > Door to Transit Station 3-A
 Leads to Command Center; Heals? False
