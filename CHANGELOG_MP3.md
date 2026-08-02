@@ -33,6 +33,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed: Omega Ridley now correctly requires Grapple Lasso to beat and now has minimum energy and combat requirements.
 
+##### Pirate Homeworld
+
+- Changed: The logic for the fight to open the morph tunnel in Skyway Access has been reworked.
+
 ## [1.8.2] - 2026-03-07
 
 #### Logic Database
