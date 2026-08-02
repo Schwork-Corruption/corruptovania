@@ -81,7 +81,7 @@ Extra - asset_id: 4215957264467390882
   > Door to Fiery Airdock
       Any of the following:
           After Imperial Hall Fuel Gel Walls
-          Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner) and Standable Terrain (Beginner)
+          Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner)
   > Morph Ball Door to Gel Cavern
       After Gel Cavern Shortcut Activated and Enabled MP3Update
   > Event - Fuel Gel Walls
@@ -104,10 +104,11 @@ Extra - asset_id: 4215957264467390882
       Any of the following:
           After Imperial Hall Fuel Gel Walls
           # https://youtu.be/9FQFcMIH1vQ
-          Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner) and Standable Terrain (Beginner)
+          Space Jump Boots and Morph Ball and Bomb/Spring Space Jump (Beginner)
   > Event - Fuel Gel Walls
       Charge Beam or Plasma Beam
   > Front of Lasso Walls
+      # https://youtu.be/9FQFcMIH1vQ
       Space Jump Boots and Morph Ball and Before Imperial Hall Fuel Gel Walls and Bomb/Spring Space Jump (Beginner) and Standable Terrain (Beginner)
 
 > Morph Ball Door to Gel Cavern; Heals? False
@@ -146,10 +147,8 @@ Extra - asset_id: 4215957264467390882
                   Bomb/Spring Space Jump (Intermediate) and Use Boost Ball
                   All of the following:
                       Standable Terrain (Beginner)
-                      Any of the following:
-                          Movement (Intermediate)
-                          # Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE
-                          Scan Visor and Movement (Beginner)
+                      # Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE
+                      Movement (Intermediate)
   > Event - Grapple Lasso Walls
       Grapple Lasso
 
