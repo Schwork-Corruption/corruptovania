@@ -146,9 +146,11 @@ Extra - asset_id: 4215957264467390882
                   After Imperial Hall Grapple Lasso Walls or Bomb/Spring Space Jump (Advanced)
                   Bomb/Spring Space Jump (Intermediate) and Use Boost Ball
                   All of the following:
-                      Standable Terrain (Beginner)
-                      # Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE
-                      Movement (Intermediate)
+                      Standable Terrain (Intermediate)
+                      Any of the following:
+                          # Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE
+                          Movement (Intermediate)
+                          Scan Visor and Movement (Beginner)
   > Event - Grapple Lasso Walls
       Grapple Lasso
 
