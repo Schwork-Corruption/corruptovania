@@ -2410,7 +2410,7 @@
                     "node_type": "generic",
                     "heal": false,
                     "coordinates": {
-                        "x": -0.99,
+                        "x": -8.0,
                         "y": -13.01,
                         "z": 0.0
                     },
@@ -2555,7 +2555,7 @@
                     "node_type": "event",
                     "heal": false,
                     "coordinates": {
-                        "x": 0.0,
+                        "x": 3.0,
                         "y": 26.0,
                         "z": 0.0
                     },
