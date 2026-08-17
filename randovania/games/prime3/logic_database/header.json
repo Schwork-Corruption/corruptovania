@@ -1139,6 +1139,10 @@
             "GelCavernShortcut": {
                 "long_name": "Gel Cavern Shortcut Activated",
                 "extra": {}
+            },
+            "MetroidProcessingPirateFight": {
+                "long_name": "Metroid Processing Pirate Fight",
+                "extra": {}
             }
         },
         "tricks": {

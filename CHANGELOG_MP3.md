@@ -37,6 +37,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed: The logic for the fight to open the morph tunnel in Skyway Access has been reworked.
 
+##### Pirate Homeworld
+
+- Fixed: Metroid Processing: Added fight requirements to deal with the pirates.
+
 ## [1.8.2] - 2026-03-07
 
 #### Logic Database
