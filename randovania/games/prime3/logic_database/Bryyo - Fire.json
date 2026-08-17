@@ -605,15 +605,6 @@
                                                         "amount": 1,
                                                         "negate": false
                                                     }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "StandableTerrain",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
                                                 }
                                             ]
                                         }
@@ -805,15 +796,6 @@
                                                         "amount": 1,
                                                         "negate": false
                                                     }
-                                                },
-                                                {
-                                                    "type": "resource",
-                                                    "data": {
-                                                        "type": "tricks",
-                                                        "name": "StandableTerrain",
-                                                        "amount": 1,
-                                                        "negate": false
-                                                    }
                                                 }
                                             ]
                                         }
@@ -850,7 +832,7 @@
                         "Front of Lasso Walls": {
                             "type": "and",
                             "data": {
-                                "comment": null,
+                                "comment": "https://youtu.be/9FQFcMIH1vQ",
                                 "items": [
                                     {
                                         "type": "resource",
@@ -1144,19 +1126,28 @@
                                                                             "data": {
                                                                                 "type": "tricks",
                                                                                 "name": "StandableTerrain",
-                                                                                "amount": 1,
+                                                                                "amount": 2,
                                                                                 "negate": false
                                                                             }
                                                                         },
                                                                         {
                                                                             "type": "or",
                                                                             "data": {
-                                                                                "comment": null,
+                                                                                "comment": "Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE",
                                                                                 "items": [
+                                                                                    {
+                                                                                        "type": "resource",
+                                                                                        "data": {
+                                                                                            "type": "tricks",
+                                                                                            "name": "Movement",
+                                                                                            "amount": 2,
+                                                                                            "negate": false
+                                                                                        }
+                                                                                    },
                                                                                     {
                                                                                         "type": "and",
                                                                                         "data": {
-                                                                                            "comment": "Jump towards the Lasso Platforms https://youtu.be/Z-XICpMJWoE",
+                                                                                            "comment": null,
                                                                                             "items": [
                                                                                                 {
                                                                                                     "type": "resource",
@@ -1177,15 +1168,6 @@
                                                                                                     }
                                                                                                 }
                                                                                             ]
-                                                                                        }
-                                                                                    },
-                                                                                    {
-                                                                                        "type": "resource",
-                                                                                        "data": {
-                                                                                            "type": "tricks",
-                                                                                            "name": "Movement",
-                                                                                            "amount": 2,
-                                                                                            "negate": false
                                                                                         }
                                                                                     }
                                                                                 ]
